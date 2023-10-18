@@ -2,12 +2,14 @@ package com.digital;
 
 import com.digital.driver.Driver;
 
+import com.digital.pages.ByCoursePage;
 import com.digital.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public abstract class BaseTest {
+    public ByCoursePage byCoursePage;
     public WebDriver driver;
     public LoginPage loginPage;
     @BeforeClass(alwaysRun = true)
