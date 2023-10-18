@@ -71,7 +71,6 @@ public class CreateCoursePage extends BasePage {
 
     public CreateCoursePage selectDate(){
         elementActions.clickElement(startDateInput);
-        elementActions.clickElement();
         elementActions.clickElement(showVideoInput);
         return this;
     }
