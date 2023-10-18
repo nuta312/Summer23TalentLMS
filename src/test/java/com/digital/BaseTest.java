@@ -2,11 +2,10 @@ package com.digital;
 
 import com.digital.driver.Driver;
 
-<<<<<<< HEAD
+
 import com.digital.pages.ByCoursePage;
-=======
 import com.digital.pages.HomePage;
->>>>>>> master
+
 import com.digital.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
