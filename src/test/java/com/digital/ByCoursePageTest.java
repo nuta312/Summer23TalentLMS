@@ -13,8 +13,16 @@ ByCoursePage byCoursePage = new ByCoursePage();
        Thread.sleep(4000);
        byCoursePage.clickHowTheCourseStoreWorks().closeClick();
        Thread.sleep(2000);
-       byCoursePage.clickName().clickEnglish().clickBusinessSkills().clickHumanRecources().clickLeaderShip().clickPersonalDevolopment().clickSafetyAndCompliance().clickSalesAndService()
-                       .clickSectorSpecific().clickTechnology();
+       byCoursePage.clickName()
+               .clickEnglish()
+               .clickBusinessSkills()
+               .clickHumanRecources()
+               .clickLeaderShip()
+               .clickPersonalDevolopment()
+               .clickSafetyAndCompliance()
+               .clickSalesAndService()
+               .clickSectorSpecific().
+               clickTechnology();
 
 
 //        .clickName().clickEnglish().clickBusinessSkills();
