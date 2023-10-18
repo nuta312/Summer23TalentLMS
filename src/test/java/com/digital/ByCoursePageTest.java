@@ -12,8 +12,7 @@ ByCoursePage byCoursePage = new ByCoursePage();
 //        byCoursePage.clickByCourse();
        Thread.sleep(4000);
        byCoursePage.clickHowTheCourseStoreWorks().closeClick();
-       Thread.sleep(2000
-       );
+       Thread.sleep(2000);
        byCoursePage.clickName().clickEnglish().clickBusinessSkills().clickHumanRecources().clickLeaderShip().clickPersonalDevolopment().clickSafetyAndCompliance().clickSalesAndService()
                        .clickSectorSpecific().clickTechnology();
 
