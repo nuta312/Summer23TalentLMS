@@ -11,6 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public abstract class BaseTest {
+
     public WebDriver driver;
     public LoginPage loginPage;
     public UserHomePage userHomePage;
