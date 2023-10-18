@@ -156,9 +156,6 @@ public class ElementActions {
     }
 
 
-
-
-
     public ElementActions setTextAndEnterElement(WebElement element, String txt) {
         writeText(element, txt);
         element.sendKeys(Keys.ENTER);
