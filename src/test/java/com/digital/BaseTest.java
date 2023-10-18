@@ -14,7 +14,7 @@ public abstract class BaseTest {
     public void setUpBrowser() {
         driver = Driver.getDriver();
         loginPage = new LoginPage();
-        driver.get("https://nbu111.talentlms.com/index");
+        driver.get("https://nbu111.talentlms.com/dashboard");
         loginPage.logIn();
     }
 
