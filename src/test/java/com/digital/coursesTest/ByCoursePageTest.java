@@ -1,9 +1,10 @@
-package com.digital;
+package com.digital.coursesTest;
 
-import com.digital.pages.ByCoursePage;
+import com.digital.BaseTest;
+import com.digital.pages.coursesPage.ByCoursePage;
 import org.testng.annotations.Test;
 
-public class ByCoursePageTest extends BaseTest{
+public class ByCoursePageTest extends BaseTest {
 ByCoursePage byCoursePage = new ByCoursePage();
     @Test
    void test() throws InterruptedException {

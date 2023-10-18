@@ -1,11 +1,10 @@
-package com.digital.pages;
+package com.digital.pages.coursesPage;
 
+import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-
-public class ByCoursePage extends BasePage{
+public class ByCoursePage extends BasePage {
 
     @FindBy(id = "grid_marketplace_filter")
     public WebElement searchCourse;
