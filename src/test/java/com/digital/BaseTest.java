@@ -4,6 +4,7 @@ import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
+import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import com.digital.utils.FakeDataProvider;
@@ -16,6 +17,7 @@ public abstract class BaseTest {
     public WebDriver driver;
     public LoginPage loginPage;
     public UserHomePage userHomePage;
+    public UserCoursesPage userCoursesPage;
 
     public HomePage homePage;
 
@@ -28,6 +30,7 @@ public abstract class BaseTest {
         loginPage.logIn();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
+        userCoursesPage = new UserCoursesPage();
     }
 
 //    @AfterClass(alwaysRun = true)
