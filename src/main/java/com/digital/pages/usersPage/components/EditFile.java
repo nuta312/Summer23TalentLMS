@@ -55,21 +55,21 @@ public class EditFile extends FilesPage {
         elementActions.moveToElement(clickTableRowInFile).clickByJS(clickTableRowInFile);
         return this;
     }
-
-    public EditFile clickPreview(){
+    public String pictureNameText;
+    public EditFile clickPreview() {
         elementActions.moveToElement(clickPreviewInTableFile).clickElement(clickPreviewInTableFile);
+        pictureNameText = resultPictureName.getAttribute("kitty.jpg");
 //        Assert.assertTrue(resultPictureName.getText().contains("kitty.jpg"));
         elementActions.clickElement(close);
         return this;
     }
     public EditFile clickDownload(){
         elementActions.clickElement(clickDownloadInTableFile).navigateBack();
-
         return this;
     }
-    public EditFile clickEdit() {
-        elementActions.moveToElement(clickEditInTableFile).clickElement(clickEditInTableFile);
-        elementActions.clickElement(clickUpdateBtmInputEdit);
+    public EditFile clickEdit() throws InterruptedException {
+        Thread.sleep (2000);
+        elementActions.moveToElement(clickEditInTableFile).waitElementToBeClickable(clickEditInTableFile);
         return this;
     }
 
