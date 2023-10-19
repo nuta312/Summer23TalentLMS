@@ -4,6 +4,8 @@ import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
+import com.digital.pages.accountSettingsPage.AccountSettingsPage;
+import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import com.digital.utils.FakeDataProvider;
@@ -15,6 +17,8 @@ public abstract class BaseTest {
 
     public WebDriver driver;
     public LoginPage loginPage;
+    public AccountSettingsPage accountSettingsPage;
+    public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
 
     public HomePage homePage;
