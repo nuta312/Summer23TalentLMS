@@ -1,8 +1,10 @@
 package com.digital.pages.coursesPage;
 
 import com.digital.pages.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class ByCoursePage extends BasePage {
 
@@ -41,64 +43,102 @@ public class ByCoursePage extends BasePage {
     @FindBy(xpath = "(//a[@data-dismiss='modal'])[1]")
     public WebElement close;
 
+    @FindBy(xpath = "(//div[@class='tl-bold-link'])[2]")
+    public WebElement courses;
+    @FindBy(xpath = "//*[text()='Buy courses']")
+    public WebElement buyCourses;
+
+    @FindBy(xpath = "//a[@id='tl-reset-categories']")
+    public WebElement reset;
+    public ByCoursePage resetClickBtn(){
+        elementActions.clickElement(reset);
+        return this;
+    }
+    public ByCoursePage buyCourseLinkClick(){
+        elementActions.clickElement(buyCourses);
+        return this;
+    }
+    public ByCoursePage coursesClickBtn(){
+        elementActions.clickElement(courses);
+        return this;
+    }
+
     public ByCoursePage closeClick(){
-        close.click();
+        elementActions.clickElement(close);
+      // Assert.assertEquals(close.getText(),"close element");
         return this;
     }
 
    public ByCoursePage clickHowTheCourseStoreWorks(){
-       howTheCourseStoreWorks.click();
+        elementActions.clickElement(howTheCourseStoreWorks);
+    // Assert.assertEquals(howTheCourseStoreWorks.getText(),"You have click the button");
        return this;
    }
 
     public ByCoursePage clickHumanRecources(){
-        humanResources.click();
+        elementActions.clickElement(humanResources);
+       // Assert.assertEquals(humanResources.getText(),"You have click human resources");
 
         return this;
     }
     public ByCoursePage clickLeaderShip()  {
-        leaderShip.click();
+        elementActions.clickElement(leaderShip);
+      //  Assert.assertEquals(leaderShip.getText(),"You have click leader ship");
 
         return this;
     }
     public ByCoursePage clickPersonalDevolopment(){
-        personalDevolopment.click();
+        elementActions.clickElement(personalDevolopment);
+      //  Assert.assertEquals(personalDevolopment.getText(),"you have click personal devolopment");
 
         return this;
     }
     public ByCoursePage clickSafetyAndCompliance() {
-        safetyAndCompliance.click();
+        elementActions.clickElement(safetyAndCompliance);
+       // Assert.assertEquals(safetyAndCompliance.getText(),"you have click safety and compliance");
 
         return this;
     }
     public ByCoursePage clickSalesAndService()  {
-        salesAndService.click();
+        elementActions.clickElement(salesAndService);
+     // Assert.assertEquals(salesAndService.getText(),"you have click sales and service");
 
         return this;
     }
 
     public ByCoursePage clickSectorSpecific()  {
-        sectorSpecific.click();
+        elementActions.clickElement(sectorSpecific);
+      //  Assert.assertEquals(sectorSpecific.getText(),"you have click sector specific");
+      //  sectorSpecific.click();
 
         return this;
     }
     public ByCoursePage clickTechnology() {
-        technology.click();
+        elementActions.clickElement(technology);
+            //    Assert.assertEquals(technology.getText(),"ypu have click tecchnology");
+
 
         return this;
     }
     public ByCoursePage clickByCourse(){
-        byCurse.click();
+        elementActions.clickElement(byCurse);
+       // Assert.assertEquals(byCurse.getText(),"You have click by curse");
+
         return this;
     }
 
 public ByCoursePage clickName(){
-    name.click();
+       elementActions.clickElement(name);
+
+       // name.click();
+    //Assert.assertEquals(name.getText(),"You are click the NAME");
 
 return this;
 }
 public ByCoursePage clickEnglish(){
-    english.click();
+        elementActions.clickElement(english);
+      //  Assert.assertEquals(english.getText(),"english");
+
     return this;
 }
 
@@ -107,7 +147,9 @@ public ByCoursePage writeSearchCourse(){
     return this;
 }
 public ByCoursePage clickBusinessSkills(){
-    businessSkills.click();
+        elementActions.clickElement(businessSkills);
+    //Assert.assertEquals(businessSkills.getText(),"you have click business skills");
+
     return this;
 }
 

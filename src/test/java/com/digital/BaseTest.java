@@ -4,13 +4,13 @@ import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
-import com.digital.pages.coursesPage.ByCoursePage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import com.digital.pages.coursesPage.ByCoursePage;
 
 public abstract class BaseTest {
     public WebDriver driver;
