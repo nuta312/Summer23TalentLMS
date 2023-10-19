@@ -3,6 +3,8 @@ package com.digital;
 import com.digital.driver.Driver;
 
 import com.digital.pages.LoginPage;
+import com.digital.pages.accountSettingsPage.AccountSettingsPage;
+import com.digital.pages.accountSettingsPage.CertificatesPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -10,6 +12,8 @@ import org.testng.annotations.BeforeClass;
 public abstract class BaseTest {
     public WebDriver driver;
     public LoginPage loginPage;
+    public AccountSettingsPage accountSettingsPage;
+    public CertificatesPage certificatesPage;
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
         driver = Driver.getDriver();
