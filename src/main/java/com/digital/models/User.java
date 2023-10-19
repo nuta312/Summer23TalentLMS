@@ -1,11 +1,8 @@
 package com.digital.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-
+@Data
 public class User {
     private String userName;
     private String userLastName;
