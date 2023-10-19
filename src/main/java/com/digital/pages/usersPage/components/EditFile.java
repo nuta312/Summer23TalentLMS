@@ -63,7 +63,8 @@ public class EditFile extends FilesPage {
         return this;
     }
     public EditFile clickDownload(){
-        elementActions.clickElement(clickDownloadInTableFile);
+        elementActions.clickElement(clickDownloadInTableFile).navigateBack();
+
         return this;
     }
     public EditFile clickEdit() {
