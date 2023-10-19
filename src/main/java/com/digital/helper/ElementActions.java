@@ -1,6 +1,7 @@
 package com.digital.helper;
 
 import com.digital.driver.Driver;
+import com.digital.pages.coursesPage.CreateCoursePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -200,6 +201,5 @@ public class ElementActions {
         Driver.getDriver().navigate().back();
         return this;
     }
-
 
 }
