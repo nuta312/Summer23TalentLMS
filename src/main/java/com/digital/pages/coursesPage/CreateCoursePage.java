@@ -40,7 +40,7 @@ public class CreateCoursePage extends BasePage {
     public WebElement coursePriceInput;
     @FindBy(id = "show-intro-video-url")
     public WebElement showVideoInput;
-    @FindBy(id = "counter-course-intro-video-url")
+    @FindBy(xpath = "//input[@name='intro_video_url']")
     public WebElement downloadVideo;
     @FindBy(id = "show-capacity")
     public WebElement showCapasityInput;
@@ -112,6 +112,11 @@ public class CreateCoursePage extends BasePage {
     public CreateCoursePage priceInput(String txt) {
         elementActions.clickElement(showCodePrice);
         elementActions.writeText(coursePriceInput, txt);
+        return this;
+    }
+    public CreateCoursePage inputVideo(){
+        elementActions.clickElement(showVideoInput);
+        elementActions.writeText(downloadVideo, "https://www.youtube.com/watch?v=9sw1NzgSdyM&ab_channel=Fashion%26Sightseeing");
         return this;
     }
 
@@ -197,6 +202,7 @@ public class CreateCoursePage extends BasePage {
                 .descriptionInput("IT stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more")
                 .courseCode("12345")
                 .priceInput("10000")
+                .inputVideo()
                 .capacityInput("50")
                 .selectDate("30")
                 .selectCertificate("Fan")
