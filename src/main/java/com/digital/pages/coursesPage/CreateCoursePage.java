@@ -14,15 +14,15 @@ public class CreateCoursePage extends BasePage {
     public WebElement courseNameInput;
     @FindBy(xpath = "//div[@class='select2-container']")
     public WebElement chooseCategoryInput;
-    @FindBy(xpath ="//div[@class='select2-result-label']")
+    @FindBy(xpath = "//div[@class='select2-result-label']")
     public WebElement selectSamples;
     @FindBy(xpath = "//textarea[@class='span7']")
     public WebElement descriptionInput;
     @FindBy(id = "show-coursecode")
     public WebElement showCourseCodeInput;
-    @FindBy (id ="course-coursecode")
+    @FindBy(id = "course-coursecode")
     public WebElement writeCode;
-    @FindBy(id= "show-price")
+    @FindBy(id = "show-price")
     public WebElement showCodePrice;
     @FindBy(id = "course-price")
     public WebElement coursePriceInput;
@@ -32,7 +32,7 @@ public class CreateCoursePage extends BasePage {
     public WebElement downloadVideo;
     @FindBy(id = "show-capacity")
     public WebElement showCapasityInput;
-    @FindBy(id="course-capacity")
+    @FindBy(id = "course-capacity")
     public WebElement writeCapasityText;
     @FindBy(id = "show-time-options")
     public WebElement showTimeOptionInput;
@@ -40,36 +40,40 @@ public class CreateCoursePage extends BasePage {
     public WebElement startDateInput;
     @FindBy(id = "expiration-date")
     public WebElement expirationDateInput;
-    @FindBy (xpath = "//a[@class='btn toggle-time-options']")
+    @FindBy(xpath = "//a[@class='btn toggle-time-options']")
     public WebElement timeLimit;
     @FindBy(id = "start-time")
     public WebElement startTimeInput;
     @FindBy(id = "expiration-time")
     public WebElement expirationTimeInput;
-    @FindBy (id= "course-timelimit")
+    @FindBy(id = "course-timelimit")
     public WebElement timeLimitInput;
     @FindBy(id = "(//th[@class='next'])[4]")
     public WebElement nextBtn;
-    @FindBy(xpath = "(//table[@class=' table-condensed'])[1]")
-    public List<WebElement> listData;
-    @FindBy(id = "hour-9")
-    public WebElement hour9Input;
-    @FindBy(id = "minute-0")
-    public WebElement minute0Input;
-    @FindBy(id = "hour-12")
-    public WebElement hour12Input;
-    @FindBy(id = "minute-15")
-    public WebElement minute15Input;
+    //    @FindBy(xpath = "(//table[@class=' table-condensed'])[1]")
+//    public List<WebElement> listData;
+//    @FindBy(id = "hour-9")
+//    public WebElement hour9Input;
+//    @FindBy(id = "minute-0")
+//    public WebElement minute0Input;
+//    @FindBy(id = "hour-12")
+//    public WebElement hour12Input;
+//    @FindBy(id = "minute-15")
+//    public WebElement minute15Input;
     @FindBy(id = "time-limit-retain-access")
     public WebElement timeLimitRetainAccessBtn;
-    @FindBy(id = "s2id_course-certification")
-    public WebElement selectCertificateInput;
+    @FindBy(xpath = "//div[@class='select2-result-label']")
+    public List<WebElement> listOfCertificate;
     @FindBy(id = "show-certification")
     public WebElement certificateBtn;
-    @FindBy(xpath = "(//span[@class='select2-chosen'])[2]")
+    @FindBy(xpath = "(//div[@class='select2-result-label'])[2]")
     public WebElement selectClassicCertificate;
-    @FindBy(id = "(//span[@class='select2-match'])[2]")
+    @FindBy(id = "s2id_course-certification")
     public WebElement selectCertificateDuration;
+    @FindBy(xpath = "//*[text()='Forever']")
+    public WebElement select2DropMask;
+    @FindBy(xpath = "(//ul[@class='select2-results'])[7]")
+    public List<WebElement> selectDuration;
     @FindBy(xpath = "(//span[@class= 'select2-match'])[4]")
     public WebElement select6month;
     @FindBy(id = "reassign-checkbox")
@@ -78,7 +82,11 @@ public class CreateCoursePage extends BasePage {
     public WebElement reassignWhen;
     @FindBy(id = "show-level")
     public WebElement showLevel;
-    @FindBy(xpath = "//ul[@class='select2-results']")
+    @FindBy(id = "s2id_course-level")
+    public WebElement selectLevel;
+    @FindBy(xpath = "(//span[@class='select2-match'])[10]")
+    public WebElement inputLevel;
+    @FindBy(xpath = "(//ul[@class='select2-results'])[7]")
     public List<WebElement> listLevel;
     @FindBy(xpath = "//input[@name='submit_course']")
     public WebElement saveBtn;
@@ -104,7 +112,7 @@ public class CreateCoursePage extends BasePage {
 
     public CreateCoursePage courseCode() throws InterruptedException {
         elementActions.clickElement(showCourseCodeInput);
-                elementActions.writeText(writeCode, "WS123");
+        elementActions.writeText(writeCode, "WS123");
         return this;
     }
 
@@ -128,45 +136,46 @@ public class CreateCoursePage extends BasePage {
 //                .clickElement(nextBtn)
 //                .clickElement(listData.get(4))
                 .clickElement(timeLimit)
-                .writeText(timeLimitInput,"30");
-        Thread.sleep(3000);
-        return this;
-    }
-
-    public CreateCoursePage selectTime() throws InterruptedException {
-        elementActions.clickElement(startTimeInput)
-                .clickElement(hour9Input)
-                .clickElement(minute0Input)
-                .clickElement(expirationTimeInput)
-                .clickElement(hour12Input)
-                .clickElement(minute15Input);
+                .writeText(timeLimitInput, "30");
         Thread.sleep(3000);
         return this;
     }
 
     public CreateCoursePage selectCertificate() throws InterruptedException {
         elementActions.clickElement(certificateBtn)
-                .clickElement(selectClassicCertificate)
                 .clickElement(selectCertificateDuration);
+
+        for (int i = 0; i < listOfCertificate.size(); i++) {
+            listOfCertificate.get(i);
+        }
+        elementActions.clickElement(selectClassicCertificate)
+                .clickElement(select2DropMask);
+        for (int i = 0; i < selectDuration.size(); i++) {
+            WebElement element = selectDuration.get(i);
+            elementActions.scrollToTheElement(select2DropMask);
+            elementActions.clickElement(element);
+
+        }
+
         Thread.sleep(3000);
         return this;
     }
 
     public CreateCoursePage levelInput() throws InterruptedException {
         elementActions.clickElement(showLevel)
-                .clickElement(listLevel.get(5));
+                .clickElement(selectLevel)
+                        .clickElement(inputLevel);
         Thread.sleep(3000);
         return this;
     }
 
     public CreateCoursePage saveBtn() throws InterruptedException {
         elementActions.clickElement(saveBtn);
-        Thread.sleep(5000);
         return this;
     }
 
     public CreateCoursePage allMethods() throws InterruptedException {
-        CreateCoursePage createCoursePage= new CreateCoursePage();
+        CreateCoursePage createCoursePage = new CreateCoursePage();
         createCoursePage
                 .nameInput()
                 .choosyCategory()
@@ -181,3 +190,5 @@ public class CreateCoursePage extends BasePage {
         return this;
     }
 }
+
+
