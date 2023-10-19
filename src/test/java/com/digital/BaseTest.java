@@ -26,6 +26,7 @@ public abstract class BaseTest {
     public HomePage homePage;
 
     public FakeDataProvider fakeDataProvider;
+
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
         driver = Driver.getDriver();
@@ -37,9 +38,9 @@ public abstract class BaseTest {
         userCoursesPage = new UserCoursesPage();
     }
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown(){
-//        Driver.closeDriver();
-//    }
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        Driver.closeDriver();
+    }
 
 }
