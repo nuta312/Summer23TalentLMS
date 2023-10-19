@@ -3,32 +3,32 @@ package com.digital.pages.usersPage;
 import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;
 
-public class CreateUser extends BasePage {
+public class CreateUserPage extends BasePage {
     //aibike
 
     public WebElement addUserBtn;
 
-    public CreateUser clickAddUserBtn(){
+    public CreateUserPage clickAddUserBtn(){
         elementActions.clickElement(addUserBtn);
         return this;
     }
 
-    public CreateUser fillUpFirstNameInput(){
+    public CreateUserPage fillUpFirstNameInput(){
         return this;
     }
-    public CreateUser fillUpLastNameInput(){
+    public CreateUserPage fillUpLastNameInput(){
         return this;
     }
-    public CreateUser fillUpEmailInput(){
+    public CreateUserPage fillUpEmailInput(){
         return this;
     }
-    public CreateUser fillUpUsernamenput(){
+    public CreateUserPage fillUpUsernamenput(){
         return this;
     }
-    public CreateUser fillUpPasswordInput(){
+    public CreateUserPage fillUpPasswordInput(){
         return this;
     }
-    public CreateUser fillUpBioInput(){
+    public CreateUserPage fillUpBioInput(){
         return this;
     }
 

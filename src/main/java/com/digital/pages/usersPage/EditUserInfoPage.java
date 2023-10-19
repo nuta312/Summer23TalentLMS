@@ -2,6 +2,6 @@ package com.digital.pages.usersPage;
 
 import com.digital.pages.BasePage;
 
-public class EditUserInfo extends BasePage {
+public class EditUserInfoPage extends BasePage {
     //ruslan
 }
