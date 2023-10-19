@@ -1,6 +1,9 @@
 package com.digital.pages.usersPage.components;
 
 import com.digital.pages.usersPage.UserHomePage;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class CheckTableOptions extends UserHomePage {
     public UserHomePage userHomePage;
@@ -11,4 +14,7 @@ public class CheckTableOptions extends UserHomePage {
         elementActions.clickElement(userHomePage.reportsBtn);
         return this;
     }
+    @FindBy(xpath = "//*[text()='SuperAdmin']")
+    public WebElement textSuperAdmin;
+
 }
