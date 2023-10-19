@@ -1,15 +1,9 @@
 package com.digital.pages.usersPage;
 
-import com.digital.driver.Driver;
 import com.digital.pages.BasePage;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,13 +30,36 @@ public class CreateUserPage extends BasePage {
 
     public WebElement bioInput;
 
-    @FindBy(xpath = "//label[contains(text(),'User type')]/../div/div")
-    public WebElement userTypeInput;
-
-    @FindBy(xpath = "//select[@name='acl_user_type_id']")
-    public WebElement userTypeSelectOptions;
     public List<String> expectedUserInfo;
 
+    public List<String> usersListInTable;
+    @FindBy(xpath = "(//div[@class='select2-container tl-select2'])[1]")
+    public WebElement openUserType;
+    @FindBy(xpath = "(//div[@class='select2-container tl-select2'])[2]")
+    public WebElement openTimeZone;
+    @FindBy(xpath = "//input[@id='status']/..")
+    public WebElement activeInput;
+    @FindBy(xpath = "//input[@id='deactivate_user']/..")
+    public WebElement deactiveInput;
+    @FindBy(xpath = "//label[contains(text(),'User type')]/..//span")
+    public WebElement spanOfUserType;
+    @FindBy(xpath = "//label[contains(text(),'Time zone')]/..//span")
+    public WebElement spanOfTimezone;
+    @FindBy(xpath = "//label[contains(text(),'Language')]/..//span")
+    public WebElement spanOfLanguage;
+    @FindBy(xpath = "//input[@name='restrict_email']/..")
+    public WebElement exludeFromEmailsInput;
+    @FindBy(xpath = "//input[@value='Add user']")
+    public WebElement submitBtn;
+    @FindBy(xpath = "//a[@title='Users']")
+    public WebElement linkToNavigateUserHomePage;
+    @FindBy(xpath = "//div[@id='tl-users-grid_wrapper']//tbody/tr")
+    public List<WebElement> allUsersInTable;
+    public boolean isActiveInputSelected;
+    public boolean isExludeFromEmailInputSelected;
+    public boolean isDeactiveInputDisplayed;
+    @FindBy(xpath = "//div[@class='select2-result-label']/..")
+    List<WebElement> listDropsMenu;
 
     public CreateUserPage clickAddUserBtn() {
         elementActions.clickElement(addUserBtn);
@@ -87,12 +104,76 @@ public class CreateUserPage extends BasePage {
     }
 
     public CreateUserPage clickToRandomUserTypeMenu() {
-        elementActions.clickElement(userTypeInput);
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        String optionValue = "Admin-Type";
-        js.executeScript("arguments[0].dispatchEvent(new Event('change', { bubbles: true }));", userTypeSelectOptions);
-        js.executeScript("arguments[0].value = '" + optionValue + "';", userTypeSelectOptions);
+        elementActions.clickElement(openUserType);
+        elementActions.clickToRandomElement(listDropsMenu);
+        expectedUserInfo.add(spanOfUserType.getAttribute("innerText"));
         return this;
     }
+
+    public CreateUserPage clickToRandomLang() {
+        elementActions.clickElement(openTimeZone);
+        elementActions.clickToRandomElement(listDropsMenu);
+        expectedUserInfo.add(spanOfTimezone.getAttribute("innerText"));
+        return this;
+    }
+
+    public CreateUserPage clickToRandomTimeZoneMenu() {
+        elementActions.clickElement(openTimeZone);
+        elementActions.clickToRandomElement(listDropsMenu);
+        expectedUserInfo.add(spanOfLanguage.getAttribute("innerText"));
+        return this;
+    }
+
+    public CreateUserPage clickToActivateInput(boolean isActive) {
+        if (isActive) {
+            elementActions.clickElement(activeInput);
+        }
+        isActiveInputActivated();
+        return this;
+    }
+
+    public boolean isActiveInputActivated() {
+        isActiveInputSelected = activeInput.isSelected();
+        return isActiveInputSelected;
+    }
+
+
+    public CreateUserPage clickToExludeFromEmailsInput(boolean isExlude) {
+        if (isExlude) {
+            elementActions.clickElement(exludeFromEmailsInput);
+        }
+        isExludeFromEmailsInputActivated();
+        return this;
+    }
+
+    public boolean isExludeFromEmailsInputActivated() {
+        isExludeFromEmailInputSelected = exludeFromEmailsInput.isEnabled();
+        return isExludeFromEmailInputSelected;
+    }
+
+    public CreateUserPage navigateToUserHomePage() {
+        elementActions.clickElement(linkToNavigateUserHomePage);
+        return this;
+    }
+
+    public CreateUserPage clickToSubmitFormBtn() {
+        elementActions.clickElement(submitBtn);
+        return this;
+    }
+
+    public boolean isDeactiveInputDisplayed() {
+        isDeactiveInputDisplayed = false;
+        return isDeactiveInputDisplayed;
+    }
+
+    public List<String> getAllUsersInTable() {
+        usersListInTable = new ArrayList<>();
+        for (WebElement el : allUsersInTable) {
+            String userText = el.getText();
+            usersListInTable.add(userText);
+        }
+        return usersListInTable;
+    }
+
 
 }
