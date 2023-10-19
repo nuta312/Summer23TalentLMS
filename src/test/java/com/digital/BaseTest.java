@@ -1,5 +1,6 @@
 package com.digital;
 
+import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
@@ -23,7 +24,7 @@ public abstract class BaseTest {
     public void setUpBrowser() {
         driver = Driver.getDriver();
         loginPage = new LoginPage();
-        driver.get("https://nbu111.talentlms.com/dashboard");
+        driver.get(ConfigReader.getProperty("BASE_URL"));
         loginPage.logIn();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
