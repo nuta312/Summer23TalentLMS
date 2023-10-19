@@ -21,35 +21,39 @@ public class CategoriesPage extends BasePage {
 
     @FindBy(xpath = "(//i[@alt='Delete'])[2]")
     public WebElement samplesCategoryOptionsDeleteBtn;
+    @FindBy(xpath = "(//a[@class='btn'])[2]")
+    public WebElement cancelBtn;
 
     @FindBy(xpath = "//i[@class='icon-download tl-icon19']")
     public WebElement saveAsCSVBtn;
 
-    @FindBy(xpath = "//a[text()='View course catalog']")
+    @FindBy(xpath = "//a[@href='https://nbu111.talentlms.com/catalog']")
     public WebElement viewCourseCatalogBtn;
 
     @FindBy(xpath = "//label[text()='Name']")
     public WebElement expectedTextName;
-    @FindBy(xpath = "//input[@name='name']")
+    @FindBy(xpath = "//label[text()='Name']")
     public WebElement expectedAfterClickSamplesCategory;
-    @FindBy(xpath = "//input[@name='name']")
+    @FindBy(xpath = "//label[text()='Name']")
     public WebElement expectedAfterClickSamplesCategoryOptionsBtn;
 
-    @FindBy(xpath = "//h3[text()='Delete Category?']")
+    @FindBy(xpath = "//b[text()='Samples']")////h3[text()='Delete Category?']
     public WebElement expectedAfterClickSamplesCategoryOptionsDeleteBtn;
-    @FindBy(xpath = "//div[@class='tl-title tl-ellipsis']")
+    @FindBy(xpath = "//span[@class='tl-current-sorting-type']")////div[@class='tl-title tl-ellipsis']
     public WebElement expectedAfterClickViewCourseCatalogBtn;
 
 
     public CategoriesPage clickBtnAddCategory() {
         elementActions.clickElement(addCategoryBtn);
         Assert.assertTrue(expectedTextName.getText().contains("Name"));
+        elementActions.navigateBack();
         return this;
     }
 
     public CategoriesPage clickSampleCategory() {
         elementActions.clickElement(samplesCategory);
-        Assert.assertTrue(expectedAfterClickSamplesCategory.getText().contains("Samples"));
+        Assert.assertTrue(expectedAfterClickSamplesCategory.getText().contains("Name"));
+        elementActions.navigateBack();
         return this;
     }
 
@@ -61,15 +65,19 @@ public class CategoriesPage extends BasePage {
         CategoriesPage categoriesPage = new CategoriesPage();
         categoriesPage.hoverMouseToSamplesCategoryOptions();
         elementActions.clickElement(samplesCategoryOptionsEditBtn);
-        Assert.assertTrue(expectedAfterClickSamplesCategoryOptionsBtn.getText().contains("Samples"));
+        Assert.assertTrue(expectedAfterClickSamplesCategoryOptionsBtn.getText().contains("Name"));
+        elementActions.navigateBack();
+        return this;
+    }
+    private CategoriesPage clickCancelBtn(){
+        elementActions.clickElement(cancelBtn);
         return this;
     }
     public CategoriesPage clickSamplesCategoryOptionsDeleteBtn(){
         CategoriesPage categoriesPage = new CategoriesPage();
         categoriesPage.hoverMouseToSamplesCategoryOptions();
         elementActions.clickElement(samplesCategoryOptionsDeleteBtn);
-        Assert.assertTrue(expectedAfterClickSamplesCategoryOptionsDeleteBtn.getText().contains("Delete Category?"));
-        alertHelper.dismissAlert();
+        categoriesPage.clickCancelBtn();
         return this;
     }
     public CategoriesPage clickSaveAsCSVBtn(){
@@ -78,7 +86,13 @@ public class CategoriesPage extends BasePage {
     }
     public CategoriesPage clickViewCourseCatalogBtn(){
         elementActions.clickElement(viewCourseCatalogBtn);
-        Assert.assertTrue(expectedAfterClickViewCourseCatalogBtn.getText().contains("catalog"));
+        Assert.assertTrue(expectedAfterClickViewCourseCatalogBtn.getText().contains("Name"));
+        elementActions.navigateBack();
+        return this;
+    }
+    public CategoriesPage allClickMethods(){
+        clickBtnAddCategory().clickSampleCategory().clickSamplesCategoryOptionsEditBtn()
+                .clickSamplesCategoryOptionsDeleteBtn().clickViewCourseCatalogBtn();
         return this;
     }
 
