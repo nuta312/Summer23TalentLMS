@@ -11,7 +11,7 @@ public class ConfigReader {
 	private static Properties properties;
 	static { // статичный блок загружается при загрузке класса и инициал поля
 		try {
-			String path ="src\\main\\resources\\config.properties";
+			String path ="/Users/zhyldyzzheenbaeva/Desktop/project.html/SummerSDET/UI/src/main/resources/config.properties";
 			FileInputStream inputStream = new FileInputStream(path);
 			// для чтения содержимого файла по указанному пути
 			properties = new Properties();
