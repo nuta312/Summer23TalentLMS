@@ -3,6 +3,7 @@ package com.digital;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
+import com.digital.pages.coursesPage.ByCoursePage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import com.digital.utils.FakeDataProvider;
@@ -18,6 +19,7 @@ public abstract class BaseTest {
     public HomePage homePage;
 
     public FakeDataProvider fakeDataProvider;
+    public ByCoursePage byCoursePage;
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
         driver = Driver.getDriver();
@@ -26,6 +28,7 @@ public abstract class BaseTest {
         loginPage.logIn();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
+        byCoursePage = new ByCoursePage();
     }
 
 //    @AfterClass(alwaysRun = true)

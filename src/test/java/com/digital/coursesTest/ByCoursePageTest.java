@@ -5,7 +5,7 @@ import com.digital.pages.coursesPage.ByCoursePage;
 import org.testng.annotations.Test;
 
 public class ByCoursePageTest extends BaseTest {
-ByCoursePage byCoursePage = new ByCoursePage();
+
     @Test
    void test() throws InterruptedException {
 
