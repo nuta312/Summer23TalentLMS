@@ -3,10 +3,11 @@ package com.digital.pages.coursesPage;
 import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class CategoriesPage extends BasePage {
 
-    @FindBy (xpath = "//a[text()='Add category']")
+    @FindBy(xpath = "//a[text()='Add category']")
     public WebElement addCategoryBtn;
 
     @FindBy(xpath = "//a[text()='Samples']")
@@ -27,5 +28,58 @@ public class CategoriesPage extends BasePage {
     @FindBy(xpath = "//a[text()='View course catalog']")
     public WebElement viewCourseCatalogBtn;
 
+    @FindBy(xpath = "//label[text()='Name']")
+    public WebElement expectedTextName;
+    @FindBy(xpath = "//input[@name='name']")
+    public WebElement expectedAfterClickSamplesCategory;
+    @FindBy(xpath = "//input[@name='name']")
+    public WebElement expectedAfterClickSamplesCategoryOptionsBtn;
+
+    @FindBy(xpath = "//h3[text()='Delete Category?']")
+    public WebElement expectedAfterClickSamplesCategoryOptionsDeleteBtn;
+    @FindBy(xpath = "//div[@class='tl-title tl-ellipsis']")
+    public WebElement expectedAfterClickViewCourseCatalogBtn;
+
+
+    public CategoriesPage clickBtnAddCategory() {
+        elementActions.clickElement(addCategoryBtn);
+        Assert.assertTrue(expectedTextName.getText().contains("Name"));
+        return this;
+    }
+
+    public CategoriesPage clickSampleCategory() {
+        elementActions.clickElement(samplesCategory);
+        Assert.assertTrue(expectedAfterClickSamplesCategory.getText().contains("Samples"));
+        return this;
+    }
+
+    private CategoriesPage hoverMouseToSamplesCategoryOptions() {
+        elementActions.moveToElement(samplesCategoryOptions);
+        return this;
+    }
+    public CategoriesPage clickSamplesCategoryOptionsEditBtn (){
+        CategoriesPage categoriesPage = new CategoriesPage();
+        categoriesPage.hoverMouseToSamplesCategoryOptions();
+        elementActions.clickElement(samplesCategoryOptionsEditBtn);
+        Assert.assertTrue(expectedAfterClickSamplesCategoryOptionsBtn.getText().contains("Samples"));
+        return this;
+    }
+    public CategoriesPage clickSamplesCategoryOptionsDeleteBtn(){
+        CategoriesPage categoriesPage = new CategoriesPage();
+        categoriesPage.hoverMouseToSamplesCategoryOptions();
+        elementActions.clickElement(samplesCategoryOptionsDeleteBtn);
+        Assert.assertTrue(expectedAfterClickSamplesCategoryOptionsDeleteBtn.getText().contains("Delete Category?"));
+        alertHelper.dismissAlert();
+        return this;
+    }
+    public CategoriesPage clickSaveAsCSVBtn(){
+        elementActions.clickElement(saveAsCSVBtn);
+        return this;
+    }
+    public CategoriesPage clickViewCourseCatalogBtn(){
+        elementActions.clickElement(viewCourseCatalogBtn);
+        Assert.assertTrue(expectedAfterClickViewCourseCatalogBtn.getText().contains("catalog"));
+        return this;
+    }
 
 }
