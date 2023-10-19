@@ -18,7 +18,7 @@ public class UserHomePageTest extends BaseTest {
         homePage = new HomePage();
         homePage.openUserCategory();
         userCoursesPage = new UserCoursesPage();
-
+        createUser = new CreateUserPage();
     }
 
 }
