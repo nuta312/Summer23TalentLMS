@@ -99,7 +99,6 @@ public class CreateCoursePage extends BasePage {
 
     public CreateCoursePage descriptionInput(String txt) throws InterruptedException {
         elementActions.clickElement(descriptionInput);
-        Thread.sleep(2000);
         elementActions.writeText(descriptionInput, txt);
         return this;
     }
