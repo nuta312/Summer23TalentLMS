@@ -14,14 +14,14 @@ public class BasicSettingsTest extends BaseTest {
     driver.get("https://nbu111.talentlms.com/account/basic_index");
     basicSettings = new BasicSettings();
     basicSettings.fillUpTheSiteName("");
-    basicSettings.fillUpTheSiteDescription("Basic Sattings");
-    basicSettings.selectLanguage();
-    basicSettings.choosingLanguageInput();
+    basicSettings.fillUpTheSiteDescription("Basic Settings");
+basicSettings.selectLanguage();
+basicSettings.choosingLanguageInput();
 basicSettings.inputTheTimeZone();
-basicSettings.inputTheDefaultZone();
-basicSettings.dateFormatClick();
-basicSettings.inputDateFormat();
+basicSettings.inputDefaultZone();
 
+basicSettings.inputDateFormat();
+basicSettings.dateFormatClick();
 
 }
 }
