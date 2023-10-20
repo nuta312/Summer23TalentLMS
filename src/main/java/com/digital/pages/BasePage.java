@@ -4,6 +4,7 @@ import com.digital.driver.Driver;
 import com.digital.helper.AlertHelper;
 import com.digital.helper.ElementActions;
 import com.digital.helper.FramesHelper;
+import com.digital.pages.coursesPage.CreateCoursePage;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
