@@ -1,12 +1,12 @@
 package com.digital.pages.coursesPage;
 
 import com.digital.pages.BasePage;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 public class ByCoursePage extends BasePage {
+
 
     @FindBy(id = "grid_marketplace_filter")
     public WebElement searchCourse;
@@ -143,7 +143,8 @@ public ByCoursePage clickEnglish(){
 }
 
 public ByCoursePage writeSearchCourse(){
-    searchCourse.sendKeys();
+        elementActions.moveToElement(searchCourse);
+   // searchCourse.sendKeys();
     return this;
 }
 public ByCoursePage clickBusinessSkills(){

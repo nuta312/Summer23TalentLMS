@@ -17,6 +17,7 @@ public class ByCoursePageTest extends BaseTest {
        byCoursePage.buyCourseLinkClick();
        byCoursePage.clickHowTheCourseStoreWorks().closeClick();
        Thread.sleep(2000);
+       byCoursePage.writeSearchCourse();
        byCoursePage.clickBusinessSkills()
                .clickHumanRecources()
                .clickLeaderShip()
