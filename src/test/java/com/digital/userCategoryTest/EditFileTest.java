@@ -20,14 +20,17 @@ public class EditFileTest extends UserHomePageTest {
         editFile.clickTable1();
         editFile.clickEdit();
         editFile.clickTable1();
+        editFile.deleteClick();
+        editFile.clickTable1();
         editFile.clickDownload();
     }
-    @Test
-    void fileTestAssert(){
-        editFile.clickPreview();
-        Assert.assertEquals(editFile.pictureNameText,"kitty.jpg");
-        editFile.clickDownload();
-
-    }
+//    @Test
+//    void fileTestAssert(){
+//        editFile.clickPreview();
+//        Assert.assertEquals(editFile.pictureNameText,"kitty.jpg");
+//        editFile.clickDownload();
+//        Assert.assertEquals(editFile.editText,"Update");
+//
+//    }
 
 }

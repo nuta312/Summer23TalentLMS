@@ -30,6 +30,9 @@ public class EditFile extends FilesPage {
     public WebElement close;
     @FindBy (id = "//*[@id=\"renameFileName\"]")
     public WebElement resultEditName;
+    @FindBy (id = "/html/body/img")
+    public WebElement downloadPicture;
+
     @FindBy(xpath = "//*[@id=\"show-tags\"]")
     public WebElement clickTagInSaidEdit;
     @FindBy(xpath = "//li[text()='Please enter 1 more character']")
@@ -38,10 +41,10 @@ public class EditFile extends FilesPage {
     public WebElement clickUpdateBtmInputEdit;
     @FindBy(xpath = "//*[@id=\"tl-hide-rename-file-modal\"]")
     public WebElement clickCanselInputEdit;
-    public  EditFile click1(){
-        elementActions.clickElement(clickUserFirst);
-        return this;
-    }
+    @FindBy(xpath = "//*[@id=\"tl-confirm-submit\"]")
+    public WebElement deleteBTM;
+    @FindBy (xpath = "//*[@id=\"tl-confirm\"]/div[3]/a[3]")
+    public WebElement canselInDelete;
     public EditFile clickName(){
         elementActions.clickElement(UserNameClick);
         return this;
@@ -58,19 +61,35 @@ public class EditFile extends FilesPage {
     public String pictureNameText;
     public EditFile clickPreview() {
         elementActions.moveToElement(clickPreviewInTableFile).clickElement(clickPreviewInTableFile);
-        pictureNameText = resultPictureName.getAttribute("kitty.jpg");
-//        Assert.assertTrue(resultPictureName.getText().contains("kitty.jpg"));
+//        pictureNameText = resultPictureName.getAttribute("kitty.jpg");
         elementActions.clickElement(close);
         return this;
     }
-    public EditFile clickDownload(){
+    public EditFile clickDownload() throws InterruptedException {
+        Thread.sleep(2000);
         elementActions.clickElement(clickDownloadInTableFile).navigateBack();
+//        Assert.assertNotNull(downloadPicture);
         return this;
     }
+    public  String editText;
     public EditFile clickEdit() throws InterruptedException {
         Thread.sleep (2000);
         elementActions.moveToElement(clickEditInTableFile).waitElementToBeClickable(clickEditInTableFile);
+//        editText = clickUpdateBtmInputEdit.getAttribute("Update");
         return this;
     }
+    public EditFile deleteClick() {
+        elementActions.clickElement(clickDeleteInTableFile);
+        elementActions.clickElement(canselInDelete);
+        return this;
+    }
+//    public EditFile deleteClickBTM(){
+//        elementActions.clickElement(deleteBTM);
+//        return this;
+//    }
+//    public EditFile canselDelete(){
+//        elementActions.clickElement(canselInDelete);
+//        return this;
+//    }
 
 }
