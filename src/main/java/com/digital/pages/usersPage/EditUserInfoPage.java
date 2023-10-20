@@ -125,4 +125,9 @@ public class EditUserInfo extends UserHomePage {
         return this;
     }
 
+<<<<<<< HEAD:src/main/java/com/digital/pages/usersPage/EditUserInfo.java
+=======
+public class EditUserInfoPage extends BasePage {
+    //ruslan
+>>>>>>> master:src/main/java/com/digital/pages/usersPage/EditUserInfoPage.java
 }

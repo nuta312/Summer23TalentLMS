@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class ElementActions {
     public static final int WAIT_TIMEOUT_SECONDS = 10;
@@ -202,5 +203,12 @@ public class ElementActions {
         return this;
     }
 
+    public static void pause(Integer milliseconds) {
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

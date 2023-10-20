@@ -9,10 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
     //Page Object Pattern
+
    public   ElementActions elementActions = new ElementActions();
    public   AlertHelper alertHelper = new AlertHelper(Driver.getDriver());
     public  FramesHelper framesHelper = new FramesHelper(Driver.getDriver());
     public FakeDataProvider fakeDataProvider = new FakeDataProvider();
+
     public BasePage() {           //принимает драйвер   //экземпляр текущей страницы
         PageFactory.initElements(Driver.getDriver(), this);
     }

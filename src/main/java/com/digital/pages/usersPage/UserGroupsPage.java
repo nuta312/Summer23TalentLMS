@@ -1,5 +1,5 @@
 package com.digital.pages.usersPage;
 
-public class UserGroups extends UserHomePage{
+public class UserGroupsPage extends UserHomePage{
     //eliza
 }
