@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 
 public class CategoriesTest extends BaseTest {
     @Test
-    void testCategories(){
+    void testCategories() {
         driver.get("https://nbu111.talentlms.com/category/index");
-       categoriesPage.allClickMethods();
+        categoriesPage.allClickMethods();
 
     }
 
