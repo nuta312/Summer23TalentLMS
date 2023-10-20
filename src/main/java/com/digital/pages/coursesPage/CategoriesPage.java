@@ -37,9 +37,9 @@ public class CategoriesPage extends BasePage {
     @FindBy(xpath = "//label[text()='Name']")
     public WebElement expectedAfterClickSamplesCategoryOptionsBtn;
 
-    @FindBy(xpath = "//b[text()='Samples']")////h3[text()='Delete Category?']
+    @FindBy(xpath = "//b[text()='Samples']")
     public WebElement expectedAfterClickSamplesCategoryOptionsDeleteBtn;
-    @FindBy(xpath = "//span[@class='tl-current-sorting-type']")////div[@class='tl-title tl-ellipsis']
+    @FindBy(xpath = "//span[@class='tl-current-sorting-type']")
     public WebElement expectedAfterClickViewCourseCatalogBtn;
 
 
@@ -61,7 +61,8 @@ public class CategoriesPage extends BasePage {
         elementActions.moveToElement(samplesCategoryOptions);
         return this;
     }
-    public CategoriesPage clickSamplesCategoryOptionsEditBtn (){
+
+    public CategoriesPage clickSamplesCategoryOptionsEditBtn() {
         CategoriesPage categoriesPage = new CategoriesPage();
         categoriesPage.hoverMouseToSamplesCategoryOptions();
         elementActions.clickElement(samplesCategoryOptionsEditBtn);
@@ -69,30 +70,35 @@ public class CategoriesPage extends BasePage {
         elementActions.navigateBack();
         return this;
     }
-    private CategoriesPage clickCancelBtn(){
+
+    private CategoriesPage clickCancelBtn() {
         elementActions.clickElement(cancelBtn);
         return this;
     }
-    public CategoriesPage clickSamplesCategoryOptionsDeleteBtn(){
+
+    public CategoriesPage clickSamplesCategoryOptionsDeleteBtn() {
         CategoriesPage categoriesPage = new CategoriesPage();
         categoriesPage.hoverMouseToSamplesCategoryOptions();
         elementActions.clickElement(samplesCategoryOptionsDeleteBtn);
         categoriesPage.clickCancelBtn();
         return this;
     }
-    public CategoriesPage clickSaveAsCSVBtn(){
-        elementActions.clickElement(saveAsCSVBtn);
-        return this;
-    }
-    public CategoriesPage clickViewCourseCatalogBtn(){
+
+    public CategoriesPage clickViewCourseCatalogBtn() {
         elementActions.clickElement(viewCourseCatalogBtn);
         Assert.assertTrue(expectedAfterClickViewCourseCatalogBtn.getText().contains("Name"));
         elementActions.navigateBack();
         return this;
     }
-    public CategoriesPage allClickMethods(){
+
+    public CategoriesPage clickSaveAsCSVBtn() {
+        elementActions.clickElement(saveAsCSVBtn);
+        return this;
+    }
+
+    public CategoriesPage allClickMethods() {
         clickBtnAddCategory().clickSampleCategory().clickSamplesCategoryOptionsEditBtn()
-                .clickSamplesCategoryOptionsDeleteBtn().clickViewCourseCatalogBtn();
+                .clickSamplesCategoryOptionsDeleteBtn().clickViewCourseCatalogBtn().clickSaveAsCSVBtn();
         return this;
     }
 
