@@ -38,9 +38,9 @@ public abstract class BaseTest {
         userCoursesPage = new UserCoursesPage();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        Driver.closeDriver();
+//    }
 
 }

@@ -17,7 +17,7 @@ public class UserHomePageTest extends BaseTest {
     public CheckDropMenu checkDropMenu;
 
     @BeforeClass
-    void setHomePage(){
+    void setHomePage() {
         userHomePage = new UserHomePage();
         homePage = new HomePage();
         homePage.openUserCategory();
@@ -27,7 +27,7 @@ public class UserHomePageTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    void checkDropMenu()  {
+    void checkDropMenu() {
         homePage = new HomePage();
         checkDropMenu.checkMenu()
                 .clickActivate()
@@ -36,28 +36,29 @@ public class UserHomePageTest extends BaseTest {
                 .clickBranchAdd()
                 .clickBranchRemove()
                 .clickAddGroup()
-                .clickRemoveGroup();
-
+                .clickRemoveGroup()
+                .clickMessage();
 
     }
 
     @Test(priority = 2)
-    void assertTest(){
+    void assertTest() {
         checkDropMenu.clickActivate();
-        Assert.assertEquals(checkDropMenu.actualTextActivate,"Activate");
+        Assert.assertEquals(checkDropMenu.actualTextActivate, "Activate");
         checkDropMenu.clickDeactivate();
-        Assert.assertEquals(checkDropMenu.actualTextDeactivate,"Deactivate");
+        Assert.assertEquals(checkDropMenu.actualTextDeactivate, "Deactivate");
         checkDropMenu.clickDelete();
-        Assert.assertEquals(checkDropMenu.actualTextDelete,"Delete");
+        Assert.assertEquals(checkDropMenu.actualTextDelete, "Delete");
         checkDropMenu.clickBranchAdd();
-        Assert.assertEquals(checkDropMenu.actualTextAddBranch,"Add users to branch");
+        Assert.assertEquals(checkDropMenu.actualTextAddBranch, "Add users to branch");
         checkDropMenu.clickBranchRemove();
-        Assert.assertEquals(checkDropMenu.actualTextRemoveBranch,"Remove users from branch");
+        Assert.assertEquals(checkDropMenu.actualTextRemoveBranch, "Remove users from branch");
         checkDropMenu.clickAddGroup();
-        Assert.assertEquals(checkDropMenu.actualTextAddGroup,"Add users to group");
+        Assert.assertEquals(checkDropMenu.actualTextAddGroup, "Add users to group");
         checkDropMenu.clickRemoveGroup();
-        Assert.assertEquals(checkDropMenu.actualTextRemoveGroup,"Remove users from group");
-
+        Assert.assertEquals(checkDropMenu.actualTextRemoveGroup, "Remove users from group");
+        checkDropMenu.clickMessage();
+        Assert.assertEquals(checkDropMenu.actualTextSendMessage,"Send message");
     }
 
 }

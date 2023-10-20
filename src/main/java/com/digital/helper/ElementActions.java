@@ -202,7 +202,7 @@ public class ElementActions {
         return this;
     }
 
-    public static void pause(Integer milliseconds) {
+    public void pause(Integer milliseconds) {
         try {
             TimeUnit.MILLISECONDS.sleep(milliseconds);
         } catch (InterruptedException e) {

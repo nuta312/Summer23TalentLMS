@@ -26,7 +26,7 @@ public class CheckDropMenu extends UserHomePage {
     public WebElement activateText;
 
     @FindBy(xpath = "//a[@id='submit-mass-action'][contains(text(),'Activate')]/../a[2]")
-    public WebElement activateModalBtn;
+    public WebElement activateCanselBtn;
 
     @FindBy(xpath = "//a[@data-mode='deactivate']")
     public WebElement deactivate;
@@ -35,7 +35,7 @@ public class CheckDropMenu extends UserHomePage {
     public WebElement deactivateText;
 
     @FindBy(xpath = "//a[@id='submit-mass-action'][contains(text(),'Deactivate')]/../a[2]")
-    public WebElement deactivateModalBtn;
+    public WebElement deactivateCanselBtn;
 
     @FindBy(xpath = "//a[@data-mode='delete']")
     public WebElement delete;
@@ -44,7 +44,7 @@ public class CheckDropMenu extends UserHomePage {
     public WebElement deleteText;
 
     @FindBy(xpath = "//a[@id='submit-mass-action'][contains(text(),'Delete')]/../a[2]")
-    public WebElement deleteModalBtn;
+    public WebElement deleteCanselBtn;
 
     @FindBy(xpath = "//a[@data-mode='branch-add']")
     public WebElement branchAdd;
@@ -53,7 +53,7 @@ public class CheckDropMenu extends UserHomePage {
     public WebElement branchAddText;
 
     @FindBy(xpath = "//a[@id='submit-mass-action'][contains(text(),'Add')]/../a[2]")
-    public WebElement branchAddModalBtn;
+    public WebElement branchAddCanselBtn;
 
     @FindBy(xpath = "//a[@data-mode='branch-remove']")
     public WebElement branchRemove;
@@ -62,7 +62,7 @@ public class CheckDropMenu extends UserHomePage {
     public WebElement branchRemoveText;
 
     @FindBy(xpath = "//a[@id='submit-mass-action'][contains(text(),'Remove')]/../a[2]")
-    public WebElement branchRemoveModalBtn;
+    public WebElement branchRemoveCanselBtn;
 
     @FindBy(xpath = "//a[@data-mode='group-add']")
     public WebElement addGroup;
@@ -71,7 +71,7 @@ public class CheckDropMenu extends UserHomePage {
     public WebElement addGroupText;
 
     @FindBy(xpath = "//a[@id='submit-mass-action'][contains(text(),'Add')]/../a[2]")
-    public WebElement addGroupModalBtn;
+    public WebElement addGroupCanselBtn;
 
     @FindBy(xpath = "//a[@data-mode='group-remove']")
     public WebElement removeGroup;
@@ -80,19 +80,26 @@ public class CheckDropMenu extends UserHomePage {
     public WebElement removeGroupText;
 
     @FindBy(xpath = "//a[@id='submit-mass-action'][contains(text(),'Remove')]/../a[2]")
-    public WebElement removeGroupModalBtn;
+    public WebElement removeGroupCanselBtn;
 
     @FindBy(xpath = "//a[@data-mode='message']")
     public WebElement clickMessage;
 
-    @FindBy (id="input-append tl-countdown")
-    public WebElement sendSubjectText;
-
-    @FindBy(xpath = "//div[@class='note-editable tl-message-editor span9']")
+    @FindBy(xpath = "//h3[text()='Send message']")
     public WebElement sendMessageText;
 
+    @FindBy (id="input-append tl-countdown")
+    public WebElement SubjectText;
+
+    @FindBy(xpath = "//div[@class='note-editable tl-message-editor span9']")
+    public WebElement MessageText;
+
     @FindBy(id="submit_send_message")
-    public WebElement cleckSendMessage;
+    public WebElement clickSendMessage;
+
+    @FindBy(xpath = "//div[@id='tl-users-send-message-modal']/div/h3/../a")
+    public WebElement clickSendMessageCanselBtn;
+
 
     /**
      * переход на checkbox пользователя для вызова dropMenu
@@ -100,6 +107,9 @@ public class CheckDropMenu extends UserHomePage {
     public CheckDropMenu checkMenu() {
         elementActions.moveToElement(firstTableRow);
         elementActions.clickElement(checkBoxClick);
+        if (checkBoxClick.isSelected()){
+            System.out.println("ok");
+        }
         return this;
     }
     /**
@@ -112,58 +122,80 @@ public class CheckDropMenu extends UserHomePage {
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(activate);
         actualTextActivate = (activateText.getAttribute("innerText"));
-        elementActions.clickElement(activateModalBtn);
+        elementActions.clickElement(activateCanselBtn);
         return this;
     }
     public String actualTextDeactivate;
     public CheckDropMenu clickDeactivate() {
+        elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(deactivate);
         actualTextDeactivate =(deactivateText.getAttribute("innerText"));
-        elementActions.clickElement(deactivateModalBtn);
+        elementActions.clickElement(deactivateCanselBtn);
 
         return this;
     }
     public String actualTextDelete;
     public CheckDropMenu clickDelete() {
+        elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(delete);
         actualTextDelete =(deleteText.getAttribute("innerText"));
-        elementActions.clickElement(deleteModalBtn);
+        elementActions.clickElement(deleteCanselBtn);
         return this;
     }
     public String actualTextAddBranch;
     public CheckDropMenu clickBranchAdd() {
+        elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(branchAdd);
         actualTextAddBranch=(branchAddText.getAttribute("innerText"));
-        elementActions.clickElement(branchAddModalBtn);
+        elementActions.clickElement(branchAddCanselBtn);
         return this;
     }
     public String actualTextRemoveBranch;
     public CheckDropMenu clickBranchRemove() {
+        elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(branchRemove);
         actualTextRemoveBranch =(branchRemoveText.getAttribute("innerText"));
-        elementActions.clickElement(branchRemoveModalBtn);
+        elementActions.clickElement(branchRemoveCanselBtn);
         return this;
     }
     public String actualTextAddGroup;
     public CheckDropMenu clickAddGroup() {
+        elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(addGroup);
         actualTextAddGroup=(addGroupText.getAttribute("innerText"));
-        elementActions.clickElement(addGroupModalBtn);
+        elementActions.clickElement(addGroupCanselBtn);
         return this;
     }
     public String actualTextRemoveGroup;
     public CheckDropMenu clickRemoveGroup() {
+        elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(removeGroup);
         actualTextRemoveGroup = (removeGroupText.getAttribute("innerText"));
-        elementActions.clickElement(removeGroupModalBtn);
+        elementActions.clickElement(removeGroupCanselBtn);
+
 
         return this;
     }
+    public String actualTextSendMessage;
+    public CheckDropMenu clickMessage() {
+        elementActions.pause(500);
+        elementActions.clickElement(clickMassAction);
+        elementActions.clickElement(clickMessage);
+        actualTextSendMessage = (sendMessageText.getAttribute("innerText"));
+        elementActions.clickElement(clickSendMessageCanselBtn);
+        return this;
 
-}
+    }
+        /**
+         * переход в dropMenu и вызов вкладок по порядку каждого элемента
+         * вывод текста в всплывающем окне для дальнейшего сравнения
+         */
+
+
+    }
