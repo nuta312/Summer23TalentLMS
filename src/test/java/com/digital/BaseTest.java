@@ -33,9 +33,10 @@ public abstract class BaseTest {
         categoriesPage = new CategoriesPage();
     }
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown(){
-//        Driver.closeDriver();
-//    }
+    @AfterClass
+    public void tearDown(){
+        Driver.getDriver().close();
+        Driver.getDriver().quit();
+    }
 
 }
