@@ -1,7 +1,6 @@
 package com.digital.helper;
 
 import com.digital.driver.Driver;
-import com.digital.pages.coursesPage.CreateCoursePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -15,6 +14,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class ElementActions {
     public static final int WAIT_TIMEOUT_SECONDS = 10;
@@ -200,6 +200,14 @@ public class ElementActions {
     public ElementActions navigateBack() {
         Driver.getDriver().navigate().back();
         return this;
+    }
+
+    public void pause(Integer milliseconds) {
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
