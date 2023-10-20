@@ -12,5 +12,8 @@ public class UserHomePage extends BasePage {
     @FindBy(xpath ="//tr[@class='odd'][1]//i[@title='Reports']" )
     public WebElement reportsBtn;
 
+    @FindBy(xpath = "//tr[@class='odd'][1]//i[@title='Edit']")
+    public WebElement editBtn;
+
 
 }

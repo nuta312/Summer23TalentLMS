@@ -3,6 +3,7 @@ package com.digital;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
+import com.digital.pages.usersPage.EditUserInfo;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import org.openqa.selenium.WebDriver;
@@ -16,12 +17,14 @@ public abstract class BaseTest {
 
     public HomePage homePage;
     public CheckTableOptions checkTableOptions;
+    public EditUserInfo editUserInfo;
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
         driver = Driver.getDriver();
         loginPage = new LoginPage();
         driver.get("https://nbu111.talentlms.com/dashboard");
         loginPage.logIn();
+        editUserInfo = new EditUserInfo();
         homePage = new HomePage();
     }
 

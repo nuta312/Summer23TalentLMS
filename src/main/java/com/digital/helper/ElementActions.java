@@ -46,6 +46,7 @@ public class ElementActions {
 
     public ElementActions writeText(WebElement element, String txt) {
         waitElementToBeVisible(element);
+        element.clear();
         element.sendKeys(txt);
         return this;
     }

@@ -1,6 +1,7 @@
 package com.digital;
 
 import com.digital.pages.HomePage;
+import com.digital.pages.usersPage.EditUserInfo;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import org.testng.annotations.BeforeClass;
@@ -21,4 +22,7 @@ public class UserHomePageTest extends BaseTest{
         homePage.openUserCategory();
         checkTableOptions.clickToReportsBtn();
     }
+
+
+
 }
