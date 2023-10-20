@@ -12,7 +12,7 @@ public class ConfigReader {
 
     static { // статичный блок загружается при загрузке класса и инициал поля
         try {
-            String path = "src/main/resources/config.properties";
+            String path = "src\\main\\resources\\config.properties";
             FileInputStream inputStream = new FileInputStream(path);
             // для чтения содержимого файла по указанному пути
             properties = new Properties();
@@ -30,5 +30,4 @@ public class ConfigReader {
     public static String getProperty(String key) {
         return properties.getProperty(key).trim();//возвращает ключ
     }
-
 }
