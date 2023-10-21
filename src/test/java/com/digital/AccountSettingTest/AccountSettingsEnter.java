@@ -1,11 +1,13 @@
 package com.digital.AccountSettingTest;
 
 import com.digital.BaseTest;
+import com.digital.pages.accountSettings.BasicSettings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class AccountSettingsEnter extends BaseTest {
+    public BasicSettings basicSettings;
 
     @Test
     public void BasicSettingsTest () throws InterruptedException {
