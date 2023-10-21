@@ -12,12 +12,9 @@ public class ByCoursePageTest extends BaseTest {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.location=' https://nbu111.talentlms.com/marketplace/talentlibrary_index'");
 
-       // driver.get("https://nbu111.talentlms.com/marketplace/talentlibrary_index");
        byCoursePage.coursesClickBtn();
        byCoursePage.buyCourseLinkClick();
        byCoursePage.clickHowTheCourseStoreWorks().closeClick();
-       Thread.sleep(2000);
-       byCoursePage.writeSearchCourse();
        byCoursePage.clickBusinessSkills()
                .clickHumanRecources()
                .clickLeaderShip()

@@ -7,7 +7,6 @@ import org.testng.Assert;
 
 public class ByCoursePage extends BasePage {
 
-
     @FindBy(id = "grid_marketplace_filter")
     public WebElement searchCourse;
 
@@ -36,8 +35,6 @@ public class ByCoursePage extends BasePage {
 
     @FindBy(xpath = "//div[@class='tl-marketplace-info-text']")
     public WebElement howTheCourseStoreWorks;
-
-
     @FindBy(xpath = "(//a[@href='https://nbu111.talentlms.com/marketplace/talentlibrary_index'])[2]")
     public WebElement byCurse;
     @FindBy(xpath = "(//a[@data-dismiss='modal'])[1]")
@@ -76,7 +73,7 @@ public class ByCoursePage extends BasePage {
    }
 
     public ByCoursePage clickHumanRecources(){
-        elementActions.clickElement(humanResources);
+        elementActions.clickByJS(humanResources);
        // Assert.assertEquals(humanResources.getText(),"You have click human resources");
 
         return this;
@@ -148,12 +145,10 @@ public ByCoursePage writeSearchCourse(){
     return this;
 }
 public ByCoursePage clickBusinessSkills(){
-        elementActions.clickElement(businessSkills);
+        elementActions.clickByJS(businessSkills);
+      //  elementActions.clickElement(businessSkills);
     //Assert.assertEquals(businessSkills.getText(),"you have click business skills");
 
     return this;
 }
-
-
-
 }

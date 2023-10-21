@@ -28,7 +28,6 @@ public abstract class BaseTest {
     public FakeDataProvider fakeDataProvider;
 
     public ByCoursePage byCoursePage;
-
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
         driver = Driver.getDriver();
@@ -37,11 +36,8 @@ public abstract class BaseTest {
         loginPage.logIn();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
-
         byCoursePage = new ByCoursePage();
-
         userCoursesPage = new UserCoursesPage();
-
     }
 
     @AfterClass(alwaysRun = true)
