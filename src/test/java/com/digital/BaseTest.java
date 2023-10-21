@@ -3,6 +3,7 @@ package com.digital;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
+import com.digital.pages.usersPage.FilesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import com.digital.utils.FakeDataProvider;
@@ -16,6 +17,7 @@ public abstract class BaseTest {
     public UserHomePage userHomePage;
 
     public HomePage homePage;
+    public FilesPage filesPages;
 
     public FakeDataProvider fakeDataProvider;
     @BeforeClass(alwaysRun = true)
