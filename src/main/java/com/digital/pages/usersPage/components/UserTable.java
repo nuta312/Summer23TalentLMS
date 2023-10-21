@@ -4,8 +4,7 @@ import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class UserTable extends BasePage {
     @FindBy(xpath = "//tr[2]/td[2]/a/span/../../..//i[@title='Delete']")
@@ -29,6 +28,13 @@ public class UserTable extends BasePage {
     public List<String> usersListInTable;
     @FindBy(xpath = "//div[@id='tl-confirm']//a[text()='Cancel']")
     public WebElement cancelModalBtn;
+
+    @FindBy(xpath = "//th[text()='Email']")
+    public WebElement emailTabInUserTable;
+
+    @FindBy(xpath = "//span[contains(text(), '.com')]")
+    public List<WebElement> listOfUserEmail;
+    public  List<String> listOfUserEmailText;
     public UserTable clickToDeleteBtn(){
         elementActions.moveToElement(choosingUserToDelete);
         userFirstName = choosingUserToDelete.getText();
@@ -43,5 +49,17 @@ public class UserTable extends BasePage {
         }
         return usersListInTable;
     }
+
+    public UserTable clickToEmailTab() {
+        listOfUserEmail  = new LinkedList<>();
+        listOfUserEmailText  = new LinkedList<>();
+        for (WebElement el : listOfUserEmail){
+            listOfUserEmailText.add(el.getText());
+        }
+        elementActions.clickElement(emailTabInUserTable);
+        return this;
+    }
+
+
 
 }
