@@ -3,18 +3,20 @@ package com.digital.pages.coursesPage;
 import com.digital.driver.Driver;
 import com.digital.helper.ElementActions;
 import com.digital.pages.BasePage;
+import com.digital.pages.usersPage.CreateUserPage;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 
-public class CreateCoursePage extends BasePage {
-
-    ElementActions elementActions = new ElementActions();
+public class CreateCoursePage extends CreateUserPage{
 
     @FindBy(xpath = "//div[@class='controls']/div/input[@name='name']")
     public WebElement courseNameInput;
@@ -22,6 +24,12 @@ public class CreateCoursePage extends BasePage {
     public WebElement permissibleValueName;
     @FindBy(xpath = "(//span[@class='help-inline'])[1]")
     public WebElement text1;
+    @FindBy(xpath = "(//span[@class='help-block'])[4]")
+    public WebElement exceptionTextOfCourseCode;
+    @FindBy(xpath = "(//span[@class='help-block'])[5]")
+    public WebElement exceptionTextOfCoursePrice;
+    @FindBy(xpath = "(//span[@class='help-block'])[3]")
+    public WebElement exceptionTextOfDescription;
     @FindBy(xpath = "//div[@class='select2-container']")
     public WebElement chooseCategoryInput;
     @FindBy(xpath = "//textarea[@class='span7']")
@@ -70,6 +78,8 @@ public class CreateCoursePage extends BasePage {
     public List<WebElement> listLevel;
     @FindBy(xpath = "//input[@name='submit_course']")
     public WebElement saveBtn;
+    @FindBy(xpath = "//span[@class='preview']")
+    public WebElement pictureBtn;
 
 
     public CreateCoursePage nameInput(String txt) {
@@ -93,13 +103,13 @@ public class CreateCoursePage extends BasePage {
         }
     }
 
-    public CreateCoursePage descriptionInput(String txt){
+    public CreateCoursePage descriptionInput(String txt) {
         elementActions.clickElement(descriptionInput);
         elementActions.writeText(descriptionInput, txt);
         return this;
     }
 
-    public CreateCoursePage courseCode(String txt){
+    public CreateCoursePage courseCode(String txt) {
         elementActions.clickElement(showCourseCodeInput);
         elementActions.writeText(writeCode, txt);
         return this;
@@ -107,7 +117,7 @@ public class CreateCoursePage extends BasePage {
 
     public CreateCoursePage priceInput(String txt) {
         elementActions.clickElement(showCodePrice);
-        elementActions.writeText(coursePriceInput, txt);
+        elementActions.writeText(coursePriceInput, String.valueOf(txt));
         return this;
     }
 
@@ -119,18 +129,18 @@ public class CreateCoursePage extends BasePage {
 
     public CreateCoursePage capacityInput(String txt) {
         elementActions.clickElement(showCapasityInput)
-                .writeText(writeCapasityText, txt);
+                .writeText(writeCapasityText, String.valueOf(txt));
         return this;
     }
 
-    public CreateCoursePage selectDate(String txt)  {
+    public CreateCoursePage selectDate(String txt) {
         elementActions.clickElement(showTimeOptionInput)
                 .clickElement(timeLimit)
                 .writeText(timeLimitInput, txt);
         return this;
     }
 
-    public CreateCoursePage selectCertificate(String str)  {
+    public CreateCoursePage selectCertificate(String str) {
 
         elementActions.clickElement(certificateBtn)
                 .clickElement(selectCertificateDuration);
@@ -147,7 +157,7 @@ public class CreateCoursePage extends BasePage {
         }
     }
 
-    public CreateCoursePage selectDurations(String str)  {
+    public CreateCoursePage selectDurations(String str) {
 
         elementActions.clickElement(select2DropMask);
         try {
@@ -165,7 +175,7 @@ public class CreateCoursePage extends BasePage {
 
     public CreateCoursePage moveSlider() {
         Actions actions = new Actions(Driver.getDriver());
-        actions.dragAndDropBy(moveTheSlider, 40, 0).perform();
+        actions.dragAndDropBy(moveTheSlider, 100, 0).perform();
         return this;
     }
 
@@ -186,63 +196,32 @@ public class CreateCoursePage extends BasePage {
         }
     }
 
-    public CreateCoursePage saveBtn()  {
+    public CreateCoursePage saveBtn() {
         elementActions.clickElement(Driver.getDriver().findElement(By.xpath("//input[@name='submit_course']")));
         return this;
     }
 
-    public void allMethodsPozitiv() {
-        nameInput("Java")
-                .choosyCategory("it")
-                .descriptionInput("IT stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more")
-                .courseCode("12345")
-                .priceInput("10000")
-                .inputVideo()
-                .capacityInput("50")
-                .selectDate("30")
-                .selectCertificate("Fan")
-                .selectDurations("Custom")
-                .moveSlider()
-                .levelInput("3")
-                .saveBtn();
-    }
-
-    public void allMethodsNegativ()  {
-
-    negativMethodsForName();
-        choosyCategory("it")
-                .negativMethodsForDescription();
-      courseCode("11111111111111111")
-                .priceInput("10000000000")
-                .capacityInput("5000000")
-                .selectDate("3000000")
-                .selectCertificate("Fan")
-                .selectDurations("Custom")
-                .moveSlider()
-                .levelInput("3")
-                .saveBtn();
-    }
-
-    public boolean negativMethodsForName() {
-
-        nameInput("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");
-        System.out.println(permissibleValueName.getText());
-        int number = Integer.valueOf(permissibleValueName.getText());
-        if (number < 0) {
-            return true;
+    public CreateCoursePage pictureInput() throws AWTException {
+        elementActions.clickElement(pictureBtn);
+        Driver.getDriver().getPageSource();
+        try {
+            Robot robot = new Robot();
+            // Ввести путь к файлу и нажать Enter
+            String filePath = "java.png";
+            for (char c : filePath.toCharArray()) {
+                robot.keyPress(KeyEvent.getExtendedKeyCodeForChar(c));
+                robot.keyRelease(KeyEvent.getExtendedKeyCodeForChar(c));
+            }
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        } catch (AWTException e) {
+            e.printStackTrace();
         }
-        return false;
-
-    }
-
-    public boolean negativMethodsForDescription() {
-
-     descriptionInput("Could you please provide more details or clarify your question about the stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. I\"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. If you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.fic IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.fic IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.fic IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.fic IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.fic IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.fic IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. I\"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. If you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.Could you please provide more details or clarify your question about the \"IT course\"? \"IT\" stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. stands for Information Technology, and there are numerous courses, programs, and certifications available in the field of IT covering a wide range of topics such as programming, cybersecurity, networking, cloud computing, data science, and more. IIf you have a specific IT course or topic in mind, feel free to provide more information so I can assist you accordingly.");
-        System.out.println(permissibleDescription.getText());
-        int number = Integer.valueOf(permissibleDescription.getText());
-        if (number < 0) {
-            return true;
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        return false;
+        return this;
     }
 }
