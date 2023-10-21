@@ -1,13 +1,17 @@
 package com.digital.AccountSettingTest;
 
 import com.digital.BaseTest;
+import com.digital.pages.accountSettings.Themes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class AccountSettingsEnter extends BaseTest {
 
-    @Test
+    public Themes themes;
+
+    @BeforeClass
     public void BasicSettingsTest () throws InterruptedException {
         driver.get("https://nbu111.talentlms.com/index");
         Thread.sleep(5000);
