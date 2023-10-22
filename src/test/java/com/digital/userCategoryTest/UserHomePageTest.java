@@ -21,6 +21,7 @@ public class UserHomePageTest extends BaseTest {
 
     public UserCoursesPage userCoursesPage;
     public CheckDropMenu checkDropMenu;
+    public EditFile editFile;
 
 
     @BeforeClass
@@ -34,6 +35,7 @@ public class UserHomePageTest extends BaseTest {
         userCoursesPage = new UserCoursesPage();
         createUser = new CreateUserPage();
         checkDropMenu = new CheckDropMenu();
+        editFile = new EditFile();
     }
 
     @Test(priority = 1)

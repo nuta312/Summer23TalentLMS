@@ -10,21 +10,21 @@ public class EditFile extends FilesPage {
     //tanos
     @FindBy(xpath = "//*[@id=\"tl-admin-users\"]/div[1]/a")
     public WebElement clickUserFirst;
-    @FindBy(xpath = "//tr[@class= 'odd']/td[2]/a")
+    @FindBy(xpath = "(//span[text()='J. Torphy'])[2]")
     public WebElement UserNameClick;
     @FindBy(xpath = "//li/a[contains(text(),'Files')]")
     public WebElement findFilesWord;
-    @FindBy(xpath = "//tr[@class='odd']")
+    @FindBy(xpath = "//tr[@class='odd']")//tr[@class='odd']
     public WebElement clickTableRowInFile;
     @FindBy(xpath ="//tr[@class='odd'][1]//a[@title='Preview']" )
     public WebElement clickPreviewInTableFile;
-    @FindBy(xpath ="//tr[@class='odd'][1]//a[@title='Download']" )
+    @FindBy(xpath ="//tr[@class='odd'][1]//a[@title='Download']" ) //a[contains(@title,'Download')])[2]
     public WebElement clickDownloadInTableFile;
     @FindBy(xpath ="//tr[@class='odd'][1]//i[@title='Edit']" )
     public WebElement clickEditInTableFile;
     @FindBy(xpath ="//tr[@class='odd'][1]//i[@title='Delete']" )
     public WebElement clickDeleteInTableFile;
-    @FindBy(xpath = "//*[@id=preview_modal]/div[1]")
+    @FindBy(xpath = "//*[@id=\"preview_modal\"]/div[1]/h3")
     public WebElement resultPictureName;
     @FindBy(xpath = "//*[@id=\"preview_modal\"]/div[1]/a")
     public WebElement close;
@@ -32,18 +32,23 @@ public class EditFile extends FilesPage {
     public WebElement resultEditName;
     @FindBy (id = "/html/body/img")
     public WebElement downloadPicture;
-
     @FindBy(xpath = "//*[@id=\"show-tags\"]")
     public WebElement clickTagInSaidEdit;
     @FindBy(xpath = "//li[text()='Please enter 1 more character']")
     public WebElement someTagWriteInputEdit;
-    @FindBy(id= "//*[@id=1319830802]")
+    @FindBy(xpath = "//*[@id=\"tl-rename-file-modal\"]/div[2]")
+    public WebElement navigateOnEditeWindow;
+    @FindBy(xpath= "//input[@name='submit_rename_file']")
     public WebElement clickUpdateBtmInputEdit;
+    @FindBy(xpath = "//*[@id=\"tl-rename-file-form\"]/div[4]")
+    public WebElement nextUpdateAndCansel;
+    @FindBy(id = "//*[@id=\"tl-modal-body\"]")
+    public WebElement textInDelete;
     @FindBy(xpath = "//*[@id=\"tl-hide-rename-file-modal\"]")
     public WebElement clickCanselInputEdit;
     @FindBy(xpath = "//*[@id=\"tl-confirm-submit\"]")
     public WebElement deleteBTM;
-    @FindBy (xpath = "//*[@id=\"tl-confirm\"]/div[3]/a[3]")
+    @FindBy (xpath = "//*[text()='Cancel']")
     public WebElement canselInDelete;
     public EditFile clickName(){
         elementActions.clickElement(UserNameClick);
@@ -61,35 +66,32 @@ public class EditFile extends FilesPage {
     public String pictureNameText;
     public EditFile clickPreview() {
         elementActions.moveToElement(clickPreviewInTableFile).clickElement(clickPreviewInTableFile);
-//        pictureNameText = resultPictureName.getAttribute("kitty.jpg");
+        pictureNameText = resultPictureName.getAttribute("innerText");
         elementActions.clickElement(close);
         return this;
     }
-    public EditFile clickDownload() throws InterruptedException {
-        Thread.sleep(2000);
-        elementActions.clickElement(clickDownloadInTableFile).navigateBack();
-//        Assert.assertNotNull(downloadPicture);
+    public EditFile clickDownload(){
+        elementActions.pause(1000);
+        elementActions.moveToElement(clickDownloadInTableFile).clickElement(clickDownloadInTableFile);
+        elementActions.navigateBack();
         return this;
     }
-    public  String editText;
-    public EditFile clickEdit() throws InterruptedException {
-        Thread.sleep (2000);
-        elementActions.moveToElement(clickEditInTableFile).waitElementToBeClickable(clickEditInTableFile);
-//        editText = clickUpdateBtmInputEdit.getAttribute("Update");
+    public  String editTexte;
+    public EditFile clickEdit() {
+        elementActions.pause(2000);
+        elementActions.moveToElement(clickEditInTableFile).clickElement(clickEditInTableFile);
+        editTexte = nextUpdateAndCansel.getAttribute("innerText");
+        elementActions.clickElement(navigateOnEditeWindow);
+        elementActions.clickElement(clickUpdateBtmInputEdit);
         return this;
     }
+    public  String textUpdate;
     public EditFile deleteClick() {
-        elementActions.clickElement(clickDeleteInTableFile);
-        elementActions.clickElement(canselInDelete);
+        elementActions.pause(1000);
+        elementActions.clickElement(clickDeleteInTableFile).navigateBack();
+        textUpdate = textInDelete.getAttribute("innerText");
         return this;
     }
-//    public EditFile deleteClickBTM(){
-//        elementActions.clickElement(deleteBTM);
-//        return this;
-//    }
-//    public EditFile canselDelete(){
-//        elementActions.clickElement(canselInDelete);
-//        return this;
-//    }
+
 
 }
