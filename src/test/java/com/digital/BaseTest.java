@@ -11,6 +11,7 @@ import com.digital.pages.usersPage.UserHomePage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import com.digital.pages.coursesPage.CreateCoursePage;
 import com.digital.pages.coursesPage.CategoriesPage;
 
 public abstract class BaseTest {
@@ -22,6 +23,7 @@ public abstract class BaseTest {
     public UserHomePage userHomePage;
     public UserCoursesPage userCoursesPage;
     public HomePage homePage;
+    public CreateCoursePage createCoursePage;
     public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
 
@@ -32,6 +34,7 @@ public abstract class BaseTest {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         loginPage.logIn();
         homePage = new HomePage();
+        createCoursePage= new CreateCoursePage();
         fakeDataProvider = new FakeDataProvider();
         userCoursesPage = new UserCoursesPage();
         categoriesPage = new CategoriesPage();
