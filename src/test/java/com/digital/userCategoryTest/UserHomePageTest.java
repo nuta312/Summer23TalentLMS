@@ -7,7 +7,9 @@ import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.EditFile;
 import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.pages.usersPage.UserHomePage;
+import com.digital.pages.usersPage.components.AddFile;
 import com.digital.pages.usersPage.components.CheckDropMenu;
+import com.digital.pages.usersPage.components.UserTable;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -21,11 +23,17 @@ public class UserHomePageTest extends BaseTest {
 
     public UserCoursesPage userCoursesPage;
     public CheckDropMenu checkDropMenu;
+
     public EditFile editFile;
+
+    public UserTable userTable;
+    public AddFile addFile;
+
+
 
 
     @BeforeClass
-    void setHomePage(){
+    void setHomePage() {
         userHomePage = new UserHomePage();
         homePage = new HomePage();
         homePage.openUserCategory();
@@ -36,22 +44,10 @@ public class UserHomePageTest extends BaseTest {
         createUser = new CreateUserPage();
         checkDropMenu = new CheckDropMenu();
         editFile = new EditFile();
+        userTable = new UserTable();
+        addFile = new AddFile();
     }
 
-    @Test(priority = 1)
-    void checkDropMenu()  {
-        homePage = new HomePage();
-        checkDropMenu.checkMenu()
-                .clickActivate()
-                .clickDeactivate()
-                .clickDelete()
-                .clickBranchAdd()
-                .clickBranchRemove()
-                .clickAddGroup()
-                .clickRemoveGroup();
-
-
-    }
 
     @Test(priority = 2)
     void assertTest(){
