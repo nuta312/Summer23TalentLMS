@@ -4,6 +4,9 @@ import com.digital.pages.usersPage.UserHomePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CheckDropMenu extends UserHomePage {
 
     /**
@@ -13,8 +16,12 @@ public class CheckDropMenu extends UserHomePage {
     @FindBy(xpath = "//tr[@class='odd'][1]")
     public WebElement firstTableRow;
 
+    @FindBy(xpath = "//tr[@class='odd'][2]")
+    public WebElement firstTableRow2;
+
     @FindBy(xpath = "//td/input[@type='checkbox']")
     public WebElement checkBoxClick;
+
 
     @FindBy(xpath = "//div[@id='checkbox-items']")
     public WebElement clickMassAction;
@@ -88,13 +95,13 @@ public class CheckDropMenu extends UserHomePage {
     @FindBy(xpath = "//h3[text()='Send message']")
     public WebElement sendMessageText;
 
-    @FindBy (id="input-append tl-countdown")
+    @FindBy(id = "input-append tl-countdown")
     public WebElement SubjectText;
 
     @FindBy(xpath = "//div[@class='note-editable tl-message-editor span9']")
     public WebElement MessageText;
 
-    @FindBy(id="submit_send_message")
+    @FindBy(id = "submit_send_message")
     public WebElement clickSendMessage;
 
     @FindBy(xpath = "//div[@id='tl-users-send-message-modal']/div/h3/../a")
@@ -104,20 +111,22 @@ public class CheckDropMenu extends UserHomePage {
     /**
      * переход на checkbox пользователя для вызова dropMenu
      */
+    @FindBy(xpath = "//td/input[@type='checkbox']")
+    public List<WebElement> allCheckBoxClick;
+
     public CheckDropMenu checkMenu() {
         elementActions.moveToElement(firstTableRow);
         elementActions.clickElement(checkBoxClick);
-        if (checkBoxClick.isSelected()){
-            System.out.println("ok");
-        }
         return this;
     }
+
     /**
      * переход в dropMenu и вызов вкладок по порядку каждого элемента
      * вывод текста в всплывающем окне для дальнейшего сравнения
      */
 
     public String actualTextActivate;
+
     public CheckDropMenu clickActivate() {
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(activate);
@@ -125,64 +134,76 @@ public class CheckDropMenu extends UserHomePage {
         elementActions.clickElement(activateCanselBtn);
         return this;
     }
+
     public String actualTextDeactivate;
+
     public CheckDropMenu clickDeactivate() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(deactivate);
-        actualTextDeactivate =(deactivateText.getAttribute("innerText"));
+        actualTextDeactivate = (deactivateText.getAttribute("innerText"));
         elementActions.clickElement(deactivateCanselBtn);
 
         return this;
     }
+
     public String actualTextDelete;
+
     public CheckDropMenu clickDelete() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(delete);
-        actualTextDelete =(deleteText.getAttribute("innerText"));
+        actualTextDelete = (deleteText.getAttribute("innerText"));
         elementActions.clickElement(deleteCanselBtn);
         return this;
     }
+
     public String actualTextAddBranch;
+
     public CheckDropMenu clickBranchAdd() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(branchAdd);
-        actualTextAddBranch=(branchAddText.getAttribute("innerText"));
+        actualTextAddBranch = (branchAddText.getAttribute("innerText"));
         elementActions.clickElement(branchAddCanselBtn);
         return this;
     }
+
     public String actualTextRemoveBranch;
+
     public CheckDropMenu clickBranchRemove() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(branchRemove);
-        actualTextRemoveBranch =(branchRemoveText.getAttribute("innerText"));
+        actualTextRemoveBranch = (branchRemoveText.getAttribute("innerText"));
         elementActions.clickElement(branchRemoveCanselBtn);
         return this;
     }
+
     public String actualTextAddGroup;
+
     public CheckDropMenu clickAddGroup() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(addGroup);
-        actualTextAddGroup=(addGroupText.getAttribute("innerText"));
+        actualTextAddGroup = (addGroupText.getAttribute("innerText"));
         elementActions.clickElement(addGroupCanselBtn);
         return this;
     }
+
     public String actualTextRemoveGroup;
+
     public CheckDropMenu clickRemoveGroup() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
         elementActions.clickElement(removeGroup);
         actualTextRemoveGroup = (removeGroupText.getAttribute("innerText"));
         elementActions.clickElement(removeGroupCanselBtn);
-
-
         return this;
     }
+
     public String actualTextSendMessage;
+
     public CheckDropMenu clickMessage() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
@@ -192,10 +213,45 @@ public class CheckDropMenu extends UserHomePage {
         return this;
 
     }
-        /**
-         * переход в dropMenu и вызов вкладок по порядку каждого элемента
-         * вывод текста в всплывающем окне для дальнейшего сравнения
-         */
 
+    /**
+     * проверяет на кликабельность по очереди все checkBox
+     */
+    public boolean isCheckt;
 
+    public CheckDropMenu clickAllChecBox() {
+        elementActions.moveToElement(firstTableRow);
+        for (WebElement check : allCheckBoxClick) {
+            if (check != null) {
+                elementActions.clickElement(check);
+                isCheckt = check.isSelected();
+            }
+        }
+        return this;
     }
+
+    /**
+     * проверяет все элементы содержашиеся в Mass action
+     */
+    @FindBy(xpath = "//a[@class='massaction']")
+    public List<WebElement> allListMassAction;
+
+    public String visiblText = "[Activate, Deactivate, Delete, Add to branch, " +
+            "Remove from branch, Add to group, Remove from group, Send message]";
+    public List<String> actualTextList = new ArrayList<>();
+
+    public CheckDropMenu massActionsList() {
+        elementActions.clickElement(clickMassAction);
+        List<String> inputCase = new ArrayList<>();
+        for (WebElement massAction : allListMassAction) {
+            if (massAction != null) {
+                String text = massAction.getText();
+                inputCase.add(text);
+                actualTextList = inputCase;
+            }
+        }
+        elementActions.clickElement(activate);
+        elementActions.clickElement(activateCanselBtn);
+        return this;
+    }
+}
