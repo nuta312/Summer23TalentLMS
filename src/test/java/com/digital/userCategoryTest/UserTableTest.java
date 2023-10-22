@@ -1,6 +1,10 @@
 package com.digital.userCategoryTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class UserTableTest extends UserHomePageTest{
 
     @Test(priority = 1)
@@ -30,5 +34,13 @@ public class UserTableTest extends UserHomePageTest{
         Assert.assertFalse(isContained);
     }
 
+
+    @Test(priority = 4, description = "This test checks if user data is sorted by email after clicking on the email tab.")
+    void testSortUserEmailAfterClickToEmailTab(){
+        userTable.clickToEmailTab();
+        List<String> expectedSortedList = new ArrayList<>(userTable.listOfUserEmailText);
+        Collections.sort(expectedSortedList);
+        Assert.assertEquals(expectedSortedList, userTable.listOfUserEmailText);
+    }
 
 }

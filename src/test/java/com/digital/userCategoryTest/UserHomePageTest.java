@@ -5,11 +5,10 @@ import com.digital.pages.HomePage;
 import com.digital.pages.usersPage.CreateUserPage;
 import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.pages.usersPage.UserHomePage;
+import com.digital.pages.usersPage.components.AddFile;
 import com.digital.pages.usersPage.components.CheckDropMenu;
 import com.digital.pages.usersPage.components.UserTable;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 public class UserHomePageTest extends BaseTest {
     public HomePage homePage;
@@ -17,6 +16,9 @@ public class UserHomePageTest extends BaseTest {
     public UserCoursesPage userCoursesPage;
     public CheckDropMenu checkDropMenu;
     public UserTable userTable;
+    public AddFile addFile;
+
+
 
     @BeforeClass
     void setHomePage() {
@@ -27,8 +29,10 @@ public class UserHomePageTest extends BaseTest {
         createUser = new CreateUserPage();
         checkDropMenu = new CheckDropMenu();
         userTable = new UserTable();
+        addFile = new AddFile();
+    }
     }
 
 
 
-}
+
