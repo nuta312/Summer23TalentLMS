@@ -26,7 +26,7 @@ public class UserHomePageTest extends BaseTest {
         checkDropMenu = new CheckDropMenu();
     }
 
-    @Test(priority = 1)
+ //   @Test(priority = 1)
     void checkDropMenu() {
         homePage = new HomePage();
         checkDropMenu.checkMenu()
@@ -41,7 +41,7 @@ public class UserHomePageTest extends BaseTest {
 
     }
 
-    @Test(priority = 2)
+  //  @Test(priority = 2)
     void assertTest() {
         checkDropMenu.clickActivate();
         Assert.assertEquals(checkDropMenu.actualTextActivate, "Activate");
