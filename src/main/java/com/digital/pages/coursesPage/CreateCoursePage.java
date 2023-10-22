@@ -1,27 +1,20 @@
 package com.digital.pages.coursesPage;
 
 import com.digital.driver.Driver;
-import com.digital.helper.ElementActions;
-import com.digital.pages.BasePage;
 import com.digital.pages.usersPage.CreateUserPage;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 import java.util.List;
 
-public class CreateCoursePage extends CreateUserPage{
+public class CreateCoursePage extends CreateUserPage {
 
     @FindBy(xpath = "//div[@class='controls']/div/input[@name='name']")
     public WebElement courseNameInput;
-    @FindBy(xpath = "//span[@class='add-on']")
-    public WebElement permissibleValueName;
     @FindBy(xpath = "(//span[@class='help-inline'])[1]")
     public WebElement text1;
     @FindBy(xpath = "(//span[@class='help-block'])[4]")
@@ -202,26 +195,30 @@ public class CreateCoursePage extends CreateUserPage{
     }
 
     public CreateCoursePage pictureInput() throws AWTException {
-        elementActions.clickElement(pictureBtn);
-        Driver.getDriver().getPageSource();
-        try {
-            Robot robot = new Robot();
-            // Ввести путь к файлу и нажать Enter
-            String filePath = "java.png";
-            for (char c : filePath.toCharArray()) {
-                robot.keyPress(KeyEvent.getExtendedKeyCodeForChar(c));
-                robot.keyRelease(KeyEvent.getExtendedKeyCodeForChar(c));
-            }
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-        } catch (AWTException e) {
-            e.printStackTrace();
-        }
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return this;
+        elementActions.waitElementToBeClickable(pictureBtn).clickElement(pictureBtn);
+        WebElement fileInput = Driver.getDriver().findElement(By.id("note"));
+
+// Отправить путь к файлу
+       fileInput.sendKeys("java.png");
+//        Driver.getDriver().getPageSource();
+//        try {
+//            Robot robot = new Robot();
+//            // Ввести путь к файлу и нажать Enter
+//            String filePath = "project.html/Summer23TalentLMS/src/main/resources/java.png";
+//            for (char c : filePath.toCharArray()) {
+//                robot.keyPress(KeyEvent.getExtendedKeyCodeForChar(c));
+//                robot.keyRelease(KeyEvent.getExtendedKeyCodeForChar(c));
+//            }
+//            robot.keyPress(KeyEvent.VK_ENTER);
+//            robot.keyRelease(KeyEvent.VK_ENTER);
+//        } catch (AWTException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+  return this;
     }
 }

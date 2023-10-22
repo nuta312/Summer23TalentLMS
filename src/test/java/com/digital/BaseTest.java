@@ -23,7 +23,6 @@ public abstract class BaseTest {
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
     public UserCoursesPage userCoursesPage;
-
     public HomePage homePage;
 
 

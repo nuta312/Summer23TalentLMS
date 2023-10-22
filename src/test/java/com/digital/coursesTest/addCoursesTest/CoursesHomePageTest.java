@@ -7,7 +7,7 @@ import com.github.javafaker.Faker;
 import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 
-public class CoursesHomePageTest extends BaseTest {
+public abstract class CoursesHomePageTest extends BaseTest {
     public CreateCoursePage createCoursePage;
     public SoftAssert soft;
     public Faker faker;

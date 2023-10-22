@@ -6,6 +6,7 @@ import java.awt.*;
 public class pozitiveTest extends CoursesHomePageTest {
     @Test
     public void allMethodsPozitiv() throws AWTException {
+        driver.get("https://nbu111.talentlms.com/course/create");
         String generatedBio = FakeDataProvider.generateLongText(200);
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
                 .choosyCategory("it")
@@ -19,7 +20,7 @@ public class pozitiveTest extends CoursesHomePageTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                //  .pictureInput()
+               // .pictureInput()
                 .saveBtn();
     }
 }
