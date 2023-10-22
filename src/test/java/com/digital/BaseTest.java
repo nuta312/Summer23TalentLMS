@@ -9,11 +9,13 @@ import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
+import com.digital.pages.usersPage.components.EditFile;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import com.digital.pages.coursesPage.ByCoursePage;
+import com.digital.pages.coursesPage.CreateCoursePage;
+import com.digital.pages.coursesPage.CategoriesPage;
 
 public abstract class BaseTest {
     public WebDriver driver;
@@ -22,10 +24,10 @@ public abstract class BaseTest {
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
     public UserCoursesPage userCoursesPage;
-
     public HomePage homePage;
-
+    public CreateCoursePage createCoursePage;
     public FakeDataProvider fakeDataProvider;
+    public CategoriesPage categoriesPage;
 
     public ByCoursePage byCoursePage;
     @BeforeClass(alwaysRun = true)
@@ -35,14 +37,16 @@ public abstract class BaseTest {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         loginPage.logIn();
         homePage = new HomePage();
+        createCoursePage= new CreateCoursePage();
         fakeDataProvider = new FakeDataProvider();
         byCoursePage = new ByCoursePage();
         userCoursesPage = new UserCoursesPage();
+        categoriesPage = new CategoriesPage();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        Driver.closeDriver();
+//    }
 
 }
