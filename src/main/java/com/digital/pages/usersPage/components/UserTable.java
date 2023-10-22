@@ -4,8 +4,7 @@ import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class UserTable extends BasePage {
     @FindBy(xpath = "//tr[2]/td[2]/a/span/../../..//i[@title='Delete']")
@@ -17,7 +16,7 @@ public class UserTable extends BasePage {
     @FindBy(xpath = "//p[@id='tl-modal-body']")
     public WebElement modalBodyText;
 
-    @FindBy(xpath = "//tr[2]/td[2]/a/span")
+    @FindBy(xpath = "//span[contains(text(), 'Type')]/../../td[2]/a/span")
     public WebElement choosingUserToDelete;
 
     public String userFirstName;
@@ -29,12 +28,28 @@ public class UserTable extends BasePage {
     public List<String> usersListInTable;
     @FindBy(xpath = "//div[@id='tl-confirm']//a[text()='Cancel']")
     public WebElement cancelModalBtn;
-    public UserTable clickToDeleteBtn(){
+
+    @FindBy(xpath = "//th[text()='Email']")
+    public WebElement emailTabInUserTable;
+    @FindBy(xpath = "//th[text()='User type']")
+    public WebElement userTypeTabInUserTable;
+
+    @FindBy(xpath = "//span[contains(text(), '.com')]")
+    public List<WebElement> listOfUserEmail;
+    public List<String> listOfUserEmailText;
+
+    public List<String> listOfUserTypeText;
+    @FindBy(xpath = "//span[contains(text(), 'Type') or contains(text(), 'Admin')]")
+    public List<WebElement> listOfUserType;
+
+    public UserTable clickToDeleteBtn() {
         elementActions.moveToElement(choosingUserToDelete);
         userFirstName = choosingUserToDelete.getText();
         elementActions.clickElement(deleteBtn);
+        elementActions.pause(3000);
         return this;
     }
+
     public List<String> getAllUsersInTable() {
         usersListInTable = new ArrayList<>();
         for (WebElement el : allUsersInTable) {
@@ -43,5 +58,24 @@ public class UserTable extends BasePage {
         }
         return usersListInTable;
     }
+
+    public UserTable clickToEmailTab() {
+        listOfUserEmailText = new ArrayList<>();
+        for (WebElement el : listOfUserEmail) {
+            listOfUserEmailText.add(el.getText());
+        }
+        elementActions.clickElement(emailTabInUserTable);
+        return this;
+    }
+
+    public UserTable clickToUserTypeTab() {
+        listOfUserTypeText = new LinkedList<>();
+        for (WebElement el : listOfUserType) {
+            listOfUserTypeText.add(el.getText());
+        }
+        elementActions.clickElement(userTypeTabInUserTable);
+        return this;
+    }
+
 
 }
