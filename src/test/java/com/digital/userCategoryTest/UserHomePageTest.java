@@ -7,9 +7,8 @@ import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckDropMenu;
 import com.digital.pages.usersPage.components.UserTable;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+
 
 public class UserHomePageTest extends BaseTest {
     public HomePage homePage;
