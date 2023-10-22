@@ -8,6 +8,11 @@ import org.testng.annotations.Test;
 
 public class EditFile extends FilesPage {
     //tanos
+
+    /**
+     * Поиск всех локаторов.
+     */
+
     @FindBy(xpath = "//*[@id=\"tl-admin-users\"]/div[1]/a")
     public WebElement clickUserFirst;
     @FindBy(xpath = "(//span[text()='J. Torphy'])[2]")
@@ -50,6 +55,11 @@ public class EditFile extends FilesPage {
     public WebElement deleteBTM;
     @FindBy (xpath = "//*[text()='Cancel']")
     public WebElement canselInDelete;
+
+    /**
+     * методы для вызова.
+     */
+
     public EditFile clickName(){
         elementActions.clickElement(UserNameClick);
         return this;
