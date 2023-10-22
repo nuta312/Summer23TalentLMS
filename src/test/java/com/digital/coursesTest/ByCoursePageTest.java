@@ -31,7 +31,5 @@ public class ByCoursePageTest extends BaseTest {
         js.executeScript("arguments[0].click()",byCoursePage.english);
         byCoursePage.resetClickBtn();
 
-
-//        .clickName().clickEnglish().clickBusinessSkills();
     }
 }
