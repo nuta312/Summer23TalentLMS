@@ -5,8 +5,6 @@ import com.digital.pages.HomePage;
 import com.digital.pages.usersPage.CreateUserPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -29,12 +27,10 @@ public class UserHomePageTest extends BaseTest {
         return this;
     }
     @Test
-    void checkTable()  {
+    void checkTable(){
         checkTableOptions.clickToReportsBtn();
         checkAdminText();
         checkTableOptions.elementActions.navigateBack();
-
-
     }
 
 }
