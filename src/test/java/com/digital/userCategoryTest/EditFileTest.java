@@ -14,7 +14,7 @@ public class EditFileTest extends UserHomePageTest {
         Assert.assertEquals(editFile.pictureNameText, "kittytt.jpg");
         editFile.clickTable1();
         editFile.clickDownload();
-        Assert.assertNull(editFile.editTexte,"Update");
+        Assert.assertNull(editFile.editTexte, "Update");
         editFile.clickFile();
         editFile.clickTable1();
         editFile.clickEdit();
