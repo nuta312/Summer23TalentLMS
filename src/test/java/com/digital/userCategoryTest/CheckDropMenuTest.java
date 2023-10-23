@@ -13,12 +13,10 @@ public class CheckDropMenuTest extends UserHomePageTest {
         Assert.assertTrue(checkDropMenu.isCheckt);
         checkDropMenu.massActionsList();
         Assert.assertEquals(checkDropMenu.actualTextList.toString(), checkDropMenu.visiblText);
-//        checkDropMenu.clickAllChecBox();
     }
 
     @Test(priority = 2)
     void checkMassAction() {
-//        checkDropMenu.checkMenu();
         checkDropMenu.clickActivate();
         Assert.assertEquals(checkDropMenu.actualTextActivate, "Activate");
         checkDropMenu.clickDeactivate();
@@ -35,5 +33,13 @@ public class CheckDropMenuTest extends UserHomePageTest {
         Assert.assertEquals(checkDropMenu.actualTextRemoveGroup, "Remove users from group");
         checkDropMenu.clickMessage();
         Assert.assertEquals(checkDropMenu.actualTextSendMessage, "Send message");
+    }
+    @Test(priority = 3)
+    void CheckFilterIcon(){
+        checkDropMenu.getAllUsersInTable();
+        checkDropMenu.activeUserFilter()
+         .getFilterUsersInTable();
+        Assert.assertEquals(checkDropMenu.usersListInTable,checkDropMenu.usersInTableToActive);
+        checkDropMenu.onClickActivFilter();
     }
 }
