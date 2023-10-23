@@ -4,6 +4,9 @@ import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
+import com.digital.pages.usersPage.UserBranchPage;
+import com.digital.pages.usersPage.UserGroupsPage;
+import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.pages.usersPage.UserCoursesPage;
@@ -25,7 +28,9 @@ public abstract class BaseTest {
     public UserHomePage userHomePage;
     public UserCoursesPage userCoursesPage;
     public HomePage homePage;
-    public FakeDataProvider fakeDataProvider;
+    public FakeDataProvider fakeDataProvider
+    public UserGroupsPage userGroupsPage;
+    public UserBranchPage userBranchPage;
     public CategoriesPage categoriesPage;
 
 

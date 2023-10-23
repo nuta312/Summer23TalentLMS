@@ -2,6 +2,9 @@ package com.digital.userCategoryTest;
 import com.digital.BaseTest;
 import com.digital.pages.HomePage;
 import com.digital.pages.usersPage.CreateUserPage;
+import com.digital.pages.usersPage.UserBranchPage;
+import com.digital.pages.usersPage.UserGroupsPage;
+import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.FilesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.EditFile;
@@ -13,22 +16,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class UserHomePageTest extends BaseTest {
+public class UserHomePageTest extends BaseTest 
     public HomePage homePage;
     public CreateUserPage createUser;
-
     public FilesPage filePage;
-
-
     public UserCoursesPage userCoursesPage;
     public CheckDropMenu checkDropMenu;
-
     public EditFile editFile;
-
     public UserTable userTable;
     public AddFile addFile;
-
-
 
 
     @BeforeClass
@@ -44,5 +40,6 @@ public class UserHomePageTest extends BaseTest {
         userTable = new UserTable();
         addFile = new AddFile();
     }
-
 }
+
+
