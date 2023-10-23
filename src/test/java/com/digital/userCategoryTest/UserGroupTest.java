@@ -6,12 +6,13 @@ import org.testng.annotations.Test;
 
 public class UserGroupTest extends UserHomePageTest {
     @Test(priority = 1)
-    void testGroupPage(){
-         userGroupsPage.clickPersonBtn().clickGroupBtn();
-    }
-    @Test(priority = 2)
-    void testAssertGroup(){
+    void testGroupPage() {
         userGroupsPage.clickPersonBtn().clickGroupBtn();
-        Assert.assertEquals(userGroupsPage.actualText,"You do not belong in any group");
+    }
+
+    @Test(priority = 2)
+    void testAssertGroup() {
+        userGroupsPage.clickPersonBtn().clickGroupBtn();
+        Assert.assertEquals(userGroupsPage.actualText, "You do not belong in any group");
     }
 }

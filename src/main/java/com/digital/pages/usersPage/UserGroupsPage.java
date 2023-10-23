@@ -13,16 +13,17 @@ public class UserGroupsPage extends UserHomePage {
 
     @FindBy(xpath = "//div[@class='empty-state-text-margin-bottom']")
     public WebElement actualDescription;
+    public String actualText;
 
-    public UserGroupsPage clickPersonBtn(){
+    public UserGroupsPage clickPersonBtn() {
         elementActions.clickElement(clickPerson);
         return this;
 
-   }
-   public String actualText;
-   public UserGroupsPage clickGroupBtn(){
-       elementActions.clickElement(clickGroup);
-        actualText=actualDescription.getAttribute("innerText");
+    }
+
+    public UserGroupsPage clickGroupBtn() {
+        elementActions.clickElement(clickGroup);
+        actualText = actualDescription.getAttribute("innerText");
         return this;
-}
+    }
 }
