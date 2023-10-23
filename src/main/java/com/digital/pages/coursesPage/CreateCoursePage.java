@@ -23,6 +23,8 @@ public class CreateCoursePage extends CreateUserPage {
     public WebElement exceptionTextOfCoursePrice;
     @FindBy(xpath = "(//span[@class='help-block'])[3]")
     public WebElement exceptionTextOfDescription;
+    @FindBy(xpath = "(//span[@class='help-block'])[7]")
+    public WebElement exceptionTextOfCapacity;
     @FindBy(xpath = "//div[@class='select2-container']")
     public WebElement chooseCategoryInput;
     @FindBy(xpath = "//textarea[@class='span7']")
@@ -71,8 +73,10 @@ public class CreateCoursePage extends CreateUserPage {
     public List<WebElement> listLevel;
     @FindBy(xpath = "//input[@name='submit_course']")
     public WebElement saveBtn;
-    @FindBy(xpath = "//span[@class='preview']")
+    @FindBy(xpath = "(//a[@class='tl-tool-tip inputbtn'])[2]")
     public WebElement pictureBtn;
+    @FindBy(xpath = "//span[@class='tl-formatted-course-name']")
+    public static List<WebElement> newCourse;
 
 
     public CreateCoursePage nameInput(String txt) {
@@ -194,12 +198,16 @@ public class CreateCoursePage extends CreateUserPage {
         return this;
     }
 
-    public CreateCoursePage pictureInput() throws AWTException {
-        elementActions.waitElementToBeClickable(pictureBtn).clickElement(pictureBtn);
-        WebElement fileInput = Driver.getDriver().findElement(By.id("note"));
+    public CreateCoursePage pictureInput() {
+        elementActions.writeText(pictureBtn,"/Users/zhyldyzzheenbaeva/Desktop/123.png" );
+
+      //  elementActions.writeText(pictureBtn, "/Users/zhyldyzzheenbaeva/Desktop/123.png");
+        return this;
+    }
+
 
 // Отправить путь к файлу
-       fileInput.sendKeys("java.png");
+    // fileInput.sendKeys("java.png");
 //        Driver.getDriver().getPageSource();
 //        try {
 //            Robot robot = new Robot();
@@ -219,6 +227,4 @@ public class CreateCoursePage extends CreateUserPage {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-  return this;
-    }
 }
