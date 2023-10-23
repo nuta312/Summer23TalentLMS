@@ -8,7 +8,6 @@ import org.testng.Assert;
 public class CheckTableOptions extends UserHomePage {
     public UserHomePage userHomePage;
     //Alex
-
     @FindBy(xpath = "//tr[@class='odd'][1]")
     public WebElement firstTable;
 
@@ -27,5 +26,4 @@ public class CheckTableOptions extends UserHomePage {
         elementActions.moveToElement(moveToBtn).clickElement(repBtn);
         return this;
     }
-
 }
