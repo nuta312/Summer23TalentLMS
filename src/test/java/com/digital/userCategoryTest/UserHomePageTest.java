@@ -5,6 +5,8 @@ import com.digital.pages.usersPage.CreateUserPage;
 import com.digital.pages.usersPage.UserBranchPage;
 import com.digital.pages.usersPage.UserGroupsPage;
 import com.digital.pages.usersPage.UserHomePage;
+import com.digital.pages.usersPage.components.CheckTableOptions;
+import org.testng.Assert;
 import com.digital.pages.usersPage.FilesPage;
 import com.digital.pages.usersPage.components.EditFile;
 import com.digital.pages.usersPage.UserCoursesPage;
@@ -12,10 +14,12 @@ import com.digital.pages.usersPage.components.AddFile;
 import com.digital.pages.usersPage.components.CheckDropMenu;
 import com.digital.pages.usersPage.components.UserTable;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class UserHomePageTest extends BaseTest{
     public HomePage homePage;
     public CreateUserPage createUser;
+    public CheckTableOptions checkTableOptions;
     public FilesPage filePage;
     public UserCoursesPage userCoursesPage;
     public CheckDropMenu checkDropMenu;
@@ -30,6 +34,7 @@ public class UserHomePageTest extends BaseTest{
         userHomePage = new UserHomePage();
         homePage = new HomePage();
         homePage.openUserCategory();
+        checkTableOptions = new CheckTableOptions();
         filePage= new FilesPage();
         userCoursesPage = new UserCoursesPage();
         createUser = new CreateUserPage();
