@@ -58,6 +58,7 @@ public class CreateUserTest extends UserHomePageTest {
     void checkDisplayedDeactiveInput() {
         Assert.assertFalse(createUser.isDeactiveInputDisplayed());
     }
+
     @Test(priority = 6, description = "This test checks validation for empty fields")
     void checkEmptyFieldValidation() {
         driver.get("https://nbu111.talentlms.com/user/create");
@@ -72,6 +73,7 @@ public class CreateUserTest extends UserHomePageTest {
         createUser.clickToSubmitFormBtn();
         Assert.assertTrue(isValidationErrorDisplayed(errorElement, expectedErrorMessage));
     }
+
     private boolean isValidationErrorDisplayed(WebElement errorElement, String expectedErrorMessage) {
         return errorElement.isDisplayed() && errorElement.getText().contains(expectedErrorMessage);
     }
