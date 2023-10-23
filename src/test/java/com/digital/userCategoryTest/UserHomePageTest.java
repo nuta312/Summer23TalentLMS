@@ -48,9 +48,29 @@ public class UserHomePageTest extends BaseTest {
         addFile = new AddFile();
     }
 
+<<<<<<< HEAD
+ //   @Test(priority = 1)
+    void checkDropMenu() {
+        homePage = new HomePage();
+        checkDropMenu.checkMenu()
+                .clickActivate()
+                .clickDeactivate()
+                .clickDelete()
+                .clickBranchAdd()
+                .clickBranchRemove()
+                .clickAddGroup()
+                .clickRemoveGroup()
+                .clickMessage();
+
+    }
+
+  //  @Test(priority = 2)
+    void assertTest() {
+=======
 
     @Test(priority = 2)
     void assertTest(){
+>>>>>>> 395117da66e803d993417ee1548bd32ca04c950f
         checkDropMenu.clickActivate();
         Assert.assertEquals(checkDropMenu.actualTextActivate,"Activate");
         checkDropMenu.clickDeactivate();
