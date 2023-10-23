@@ -84,5 +84,16 @@ public class FakeDataProvider {
         }
         return new String(characters);
     }
+
+
+    public static String generateLongText( int wordCount) {
+        StringBuilder longTextBuilder = new StringBuilder();
+        while (longTextBuilder.toString().split("\\s+").length < wordCount) {
+            longTextBuilder.append(faker.lorem().sentence());
+            longTextBuilder.append(" ");
+        }
+        return longTextBuilder.toString();
+    }
+
 }
 

@@ -26,8 +26,22 @@ public class CreateUserPage extends BasePage {
     @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordInput;
 
-    @FindBy(xpath = "//textarea[@name='description']")
+    @FindBy(xpath = "//label[text()='First name']/../div/span/span")
+    public WebElement firstNameInputError;
 
+    @FindBy(xpath = "//label[text()='Last name']/../div/span/span")
+    public WebElement lastNameInputError;
+
+    @FindBy(xpath = "//label[text()='Email address']/../div/span/span")
+    public WebElement emailInputError;
+    @FindBy(xpath = "//label[text()='Username']/../div/span/span")
+    public WebElement  usernameInputError;
+    @FindBy(xpath = "//label[text()='Password']/../div/span/span")
+    public WebElement  passwordInputError;
+
+    @FindBy(xpath = "//label[text()='Bio']/../div/span/span")
+    public WebElement  bioInputError;
+    @FindBy(xpath = "//textarea[@name='description']")
     public WebElement bioInput;
 
     public List<String> expectedUserInfo;

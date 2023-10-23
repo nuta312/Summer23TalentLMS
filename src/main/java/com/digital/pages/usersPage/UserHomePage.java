@@ -1,6 +1,7 @@
 package com.digital.pages.usersPage;
 
 import com.digital.pages.BasePage;
+import com.digital.pages.usersPage.components.UserTable;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,6 +15,8 @@ public class UserHomePage extends BasePage {
 
     @FindBy(xpath = "//tr[@class='odd'][1]//i[@title='Edit']")
     public WebElement editBtn;
+
+
 
 
 }

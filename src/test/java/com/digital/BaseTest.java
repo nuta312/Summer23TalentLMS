@@ -11,8 +11,8 @@ import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import com.digital.pages.coursesPage.CategoriesPage;
 
 public abstract class BaseTest {
 
@@ -22,12 +22,14 @@ public abstract class BaseTest {
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
     public UserCoursesPage userCoursesPage;
-
     public HomePage homePage;
 
     public CheckTableOptions checkTableOptions;
     public EditUserInfoPage editUserInfoPage;
+
     public FakeDataProvider fakeDataProvider;
+    public CategoriesPage categoriesPage;
+
 
 
     @BeforeClass(alwaysRun = true)
@@ -40,11 +42,13 @@ public abstract class BaseTest {
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
         userCoursesPage = new UserCoursesPage();
+        categoriesPage = new CategoriesPage();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        Driver.closeDriver();
+//    }
+
 
 }
