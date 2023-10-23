@@ -70,7 +70,7 @@ public class UserTableTest extends UserHomePageTest {
     }
 
     @Test(priority = 6, description = "This test checks reports btn in user table")
-    void checkTable(){
+    void checkTable() {
         userTable.clickToReportsBtn();
         Assert.assertEquals(userTable.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
         userTable.elementActions.navigateBack();

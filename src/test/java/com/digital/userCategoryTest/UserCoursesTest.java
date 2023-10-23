@@ -14,14 +14,15 @@ public class UserCoursesTest extends UserHomePageTest {
         userCoursesPage.clickCourses();
         Assert.assertTrue(Boolean.parseBoolean(userCoursesPage.coursesIsDisplayed));
     }
-    @Test (priority = 1)
+
+    @Test(priority = 1)
     void userCoursePage1() {
         userCoursesPage.clickCheckBox();
         Assert.assertFalse(userCoursesPage.checkBoxAction);
         userCoursesPage.clickMassActions1();
         Assert.assertTrue(Boolean.parseBoolean(userCoursesPage.coursesIsDisplayed));
         userCoursesPage.clickEnrollAction();
-        Assert.assertEquals(userCoursesPage.enrollActualText,"Enroll");
+        Assert.assertEquals(userCoursesPage.enrollActualText, "Enroll");
         userCoursesPage.clickMassActions1();
         userCoursesPage.clickUnenrollAction();
         Assert.assertEquals(userCoursesPage.unenrollActualText, "Unenroll");
@@ -29,8 +30,8 @@ public class UserCoursesTest extends UserHomePageTest {
         Assert.assertTrue(Boolean.parseBoolean(userCoursesPage.closeBtnIsDisplayed));
         userCoursesPage.clickMassActions1();
         userCoursesPage.clickResetProgress();
-        Assert.assertEquals(userCoursesPage.resetProgressActualText,"Reset progress");
-      }
+        Assert.assertEquals(userCoursesPage.resetProgressActualText, "Reset progress");
+    }
 
     @Test(priority = 2, description = "this test checks the tabs on the course user page")
     void checkTabsInCoursesPage() {
