@@ -6,7 +6,6 @@ import com.digital.pages.usersPage.FilesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.EditFile;
 import com.digital.pages.usersPage.UserCoursesPage;
-import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.AddFile;
 import com.digital.pages.usersPage.components.CheckDropMenu;
 import com.digital.pages.usersPage.components.UserTable;
@@ -38,8 +37,6 @@ public class UserHomePageTest extends BaseTest {
         homePage = new HomePage();
         homePage.openUserCategory();
         filePage= new FilesPage();
-
-
         userCoursesPage = new UserCoursesPage();
         createUser = new CreateUserPage();
         checkDropMenu = new CheckDropMenu();
@@ -48,7 +45,6 @@ public class UserHomePageTest extends BaseTest {
         addFile = new AddFile();
     }
 
-<<<<<<< HEAD
  //   @Test(priority = 1)
     void checkDropMenu() {
         homePage = new HomePage();
@@ -64,13 +60,9 @@ public class UserHomePageTest extends BaseTest {
 
     }
 
-  //  @Test(priority = 2)
-    void assertTest() {
-=======
 
-    @Test(priority = 2)
+   // @Test(priority = 2)
     void assertTest(){
->>>>>>> 395117da66e803d993417ee1548bd32ca04c950f
         checkDropMenu.clickActivate();
         Assert.assertEquals(checkDropMenu.actualTextActivate,"Activate");
         checkDropMenu.clickDeactivate();
@@ -85,7 +77,6 @@ public class UserHomePageTest extends BaseTest {
         Assert.assertEquals(checkDropMenu.actualTextAddGroup,"Add users to group");
         checkDropMenu.clickRemoveGroup();
         Assert.assertEquals(checkDropMenu.actualTextRemoveGroup,"Remove users from group");
-
 
     }
 
