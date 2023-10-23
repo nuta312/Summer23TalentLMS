@@ -4,7 +4,7 @@ import com.digital.pages.BasePage;
 
 public class HomePage extends BasePage {
 
-    public HomePage openHomePage(){
+    public HomePage openHomePage() {
         return this;
     }
 }
