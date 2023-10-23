@@ -1,4 +1,4 @@
-package com.digital.coursesTest.addCoursesTest;
+package com.digital;
 
 import com.digital.BaseTest;
 import com.digital.helper.ElementActions;
@@ -7,7 +7,7 @@ import com.github.javafaker.Faker;
 import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 
-public abstract class CoursesHomePageTest extends BaseTest {
+public abstract class CoursesCategoriesBaseTest extends BaseTest {
     public CreateCoursePage createCoursePage;
     public SoftAssert soft;
     public Faker faker;
