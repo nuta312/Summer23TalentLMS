@@ -9,6 +9,7 @@ import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import com.digital.pages.coursesPage.CategoriesPage;
 
@@ -34,10 +35,10 @@ public abstract class BaseTest {
         categoriesPage = new CategoriesPage();
     }
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown() {
-//        Driver.closeDriver();
-//    }
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        Driver.closeDriver();
+    }
 
 
 }
