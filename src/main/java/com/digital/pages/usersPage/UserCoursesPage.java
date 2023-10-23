@@ -47,7 +47,7 @@ import org.openqa.selenium.support.FindBy;
         }
         public boolean checkBoxAction;
         public UserCoursesPage clickCheckBox(){
-            elementActions.waitElementToBeClickable(clickCheckBox);
+            elementActions.moveToElement(clickCheckBox);
             checkBoxAction = clickCheckBox.isSelected();
             elementActions.clickByJS(clickCheckBox);
             return this;
