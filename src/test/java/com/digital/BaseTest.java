@@ -22,8 +22,6 @@ public abstract class BaseTest {
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
     public HomePage homePage;
-    public EditUserInfoPage editUserInfoPage;
-
     public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
     public AccountHomePage accountHomePage;
@@ -37,7 +35,6 @@ public abstract class BaseTest {
         loginPage = new LoginPage();
         driver.get(ConfigReader.getProperty("BASE_URL"));
         loginPage.logIn();
-        editUserInfoPage = new EditUserInfoPage();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
         categoriesPage = new CategoriesPage();

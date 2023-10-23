@@ -1,9 +1,7 @@
 package com.digital.userCategoryTest;
-
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.*;
 
 public class UserTableTest extends UserHomePageTest {

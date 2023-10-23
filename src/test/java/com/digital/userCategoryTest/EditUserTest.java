@@ -1,21 +1,10 @@
-package com.digital;
-import com.digital.pages.HomePage;
-import com.digital.pages.usersPage.EditUserInfoPage;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+package com.digital.userCategoryTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class EditUserTest extends BaseTest{
-    public HomePage homePage;
-    public EditUserInfoPage editUserInfoPage;
-
-
+public class EditUserTest extends UserHomePageTest{
     @Test
     void editAndAssertUserInfo() throws InterruptedException {
-        homePage = new HomePage();
-        homePage.openUserCategory();
-        editUserInfoPage = new EditUserInfoPage();
         String generatedFirstname = fakeDataProvider.generateFakeFirstName();
         String generateLastName = fakeDataProvider.generateFakeLastName();
         String BIO = "Вы помните,\n" +
