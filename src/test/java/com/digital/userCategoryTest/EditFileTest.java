@@ -1,6 +1,5 @@
 package com.digital.userCategoryTest;
 
-import com.digital.pages.usersPage.components.EditFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

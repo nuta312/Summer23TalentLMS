@@ -3,8 +3,8 @@ package com.digital.pages.usersPage.components;
 import com.digital.pages.usersPage.FilesPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 
 public class EditFile extends FilesPage {
     //tanos
@@ -21,21 +21,21 @@ public class EditFile extends FilesPage {
     public WebElement findFilesWord;
     @FindBy(xpath = "//tr[@class='odd']")//tr[@class='odd']
     public WebElement clickTableRowInFile;
-    @FindBy(xpath ="//tr[@class='odd'][1]//a[@title='Preview']" )
+    @FindBy(xpath = "//tr[@class='odd'][1]//a[@title='Preview']")
     public WebElement clickPreviewInTableFile;
-    @FindBy(xpath ="//tr[@class='odd'][1]//a[@title='Download']" ) //a[contains(@title,'Download')])[2]
+    @FindBy(xpath = "//tr[@class='odd'][1]//a[@title='Download']") //a[contains(@title,'Download')])[2]
     public WebElement clickDownloadInTableFile;
-    @FindBy(xpath ="//tr[@class='odd'][1]//i[@title='Edit']" )
+    @FindBy(xpath = "//tr[@class='odd'][1]//i[@title='Edit']")
     public WebElement clickEditInTableFile;
-    @FindBy(xpath ="//tr[@class='odd'][1]//i[@title='Delete']" )
+    @FindBy(xpath = "//tr[@class='odd'][1]//i[@title='Delete']")
     public WebElement clickDeleteInTableFile;
     @FindBy(xpath = "//*[@id='preview_modal']/div[1]/h3")
     public WebElement resultPictureName;
     @FindBy(xpath = "//*[@id='preview_modal']/div/a[@class='close']")
     public WebElement close;
-    @FindBy (id = "//*[@id=\"renameFileName\"]")
+    @FindBy(id = "//*[@id=\"renameFileName\"]")
     public WebElement resultEditName;
-    @FindBy (id = "/html/body/img")
+    @FindBy(id = "/html/body/img")
     public WebElement downloadPicture;
     @FindBy(xpath = "//*[@id=\"show-tags\"]")
     public WebElement clickTagInSaidEdit;
@@ -43,7 +43,7 @@ public class EditFile extends FilesPage {
     public WebElement someTagWriteInputEdit;
     @FindBy(xpath = "//*[@id=\"tl-rename-file-modal\"]/div[2]")
     public WebElement navigateOnEditeWindow;
-    @FindBy(xpath= "//input[@name='submit_rename_file']")
+    @FindBy(xpath = "//input[@name='submit_rename_file']")
     public WebElement clickUpdateBtmInputEdit;
     @FindBy(xpath = "//div[1]/h3[text()='Edit file']")
     public WebElement editFileTExt;
@@ -53,42 +53,49 @@ public class EditFile extends FilesPage {
     public WebElement clickCanselInputEdit;
     @FindBy(xpath = "//*[@id=\"tl-confirm-submit\"]")
     public WebElement deleteBTM;
-    @FindBy (xpath = "//*[@id='tl-confirm']/div[3]/a[text()='Cancel']")
+    @FindBy(xpath = "//*[@id='tl-confirm']/div[3]/a[text()='Cancel']")
     public WebElement canselInDelete;
-    @FindBy (xpath = "//*[@id='tl-confirm']/div[1]/a[@class='close']")
+    @FindBy(xpath = "//*[@id='tl-confirm']/div[1]/a[@class='close']")
     public WebElement closeInDelete;
+    public String pictureNameText;
+    public String editTexte;
+    public String textUpdate;
 
     /**
      * методы для вызова.
      */
 
-    public EditFile clickName(){
+    public EditFile clickName() {
         elementActions.clickElement(UserNameClick);
         return this;
 
     }
-    public EditFile clickFile(){
+
+    public EditFile clickFile() {
         elementActions.clickElement(findFilesWord);
         return this;
     }
+
     public EditFile clickTable1() {
         elementActions.moveToElement(clickTableRowInFile).clickByJS(clickTableRowInFile);
         return this;
     }
-    public String pictureNameText;
+
     public EditFile clickPreview() {
         elementActions.moveToElement(clickPreviewInTableFile).clickElement(clickPreviewInTableFile);
         pictureNameText = resultPictureName.getAttribute("innerText");
         elementActions.clickElement(close);
         return this;
     }
-    public EditFile clickDownload(){
+
+    public EditFile clickDownload() {
         elementActions.pause(1000);
         elementActions.moveToElement(clickDownloadInTableFile).clickElement(clickDownloadInTableFile);
-        elementActions.navigateBack();
+        ArrayList<String> tabs = elementActions.getAllWindowsHandles();
+        elementActions.switchToTargetWindow(tabs, 0);
         return this;
     }
-    public  String editTexte;
+
     public EditFile clickEdit() {
         elementActions.pause(2000);
         elementActions.moveToElement(clickEditInTableFile).clickElement(clickEditInTableFile);
@@ -97,14 +104,15 @@ public class EditFile extends FilesPage {
         elementActions.clickElement(clickUpdateBtmInputEdit);
         return this;
     }
-    public  String textUpdate;
+
     public EditFile deleteClick() {
         elementActions.pause(1000);
         elementActions.clickByJS(clickDeleteInTableFile);
         textUpdate = textInDelete.getAttribute("innerText");
         return this;
     }
-    public EditFile closeDelete(){
+
+    public EditFile closeDelete() {
         elementActions.clickByJS(closeInDelete);
         return this;
     }

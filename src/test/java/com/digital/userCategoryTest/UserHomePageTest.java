@@ -26,6 +26,7 @@ public class UserHomePageTest extends BaseTest{
     public UserBranchPage userBranchPage;
     public UserGroupsPage  userGroupsPage;
 
+
     @BeforeClass
     void setHomePage() {
         userHomePage = new UserHomePage();

@@ -7,7 +7,6 @@ import com.digital.pages.LoginPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
-import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
@@ -19,11 +18,9 @@ public abstract class BaseTest {
     public AccountSettingsPage accountSettingsPage;
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
-    public UserCoursesPage userCoursesPage;
     public HomePage homePage;
     public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
-   public EditFile editFile;
 
 
     @BeforeClass(alwaysRun = true)
@@ -34,9 +31,7 @@ public abstract class BaseTest {
         loginPage.logIn();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
-        userCoursesPage = new UserCoursesPage();
         categoriesPage = new CategoriesPage();
-        editFile= new EditFile();
     }
 
 //    @AfterClass(alwaysRun = true)
