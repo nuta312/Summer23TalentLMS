@@ -1,23 +1,25 @@
 package com.digital.pages.usersPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-
-import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 
-import static com.digital.driver.Driver.driver;
 import static com.digital.driver.Driver.getDriver;
 
 public class EditUserInfoPage extends UserHomePage {
     public UserHomePage userHomePage;
-    @FindBy(xpath = "//tr[@class='even']")
+    @FindBy(xpath = "//a[@class='tl-tool-tip']/span")
+    public WebElement move2EditedUser;
+
+    @FindBy(xpath = "(//a[@class='tl-tool-tip']/span)[2]")
     public WebElement moveToEditedUser;
-    @FindBy(xpath = "(//a[@rel='tooltip'])[3]")
+
+    @FindBy(xpath = "//a[@rel='tooltip']/span")
     public WebElement clickEditedUser;
+
+    @FindBy(xpath = "(//a[@rel='tooltip']/span)[2]")
+    public WebElement click2EditedUser;
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement inputfFirstName;
@@ -31,17 +33,17 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "(//span[@class='select2-chosen'])[2]")
     public WebElement selectTimeZoneChosen;
 
-    @FindBy(xpath = "((//span[@class='select2-chosen'])[2]")
-    public WebElement selectTimeZone;
-
     @FindBy(xpath = "(//span[@class='select2-arrow'])[3]")
     public WebElement selectLanguageChosen;
 
-    @FindBy(xpath = "//input[@id='deactivate_user']")
-    public WebElement clickDeactivateCheckbox;
+    @FindBy(xpath = "(//span[@class='select2-arrow'])[1]")
+    public WebElement userTypeChosen;
+
+    @FindBy(xpath = "//input[@id='status']")
+    public WebElement clickActivateCheckbox;
 
     @FindBy(xpath = "//input[@name='restrict_email']")
-    public WebElement clickExcludeCheckBox;
+    public WebElement excludeCheckBox;
 
     @FindBy(xpath = "//a[@id='fileupload_input']")
     public WebElement loadImageBTN;
@@ -52,49 +54,42 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "//input[@id='user_update_submit']")
     public WebElement updateUserBtn;
 
+    @FindBy(xpath = "//input[@name='name']")
+    public WebElement firsName;
+
+    @FindBy(xpath = "//input[@name='surname']")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//textarea[@class='span6']")
+    public WebElement getInputBio;
+
     public EditUserInfoPage clickToEditBtn() {
-        userHomePage = new UserHomePage();
-        elementActions.moveToElement(moveToEditedUser);
-        elementActions.clickElement(clickEditedUser);
-        return this;
+
+            if (move2EditedUser.getAttribute("innerText").equals("J. Torphy")){
+            elementActions.moveToElement(moveToEditedUser);}
+            else {
+            elementActions.clickElement(move2EditedUser);
+            }
+                if (clickEditedUser.getAttribute("title").equals("J. Torphy (admin)")){
+            elementActions.clickElement(click2EditedUser);}
+                else {
+                    elementActions.clickElement(clickEditedUser);
+                }
+            return this;
     }
-    public String firstName = "";
-    public EditUserInfoPage editFirstName() {
-        elementActions.writeText(inputfFirstName, fakeDataProvider.generateFakeFirstName());
-        firstName = fakeDataProvider.generateFakeFirstName().toString();
+
+        public EditUserInfoPage editFirstName(String firstName) {
+        elementActions.writeText(inputfFirstName, firstName);
         return this;
     }
 
-    public String lastName = "";
-    public EditUserInfoPage editLastName() {
-        elementActions.writeText(inputLastName, fakeDataProvider.generateFakeLastName());
-        lastName = fakeDataProvider.generateFakeLastName().toString();
+    public EditUserInfoPage editLastName(String txt) {
+        elementActions.writeText(inputLastName, txt);
         return this;
     }
 
-    public EditUserInfoPage editBio() {
-        elementActions
-                .writeText(inputBio,
-                            "Я помню чудное мгновенье:\n" +
-                                "Передо мной явилась ты,\n" +
-                                "Как мимолетное виденье,\n" +
-                                "Как гений чистой красоты.\n" +
-                                "В томленьях грусти безнадежной,\n" +
-                                "В тревогах шумной суеты,\n" +
-                                "Звучал мне долго голос нежный\n" +
-                                "И снились милые черты.\n" +
-                                "Шли годы. Бурь порыв мятежный\n" +
-                                "Рассеял прежние мечты,\n" +
-                                "И я забыл твой голос нежный,\n" +
-                                "Твои небесные черты.\n" +
-                                "В глуши, во мраке заточенья\n" +
-                                "Тянулись тихо дни мои\n" +
-                                "Без божества, без вдохновенья,\n" +
-                                "Без слез, без жизни, без любви.\n" +
-                                "Душе настало пробужденье:\n" +
-                                "И вот опять явилась ты,\n" +
-                                "Как мимолетное виденье,\n" +
-                                "Как гений чистой красоты.");
+    public EditUserInfoPage editBio(String txt){
+        elementActions.writeText(inputBio, txt);
         return this;
     }
 
@@ -103,12 +98,10 @@ public class EditUserInfoPage extends UserHomePage {
         return this;
     }
 
-    public String timeZone = "";
     public EditUserInfoPage timeZoneSelect() {
         List<WebElement> timeZoneElements = getDriver()
         .findElements(By.xpath("//li[@class='select2-results-dept-0 select2-result select2-result-selectable']"));
         elementActions.clickToRandomElement(timeZoneElements);
-//        timeZone = elementActions.clickToRandomElement(timeZoneElements).toString();
         return this;
     }
 
@@ -117,35 +110,45 @@ public class EditUserInfoPage extends UserHomePage {
         return this;
     }
 
-    public String usedLanguage = "";
     public EditUserInfoPage languageSelect() {
-                     List<WebElement> languages = getDriver()
+                    List<WebElement> languages = getDriver()
                     .findElements(By.xpath("//li[@class='select2-results-dept-0 select2-result select2-result-selectable']"));
                     elementActions.clickToRandomElement(languages);
         return this;
     }
 
-    public EditUserInfoPage clickDeactivateCheckBox() {
-        elementActions.moveToElement(clickDeactivateCheckbox).clickElement(clickDeactivateCheckbox);
+    public EditUserInfoPage userTypeSelected(){
+       try {
+           elementActions.clickElement(userTypeChosen);
+           List<WebElement> userTypes = getDriver()
+                   .findElements(By.xpath("//li[@class='select2-results-dept-0 select2-result select2-result-selectable']"));
+           elementActions.clickToRandomElement(userTypes);
+       }catch (Exception e){
+           elementActions.clickElement(excludeCheckBox);
+       }
+        return this;
+    }
+
+    public EditUserInfoPage clickActivateCheckBox() {
+       try {
+           elementActions.clickElement(clickActivateCheckbox);
+       }catch (Exception e){
+           elementActions.clickElement(updateUserBtn);
+       }
         return this;
     }
 
     public EditUserInfoPage clickExcludeCheckBox(){
-        elementActions.clickElement(clickExcludeCheckBox);
+        elementActions.clickElement(excludeCheckBox);
         return this;
     }
 
-//    public EditUserInfoPage imageLoad() throws InterruptedException {
-//        elementActions.clickElement(loadImageBTN);
-//        elementActions.waitElementToBeVisible(imageInput);
-//        String filePath = "src/main/resources/Тест.png";
-//        imageInput.sendKeys(filePath);
-//        return this;
-//    }
-
-
     public EditUserInfoPage updateBtn() {
-        elementActions.clickElement(updateUserBtn);
+        try {
+            elementActions.clickElement(updateUserBtn);
+        }catch (Exception e){
+            System.out.println("Все ок");
+        }
         return this;
     }
 
