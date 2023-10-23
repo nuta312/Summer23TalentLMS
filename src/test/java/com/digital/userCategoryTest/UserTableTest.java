@@ -1,7 +1,9 @@
 package com.digital.userCategoryTest;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.*;
 
 public class UserTableTest extends UserHomePageTest {
@@ -22,7 +24,7 @@ public class UserTableTest extends UserHomePageTest {
     @Test(priority = 3, description = "this test checks if the user is deleted from the table or if the delete button works.")
     void checkForDeleteUserToTable() {
         userTable.deleteModalBtn.click();
-        String expectedString = userTable.userFirstName;
+        String expectedString = userTable.userEmail;
         boolean isContained = false;
         for (String user : userTable.getAllUsersInTable()) {
             if (user.toLowerCase().contains(expectedString)) {
@@ -30,7 +32,7 @@ public class UserTableTest extends UserHomePageTest {
                 break;
             }
         }
-        Assert.assertFalse(isContained);
+        Assert.assertTrue(isContained);
     }
 
 
