@@ -8,13 +8,11 @@ import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.pages.usersPage.UserHomePage;
-import com.digital.pages.usersPage.components.CheckTableOptions;
-import com.digital.pages.usersPage.components.EditFile;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import com.digital.pages.coursesPage.CreateCoursePage;
-import com.digital.pages.coursesPage.CategoriesPage;
+import com.digital.pages.categoriesPage.CategoriesPage;
 
 public abstract class BaseTest {
 
