@@ -4,16 +4,14 @@ import com.digital.driver.Driver;
 import com.digital.helper.AlertHelper;
 import com.digital.helper.ElementActions;
 import com.digital.helper.FramesHelper;
-import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
     //Page Object Pattern
 
-   public   ElementActions elementActions = new ElementActions();
-   public   AlertHelper alertHelper = new AlertHelper(Driver.getDriver());
+    public   ElementActions elementActions = new ElementActions();
+    public   AlertHelper alertHelper = new AlertHelper(Driver.getDriver());
     public  FramesHelper framesHelper = new FramesHelper(Driver.getDriver());
-
     public BasePage() {           //принимает драйвер   //экземпляр текущей страницы
         PageFactory.initElements(Driver.getDriver(), this);
     }

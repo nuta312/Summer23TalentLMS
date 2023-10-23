@@ -113,19 +113,37 @@ public class CheckDropMenu extends UserHomePage {
      */
     @FindBy(xpath = "//td/input[@type='checkbox']")
     public List<WebElement> allCheckBoxClick;
-
-    public CheckDropMenu checkMenu() {
-        elementActions.moveToElement(firstTableRow);
-        elementActions.clickElement(checkBoxClick);
-        return this;
-    }
-
     /**
      * переход в dropMenu и вызов вкладок по порядку каждого элемента
      * вывод текста в всплывающем окне для дальнейшего сравнения
      */
 
     public String actualTextActivate;
+    public String actualTextDeactivate;
+    public String actualTextDelete;
+    public String actualTextAddBranch;
+    public String actualTextRemoveBranch;
+    public String actualTextAddGroup;
+    public String actualTextRemoveGroup;
+    public String actualTextSendMessage;
+    /**
+     * проверяет на кликабельность по очереди все checkBox
+     */
+    public boolean isCheckt;
+    /**
+     * проверяет все элементы содержашиеся в Mass action
+     */
+    @FindBy(xpath = "//a[@class='massaction']")
+    public List<WebElement> allListMassAction;
+    public String visiblText = "[Activate, Deactivate, Delete, Add to branch, " +
+            "Remove from branch, Add to group, Remove from group, Send message]";
+    public List<String> actualTextList = new ArrayList<>();
+
+    public CheckDropMenu checkMenu() {
+        elementActions.moveToElement(firstTableRow);
+        elementActions.clickElement(checkBoxClick);
+        return this;
+    }
 
     public CheckDropMenu clickActivate() {
         elementActions.clickElement(clickMassAction);
@@ -134,8 +152,6 @@ public class CheckDropMenu extends UserHomePage {
         elementActions.clickElement(activateCanselBtn);
         return this;
     }
-
-    public String actualTextDeactivate;
 
     public CheckDropMenu clickDeactivate() {
         elementActions.pause(500);
@@ -147,8 +163,6 @@ public class CheckDropMenu extends UserHomePage {
         return this;
     }
 
-    public String actualTextDelete;
-
     public CheckDropMenu clickDelete() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
@@ -157,8 +171,6 @@ public class CheckDropMenu extends UserHomePage {
         elementActions.clickElement(deleteCanselBtn);
         return this;
     }
-
-    public String actualTextAddBranch;
 
     public CheckDropMenu clickBranchAdd() {
         elementActions.pause(500);
@@ -169,8 +181,6 @@ public class CheckDropMenu extends UserHomePage {
         return this;
     }
 
-    public String actualTextRemoveBranch;
-
     public CheckDropMenu clickBranchRemove() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
@@ -179,8 +189,6 @@ public class CheckDropMenu extends UserHomePage {
         elementActions.clickElement(branchRemoveCanselBtn);
         return this;
     }
-
-    public String actualTextAddGroup;
 
     public CheckDropMenu clickAddGroup() {
         elementActions.pause(500);
@@ -191,8 +199,6 @@ public class CheckDropMenu extends UserHomePage {
         return this;
     }
 
-    public String actualTextRemoveGroup;
-
     public CheckDropMenu clickRemoveGroup() {
         elementActions.pause(500);
         elementActions.clickElement(clickMassAction);
@@ -201,8 +207,6 @@ public class CheckDropMenu extends UserHomePage {
         elementActions.clickElement(removeGroupCanselBtn);
         return this;
     }
-
-    public String actualTextSendMessage;
 
     public CheckDropMenu clickMessage() {
         elementActions.pause(500);
@@ -214,11 +218,6 @@ public class CheckDropMenu extends UserHomePage {
 
     }
 
-    /**
-     * проверяет на кликабельность по очереди все checkBox
-     */
-    public boolean isCheckt;
-
     public CheckDropMenu clickAllChecBox() {
         elementActions.moveToElement(firstTableRow);
         for (WebElement check : allCheckBoxClick) {
@@ -229,16 +228,6 @@ public class CheckDropMenu extends UserHomePage {
         }
         return this;
     }
-
-    /**
-     * проверяет все элементы содержашиеся в Mass action
-     */
-    @FindBy(xpath = "//a[@class='massaction']")
-    public List<WebElement> allListMassAction;
-
-    public String visiblText = "[Activate, Deactivate, Delete, Add to branch, " +
-            "Remove from branch, Add to group, Remove from group, Send message]";
-    public List<String> actualTextList = new ArrayList<>();
 
     public CheckDropMenu massActionsList() {
         elementActions.clickElement(clickMassAction);
