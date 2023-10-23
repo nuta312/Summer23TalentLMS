@@ -25,9 +25,9 @@ public abstract class BaseTest {
     public UserHomePage userHomePage;
     public UserCoursesPage userCoursesPage;
     public HomePage homePage;
-    public CreateCoursePage createCoursePage;
     public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
+
 
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
@@ -36,7 +36,6 @@ public abstract class BaseTest {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         loginPage.logIn();
         homePage = new HomePage();
-        createCoursePage= new CreateCoursePage();
         fakeDataProvider = new FakeDataProvider();
         userCoursesPage = new UserCoursesPage();
         categoriesPage = new CategoriesPage();
@@ -46,5 +45,6 @@ public abstract class BaseTest {
 //    public void tearDown() {
 //        Driver.closeDriver();
 //    }
+
 
 }
