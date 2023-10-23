@@ -3,7 +3,6 @@ package com.digital.pages.categoriesPage;
 import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class CategoriesPage extends BasePage {
 
