@@ -3,9 +3,9 @@ import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
-import com.digital.pages.usersPage.EditUserInfo;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
+import com.digital.pages.usersPage.EditUserInfoPage;
 import com.digital.pages.usersPage.UserCoursesPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.usersPage.components.CheckTableOptions;
@@ -26,7 +26,7 @@ public abstract class BaseTest {
     public HomePage homePage;
 
     public CheckTableOptions checkTableOptions;
-    public EditUserInfo editUserInfo;
+    public EditUserInfoPage editUserInfoPage;
     public FakeDataProvider fakeDataProvider;
 
 
@@ -36,7 +36,7 @@ public abstract class BaseTest {
         loginPage = new LoginPage();
         driver.get(ConfigReader.getProperty("BASE_URL"));
         loginPage.logIn();
-        editUserInfo = new EditUserInfo();
+        editUserInfoPage = new EditUserInfoPage();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
         userCoursesPage = new UserCoursesPage();
