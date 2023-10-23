@@ -2,8 +2,10 @@ package com.digital;
 
 import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
+import com.digital.helper.ElementActions;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
+import com.digital.pages.accountSettingsPage.AccountHomePage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
@@ -22,6 +24,8 @@ public abstract class BaseTest {
     public HomePage homePage;
     public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
+    public AccountHomePage accountHomePage;
+    public ElementActions elementActions;
 
 
     @BeforeClass(alwaysRun = true)
@@ -33,6 +37,9 @@ public abstract class BaseTest {
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
         categoriesPage = new CategoriesPage();
+        accountHomePage= new AccountHomePage();
+        elementActions = new ElementActions();
+
     }
 
     @AfterClass(alwaysRun = true)
