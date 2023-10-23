@@ -12,4 +12,5 @@ public class AddFileTest extends UserHomePageTest{
         addFile.clickCloudBtn();
         addFile.loadImageBtn();
     }
+    //Asserts
 }

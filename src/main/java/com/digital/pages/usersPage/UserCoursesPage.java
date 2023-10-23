@@ -1,7 +1,7 @@
 package com.digital.pages.usersPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
+
 
 //denis
     public class UserCoursesPage extends UserHomePage{

@@ -24,6 +24,10 @@ public class EditFileTest extends UserHomePageTest {
         editFile.clickTable1();
         editFile.deleteClick();
     }
+
+    ////span[text()='kitty.jpg'] - locator
+
+
 //    @Test(priority = 2)
 //    void fileTestAssert(){
 //        editFile.clickName();

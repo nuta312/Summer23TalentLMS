@@ -20,7 +20,6 @@ import com.digital.pages.coursesPage.CreateCoursePage;
 import com.digital.pages.coursesPage.CategoriesPage;
 
 public abstract class BaseTest {
-
     public WebDriver driver;
     public LoginPage loginPage;
     public AccountSettingsPage accountSettingsPage;
@@ -28,9 +27,7 @@ public abstract class BaseTest {
     public UserHomePage userHomePage;
     public UserCoursesPage userCoursesPage;
     public HomePage homePage;
-    public FakeDataProvider fakeDataProvider
-    public UserGroupsPage userGroupsPage;
-    public UserBranchPage userBranchPage;
+    public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
 
 
