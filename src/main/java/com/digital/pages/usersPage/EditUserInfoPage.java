@@ -70,11 +70,11 @@ public class EditUserInfoPage extends UserHomePage {
             else {
             elementActions.clickElement(move2EditedUser);
             }
-                if (clickEditedUser.getAttribute("title").equals("J. Torphy (admin)")){
-            elementActions.clickElement(click2EditedUser);}
-                else {
-                    elementActions.clickElement(clickEditedUser);
-                }
+//                if (clickEditedUser.getAttribute("title").equals("J. Torphy (admin)")){
+//            elementActions.clickElement(click2EditedUser);}
+//                else {
+//                    elementActions.clickElement(clickEditedUser);
+//                }
             return this;
     }
 

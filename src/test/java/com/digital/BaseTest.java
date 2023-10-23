@@ -8,13 +8,7 @@ import com.digital.pages.accountSettingsPage.AccountHomePage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
-<<<<<<< HEAD
 import com.digital.pages.usersPage.EditUserInfoPage;
-import com.digital.pages.usersPage.UserCoursesPage;
-import com.digital.pages.usersPage.UserHomePage;
-import com.digital.pages.usersPage.components.CheckTableOptions;
-=======
->>>>>>> master
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
