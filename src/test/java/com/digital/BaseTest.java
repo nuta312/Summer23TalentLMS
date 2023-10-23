@@ -23,6 +23,7 @@ public abstract class BaseTest {
     public HomePage homePage;
     public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
+   public EditFile editFile;
 
 
     @BeforeClass(alwaysRun = true)
@@ -35,6 +36,7 @@ public abstract class BaseTest {
         fakeDataProvider = new FakeDataProvider();
         userCoursesPage = new UserCoursesPage();
         categoriesPage = new CategoriesPage();
+        editFile= new EditFile();
     }
 
 //    @AfterClass(alwaysRun = true)

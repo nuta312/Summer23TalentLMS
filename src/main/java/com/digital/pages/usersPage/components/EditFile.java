@@ -29,9 +29,9 @@ public class EditFile extends FilesPage {
     public WebElement clickEditInTableFile;
     @FindBy(xpath ="//tr[@class='odd'][1]//i[@title='Delete']" )
     public WebElement clickDeleteInTableFile;
-    @FindBy(xpath = "//*[@id=\"preview_modal\"]/div[1]/h3")
+    @FindBy(xpath = "//*[@id='preview_modal']/div[1]/h3")
     public WebElement resultPictureName;
-    @FindBy(xpath = "//*[@id=\"preview_modal\"]/div[1]/a")
+    @FindBy(xpath = "//*[@id='preview_modal']/div/a[@class='close']")
     public WebElement close;
     @FindBy (id = "//*[@id=\"renameFileName\"]")
     public WebElement resultEditName;
@@ -45,16 +45,18 @@ public class EditFile extends FilesPage {
     public WebElement navigateOnEditeWindow;
     @FindBy(xpath= "//input[@name='submit_rename_file']")
     public WebElement clickUpdateBtmInputEdit;
-    @FindBy(xpath = "//*[@id=\"tl-rename-file-form\"]/div[4]")
-    public WebElement nextUpdateAndCansel;
-    @FindBy(id = "//*[@id=\"tl-modal-body\"]")
+    @FindBy(xpath = "//div[1]/h3[text()='Edit file']")
+    public WebElement editFileTExt;
+    @FindBy(xpath = "//*[@id='tl-confirm']/div[1]/h3[text()='Delete file?']")
     public WebElement textInDelete;
     @FindBy(xpath = "//*[@id=\"tl-hide-rename-file-modal\"]")
     public WebElement clickCanselInputEdit;
     @FindBy(xpath = "//*[@id=\"tl-confirm-submit\"]")
     public WebElement deleteBTM;
-    @FindBy (xpath = "//*[text()='Cancel']")
+    @FindBy (xpath = "//*[@id='tl-confirm']/div[3]/a[text()='Cancel']")
     public WebElement canselInDelete;
+    @FindBy (xpath = "//*[@id='tl-confirm']/div[1]/a[@class='close']")
+    public WebElement closeInDelete;
 
     /**
      * методы для вызова.
@@ -90,16 +92,20 @@ public class EditFile extends FilesPage {
     public EditFile clickEdit() {
         elementActions.pause(2000);
         elementActions.moveToElement(clickEditInTableFile).clickElement(clickEditInTableFile);
-        editTexte = nextUpdateAndCansel.getAttribute("innerText");
         elementActions.clickElement(navigateOnEditeWindow);
+        editTexte = editFileTExt.getAttribute("innerText");
         elementActions.clickElement(clickUpdateBtmInputEdit);
         return this;
     }
     public  String textUpdate;
     public EditFile deleteClick() {
         elementActions.pause(1000);
-        elementActions.clickElement(clickDeleteInTableFile).navigateBack();
+        elementActions.clickByJS(clickDeleteInTableFile);
         textUpdate = textInDelete.getAttribute("innerText");
+        return this;
+    }
+    public EditFile closeDelete(){
+        elementActions.clickByJS(closeInDelete);
         return this;
     }
 
