@@ -74,9 +74,9 @@ public class UserCoursesPage extends UserHomePage {
     }
 
     public UserCoursesPage clickMassActions1() {
+        elementActions.pause(2000);
         elementActions.moveToElement(massActions1);
         elementActions.waitElementToBeVisible(massActions1);
-        elementActions.waitElementToBeClickable(massActions1);
         massActionsActualText = String.valueOf(massActions1.isDisplayed());
         elementActions.clickByJS(massActions1);
         return this;
