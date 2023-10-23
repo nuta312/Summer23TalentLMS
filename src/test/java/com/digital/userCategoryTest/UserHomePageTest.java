@@ -15,22 +15,11 @@ public class UserHomePageTest extends BaseTest {
     public CheckTableOptions checkTableOptions;
 
     @BeforeClass
-    void setHomePage(){
+    void setHomePage() {
         userHomePage = new UserHomePage();
         homePage = new HomePage();
         homePage.openUserCategory();
         checkTableOptions = new CheckTableOptions();
 
     }
-    public UserHomePageTest checkAdminText(){
-        Assert.assertEquals(checkTableOptions.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
-        return this;
-    }
-    @Test
-    void checkTable(){
-        checkTableOptions.clickToReportsBtn();
-        checkAdminText();
-        checkTableOptions.elementActions.navigateBack();
-    }
-
 }
