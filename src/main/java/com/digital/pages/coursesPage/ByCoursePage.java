@@ -6,16 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 public class ByCoursePage extends BasePage {
-
-    @FindBy(id = "grid_marketplace_filter")
+    @FindBy(xpath = "//input[@placeholder='Search courses']")
     public WebElement searchCourse;
-
     @FindBy(xpath = "//div[@class='dropdown tl-grid-marketplace-sorting-wrapper pull-right hidden-phone']")
     public WebElement name;
-
     @FindBy(xpath = "//div[@class='dropdown tl-grid-course-library-language-wrapper pull-right hidden-phone']")
     public WebElement english;
-
     @FindBy(xpath = "//a[@title='Business Skills (168)']")
     public WebElement businessSkills;
     @FindBy(xpath = "//a[@title='Human Resources (88)']")
@@ -30,125 +26,119 @@ public class ByCoursePage extends BasePage {
     public WebElement salesAndService;
     @FindBy(xpath = "//a[@title='Sector Specific (35)']")
     public WebElement sectorSpecific;
-    @FindBy(xpath = "//a[@title='Technology (61)']" )
+    @FindBy(xpath = "//a[@title='Technology (61)']")
     public WebElement technology;
-
     @FindBy(xpath = "//div[@class='tl-marketplace-info-text']")
     public WebElement howTheCourseStoreWorks;
-    @FindBy(xpath = "(//a[@href='https://nbu111.talentlms.com/marketplace/talentlibrary_index'])[2]")
-    public WebElement byCurse;
     @FindBy(xpath = "(//a[@data-dismiss='modal'])[1]")
     public WebElement close;
-
     @FindBy(xpath = "(//div[@class='tl-bold-link'])[2]")
     public WebElement courses;
     @FindBy(xpath = "//*[text()='Buy courses']")
     public WebElement buyCourses;
-
     @FindBy(xpath = "//a[@id='tl-reset-categories']")
     public WebElement reset;
-    public ByCoursePage resetClickBtn(){
+    @FindBy(xpath = "//div[@id = 'tl-marketplace-modal-info']//h3")
+    public WebElement textAssert1;
+    @FindBy(xpath = "(//div[@title = 'Business Skills / Business Continuity Essentials'])[1]")
+    public WebElement textAssert2;
+    @FindBy(xpath = "(//div[@title = 'Human Resources / Diversity and Inclusion'])[1]")
+    public WebElement textAssert3;
+    @FindBy(xpath = "(//div[@title = 'Leadership / Adaptive Leadership'])[1]")
+    public WebElement textAssert4;
+    @FindBy(xpath = "(//div[@title = 'Personal Development / Career Management'])[1]")
+    public WebElement textAssert5;
+    @FindBy(xpath = "(//div[@title = 'Safety and Compliance / Compliance Essentials'])[1]")
+    public WebElement textAssert6;
+    @FindBy(xpath = "(//div[@title = 'Sales and Service / Customer Service Applied'])[1]")
+    public WebElement textAssert7;
+    @FindBy(xpath = "(//div[@title = 'Sector Specific / HIPAA Compliance Essentials'])[1]")
+    public WebElement textAssert8;
+    @FindBy(xpath = "(//div[@title = 'Technology / Artificial Intelligence Essentials'])[1]")
+    public WebElement textAssert9;
+    @FindBy(xpath = "//a[@data-sortingtype= 'name']")
+    public WebElement assertNameBtn;
+    @FindBy(xpath = "//span[@class= 'tl-current-course-library-language']")
+    public WebElement assertEnglishBtn;
+
+    public ByCoursePage resetClickBtn() {
         elementActions.clickElement(reset);
         return this;
     }
-    public ByCoursePage buyCourseLinkClick(){
+
+    public ByCoursePage buyCourseLinkClick() {
         elementActions.clickElement(buyCourses);
         return this;
     }
-    public ByCoursePage coursesClickBtn(){
+
+    public ByCoursePage coursesClickBtn() {
         elementActions.clickElement(courses);
         return this;
     }
 
-    public ByCoursePage closeClick(){
+    public ByCoursePage closeClick() {
         elementActions.clickElement(close);
-      // Assert.assertEquals(close.getText(),"close element");
         return this;
     }
 
-   public ByCoursePage clickHowTheCourseStoreWorks(){
+    public ByCoursePage clickHowTheCourseStoreWorks() {
         elementActions.clickElement(howTheCourseStoreWorks);
-    // Assert.assertEquals(howTheCourseStoreWorks.getText(),"You have click the button");
-       return this;
-   }
+        return this;
+    }
 
-    public ByCoursePage clickHumanRecources(){
+    public ByCoursePage clickHumanRecources() {
         elementActions.clickByJS(humanResources);
-       // Assert.assertEquals(humanResources.getText(),"You have click human resources");
-
         return this;
     }
-    public ByCoursePage clickLeaderShip()  {
+
+    public ByCoursePage clickLeaderShip() {
         elementActions.clickElement(leaderShip);
-      //  Assert.assertEquals(leaderShip.getText(),"You have click leader ship");
-
         return this;
     }
-    public ByCoursePage clickPersonalDevolopment(){
+
+    public ByCoursePage clickPersonalDevolopment() {
         elementActions.clickElement(personalDevolopment);
-      //  Assert.assertEquals(personalDevolopment.getText(),"you have click personal devolopment");
-
         return this;
     }
+
     public ByCoursePage clickSafetyAndCompliance() {
         elementActions.clickElement(safetyAndCompliance);
-       // Assert.assertEquals(safetyAndCompliance.getText(),"you have click safety and compliance");
-
         return this;
     }
-    public ByCoursePage clickSalesAndService()  {
+
+    public ByCoursePage clickSalesAndService() {
         elementActions.clickElement(salesAndService);
-     // Assert.assertEquals(salesAndService.getText(),"you have click sales and service");
-
         return this;
     }
 
-    public ByCoursePage clickSectorSpecific()  {
+    public ByCoursePage clickSectorSpecific() {
         elementActions.clickElement(sectorSpecific);
-      //  Assert.assertEquals(sectorSpecific.getText(),"you have click sector specific");
-      //  sectorSpecific.click();
-
         return this;
     }
+
     public ByCoursePage clickTechnology() {
         elementActions.clickElement(technology);
-            //    Assert.assertEquals(technology.getText(),"ypu have click tecchnology");
-
-
         return this;
     }
-    public ByCoursePage clickByCourse(){
-        elementActions.clickElement(byCurse);
-       // Assert.assertEquals(byCurse.getText(),"You have click by curse");
+
+    public ByCoursePage clickName() {
+      elementActions.clickElement(name);
 
         return this;
     }
 
-public ByCoursePage clickName(){
-       elementActions.clickElement(name);
+    public ByCoursePage clickEnglish() {
+       elementActions.clickElement(english);
+        return this;
+    }
 
-       // name.click();
-    //Assert.assertEquals(name.getText(),"You are click the NAME");
+    public ByCoursePage writeSearchCourse() {
+        elementActions.writeText(searchCourse, "Java");
+        return this;
+    }
 
-return this;
-}
-public ByCoursePage clickEnglish(){
-        elementActions.clickElement(english);
-      //  Assert.assertEquals(english.getText(),"english");
-
-    return this;
-}
-
-public ByCoursePage writeSearchCourse(){
-        elementActions.moveToElement(searchCourse);
-   // searchCourse.sendKeys();
-    return this;
-}
-public ByCoursePage clickBusinessSkills(){
+    public ByCoursePage clickBusinessSkills() {
         elementActions.clickByJS(businessSkills);
-      //  elementActions.clickElement(businessSkills);
-    //Assert.assertEquals(businessSkills.getText(),"you have click business skills");
-
-    return this;
-}
+        return this;
+    }
 }
