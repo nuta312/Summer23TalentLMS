@@ -32,7 +32,7 @@ public class UserTableTest extends UserHomePageTest {
                 break;
             }
         }
-        Assert.assertTrue(isContained);
+        Assert.assertFalse(isContained);
     }
 
 
