@@ -12,8 +12,8 @@ import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import  com.digital.pages.categoriesPage.CategoriesPage;
 import com.digital.pages.coursesPage.ByCoursePage;
-import com.digital.pages.coursesPage.CategoriesPage;
 
 public abstract class BaseTest {
     public WebDriver driver;
