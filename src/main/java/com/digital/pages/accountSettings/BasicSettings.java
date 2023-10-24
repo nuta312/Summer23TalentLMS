@@ -1,7 +1,9 @@
 
-package com.digital.pages.accountSettings;
+package com.digital.pages.AccountSettings;
+
 
 public class BasicSettings {
+
 
 
 }
