@@ -73,7 +73,7 @@ public class CreateCoursePage extends CreateUserPage {
     public List<WebElement> listLevel;
     @FindBy(xpath = "//input[@name='submit_course']")
     public WebElement saveBtn;
-    @FindBy(xpath = "(//a[@class='tl-tool-tip inputbtn'])[2]")
+    @FindBy(xpath = "//input[@name='avatar[]']")
     public WebElement pictureBtn;
     @FindBy(xpath = "//span[@class='tl-formatted-course-name']")
     public static List<WebElement> newCourse;
@@ -199,9 +199,10 @@ public class CreateCoursePage extends CreateUserPage {
     }
 
     public CreateCoursePage pictureInput() {
-        elementActions.writeText(pictureBtn,"/Users/zhyldyzzheenbaeva/Desktop/123.png" );
+        pictureBtn.sendKeys("/Users/zhyldyzzheenbaeva/Desktop/project.html/Summer23TalentLMS/src/main/resources/java.png");
+//        elementActions.writeText(pictureBtn,"/Users/zhyldyzzheenbaeva/Desktop/123.png" );
 
-      //  elementActions.writeText(pictureBtn, "/Users/zhyldyzzheenbaeva/Desktop/123.png");
+        //  elementActions.writeText(pictureBtn, "/Users/zhyldyzzheenbaeva/Desktop/123.png");
         return this;
     }
 
