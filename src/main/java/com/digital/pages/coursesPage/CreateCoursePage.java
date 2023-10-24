@@ -175,7 +175,6 @@ public class CreateCoursePage extends CreateUserPage {
         actions.dragAndDropBy(moveTheSlider, 100, 0).perform();
         return this;
     }
-
     public CreateCoursePage levelInput(String str) {
 
         elementActions.clickElement(showLevel)
@@ -192,7 +191,6 @@ public class CreateCoursePage extends CreateUserPage {
             return this;
         }
     }
-
     public CreateCoursePage saveBtn() {
         elementActions.clickElement(Driver.getDriver().findElement(By.xpath("//input[@name='submit_course']")));
         return this;
@@ -200,32 +198,6 @@ public class CreateCoursePage extends CreateUserPage {
 
     public CreateCoursePage pictureInput() {
         pictureBtn.sendKeys("/Users/zhyldyzzheenbaeva/Desktop/project.html/Summer23TalentLMS/src/main/resources/java.png");
-//        elementActions.writeText(pictureBtn,"/Users/zhyldyzzheenbaeva/Desktop/123.png" );
-
-        //  elementActions.writeText(pictureBtn, "/Users/zhyldyzzheenbaeva/Desktop/123.png");
         return this;
     }
-
-
-// Отправить путь к файлу
-    // fileInput.sendKeys("java.png");
-//        Driver.getDriver().getPageSource();
-//        try {
-//            Robot robot = new Robot();
-//            // Ввести путь к файлу и нажать Enter
-//            String filePath = "project.html/Summer23TalentLMS/src/main/resources/java.png";
-//            for (char c : filePath.toCharArray()) {
-//                robot.keyPress(KeyEvent.getExtendedKeyCodeForChar(c));
-//                robot.keyRelease(KeyEvent.getExtendedKeyCodeForChar(c));
-//            }
-//            robot.keyPress(KeyEvent.VK_ENTER);
-//            robot.keyRelease(KeyEvent.VK_ENTER);
-//        } catch (AWTException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
 }
