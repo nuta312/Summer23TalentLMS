@@ -29,8 +29,6 @@ public class FakeDataProvider {
 
     public static String generateFakeFirstName() {
         return faker.name().firstName();
-
-
     }
 
     public static String generateFakeLastName() {
@@ -53,6 +51,10 @@ public class FakeDataProvider {
         return faker.address().streetName() + " " + faker.address().streetAddressNumber();
     }
 
+    public static String generateFakeUserName(){
+        return faker.name().username();
+    }
+
     public static String generateStrongPassword() {
         String upperCase = RandomStringUtils.randomAlphabetic(1).toUpperCase(); // Минимум 1 заглавная буква
         String lowerCase = RandomStringUtils.randomAlphabetic(1).toLowerCase(); // Минимум 1 строчная буква
@@ -61,7 +63,6 @@ public class FakeDataProvider {
         String password = upperCase + lowerCase + digit + middle;
         // Перемешиваем символы в пароле для большей безопасности
         password = shuffleString(password);
-
         return password;
     }
 
@@ -97,3 +98,4 @@ public class FakeDataProvider {
     }
 
 }
+

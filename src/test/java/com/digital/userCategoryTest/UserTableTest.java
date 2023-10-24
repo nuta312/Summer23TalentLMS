@@ -8,23 +8,23 @@ import java.util.*;
 
 public class UserTableTest extends UserHomePageTest {
 
-    @Test(priority = 1)
+    @Test(priority = 1,groups = "RegressionTests")
     void checkOpenModal() {
         userTable.clickToDeleteBtn();
         Assert.assertTrue(userTable.deleteModal.isEnabled());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2,groups = "SmokeTests")
     void checkTextInModal() {
         Assert.assertTrue(userTable.modalHeaderTitle.getText().contains("Delete User?"));
         Assert.assertTrue(userTable.modalBodyText.getText().contains("Are you sure you want to delete the user "));
         Assert.assertTrue(userTable.cancelModalBtn.getText().contains("Cancel"));
     }
 
-    @Test(priority = 3, description = "this test checks if the user is deleted from the table or if the delete button works.")
+    @Test(priority = 3, description = "this test checks if the user is deleted from the table or if the delete button works.",groups = "SmokeTests")
     void checkForDeleteUserToTable() {
         userTable.deleteModalBtn.click();
-        String expectedString = userTable.userFirstName;
+        String expectedString = userTable.userEmail;
         boolean isContained = false;
         for (String user : userTable.getAllUsersInTable()) {
             if (user.toLowerCase().contains(expectedString)) {
@@ -36,7 +36,7 @@ public class UserTableTest extends UserHomePageTest {
     }
 
 
-    @Test(priority = 4, description = "This test checks if user data is sorted by email after clicking on the email tab.")
+    @Test(priority = 4, description = "This test checks if user data is sorted by email after clicking on the email tab.",groups = "RegressionTests")
     void testSortUserEmailAfterClickToEmailTab() {
         userTable.clickToEmailTab();
         List<String> expectedSort = new LinkedList<>(userTable.listOfUserEmailText);
@@ -48,7 +48,7 @@ public class UserTableTest extends UserHomePageTest {
         Assert.assertEquals(expectedSort, actual);
     }
 
-    @Test(priority = 5, description = "This test checks if user data is sorted by user type after clicking on the usertype tab.")
+    @Test(priority = 5, description = "This test checks if user data is sorted by user type after clicking on the usertype tab.",groups = "RegressionTests")
     void testUserTypeSorting() {
         userTable.clickToUserTypeTab();
         Comparator<String> userTypeComparator = (s1, s2) -> {
@@ -69,7 +69,7 @@ public class UserTableTest extends UserHomePageTest {
         Assert.assertEquals(expectedOrder, actual, "The list is not sorted correctly");
     }
 
-    @Test(priority = 6, description = "This test checks reports btn in user table")
+    @Test(priority = 6, description = "This test checks reports btn in user table",groups = "RegressionTests")
     void checkTable() {
         userTable.clickToReportsBtn();
         Assert.assertEquals(userTable.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
