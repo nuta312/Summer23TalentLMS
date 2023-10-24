@@ -1,10 +1,10 @@
-//package com.digital.AccountSettingTest;
-//
-//import com.digital.pages.accountSettingsPage.EcommercePage;
-//import org.testng.annotations.Test;
-//
-//public class EcommercePageTest extends AccountSettingsEnter {
-//    @Test(priority = 1)
+package com.digital.accountSettingTest;
+
+import com.digital.pages.accountSettingsPage.EcommercePage;
+import org.testng.annotations.Test;
+
+public class EcommercePageTest extends AccountSettingsEnter {
+//    @Test(groups = "regression", priority = 1)
 //    void openOption(){
 //        ecommercePage = new EcommercePage();
 //         ecommercePage.enterEcommerce()
@@ -29,12 +29,12 @@
 ////                 .elementActions.navigateBack()
 //    }
 //
-//    @Test(priority = 2)
+//    @Test(groups = "regression", priority = 2)
 //    void timeLine(){
 //        driver.get("https://nbu111.talentlms.com/reports/timeline/mode:ecommerce");
 //        ecommercePage = new EcommercePage();
 //        ecommercePage.selectRandomDate();
-//    }
+    }
 
 
 

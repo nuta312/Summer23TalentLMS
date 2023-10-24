@@ -5,6 +5,7 @@
         <classes>
             <class name="com.digital.userCategoryTest.CreateUserTest"></class>
             <class name="com.digital.userCategoryTest.EditUserTest"></class>
+            <class name="com.digital.accountSettingTest.BasicSettingsTest"></class>
         </classes>
     </test>
 </suite>
