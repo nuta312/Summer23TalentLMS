@@ -53,6 +53,10 @@ public class FakeDataProvider {
         return faker.address().streetName() + " " + faker.address().streetAddressNumber();
     }
 
+    public static String generateFakeUserName(){
+        return faker.name().username();
+    }
+
     public static String generateStrongPassword() {
         String upperCase = RandomStringUtils.randomAlphabetic(1).toUpperCase(); // Минимум 1 заглавная буква
         String lowerCase = RandomStringUtils.randomAlphabetic(1).toLowerCase(); // Минимум 1 строчная буква

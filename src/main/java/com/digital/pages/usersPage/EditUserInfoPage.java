@@ -25,6 +25,9 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "//input[@name='surname']")
     public WebElement inputLastName;
 
+    @FindBy(xpath = "//input[@name='login']")
+    public WebElement inputUserName;
+
     @FindBy(xpath = "//textarea[@name='description']")
     public WebElement inputBio;
 
@@ -61,6 +64,18 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "//textarea[@class='span6']")
     public WebElement getInputBio;
 
+    @FindBy(xpath = "(//span[@class='help-inline'])[1]")
+    public WebElement popUpWarningFirstName;
+
+    @FindBy(xpath = "(//span[@class='help-inline'])[2]")
+    public WebElement popUpWarningLastName;
+
+    @FindBy(xpath = "(//span[@class='help-inline'])[3]")
+    public WebElement popUpWarningUserName;
+
+    @FindBy(xpath = "//span[text()=\"'Bio' cannot exceed 800 characters\"]")
+    public WebElement popUpWarningBIO;
+
     public EditUserInfoPage clickToEditBtn() {
 
             if (move2EditedUser.getAttribute("innerText").equals("J. Torphy")){
@@ -83,6 +98,11 @@ public class EditUserInfoPage extends UserHomePage {
 
     public EditUserInfoPage editLastName(String txt) {
         elementActions.writeText(inputLastName, txt);
+        return this;
+    }
+
+    public EditUserInfoPage editUserName(String txt){
+        elementActions.writeText(inputUserName, txt);
         return this;
     }
 
