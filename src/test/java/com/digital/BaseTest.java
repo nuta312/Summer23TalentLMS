@@ -4,12 +4,12 @@ import com.digital.driver.Driver;
 import com.digital.helper.ElementActions;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
-<<<<<<< HEAD
 
-=======
+
+
 import com.digital.pages.accountSettingsPage.AccountHomePage;
 import com.digital.pages.usersPage.UserHomePage;
->>>>>>> master
+
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.pages.usersPage.EditUserInfoPage;
@@ -17,22 +17,21 @@ import com.digital.utils.FakeDataProvider;
 
 import com.digital.pages.accountSettings.BasicSettings;
 import com.digital.pages.usersPage.UserHomePage;
-import com.digital.pages.usersPage.components.CheckTableOptions;
+
 import com.fasterxml.jackson.databind.cfg.BaseSettings;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import com.digital.pages.coursesPage.ByCoursePage;
 import com.digital.pages.coursesPage.CategoriesPage;
 
 public abstract class BaseTest {
-<<<<<<< HEAD
+
 
 
     public BasicSettings basicSettings;
 
-=======
->>>>>>> master
     public WebDriver driver;
     public LoginPage loginPage;
     public AccountSettingsPage accountSettingsPage;

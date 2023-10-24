@@ -1,4 +1,4 @@
-package com.digital.accountSettingTest;
+package com.digital.AccountSettingTest;
 
 import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
 import org.testng.annotations.Test;

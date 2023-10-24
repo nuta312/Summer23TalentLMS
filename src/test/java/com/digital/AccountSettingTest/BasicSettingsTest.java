@@ -4,7 +4,8 @@ import com.digital.helper.ElementActions;
 import com.digital.pages.accountSettingsPage.BasicSettings;
 import org.testng.annotations.Test;
 
-public class BasicSettingsTest {
+
+public class BasicSettingsTest extends AccountSettingsEnter {
     @Test(priority = 1)
     void fillUpTheSiteTest() {
         BasicSettings basicSettings = new BasicSettings();
