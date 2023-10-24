@@ -47,6 +47,7 @@ public class ElementActions {
 
     public ElementActions writeText(WebElement element, String txt) {
         waitElementToBeVisible(element);
+        element.clear();
         element.sendKeys(txt);
         return this;
     }
@@ -209,5 +210,17 @@ public class ElementActions {
             e.printStackTrace();
         }
     }
+    public void makeElementVisible(WebElement element) {
+        String script = "arguments[0].style.left = '0px';" +
+                "arguments[0].style.zIndex = '1';" +
+                "arguments[0].style.opacity = '1';" +
+                "arguments[0].style.visibility = 'visible';";
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript(script, element);
+    }
+
+
+
+
 
 }
