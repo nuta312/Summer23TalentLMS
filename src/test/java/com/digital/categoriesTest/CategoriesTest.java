@@ -1,11 +1,11 @@
 package com.digital.categoriesTest;
 
+import com.digital.CoursesCategoriesBaseTest;
 import com.digital.config.ConfigReader;
-import com.digital.coursesTest.addCoursesTest.CoursesHomePageTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CategoriesTest extends CoursesHomePageTest {
+public class CategoriesTest extends CoursesCategoriesBaseTest {
     @Test(priority = 1)
     void testClickBtnAddCategory() {
         driver.get(ConfigReader.getProperty("CATEGORY_URL"));

@@ -1,5 +1,4 @@
 package com.digital;
-
 import com.digital.config.ConfigReader;
 import com.digital.driver.Driver;
 import com.digital.helper.ElementActions;
@@ -14,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import  com.digital.pages.categoriesPage.CategoriesPage;
+import com.digital.pages.coursesPage.ByCoursePage;
 
 public abstract class BaseTest {
     public WebDriver driver;
@@ -26,7 +26,7 @@ public abstract class BaseTest {
     public CategoriesPage categoriesPage;
     public AccountHomePage accountHomePage;
     public ElementActions elementActions;
-
+    public ByCoursePage byCoursePage;
 
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
@@ -36,10 +36,10 @@ public abstract class BaseTest {
         loginPage.logIn();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
+        byCoursePage = new ByCoursePage();
         categoriesPage = new CategoriesPage();
         accountHomePage= new AccountHomePage();
         elementActions = new ElementActions();
-
     }
 
     @AfterClass(alwaysRun = true)
