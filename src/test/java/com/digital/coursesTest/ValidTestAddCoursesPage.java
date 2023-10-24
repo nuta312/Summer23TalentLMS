@@ -5,15 +5,17 @@ import com.digital.CoursesCategoriesBaseTest;
 import com.digital.pages.coursesPage.CreateCoursePage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.awt.*;
+import java.io.FileNotFoundException;
 
 public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
     @Test (priority = 0, description = "This is test meets all parameters")
-    public void allMethodsValid() throws AWTException {
+    public void allMethodsValid() throws AWTException, FileNotFoundException {
         driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
-        String generatedBio = FakeDataProvider.generateLongText(200);
+        String generatedBio = FakeDataProvider.generateLongText(50);
         String nameCourse = "Java";
         createCoursePage.nameInput(nameCourse)
                 .choosyCategory("it")
@@ -27,23 +29,19 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                // .pictureInput()
+                 .pictureInput()
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
-        try {
-            for (WebElement val : CreateCoursePage.newCourse) {
-                if (val.getText().contains(nameCourse)) {
-                }
-            }
-        } catch (RuntimeException exception) {
-        }
+            Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+            System.out.println("prowel");
+
     }
 
     @Test (priority = 1, description = "This test checks the ability to enter the name of the int")
     public void nameIntValidTest() {
         driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
         String nameCourse = "55";
-        String generatedBio = FakeDataProvider.generateLongText(100);
+        String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
                 .choosyCategory("it")
                 .descriptionInput(generatedBio)
@@ -56,7 +54,7 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                //  .pictureInput()
+                .pictureInput()
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
         try {
@@ -72,7 +70,7 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
     public void nameSymbolValidTest() {
         driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
         String nameCourse = "!@#$%^&*(";
-        String generatedBio = FakeDataProvider.generateLongText(200);
+        String generatedBio = FakeDataProvider.generateLongText(150);
         createCoursePage.nameInput(nameCourse)
                 .choosyCategory("it")
                 .descriptionInput(generatedBio)

@@ -16,7 +16,7 @@ import java.util.Random;
 
 import static org.testng.AssertJUnit.assertTrue;
 
-public class BasicSettings extends AccountSettingsPage {
+public class BasicSettings extends AccountSettingsTest {
 
     Actions actions = new Actions(Driver.getDriver());
 

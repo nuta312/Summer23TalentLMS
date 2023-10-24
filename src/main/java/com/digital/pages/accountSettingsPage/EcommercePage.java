@@ -1,15 +1,13 @@
 package com.digital.pages.accountSettingsPage;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 import java.util.List;
 
 
-public class EcommercePage extends AccountSettingsPage{
+public class EcommercePage extends AccountSettingsTest {
 
     @FindBy(xpath="//li/a[@href='https://nbu111.talentlms.com/account/ecommerce_index']")
     public WebElement enterEcommerce;
