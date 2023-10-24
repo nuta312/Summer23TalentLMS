@@ -13,6 +13,7 @@ import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import com.digital.pages.coursesPage.ByCoursePage;
 import com.digital.pages.coursesPage.CategoriesPage;
 
 public abstract class BaseTest {
@@ -22,14 +23,11 @@ public abstract class BaseTest {
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
     public HomePage homePage;
-    public EditUserInfoPage editUserInfoPage;
-
     public FakeDataProvider fakeDataProvider;
     public CategoriesPage categoriesPage;
     public AccountHomePage accountHomePage;
     public ElementActions elementActions;
-
-
+    public ByCoursePage byCoursePage;
 
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
@@ -37,13 +35,12 @@ public abstract class BaseTest {
         loginPage = new LoginPage();
         driver.get(ConfigReader.getProperty("BASE_URL"));
         loginPage.logIn();
-        editUserInfoPage = new EditUserInfoPage();
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
+        byCoursePage = new ByCoursePage();
         categoriesPage = new CategoriesPage();
         accountHomePage= new AccountHomePage();
         elementActions = new ElementActions();
-
     }
 
     @AfterClass(alwaysRun = true)

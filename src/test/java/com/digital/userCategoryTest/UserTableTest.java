@@ -24,7 +24,7 @@ public class UserTableTest extends UserHomePageTest {
     @Test(priority = 3, description = "this test checks if the user is deleted from the table or if the delete button works.")
     void checkForDeleteUserToTable() {
         userTable.deleteModalBtn.click();
-        String expectedString = userTable.userFirstName;
+        String expectedString = userTable.userEmail;
         boolean isContained = false;
         for (String user : userTable.getAllUsersInTable()) {
             if (user.toLowerCase().contains(expectedString)) {
