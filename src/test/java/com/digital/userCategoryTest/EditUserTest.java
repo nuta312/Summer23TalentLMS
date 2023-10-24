@@ -1,12 +1,18 @@
 package com.digital.userCategoryTest;
+import com.digital.pages.HomePage;
+import com.digital.pages.usersPage.EditUserInfoPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EditUserTest extends UserHomePageTest{
     @Test(groups = "SmokeTests")
     void editAndAssertUserInfo() throws InterruptedException {
-        String generatedFirstname = fakeDataProvider.generateFakeFirstName();
-        String generateLastName = fakeDataProvider.generateFakeLastName();
+        homePage = new HomePage();
+        homePage.openUserCategory();
+        editUserInfoPage = new EditUserInfoPage();
+        String fakeFirstName = fakeDataProvider.generateFakeFirstName();
+        String fakeLastName = fakeDataProvider.generateFakeLastName();
+        String fakeUserName = fakeDataProvider.generateFakeUserName();
         String BIO = "Вы помните,\n" +
                 "Вы всё, конечно, помните,\n" +
                 "Как я стоял,\n" +
@@ -106,10 +112,12 @@ public class EditUserTest extends UserHomePageTest{
                 "Вас помнящий всегда\n" +
                 "Знакомый ваш\n" +
                 "Сергей Есенин.";
+
         editUserInfoPage
                 .clickToEditBtn()
-                .editFirstName(generatedFirstname)
-                .editLastName(generateLastName)
+                .editFirstName(fakeFirstName)
+                .editLastName(fakeLastName)
+                .editUserName(fakeUserName)
                 .editBio(BIO)
                 .timeZoneChosen()
                 .timeZoneSelect()
@@ -120,8 +128,8 @@ public class EditUserTest extends UserHomePageTest{
                 .clickExcludeCheckBox()
                 .updateBtn();
 
-        Assert.assertEquals(editUserInfoPage.firsName.getAttribute("value"), generatedFirstname);
-        Assert.assertEquals(editUserInfoPage.lastName.getAttribute("value"), generateLastName);
+        Assert.assertEquals(editUserInfoPage.firsName.getAttribute("value"), fakeFirstName);
+        Assert.assertEquals(editUserInfoPage.lastName.getAttribute("value"), fakeLastName);
 //        Assert.assertEquals(editUserInfoPage.getInputBio.getAttribute("innerText"), BIO);
     }
 }
