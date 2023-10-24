@@ -1,5 +1,6 @@
 package com.digital.userCategoryTest;
 
+import com.digital.BaseTest;
 import com.digital.models.User;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.function.Consumer;
 
 public class CreateUserTest extends UserHomePageTest {
-    @Test(priority = 1)
+    @Test(priority = 1,groups = "SmokeTests")
     void userAddTest() {
         fakeDataProvider = new FakeDataProvider();
         User user = fakeDataProvider.createFakeUser();
@@ -31,7 +32,7 @@ public class CreateUserTest extends UserHomePageTest {
                 .getAllUsersInTable();
     }
 
-    @Test(priority = 2, description = "This test verifies if a new user is added to the table")
+    @Test(priority = 2, description = "This test verifies if a new user is added to the table",groups = "SmokeTests")
     void checkForAddingUserToTable() {
         String expectedString = (createUser.expectedUserInfo.get(2));
         boolean isContained = false;
@@ -44,22 +45,22 @@ public class CreateUserTest extends UserHomePageTest {
         Assert.assertTrue(isContained);
     }
 
-    @Test(priority = 3, description = "This test checks if the active input is selected")
+    @Test(priority = 3, description = "This test checks if the active input is selected", groups = "RegressionTests")
     void checkActiveInputIsSelected() {
         Assert.assertFalse(createUser.isActiveInputSelected);
     }
 
-    @Test(priority = 4, description = "This test checks if the exludeFromEmail input is selected")
+    @Test(priority = 4, description = "This test checks if the exludeFromEmail input is selected", groups = "RegressionTests")
     void checkExludeFromEmailInputIsSelected() {
         Assert.assertTrue(createUser.isExludeFromEmailInputSelected);
     }
 
-    @Test(priority = 5, description = "This test checks if the deactive input is displayed")
+    @Test(priority = 5, description = "This test checks if the deactive input is displayed",groups = "RegressionTests")
     void checkDisplayedDeactiveInput() {
         Assert.assertFalse(createUser.isDeactiveInputDisplayed());
     }
 
-    @Test(priority = 6, description = "This test checks validation for empty fields")
+    @Test(priority = 6, description = "This test checks validation for empty fields",groups = "SmokeTests")
     void checkEmptyFieldValidation() {
         driver.get("https://nbu111.talentlms.com/user/create");
         checkFieldValidation(createUser.firstNameInputError, "'First name' is required", createUser::fillUpFirstNameInput);
@@ -78,7 +79,7 @@ public class CreateUserTest extends UserHomePageTest {
         return errorElement.isDisplayed() && errorElement.getText().contains(expectedErrorMessage);
     }
 
-    @Test(priority = 7, description = "This test checks validation for limit characters fields")
+    @Test(priority = 7, description = "This test checks validation for limit characters fields",groups = "SmokeTests")
     void checkInputsCharactersLimit() {
         driver.get("https://nbu111.talentlms.com/user/create");
         checkCharactersLimitValidationMessage(createUser.firstNameInputError, "'First name' cannot exceed 50 characters", createUser::fillUpFirstNameInput);

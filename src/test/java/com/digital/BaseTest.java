@@ -5,6 +5,7 @@ import com.digital.helper.ElementActions;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
 import com.digital.pages.accountSettingsPage.AccountHomePage;
+import com.digital.pages.usersPage.CreateUserPage;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
@@ -28,6 +29,7 @@ public abstract class BaseTest {
     public AccountHomePage accountHomePage;
     public ElementActions elementActions;
     public ByCoursePage byCoursePage;
+
 
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
