@@ -29,7 +29,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                     .selectDurations("Custom")
                     .moveSlider()
                     .levelInput("20")
-                    //  .pictureInput()
+                    .pictureInput()
                     .saveBtn();
 
         SoftAssert soft= new SoftAssert();
@@ -62,7 +62,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                //  .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.text1.getText().contains("cannot exceed 100 characters"));
         System.out.println(createCoursePage.text1.getText());
@@ -84,7 +84,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                //  .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.exceptionTextOfDescription.getText().contains("cannot exceed 5000 characters"));
         System.out.println(createCoursePage.exceptionTextOfDescription.getText());
@@ -106,7 +106,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                //  .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.exceptionTextOfCoursePrice.getText().contains("This is not a valid"));
         soft.assertAll();
@@ -128,7 +128,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                //  .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.exceptionTextOfCoursePrice.getText().contains("This is not a valid"));
         soft.assertAll();
@@ -155,7 +155,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                // .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.exceptionTextOfCourseCode.getText().contains("cannot exceed 20 characters"));
         System.out.println(createCoursePage.exceptionTextOfCourseCode.getText());
@@ -176,7 +176,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                // .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.exceptionTextOfCapacity.getText().contains("This is not a valid"));
         System.out.println(createCoursePage.exceptionTextOfCapacity.getText());
@@ -198,7 +198,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                // .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.exceptionTextOfCapacity.getText().contains("This is not a valid"));
         System.out.println(createCoursePage.exceptionTextOfCapacity.getText());
@@ -220,7 +220,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                // .pictureInput()
+                .pictureInput()
                 .saveBtn();
         soft.assertTrue(createCoursePage.exceptionTextOfCapacity.getText().contains("This is not a valid"));
         System.out.println(createCoursePage.exceptionTextOfCapacity.getText());
