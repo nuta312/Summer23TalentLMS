@@ -1,4 +1,4 @@
-package com.digital.pages.coursesPage;
+package com.digital.pages.categoriesPage;
 
 import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;

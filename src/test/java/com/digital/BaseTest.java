@@ -9,7 +9,6 @@ import com.digital.pages.accountSettingsPage.BasicSettings;
 import com.digital.pages.usersPage.UserHomePage;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
-import com.digital.pages.usersPage.EditUserInfoPage;
 import com.digital.utils.FakeDataProvider;
 import com.digital.pages.usersPage.UserHomePage;
 import com.fasterxml.jackson.databind.cfg.BaseSettings;
@@ -18,8 +17,10 @@ import com.fasterxml.jackson.databind.cfg.BaseSettings;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import  com.digital.pages.categoriesPage.CategoriesPage;
 import com.digital.pages.coursesPage.ByCoursePage;
 import com.digital.pages.coursesPage.CategoriesPage;
+
 public abstract class BaseTest {
     public BasicSettings basicSettings;
     public WebDriver driver;
@@ -33,6 +34,7 @@ public abstract class BaseTest {
     public AccountHomePage accountHomePage;
     public ElementActions elementActions;
     public ByCoursePage byCoursePage;
+
 
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {

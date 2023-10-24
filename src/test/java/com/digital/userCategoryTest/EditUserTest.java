@@ -3,7 +3,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EditUserTest extends UserHomePageTest{
-    @Test
+    @Test(groups = "SmokeTests")
     void editAndAssertUserInfo() throws InterruptedException {
         String generatedFirstname = fakeDataProvider.generateFakeFirstName();
         String generateLastName = fakeDataProvider.generateFakeLastName();
