@@ -11,8 +11,12 @@ public class AccountSettingsPage extends BasePage {
     public WebElement enter;
 
     public AccountSettingsPage enterAccountSettingsPage(){
+        elementActions.waitElementToBeClickable(enter);
         elementActions.waitElementToBeVisible(enter);
-        elementActions.clickElement(enter);
+        if (enter.isDisplayed() && enter.isEnabled()) {
+            elementActions.scrollToTheElement(enter);
+            elementActions.clickElement(enter);
+        }
         return this;
     }
 }
