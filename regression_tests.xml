@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+    <test name="Regression Tests">
+        <classes>
+            <class name="com.digital.userCategoryTest.UserTableTest"></class>
+            <class name="com.digital.userCategoryTest.CheckDropMenuTest"></class>
+            <class name="com.digital.userCategoryTest.FilesPageTest"></class>
+            <class name="com.digital.userCategoryTest.UserBranchTest"></class>
+            <class name="com.digital.userCategoryTest.UserGroupTest"></class>
+            <class name="com.digital.userCategoryTest.UserCoursesTest"></class>
+        </classes>
+    </test>
+</suite>
+
