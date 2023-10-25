@@ -1,6 +1,6 @@
 package com.digital.accountSettingTest;
 
-import com.digital.pages.accountSettings.Themes;
+import com.digital.pages.accountSettingsPage.Themes;
 import org.testng.annotations.Test;
 
 public class ThemesTest extends AccountSettingsEnter {
@@ -11,6 +11,7 @@ public class ThemesTest extends AccountSettingsEnter {
         Themes themes = new Themes();
         themes.openThemes();
         themes.clickDropDown();
+        themes.chooseTropicZone();
 
 
 

@@ -1,9 +1,6 @@
 package com.digital.accountSettingTest;
 
-import com.digital.pages.accountSettingsPage.EcommercePage;
-import org.testng.annotations.Test;
-
-public class EcommercePageTest extends AccountSettingsEnter {
+public class EcommercePageTest {
 //    @Test(groups = "regression", priority = 1)
 //    void openOption(){
 //        ecommercePage = new EcommercePage();

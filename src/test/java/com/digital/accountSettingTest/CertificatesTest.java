@@ -4,7 +4,7 @@ import com.digital.pages.accountSettingsPage.CertificatesPage;
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 
-public class CertificatesTest extends AccountSettingsEnter{
+public class CertificatesTest {
 
     @Test (groups = "regression")
     @Description ("Testing dropdown list of Certificates")

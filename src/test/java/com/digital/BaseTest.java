@@ -4,7 +4,6 @@ import com.digital.driver.Driver;
 import com.digital.helper.ElementActions;
 import com.digital.pages.HomePage;
 import com.digital.pages.LoginPage;
-import com.digital.pages.accountSettings.Themes;
 import com.digital.pages.accountSettingsPage.AccountHomePage;
 import com.digital.pages.accountSettingsPage.BasicSettings;
 import com.digital.pages.usersPage.UserHomePage;

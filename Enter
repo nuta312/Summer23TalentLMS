@@ -1,0 +1,1560 @@
+[33mcommit e07fa08e84738e57f441ce227fdc465274beb1c2[m[33m ([m[1;36mHEAD -> [m[1;32mnurzat[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 3972f79 214e8b4
+Author: Nur <jeldenovanur@gmail.com>
+Date:   Wed Oct 25 22:05:14 2023 +0600
+
+    Merge branch 'master' into nurzat
+
+[33mcommit 3972f79cb28a8d3822903569aa7fd89ebd194ae7[m
+Merge: c5da3a9 2b78876
+Author: Nur <jeldenovanur@gmail.com>
+Date:   Wed Oct 25 21:55:15 2023 +0600
+
+    chanchetheme
+
+[33mcommit 214e8b470f9e94b6e351a5fcacdcb13c7a2fb9bd[m
+Author: Nur <jeldenovanur@gmail.com>
+Date:   Wed Oct 25 20:04:58 2023 +0600
+
+    themes
+
+[33mcommit 2b788763f409a8921008c1682787ac945c73ba52[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 25 15:21:41 2023 +0600
+
+    fix driver method
+
+[33mcommit fd1f6ee56575c0468af306aa326b773b0205ec2e[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 25 08:31:35 2023 +0600
+
+    feat:added new end2end xml
+
+[33mcommit fed93a6950c0f89401e875db3b705e38f78a745d[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 25 08:24:48 2023 +0600
+
+    fix pom xml
+
+[33mcommit 6c126c6862ac4cbf9fdcf2bef11c6def0d637fc1[m
+Merge: a41a4c5 21837cb
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 25 08:08:39 2023 +0600
+
+    Merge pull request #46 from nuta312/Zhyldyz/create
+    
+    Zhyldyz/create
+
+[33mcommit 21837cb79012e02c512a333221b00ee1f172dd7a[m[33m ([m[1;31morigin/Zhyldyz/create[m[33m)[m
+Merge: 9a0c829 a41a4c5
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 25 08:08:33 2023 +0600
+
+    Merge branch 'master' into Zhyldyz/create
+
+[33mcommit a41a4c5bb1bc1f110a0c980d5325b0830e464bff[m
+Merge: daff9d6 7ec96e4
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 25 08:07:35 2023 +0600
+
+    Merge pull request #47 from nuta312/Kanybek
+    
+    saving changes
+
+[33mcommit 7ec96e4348f853ee6c351874b9000053d27cbbb9[m[33m ([m[1;31morigin/Kanybek[m[33m)[m
+Author: Kanybek <matisakov12@gmail.com>
+Date:   Wed Oct 25 04:17:14 2023 +0600
+
+    saving changes
+
+[33mcommit 9a0c82976ba855a4f2e84706505bd5c2e33fb5cf[m
+Merge: 163a6f4 daff9d6
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Tue Oct 24 22:32:18 2023 +0600
+
+    добавлены смок и регрес тесты
+
+[33mcommit 163a6f4502d60c42a823f4a3452b98ff8d0b0c32[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Tue Oct 24 21:58:55 2023 +0600
+
+    исправлена кнопка фото
+
+[33mcommit 1e6cb31867cc64e9815ece7533be8dd56e54fd24[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Tue Oct 24 21:44:17 2023 +0600
+
+    chernovic
+
+[33mcommit daff9d644df41ed5c43123e75d786742dbf6f6c3[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 21:39:34 2023 +0600
+
+    fix:delete allure results
+
+[33mcommit 3529927c1ef01e792386ffe1afec43dbd6bf6573[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 21:36:43 2023 +0600
+
+    fix:commented talent lms beta test class
+
+[33mcommit 602b322208df54d00e232c2e045145c429b71cf7[m
+Merge: 28dc126 1ee0614
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 21:30:54 2023 +0600
+
+    Merge pull request #45 from nuta312/ulan
+    
+    Ulan
+
+[33mcommit 28dc1269193a349fe1a757bc0d23f9ac62b7d226[m
+Merge: ba65821 0763a37
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 21:30:10 2023 +0600
+
+    Merge pull request #39 from nuta312/Ruslan
+    
+    Ruslan
+
+[33mcommit 1ee061497bad0d304b002c1b307d5efab67b485d[m[33m ([m[1;31morigin/ulan[m[33m)[m
+Merge: a112b47 ba65821
+Author: UlanT <2cformat@gmail.com>
+Date:   Tue Oct 24 18:00:46 2023 +0600
+
+    fix:downloadImage1
+
+[33mcommit a112b47999424260ee00263c6855106252059ab8[m
+Author: UlanT <2cformat@gmail.com>
+Date:   Tue Oct 24 17:39:15 2023 +0600
+
+    fix:downloadImage
+
+[33mcommit ba65821567e00f4ec6d265b6eeb2b33480672264[m
+Merge: d8fa21a 81094a6
+Author: 2cformat <145092663+2cformat@users.noreply.github.com>
+Date:   Tue Oct 24 17:28:27 2023 +0600
+
+    Merge pull request #44 from nuta312/ulan
+    
+    Ulan
+
+[33mcommit d8fa21aa00b672448f81f1d77b9e55fd7f19b399[m
+Merge: ecb772e 423a0b4
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 17:10:08 2023 +0600
+
+    Merge pull request #42 from nuta312/aykerim
+    
+    Aykerim
+
+[33mcommit 423a0b48ab1c0997d6b7b380322af097a5be5cd9[m[33m ([m[1;31morigin/aykerim[m[33m)[m
+Merge: ee44c08 ecb772e
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 17:09:59 2023 +0600
+
+    Merge branch 'master' into aykerim
+
+[33mcommit ecb772e94fcd672f12dbe7409d848d09a51ffdc7[m
+Merge: b046409 28b28ec
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 17:08:29 2023 +0600
+
+    Merge pull request #41 from nuta312/Tahir
+    
+    Tahir
+
+[33mcommit b046409d38f4cf8cabdea657c854851c828f64a0[m
+Merge: a44db25 7351ee9
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 17:07:44 2023 +0600
+
+    Merge pull request #43 from nuta312/aibikeTest
+    
+    Aibike test
+
+[33mcommit 7351ee9f4d71f28b6d43345efd2679a4e14bb388[m[33m ([m[1;31morigin/aibikeTest[m[33m)[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 17:07:11 2023 +0600
+
+    clean
+
+[33mcommit 62116d724d8b6d33ed9acea6376dcc176ca6c691[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 17:05:20 2023 +0600
+
+    feat:added smoke and regression xml files
+
+[33mcommit ee44c0844584678560e8c853517b3ed9ca3794f0[m
+Merge: 5e313b9 cf0872b
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Tue Oct 24 16:04:56 2023 +0600
+
+    fix:basic settings
+
+[33mcommit 5e313b97ca2aa7caa34e5a8322000a7c96cf0670[m
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Tue Oct 24 15:50:51 2023 +0600
+
+    fix:basic sattings
+
+[33mcommit 81094a609fe26140c9b6226b107de25da7ccabc1[m
+Author: UlanT <2cformat@gmail.com>
+Date:   Tue Oct 24 14:47:02 2023 +0600
+
+    fix:openImage
+
+[33mcommit bbdd8711e1aaa2b1c580e60857bce1955230755f[m
+Author: UlanT <2cformat@gmail.com>
+Date:   Tue Oct 24 14:41:13 2023 +0600
+
+    fix:openImage
+
+[33mcommit 28b28ecf0aaf6a03724ffdf498c81b87f4c1ae5d[m[33m ([m[1;31morigin/Tahir[m[33m)[m
+Merge: 0b2d238 a44db25
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Tue Oct 24 11:27:04 2023 +0600
+
+    Added Priority in CategoriesTest
+
+[33mcommit a44db253c2fbb7a9f974a5f71f3c59004b28532a[m
+Merge: 68be996 9a3e672
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 09:57:32 2023 +0600
+
+    Merge pull request #40 from nuta312/fixUserCategory
+    
+    fix test ng path
+
+[33mcommit 9a3e6728da551198fdd33527e0276e798f927744[m[33m ([m[1;31morigin/fixUserCategory[m[33m)[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 09:57:09 2023 +0600
+
+    fix test ng path
+
+[33mcommit c5da3a9496b0e4d0ba0ef828839123848657217a[m[33m ([m[1;31morigin/nurzat[m[33m, [m[1;32mchernovoi[m[33m)[m
+Author: Nur <jeldenovanur@gmail.com>
+Date:   Tue Oct 24 09:05:13 2023 +0600
+
+    themes
+
+[33mcommit 83eed3960a87b20c6a844b86fad90dc4cf81e353[m
+Merge: deed000 68be996
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Tue Oct 24 09:02:26 2023 +0600
+
+    fixx
+
+[33mcommit deed0004b5222bcf2ea4be32e871584dac0994ca[m
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Tue Oct 24 08:50:02 2023 +0600
+
+    fix file
+
+[33mcommit 0763a376ab126e7b3083676323fa3663ffacbf72[m
+Merge: 9b417d6 68be996
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Tue Oct 24 08:46:03 2023 +0600
+
+    deleted conflict files
+
+[33mcommit 9b417d61d393359b481b400295c401142c8fe131[m
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Tue Oct 24 08:40:29 2023 +0600
+
+    added user edit negative test
+
+[33mcommit 68be9966879f0435576796fc789a02382b0b9989[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 08:25:37 2023 +0600
+
+    feat:create new test ng file
+
+[33mcommit 102c5a4ded6679d89f578e468820c05dc3bc98b0[m
+Merge: 7bbf9a2 7a71d0f
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 08:21:27 2023 +0600
+
+    Merge remote-tracking branch 'origin'
+
+[33mcommit 7bbf9a2dc9d62db599be3a60fdf136d3758d9fd8[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 08:20:55 2023 +0600
+
+    fix: uncommented afterclass method
+
+[33mcommit 7a71d0f1adccd279ecf65597364c73baacd22da5[m
+Merge: a8c55e9 e484ba3
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 07:58:13 2023 +0600
+
+    Merge pull request #38 from nuta312/kanzada
+    
+    addedEcommercePage
+
+[33mcommit a8c55e94e58d412e71fe7994bf8293cf1d94edbc[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 07:56:40 2023 +0600
+
+    clean master
+
+[33mcommit e484ba32cc7cc1d02d22402d3f2bcfd870c35552[m[33m ([m[1;31morigin/kanzada[m[33m)[m
+Author: Kanzada <abdykadyrovna2001@gmail.com>
+Date:   Tue Oct 24 07:54:56 2023 +0600
+
+    addedEcommerce
+
+[33mcommit c87059ad218fb774d43718f36fbb97209d26d7e9[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 04:37:44 2023 +0600
+
+    fix:fix user table class
+
+[33mcommit 448370155414f07099e516d48461d080f58970ce[m
+Merge: dce91b7 135da44
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 03:55:07 2023 +0600
+
+    Merge pull request #36 from nuta312/ByCoursePage
+    
+    By course page
+
+[33mcommit 135da44244b7dfd1ad02102523a5d99bc5f7740b[m[33m ([m[1;31morigin/ByCoursePage[m[33m)[m
+Merge: 833ca3c dce91b7
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 03:54:58 2023 +0600
+
+    Merge branch 'master' into ByCoursePage
+
+[33mcommit dce91b79432f73cba64e4f93b24446a9c48e0d0b[m
+Merge: d2f9233 c2f5a40
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 03:54:11 2023 +0600
+
+    Merge pull request #35 from nuta312/Zhyldyz/create
+    
+    Zhyldyz/create
+
+[33mcommit d2f9233be3c3b96cf7fe39cfae6ca856bc41d527[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Tue Oct 24 03:52:09 2023 +0600
+
+    fix:clean ruslans file
+
+[33mcommit 282c5e83ec18ba8e48a469a7e94b6cd55f9c6b77[m
+Merge: 85aa3e7 d0dd5fe
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Tue Oct 24 03:41:31 2023 +0600
+
+    Merge pull request #34 from nuta312/Ruslan
+    
+    Ruslan
+
+[33mcommit 833ca3c3072c9d35799b071d422903a6aa39287b[m
+Merge: d87ebe6 85aa3e7
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Tue Oct 24 01:12:37 2023 +0600
+
+    fix: added Buy Course Page
+
+[33mcommit d87ebe6c01a19ab13bd4fa0ead227a479ef7c367[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Tue Oct 24 01:10:17 2023 +0600
+
+    fix: added Buy Course Page
+
+[33mcommit e8631269621b873c76b7061044d6607b89c71da3[m
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Tue Oct 24 00:33:50 2023 +0600
+
+    feature:add basic settings page
+
+[33mcommit c2f5a401a6245a08c5060ce6e27bcd66a5d2d83d[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Mon Oct 23 23:11:06 2023 +0600
+
+    созданы приоритеты и названия тестов
+
+[33mcommit 0b2d238784c652d536f2c3c5e78c339f86b04301[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Mon Oct 23 23:03:29 2023 +0600
+
+    Added Priority in CategoriesTest
+
+[33mcommit 62a748daa2b764035bdf1c8bb7f6691cfb366cd0[m
+Merge: 4c7a6bc 85aa3e7
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Mon Oct 23 23:00:12 2023 +0600
+
+    Added Priority in CategoriesTest
+
+[33mcommit f84a7a724d5631d51d1380dd97c29a4622641282[m
+Merge: 7b8379a 85aa3e7
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Mon Oct 23 22:34:17 2023 +0600
+
+    исправлены папки тестов
+
+[33mcommit 7b8379ab10fa3b4cba7c9afa19c059da81e3db6e[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Mon Oct 23 22:29:49 2023 +0600
+
+    исправлены папки с тестами
+
+[33mcommit d0dd5fe167aba8bd6704fe02f60937b1d31f1a12[m
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Mon Oct 23 21:48:41 2023 +0600
+
+    aaa
+
+[33mcommit 41537ab379b2d15cfc24dc318a06b81ee2cc80da[m
+Merge: c510c2c 85aa3e7
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Mon Oct 23 21:48:03 2023 +0600
+
+    Merge branch 'master' into Ruslan
+
+[33mcommit c510c2cf245037ab403b6378e12c23f013106887[m
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Mon Oct 23 21:44:12 2023 +0600
+
+    added 2 assert
+
+[33mcommit 85aa3e7f600d2174cb668c8fc99c9ccaa5d22d8f[m
+Merge: 660507c 258c7e8
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 21:32:50 2023 +0600
+
+    Merge pull request #33 from nuta312/sergeiDropMenu
+    
+    Feature:addCheckFilterIcon
+
+[33mcommit 258c7e850e7a30a989110672d6cdfbf006860460[m
+Author: Sergey <myphone.kg2@mail.ru>
+Date:   Mon Oct 23 21:19:05 2023 +0300
+
+    Feature:addCheckFilterIcon
+
+[33mcommit 8fd5a1a7049b7bb2343bc16f1dbce518afef53eb[m
+Merge: 60a5dbc 660507c
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Mon Oct 23 21:32:48 2023 +0600
+
+    Deleted all conflickt
+
+[33mcommit 60a5dbcd228db449dd414d66106c93346686c1d7[m
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Mon Oct 23 21:19:36 2023 +0600
+
+    firstCommit
+
+[33mcommit 660507c438469dd93bb370110d925fbc6b40582e[m
+Merge: bd6326f fe5d427
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 20:29:39 2023 +0600
+
+    Merge pull request #31 from nuta312/meervan
+    
+    I added a new AccountHomePageTest class
+
+[33mcommit bd6326f14634e0dd435050db75989274c00e75d7[m
+Merge: 6a6d1ce 6832c5e
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 20:29:00 2023 +0600
+
+    Merge pull request #32 from nuta312/aibikeFixUserCategory
+    
+    feat:change file page and file page tests
+
+[33mcommit 6832c5ebb2f6eccd00a6440f0ce490624cced010[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 20:28:24 2023 +0600
+
+    feat:change file page and file page tests
+
+[33mcommit fe5d427767ce3a0e72707ba978cf5b129af7813a[m
+Author: Meervan <meervan.datkaeva.ch@gmail.com>
+Date:   Mon Oct 23 20:09:42 2023 +0600
+
+    I added a new AccountHomePageTest class
+
+[33mcommit 6a6d1ce86a67f6c2d1ef48b848bbba48ec17baa4[m[33m ([m[1;31morigin/Almaz[m[33m)[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 17:40:51 2023 +0600
+
+    fix:fixed edit file
+
+[33mcommit e4d87b398e0c75f3046850c2b050e04256294090[m
+Merge: c9e7e6e 4f604b1
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 16:12:40 2023 +0600
+
+    Merge pull request #28 from nuta312/tansuluuEditFile
+    
+    Tansuluu edit file
+
+[33mcommit c9e7e6e7c6dd8ab7e6ef6bc28d82995ae9197e29[m
+Merge: 4db5ca3 7005d90
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 16:00:39 2023 +0600
+
+    Merge pull request #30 from nuta312/aibikeCoursesOptions
+    
+    fix:fixed clickmassaction1 method in user courses page
+
+[33mcommit 7005d90cbcd81cb5a969553cc79bd56b8f57cad6[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 15:59:52 2023 +0600
+
+    fix:fixed clickmassaction1 method in user courses page
+
+[33mcommit 4db5ca37f535248139368bdb05fdc2172b4a4e6c[m
+Merge: 23390f7 0523eba
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 15:52:56 2023 +0600
+
+    Merge pull request #29 from nuta312/aibikeCoursesOptions
+    
+    feat:create tests for tabs in user courses page
+
+[33mcommit 0523eba75067acb19f6bb21f27141ef807bb648c[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 15:52:17 2023 +0600
+
+    feat:create tests for tabs in user courses page
+
+[33mcommit 23390f7ef0ec27e763b17336c966c9c5642bc254[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 13:37:38 2023 +0600
+
+    fix:fix sorts by email and user type in user table
+
+[33mcommit 4f604b1d75cca229b672fa793c9843a209da986a[m
+Merge: 230c253 f15c92c
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Mon Oct 23 13:00:24 2023 +0600
+
+    fix:edidFiles Conflict
+
+[33mcommit 230c253bc1d383cbe253e8756c6dc2a240fac86c[m
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Mon Oct 23 12:57:06 2023 +0600
+
+    fix:added asserts
+
+[33mcommit 4c7a6bc51c3ebaa11f28a25692fa7a5df8345bed[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Mon Oct 23 12:55:14 2023 +0600
+
+    Added Assert in CategoriesTest
+
+[33mcommit 5e362af9fda129d1d85828bef54b35baa0860ae1[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Mon Oct 23 12:51:08 2023 +0600
+
+    Added Assert in CategoriesTest
+
+[33mcommit f15c92c13b75a3389ef3fdcceb179300c4e3d978[m
+Merge: a4d9816 7f1b382
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 12:34:41 2023 +0600
+
+    Merge pull request #27 from nuta312/sasha
+    
+    Sasha
+
+[33mcommit 7f1b382f49bbb47557aabd0c0b7625e694fc6482[m
+Merge: 2e43c53 a4d9816
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 12:34:33 2023 +0600
+
+    Merge branch 'master' into sasha
+
+[33mcommit 2e43c53c5705b5f0f746c6abe3b69dfd789fc228[m
+Author: Sasha <udenkosana10gmail.com>
+Date:   Mon Oct 23 12:17:34 2023 +0600
+
+    feature:addedCheckTableOptionsTest
+
+[33mcommit a4d98166ae980480da168271a15f4689ae5e4658[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 10:38:27 2023 +0600
+
+    fix:fixed in denis files
+
+[33mcommit 482fc3b3e5c65ace0a32cfb6551d7935302eeb7b[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 10:14:22 2023 +0600
+
+    fix:fixed in user groups/branchs pages
+
+[33mcommit f80728be29549f2d503b1a182c357bc5fe6c7fdd[m
+Merge: 7a2a060 38f3406
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 10:05:25 2023 +0600
+
+    Merge pull request #26 from nuta312/eliza
+    
+    addedeliza
+
+[33mcommit 38f34060e05183547d6f6079a329eb27bb7c9708[m
+Merge: 3699a2b 7a2a060
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 10:05:18 2023 +0600
+
+    Merge branch 'master' into eliza
+
+[33mcommit 3699a2bd45e949cc5c91fbe9daee38cb3d177f7e[m
+Author: Eliza <saparalieva.eliza2@gmail.com>
+Date:   Mon Oct 23 09:56:34 2023 +0600
+
+    addedeliza
+
+[33mcommit baad1a5954d9128d2c16ab132f966073106b3bd8[m
+Merge: 314f7d3 7a2a060
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Mon Oct 23 09:29:19 2023 +0600
+
+    delet conflict files
+
+[33mcommit 314f7d3d61e3457702bd896cebfd22c7220db5e3[m
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Mon Oct 23 09:26:45 2023 +0600
+
+    add all
+
+[33mcommit c6dac9aabda0f440d4c7e5e4aae870fde6e3e2f7[m
+Author: Sasha <udenkosana10gmail.com>
+Date:   Mon Oct 23 09:16:38 2023 +0600
+
+    feature:addedCheckTableOptions
+
+[33mcommit 7a2a060588dfb79916170e9a1e90f186dd9c01f8[m
+Merge: aa90097 d861cfd
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 08:51:24 2023 +0600
+
+    Merge pull request #24 from nuta312/sergeiDropMenu
+    
+    deletFromUserHomePageTesr
+
+[33mcommit d861cfddcf6d0fcc193451c49e8669dc9393891f[m
+Author: Sergey <myphone.kg2@mail.ru>
+Date:   Mon Oct 23 08:39:10 2023 +0300
+
+    deletFromUserHomePageTesr
+
+[33mcommit aa900972882bbf93a949eca3819b63d4bc2b16db[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Mon Oct 23 08:23:02 2023 +0600
+
+    fix: clean master branch
+
+[33mcommit 9c91c1f3440f7bc3bcd09c9ee6d96ac4390e8f5e[m
+Merge: 303f5eb bbe02f2
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 08:15:56 2023 +0600
+
+    Merge pull request #23 from nuta312/Denis
+    
+    Denis
+
+[33mcommit 303f5ebbce8998a2a92d4c195473fdc08f6b140c[m
+Merge: 395117d 502af5e
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Mon Oct 23 08:15:08 2023 +0600
+
+    Merge pull request #22 from nuta312/Zhyldyz/create
+    
+    Zhyldyz/create
+
+[33mcommit 502af5ec272b467037282c45b5d47ee8c891f39f[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Sun Oct 22 23:03:07 2023 +0600
+
+    feature:checkConflict
+
+[33mcommit 70bd9c6b421d1ab6275321ef1b0aaeb507cd19bf[m
+Merge: 3c82740 395117d
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Sun Oct 22 22:48:02 2023 +0600
+
+    feature :addedNewPackageCoursesHomePage
+
+[33mcommit 3c82740a2143b14eadd93f3d149633a8256ccc75[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Sun Oct 22 22:35:04 2023 +0600
+
+    feature: added checkPage
+
+[33mcommit 68836079bd98486e9bcb34cbfb62fe9958e11357[m
+Merge: 7caa0c6 395117d
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Sun Oct 22 22:18:59 2023 +0600
+
+    fix:added Buy Course Page
+
+[33mcommit 7caa0c60b3aaf6bff9373371d63132914706bf89[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Sun Oct 22 22:16:57 2023 +0600
+
+    fix:added Buy Course Page
+
+[33mcommit bbe02f21817bbbb6fe7265d256f085fc92a6fbc5[m
+Merge: 92dfe30 395117d
+Author: Denis <yugai.denis17@gmail.com>
+Date:   Sun Oct 22 19:08:39 2023 +0600
+
+    added Asserts
+
+[33mcommit 395117da66e803d993417ee1548bd32ca04c950f[m
+Merge: 53590c6 d3f0e90
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sun Oct 22 19:04:54 2023 +0600
+
+    Merge pull request #21 from nuta312/aibikeCheckSortInUserTable
+    
+    Aibike check sort in user table
+
+[33mcommit d3f0e905077b15f13bb0de13d12742011c3c36ee[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Sun Oct 22 19:04:09 2023 +0600
+
+    fix:clean usertable test file
+
+[33mcommit 92dfe304979e865265acbe3e91a9aa37f29e8a82[m
+Author: Denis <yugai.denis17@gmail.com>
+Date:   Sun Oct 22 19:03:55 2023 +0600
+
+    added: Asserts
+
+[33mcommit 6d0f9d8cd20cf752f84cebc57d09aef78d5117e7[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Sun Oct 22 18:55:13 2023 +0600
+
+    feat:check email tab and user type tab in userTable
+
+[33mcommit 53590c6f971417f45906e1d75eb1fb8bd0b15402[m
+Merge: 6b810d5 11e5ef6
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Sun Oct 22 14:25:48 2023 +0600
+
+    fix: changes in BaseTest
+
+[33mcommit 6b810d5d579e2322bc83bb7ea66c132bcc50465e[m
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Sun Oct 22 12:41:26 2023 +0600
+
+    feture:added  comments
+
+[33mcommit ca66b3ecfc813e3875bd28fd52b56203bab2c2be[m
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Sun Oct 22 12:33:32 2023 +0600
+
+    feature:added deleted click
+
+[33mcommit 11e5ef6793ede56ebca8f643f6384a3ff650b780[m
+Merge: 9716636 3ab60fa
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sun Oct 22 10:52:17 2023 +0600
+
+    Merge pull request #17 from nuta312/Zhyldyz/create
+    
+    Zhyldyz/create
+
+[33mcommit 3ab60fafced6f4013363695cc44ee78c2e9c5e62[m
+Merge: 9af95f4 9716636
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sun Oct 22 10:52:09 2023 +0600
+
+    Merge branch 'master' into Zhyldyz/create
+
+[33mcommit 9716636c14633060a7d0b675fecfe6a9c523521c[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Sun Oct 22 10:50:10 2023 +0600
+
+    fix:clean master branch
+
+[33mcommit 4fc0d8b700af80f26ed8b12859058f960084fa9d[m
+Merge: 89c9521 ae7a7d0
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sun Oct 22 10:44:31 2023 +0600
+
+    Merge pull request #19 from nuta312/aidabranch
+    
+    added aidabranch
+
+[33mcommit ae7a7d0d07bbab93ae106c1f559fea923668cfab[m
+Merge: c81159d 89c9521
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sun Oct 22 10:44:23 2023 +0600
+
+    Merge branch 'master' into aidabranch
+
+[33mcommit 89c9521b4e1d8cd332ee207f4b6ffc81bb51cf23[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Sun Oct 22 10:38:57 2023 +0600
+
+    fix:deleted an unnecessary folder
+
+[33mcommit 0e518fd8f345b5cb2b7954846defeb58825b2ad2[m
+Merge: 76e7315 6340534
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sun Oct 22 10:34:39 2023 +0600
+
+    Merge pull request #20 from nuta312/sergeiDropMenuNewUser
+    
+    addChengesToNewCheckBoxAndMassAction
+
+[33mcommit ddc6509e9af108da0a08292759d14c5b984fd8ce[m
+Author: Nur <jeldenovanur@gmail.com>
+Date:   Sun Oct 22 02:57:24 2023 +0600
+
+    themes
+
+[33mcommit 6340534f1d30749a40cdb6328425ab0ef0393f21[m[33m ([m[1;31morigin/sergeiDropMenuNewUser[m[33m)[m
+Author: Sergey <myphone.kg2@mail.ru>
+Date:   Sat Oct 21 20:06:15 2023 +0300
+
+    addChengesToNewCheckBoxAndMassAction
+
+[33mcommit 34ee63ad1be43d7ff9a16c5767316e64653c7c0e[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Sat Oct 21 22:46:50 2023 +0600
+
+    otdeniyeTesti
+
+[33mcommit cf0872bb6827fa223d486d6362f6df8c7b875125[m
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Sat Oct 21 17:41:48 2023 +0600
+
+    addfg
+
+[33mcommit c81159d2c445e9abdc8e252b81343f8ec4b3c3fc[m[33m ([m[1;31morigin/aidabranch[m[33m)[m
+Author: Aida-QA <aida.sadyrkulova85@gmail.com>
+Date:   Sat Oct 21 17:20:04 2023 +0600
+
+    added aidabranch
+
+[33mcommit ab9f29d42a6bdbce0be1ecbba35b6ef1e273146e[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Sat Oct 21 15:53:32 2023 +0600
+
+    added buy course page
+
+[33mcommit 76e7315319c395e26c8520ec92cb48fad95e8d40[m
+Merge: 425b497 58d0166
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sat Oct 21 14:58:11 2023 +0600
+
+    Merge pull request #18 from nuta312/aibikeCheckDeleteUserFromTable
+    
+    Aibike check delete user from table
+
+[33mcommit 58d01664bb095b55c6b58912f3f1286f88a2d8dc[m[33m ([m[1;31morigin/aibikeCheckDeleteUserFromTable[m[33m)[m
+Merge: 8d3d5e9 425b497
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Sat Oct 21 14:56:12 2023 +0600
+
+    Merge remote-tracking branch 'origin' into aibikeCheckDeleteUserFromTable
+
+[33mcommit 8d3d5e92a56e361fbf301e9e643f51365d11a38f[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Sat Oct 21 14:56:03 2023 +0600
+
+    feat: added click on userEmail tab and check email sorting in the userTable
+
+[33mcommit 425b4972bdadd0227d145fb992ecc8e7ebffa8ad[m
+Merge: 56d60fd b024071
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Sat Oct 21 13:00:34 2023 +0600
+
+    Merge pull request #13 from nuta312/Tahir
+    
+    Tahir
+
+[33mcommit 9af95f4c2327e1a6489ab80f285f432f2f571909[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Fri Oct 20 23:37:28 2023 +0600
+
+    точный вариант с исправлением
+
+[33mcommit c8224bc197be1f7274c844248ecd9aaa7f68c831[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Fri Oct 20 23:28:39 2023 +0600
+
+    исправлен
+
+[33mcommit a4a1067e7271c745cf55a159a3e6e354c64787b3[m
+Merge: 73b9711 56d60fd
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Fri Oct 20 22:59:24 2023 +0600
+
+    fixElementActions
+
+[33mcommit 73b9711875152c36a237a1bcb1770ac1bd9f962b[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Fri Oct 20 22:50:16 2023 +0600
+
+    createCourses
+
+[33mcommit b024071238262ead4123ad42075bac9bab60e569[m
+Merge: 2a3d65f d372e59
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Fri Oct 20 21:20:16 2023 +0600
+
+    fix:BaseTest and testng
+
+[33mcommit 56d60fd955aaa92b9d9770c162f2f04aa681a9a4[m
+Merge: d372e59 42546a1
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Fri Oct 20 21:09:13 2023 +0600
+
+    Merge pull request #16 from nuta312/aibikeCheckDeleteUserFromTable
+    
+    feat:automated deletion of a user from a table
+
+[33mcommit 42546a1037efb87c90fc16f9f050350e2e7799bd[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Fri Oct 20 21:08:11 2023 +0600
+
+    feat:automated deletion of a user from a table
+
+[33mcommit d372e5903e86475b35b4215729ccfb21a30d2205[m
+Merge: 5750df4 491ec1f
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Fri Oct 20 19:42:42 2023 +0600
+
+    Merge pull request #15 from nuta312/sergeiDropMenuNewUser
+    
+    addNewToDropMenu
+
+[33mcommit 491ec1f6ff64de6b0eafd904ffc71cef71748352[m
+Author: Sergey <myphone.kg2@mail.ru>
+Date:   Fri Oct 20 19:38:55 2023 +0300
+
+    addNewToDropMenu
+
+[33mcommit 5750df4817ff9f7f5d7ab3ed6376f893246ea12e[m
+Merge: c5f2545 1c483a6
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Fri Oct 20 17:36:19 2023 +0600
+
+    Merge pull request #14 from nuta312/aibikeCreateUser
+    
+    Aibike create user
+
+[33mcommit 1c483a6ce69668d5c5f80706919250399065788f[m[33m ([m[1;31morigin/aibikeCreateUser[m[33m)[m
+Merge: 157e8f2 c5f2545
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Fri Oct 20 17:35:33 2023 +0600
+
+    Merge remote-tracking branch 'origin' into aibikeCreateUser
+
+[33mcommit 157e8f28f1757321ac2511756434c362403f9fca[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Fri Oct 20 17:34:56 2023 +0600
+
+    feat: added validate inputs methods to add user page
+
+[33mcommit 70cb1e4836e540e859a9143f4057b23f12fd959e[m
+Merge: d18fcec c5f2545
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Fri Oct 20 12:51:57 2023 +0600
+
+    fix:conflict With userHOmePage
+
+[33mcommit d18fcec03720dfca53ceb126638da626c6882042[m
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Fri Oct 20 12:39:36 2023 +0600
+
+    feature:added deleteClick
+
+[33mcommit 2a3d65f7919acc39623a8bf61228a8e6025a6f44[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Fri Oct 20 12:24:18 2023 +0600
+
+    added listener allure
+
+[33mcommit d61659bd0b0a7e24cdcf17e3dc861a908a7d6f09[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Fri Oct 20 11:30:32 2023 +0600
+
+    Categories rework
+
+[33mcommit 05bc5143607016ec473915aa6dc76f196a047171[m
+Merge: 49d69ff c5f2545
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Fri Oct 20 10:22:14 2023 +0600
+
+    all changes added
+
+[33mcommit 9c0780cd76c9223d9cb0836e5ab9c79415d7450d[m
+Merge: afac2d7 c5f2545
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Fri Oct 20 10:21:28 2023 +0600
+
+    added buy pages
+
+[33mcommit afac2d7e55a56bce705988c12757417c09a2f236[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Fri Oct 20 10:17:59 2023 +0600
+
+    added buy course page
+
+[33mcommit 49d69ff442b6676edb24fafb85884f1f04de09f9[m
+Author: Ruslan <143115412+Ruslan-NOMAD@users.noreply.github.com>
+Date:   Fri Oct 20 10:13:26 2023 +0600
+
+    Feature: added editUserPage & editUserTest
+
+[33mcommit c5f2545acc553bf9b7f0e4e655707981cd685ac4[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Fri Oct 20 10:10:35 2023 +0600
+
+    feat: added new pause method in helper pack
+
+[33mcommit 1e86c36cce6e21feca35c0dc336d298c339d174e[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Fri Oct 20 10:02:37 2023 +0600
+
+    Categories finish
+
+[33mcommit 55e2ba9b3cc5b2f12afbed7d33b850eb40ffceb0[m
+Author: Denis <yugai.denis17@gmail.com>
+Date:   Fri Oct 20 09:21:11 2023 +0600
+
+    Merge changes from origin/master
+
+[33mcommit a9262dfb954bfd43177571bbe55e7cec48320484[m
+Merge: b3fe835 a39cae9
+Author: Denis <yugai.denis17@gmail.com>
+Date:   Fri Oct 20 09:15:35 2023 +0600
+
+    Merge changes from origin/master
+
+[33mcommit a39cae9eaa489492f7f4924c0633cdb5eba9ba60[m
+Merge: 0678fe5 96c94d2
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Fri Oct 20 08:51:24 2023 +0600
+
+    Merge pull request #12 from nuta312/sergeiDropMenu
+    
+    addCheckDropMenu
+
+[33mcommit 96c94d2a24c84957136ac645b8b75971644ca189[m[33m ([m[1;31morigin/sergeiDropMenu[m[33m)[m
+Author: Sergey <myphone.kg2@mail.ru>
+Date:   Fri Oct 20 08:44:30 2023 +0300
+
+    addCheckDropMenu
+
+[33mcommit 0678fe53a457ddbc27e661ce586ebab78941631c[m
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Fri Oct 20 08:13:06 2023 +0600
+
+    Create README.md
+
+[33mcommit 00f8b423f71f0ed1477ca61c02225675fc95091b[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Fri Oct 20 00:10:16 2023 +0600
+
+    feature:addedVideo
+
+[33mcommit 49a509a5642c59163f61282150f561472fc3651b[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Thu Oct 19 23:54:52 2023 +0600
+
+    feature: addedtest
+
+[33mcommit 0ee73cd41897552d0145ae6567daefeac4db7402[m
+Merge: 165aa93 1504e78
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Thu Oct 19 23:50:01 2023 +0600
+
+    feature: addedtest
+
+[33mcommit d4590ae02102c3b0e101dae367992cda307ed50d[m
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Thu Oct 19 23:45:53 2023 +0600
+
+    feature: added test in EditFileTest and added object in UserHome
+
+[33mcommit 1504e78f49f79bf902d5eaa94f4540dc7d6ad1b6[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Thu Oct 19 23:33:29 2023 +0600
+
+    fix:uncommented the @AfterClass method in the base page
+
+[33mcommit 3b334156b466040bf337c4440849d47b1afa5aa6[m
+Merge: 117cc3f d8e9c68
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Thu Oct 19 23:29:24 2023 +0600
+
+    Merge pull request #10 from nuta312/Denis
+    
+    feature: added UserCoursesPage and UserCoursesTest
+
+[33mcommit d8e9c683c48d45b800aa6aff064cc2f3eac6a149[m[33m ([m[1;31morigin/Denis[m[33m)[m
+Merge: 39c4589 117cc3f
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Thu Oct 19 23:27:21 2023 +0600
+
+    Merge branch 'master' into Denis
+
+[33mcommit 117cc3fd33cee90d3b346797713a9bffd4915428[m
+Merge: 765abfd 2cfd7b5
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Thu Oct 19 23:25:03 2023 +0600
+
+    Merge pull request #11 from nuta312/aibikeCreateUser
+    
+    Aibike create user
+
+[33mcommit 2cfd7b529cf4e04b34977fc44701708d1c3c70dd[m
+Merge: a043f68 765abfd
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Thu Oct 19 23:23:46 2023 +0600
+
+    Merge remote-tracking branch 'origin' into aibikeCreateUser
+
+[33mcommit a043f689709097677c49e8570e61704d8c376f92[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Thu Oct 19 23:23:31 2023 +0600
+
+    feat:added assert fot checking user in table, assert inputs in addnewuser page
+
+[33mcommit 5a2124eec91d55164d3b49c9b3606531e3fb3e82[m
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Thu Oct 19 23:16:48 2023 +0600
+
+    feature:addPage
+
+[33mcommit 0749ebbf403532b265b155873fd5c416eae7ced4[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 23:13:43 2023 +0600
+
+    Categories finish
+
+[33mcommit 39c4589d8393219540b43cbc889ff7f0c566f9ed[m
+Author: Denis <yugai.denis17@gmail.com>
+Date:   Thu Oct 19 22:50:52 2023 +0600
+
+    feature: added UserCoursesPage and UserCoursesTest
+
+[33mcommit 9164e9af949098216336b17c96a7e9fe1a80856d[m
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Thu Oct 19 21:48:43 2023 +0600
+
+    featch: added editFilesTest
+
+[33mcommit 20b1a3ba2e0e6cb0acb8bd2930cebee9f6b32cb1[m
+Merge: 0cc8679 765abfd
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Thu Oct 19 21:17:42 2023 +0600
+
+    Merge remote-tracking branch 'origin' into tansuluuEditFile
+
+[33mcommit 0cc8679f1c825b5bc86999a57661513674143b5f[m
+Author: tansuluut <tansuluu.totosheva00@gmail.com>
+Date:   Thu Oct 19 21:17:02 2023 +0600
+
+    feature: added editeFileTest
+
+[33mcommit b3fe835fe9fc7071ef6a6eb6dbb39fe00d7791a0[m
+Author: Denis <yugai.denis17@gmail.com>
+Date:   Thu Oct 19 21:01:26 2023 +0600
+
+    delete testclass
+
+[33mcommit d555a87a0de5f86b2234ee39853eaa147d51be20[m
+Author: Aykerim <aika_sony@mail.ru>
+Date:   Thu Oct 19 19:45:40 2023 +0600
+
+    asd
+
+[33mcommit c4c523961369cbf0ce1a5873527e1f06e7c08362[m
+Merge: 253708d 765abfd
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Thu Oct 19 19:44:24 2023 +0600
+
+    Merge branch 'master' into ByCoursePage
+
+[33mcommit 765abfd83e6c28abe38e4584f22b40d0f0edfc3d[m
+Merge: 479b82a 7009d2e
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Thu Oct 19 19:37:50 2023 +0600
+
+    Merge pull request #8 from nuta312/Kanybek
+    
+    feature:addedCommonClassToBeExtendedByChildren
+
+[33mcommit 7009d2ebce37d0a3bfcc468a9befe932a8e461b5[m[33m ([m[1;32mkanybek[m[33m)[m
+Merge: 3f8e37b 479b82a
+Author: Kanybek <matisakov12@gmail.com>
+Date:   Thu Oct 19 19:35:54 2023 +0600
+
+    fix:fixedBaseTestAndBasePage
+
+[33mcommit 253708d12c9ccbd7543f0092dddb6240ea44f377[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Thu Oct 19 19:29:29 2023 +0600
+
+    course page
+
+[33mcommit 5551912cd9a402853692a7007b25b11ccddfe7ed[m[33m ([m[1;31morigin/sasha[m[33m)[m
+Author: Sasha <udenkosana10gmail.com>
+Date:   Thu Oct 19 19:12:53 2023 +0600
+
+    feature:addedCheckTableOptions
+
+[33mcommit 3f8e37b331b5b59d38077a22e881b419234417dd[m
+Author: Kanybek <matisakov12@gmail.com>
+Date:   Thu Oct 19 18:27:25 2023 +0600
+
+    feature:addedCommonClassToBeExtendedByChildren
+
+[33mcommit 165aa932ebe3c371911b57f936b8aad6e4a66d75[m
+Merge: 9a5f12b 6eae6d2
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Thu Oct 19 15:32:32 2023 +0600
+
+    Zhyldyz/createCourse
+
+[33mcommit 9d1b9fcf4ee955b3713f8bdb9c034431e3056ca7[m
+Merge: 7f96327 479b82a
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Thu Oct 19 15:29:03 2023 +0600
+
+    Merge remote-tracking branch 'origin' into aibikeCreateUser
+
+[33mcommit 479b82a592b8acc29fc59882a5f1cd19c2c676a6[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Thu Oct 19 15:26:36 2023 +0600
+
+    fix:fix path in testNg.xml
+
+[33mcommit 71b09d9f439070cb300d65ee6021ff8cefd6a8dd[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 12:47:09 2023 +0600
+
+    added Categories
+
+[33mcommit 085ef99be92725557db154e77b692e5e6991d507[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 10:16:39 2023 +0600
+
+    Taha
+
+[33mcommit 7beca4acbe08b3f76736992e59e340e23e3094d8[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 10:15:38 2023 +0600
+
+    Taha
+
+[33mcommit 0e36152cf7e655a2a71f9c818fb1783895af3aa4[m
+Merge: 814fdc2 6eae6d2
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Thu Oct 19 10:07:58 2023 +0600
+
+    Merge branch 'master' into ByCoursePage
+
+[33mcommit 814fdc2fb5bb395cd704cb30ce06ed9aeda82416[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Thu Oct 19 10:07:44 2023 +0600
+
+    course page
+
+[33mcommit 9a5f12b7c86942870be872f7b8d60eaf2fb1fc51[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Thu Oct 19 10:02:00 2023 +0600
+
+    /буду мержить с мастер веткой
+
+[33mcommit dcde7cee9480311a07591f480c1645760c318f07[m
+Merge: 42c3ec9 6eae6d2
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 10:00:33 2023 +0600
+
+    Merge remote-tracking branch 'origin' into Tahir
+
+[33mcommit 6eae6d265e2facf8006443575bd1b4cb3ef628f3[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Thu Oct 19 09:58:19 2023 +0600
+
+    fix:amended prohect
+
+[33mcommit 42c3ec996c554c0de9933995c97b0912530152e2[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 09:56:29 2023 +0600
+
+    Taha
+
+[33mcommit 4dc8dd3bc0913936b331a8a2adb4fad8a8250e57[m
+Merge: fb13adb 981086e
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 09:53:23 2023 +0600
+
+    Taha
+
+[33mcommit fb13adb41f39ae404bc8b5f8f11556e81ba1ee9f[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Thu Oct 19 09:46:01 2023 +0600
+
+    Taha
+
+[33mcommit 7f9632781fadb218164523b1747f30e1540086d3[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Thu Oct 19 09:43:48 2023 +0600
+
+    fix:fix createuserclass added new methods
+
+[33mcommit 55d5bc5e203f935b2172423453c9038e5ee8678f[m
+Merge: 7188d1e 981086e
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Thu Oct 19 09:40:31 2023 +0600
+
+    Merge branch 'master' into ByCoursePage
+
+[33mcommit 981086e4bee7e66aaa56a0f9d1489c2a03b0f977[m
+Merge: 9a20c59 ce2b912
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 18 23:51:32 2023 +0600
+
+    Merge pull request #7 from nuta312/Nurgazy
+    
+    Nurgazy
+
+[33mcommit ce2b9126ba0b999a8e54ecadf061ed4aedeec445[m[33m ([m[1;31morigin/Nurgazy[m[33m)[m
+Author: Нургазы Оморбеков <n.omorbekov@saimatelecom.kg>
+Date:   Wed Oct 18 23:45:18 2023 +0600
+
+    Change package
+
+[33mcommit 7188d1e0cc9bb4fafed804b6bae93a457c966306[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Wed Oct 18 23:41:17 2023 +0600
+
+    added course page
+
+[33mcommit 15135df17c25c789b8474df975003672792ecb2f[m
+Merge: 7910815 9a20c59
+Author: Нургазы Оморбеков <n.omorbekov@saimatelecom.kg>
+Date:   Wed Oct 18 23:39:18 2023 +0600
+
+    Merge branch 'master' into Nurgazy
+
+[33mcommit 79108154528c87617c55836b429c2ca6a0e9f59a[m
+Author: Нургазы Оморбеков <n.omorbekov@saimatelecom.kg>
+Date:   Wed Oct 18 23:35:29 2023 +0600
+
+    Feature added AddCategoryPage, CategoriesPage
+
+[33mcommit 9a20c5990923b437c9b242078dd36106ac2907c3[m
+Merge: 173a307 7f3cda4
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 18 23:26:44 2023 +0600
+
+    Merge pull request #3 from nuta312/ByCoursePage
+    
+    By course page
+
+[33mcommit 7f3cda44ef6bdece941e677207392ca91bbc5a3a[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Wed Oct 18 23:15:32 2023 +0600
+
+    Fix: added Course Page
+
+[33mcommit 173a3070bc5828b49b8b8331411b57768051c51a[m
+Merge: 4a96d43 e6269d8
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 18 23:15:29 2023 +0600
+
+    Merge pull request #6 from nuta312/aibikeCreateUser
+    
+    fix:fix names of pages
+
+[33mcommit e6269d8eb41cfc93b15498772764ee34797d50b7[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 23:13:25 2023 +0600
+
+    fix:fix names of pages
+
+[33mcommit 4a96d43f8552befdabaf25f564364320df06faf3[m
+Merge: f84511e 5e0d41f
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 18 22:43:09 2023 +0600
+
+    Merge pull request #5 from nuta312/aibikeCreateUser
+    
+    fix:fix test pack,create new pack for user category pages test
+
+[33mcommit 5e0d41f3a6d80a92f69efcd562ed630229692996[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 22:42:09 2023 +0600
+
+    fix:fix test pack,create new pack for user category pages test
+
+[33mcommit f84511e94f6bf93de8393d364a6a7384db410dee[m
+Merge: 967ce0a 1bd5baa
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 18 21:59:52 2023 +0600
+
+    Merge pull request #1 from nuta312/Kanybek
+    
+    firstCommit
+
+[33mcommit 967ce0a138ab2c7e1e5ddd0de857a810a8561eb9[m
+Merge: c6514fe b8249e1
+Author: aibikeimanbaeva <106961637+aibikeimanbaeva@users.noreply.github.com>
+Date:   Wed Oct 18 21:50:07 2023 +0600
+
+    Merge pull request #4 from nuta312/configUserCategory
+    
+    feat:added userhomepagetest
+
+[33mcommit b8249e1a5427b92ddbcebe7816857a5ab3bdb712[m[33m ([m[1;31morigin/configUserCategory[m[33m)[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 21:48:20 2023 +0600
+
+    feat:added userhomepagetest
+
+[33mcommit 6688da43bb0ab061594bf0a5a8036da44210a373[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Wed Oct 18 21:28:15 2023 +0600
+
+    added Course page
+
+[33mcommit c0bad8c45a57ad2b1d0c09628afc1b2072538b0d[m
+Merge: 8af7365 c6514fe
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Wed Oct 18 21:28:00 2023 +0600
+
+    Merge branch 'master' into Tahir
+
+[33mcommit 515c888e353a828727c26a5cf5dafaed01cad957[m
+Merge: b427a36 c6514fe
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Wed Oct 18 21:27:22 2023 +0600
+
+    Zhyldyz/merge1
+
+[33mcommit 06fbeac072ff65bfd980572b396f526b546db4bc[m
+Merge: 18b2684 c6514fe
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Wed Oct 18 21:26:59 2023 +0600
+
+    added Course Page
+
+[33mcommit 18b2684ca2b603f4695968dc6fcf56a62fd97278[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Wed Oct 18 21:23:20 2023 +0600
+
+    added Course Page
+
+[33mcommit a15fea0454514d8a1f9e5900ecd9a780e5ccdac6[m
+Merge: eea1645 c6514fe
+Author: Нургазы Оморбеков <n.omorbekov@saimatelecom.kg>
+Date:   Wed Oct 18 21:21:39 2023 +0600
+
+    Merge branch 'master' into Nurgazy
+
+[33mcommit b427a363ddb2eef483e856bfd4493348bde89bcb[m
+Author: Zhyldyz Zheenbaeva <zhyldyzzheenbaeva@MacBook-Air-Zhyldyz.local>
+Date:   Wed Oct 18 21:18:50 2023 +0600
+
+    Zhyldyz/addedcreate
+
+[33mcommit 8af736535d4e3d11fc457c6439cbe038b759ec58[m
+Author: Tahir <tafik13.01.90@gmail.com>
+Date:   Wed Oct 18 20:41:27 2023 +0600
+
+    Added CoursesPage
+
+[33mcommit c6514fef629deae284a318ff633804b9ce1fd5b1[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 20:38:05 2023 +0600
+
+    feat:create homepage test and homepage in pages pack
+
+[33mcommit eea164567b80e14246edb5b4a69a004b96f06206[m
+Author: Нургазы Оморбеков <n.omorbekov@saimatelecom.kg>
+Date:   Wed Oct 18 20:37:25 2023 +0600
+
+    Test
+
+[33mcommit 1bd5baa4910379e8078328979ee9369991b5d4b2[m
+Author: Kanybek <matisakov12@gmail.com>
+Date:   Wed Oct 18 20:03:10 2023 +0600
+
+    firstCommit
+
+[33mcommit 0c7ec4c2acdc49cf094b3608c1040de4f1efb7c9[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Wed Oct 18 19:42:09 2023 +0600
+
+    feature: added course page
+
+[33mcommit 0fa9638fdafe057f381378082c670f4302a0a001[m
+Author: Adil <adilemilbekov12@gmail.com>
+Date:   Wed Oct 18 19:39:22 2023 +0600
+
+    feature: added Course Page
+
+[33mcommit a8e899ea9a26011608ab20e1f0def4fdd2be72fc[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 17:08:42 2023 +0600
+
+    update base test class
+
+[33mcommit 985056f45ed4ba914c605c942c24ba8061484e34[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 16:01:21 2023 +0600
+
+    feat:create loginpage and login method
+
+[33mcommit a035bbb4b717d076c7c949b2c8c94fb196a789ad[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 15:24:21 2023 +0600
+
+    delete path in git ignore
+
+[33mcommit 40126ebe928b69651f7f855c947e98d4f0644eb0[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 15:22:41 2023 +0600
+
+    chanched config
+
+[33mcommit 3c511e73a7421f0feae64c6e85d32e426f0802d6[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 12:15:56 2023 +0600
+
+    added new file to git ignore
+
+[33mcommit 1754b8f392193e73b5640b6c5bdd3c6f249d268e[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 11:20:35 2023 +0600
+
+    added properties
+
+[33mcommit 3a4a1202972c33968fdd8b5d5371556032def1ae[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 10:46:57 2023 +0600
+
+    added new packs
+
+[33mcommit e1b293b03a405a3dfe86e3db285bb09280aa2ac0[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 10:36:52 2023 +0600
+
+    Removed .idea files
+
+[33mcommit 8be9b97babba67878ee43ea38187330c7defd470[m
+Author: Aibike <aibikekimanbaeva@gmail.com>
+Date:   Wed Oct 18 10:34:49 2023 +0600
+
+    added files
+
+[33mcommit 3683915ad93f6eae9a34b110a0a33a66e1aa715a[m
+Author: Nursultan Musakunov <musakunovnur@gmail.com>
+Date:   Wed Oct 18 10:25:32 2023 +0600
+
+    firstCommit
