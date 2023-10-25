@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EditUserTest extends UserHomePageTest{
-    @Test
+    @Test(groups = "SmokeTests")
     void editAndAssertUserInfo() throws InterruptedException {
         homePage = new HomePage();
         homePage.openUserCategory();
