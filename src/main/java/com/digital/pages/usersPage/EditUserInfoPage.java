@@ -1,4 +1,5 @@
 package com.digital.pages.usersPage;
+import com.digital.helper.ScreenShotMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,7 +7,7 @@ import java.util.List;
 import static com.digital.driver.Driver.getDriver;
 
 public class EditUserInfoPage extends UserHomePage {
-    public UserHomePage userHomePage;
+    public ScreenShotMethods screenShotMethods;
     @FindBy(xpath = "//a[@class='tl-tool-tip']/span")
     public WebElement move2EditedUser;
 
@@ -75,6 +76,9 @@ public class EditUserInfoPage extends UserHomePage {
 
     @FindBy(xpath = "//span[text()=\"'Bio' cannot exceed 800 characters\"]")
     public WebElement popUpWarningBIO;
+
+    @FindBy(xpath = "//h4[@style='padding: 10px 0px;']")
+    public WebElement popUpWarningSystem;
 
     public EditUserInfoPage clickToEditBtn() {
 
@@ -150,6 +154,7 @@ public class EditUserInfoPage extends UserHomePage {
     public EditUserInfoPage clickActivateCheckBox() {
        try {
            elementActions.clickElement(clickActivateCheckbox);
+           screenShotMethods.takeScreenShot();
        }catch (Exception e){
            elementActions.clickElement(updateUserBtn);
        }
@@ -164,9 +169,11 @@ public class EditUserInfoPage extends UserHomePage {
     public EditUserInfoPage updateBtn() {
         try {
             elementActions.clickElement(updateUserBtn);
+            screenShotMethods.takeScreenShot();
         }catch (Exception e){
-            System.out.println("Все ок");
+
         }
+
         return this;
     }
 
