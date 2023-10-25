@@ -9,7 +9,7 @@ public class HomePage extends BasePage {
     public WebElement userCategoryBlock;
 
 
-    public HomePage openUserCategory(){
+    public HomePage openUserCategory() {
         elementActions.clickElement(userCategoryBlock);
         return this;
     }

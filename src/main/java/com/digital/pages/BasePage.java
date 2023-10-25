@@ -13,8 +13,10 @@ public abstract class BasePage {
     //Page Object Pattern;
 
     public WebDriver driver;
-   public   ElementActions elementActions = new ElementActions();
-   public   AlertHelper alertHelper = new AlertHelper(Driver.getDriver());
+
+    //Page Object Pattern
+    public   ElementActions elementActions = new ElementActions();
+    public   AlertHelper alertHelper = new AlertHelper(Driver.getDriver());
     public  FramesHelper framesHelper = new FramesHelper(Driver.getDriver());
     public BasePage() {           //принимает драйвер   //экземпляр текущей страницы
         PageFactory.initElements(Driver.getDriver(), this);

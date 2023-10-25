@@ -1,23 +1,24 @@
 package com.digital.pages;
 
+import com.digital.enums.UserCredentials;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
-    @FindBy (xpath = "//input[@name='login']")
-    WebElement loginInput;
+    @FindBy(xpath = "//input[@name='login']")
+    public WebElement loginInput;
 
     @FindBy(xpath = "//input[@name='password']")
-    WebElement passwordInput;
+    public WebElement passwordInput;
 
     @FindBy(xpath = "//input[@name='submit']")
-    WebElement submitBtn;
+    public WebElement submitBtn;
 
 
-    public LoginPage logIn(){
-        elementActions.writeText(loginInput,"admin");
-        elementActions.writeText(passwordInput,"Admin123!");
+    public LoginPage logIn() {
+        elementActions.writeText(loginInput, UserCredentials.ADMIN.getUsername());
+        elementActions.writeText(passwordInput, UserCredentials.ADMIN.getPassword());
         elementActions.clickElement(submitBtn);
         return this;
     }
