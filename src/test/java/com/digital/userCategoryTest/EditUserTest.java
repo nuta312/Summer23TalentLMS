@@ -8,7 +8,6 @@ public class EditUserTest extends UserHomePageTest{
     @Test(groups = "SmokeTests")
     void editAndAssertUserInfo() throws InterruptedException {
         homePage = new HomePage();
-        homePage.openUserCategory();
         editUserInfoPage = new EditUserInfoPage();
         String fakeFirstName = fakeDataProvider.generateFakeFirstName();
         String fakeLastName = fakeDataProvider.generateFakeLastName();
