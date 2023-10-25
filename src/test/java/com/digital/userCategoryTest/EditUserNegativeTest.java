@@ -41,7 +41,7 @@ public class EditUserNegativeTest extends BaseTest {
                 .clickExcludeCheckBox()
                 .updateBtn();
 
-        String expectedWarningText = "The system is currently lockedThe system is currently lockedThe system is currently lockedThe system is currently locked";
+        String expectedWarningText = "The system is currently locked";
         String actualWarningText = editUserInfoPage.popUpWarningSystem.getText().trim();
         String expectedPopUpFirstNameText = "'First name' cannot exceed 50 characters";
         String actualPopUpFirstNameText = editUserInfoPage.popUpWarningFirstName.getAttribute("innerText");
