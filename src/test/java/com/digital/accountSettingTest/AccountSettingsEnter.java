@@ -1,4 +1,4 @@
-package com.digital.accountSettingsTest;
+package com.digital.accountSettingTest;
 
 import com.digital.BaseTest;
 
@@ -9,9 +9,9 @@ import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
 
 import org.testng.annotations.BeforeClass;
 
-public class accountSettingsPage extends BaseTest {
+public class AccountSettingsEnter extends BaseTest {
 
-public BasicSettings basicSettings;
+    public BasicSettings basicSettings;
     public EcommercePage ecommercePage;
     public TalentLMSBetaPage talentLMSBetaPage;
     @BeforeClass
