@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <listeners>
-        <listener class-name="com.digital.listener.ScreenshotListener"></listener>
-    </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/Asus/IdeaProjects/Summer23TalentLMS">
     <test verbose="2" preserve-order="true" name="/Summer23TalentLMS">
         <classes>
             <class name="com.digital.accountSettingTest.AccountHomePageTest">
@@ -14,30 +10,29 @@
                     <include name="clickPlayBtn"/>
                 </methods>
             </class>
+            <class name="com.digital.accountSettingTest.BasicSettingsTest">
+                <methods>
+                    <include name="fillUpTheSiteTest"/>
+                </methods>
+            </class>
             <class name="com.digital.accountSettingTest.CertificatesTest">
                 <methods>
-                    <include name="CertificatesList"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.EcommercePageTest">
-                <methods>
-                    <include name="openOption"/>
-                    <include name="timeLine"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.TalentLMSBetaTest">
-                <methods>
-                    <include name="talentLMS"/>
-                </methods>
-            </class>
-            <class name="com.digital.coursesTest.ByCoursePageTest">
-                <methods>
-                    <include name="test"/>
+                    <include name="dropdownMenuOfCertificates"/>
                 </methods>
             </class>
             <class name="com.digital.categoriesTest.CategoriesTest">
                 <methods>
                     <include name="testClickBtnAddCategory"/>
+                    <include name="testClickSampleCategory"/>
+                    <include name="testClickSamplesCategoryOptionsEditBtn"/>
+                    <include name="testClickSamplesCategoryOptionsDeleteBtn"/>
+                    <include name="testClickViewCourseCatalogBtn"/>
+                    <include name="testClickSaveAsCSVBtn"/>
+                </methods>
+            </class>
+            <class name="com.digital.coursesTest.ByCoursePageTest">
+                <methods>
+                    <include name="test"/>
                 </methods>
             </class>
             <class name="com.digital.coursesTest.InvalidTestAddCoursePage">
@@ -78,6 +73,11 @@
                     <include name="checkInputsCharactersLimit"/>
                 </methods>
             </class>
+            <class name="com.digital.userCategoryTest.EditUserNegativeTest">
+                <methods>
+                    <include name="editAndAssertUserInfo"/>
+                </methods>
+            </class>
             <class name="com.digital.userCategoryTest.EditUserTest">
                 <methods>
                     <include name="editAndAssertUserInfo"/>
@@ -116,36 +116,6 @@
                     <include name="testSortUserEmailAfterClickToEmailTab"/>
                     <include name="testUserTypeSorting"/>
                     <include name="checkTable"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.AccountSettingsEnter">
-                <methods>
-                    <include name="BasicSettingsTest"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.BasicSettingsTest">
-                <methods>
-                    <include name="fillUpTheSiteTest"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.AccountHomePageTest">
-                <methods>
-                    <include name="openHomePageTest"/>
-                    <include name="maximizeVideoWindowTest"/>
-                    <include name="clickPlayBtn"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.CertificatesTest">
-                <methods>
-                    <include name="dropdownMenuOfCertificates"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.EcommercePageTest">
-                <methods>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.TalentLMSBetaTest">
-                <methods>
                 </methods>
             </class>
         </classes>

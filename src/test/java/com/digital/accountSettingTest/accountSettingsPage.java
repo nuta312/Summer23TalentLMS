@@ -1,4 +1,4 @@
-package com.digital.accountSettingsTest;
+package com.digital.accountSettingTest;
 
 import com.digital.BaseTest;
 
