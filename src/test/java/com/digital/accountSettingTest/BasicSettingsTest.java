@@ -6,8 +6,8 @@ import com.digital.pages.accountSettingsPage.BasicSettings;
 import org.testng.annotations.Test;
 
 
-public class BasicSettingsTest {
-    @Test(priority = 1)
+public class BasicSettingsTest extends AccountSettingsEnter {
+    @Test(groups = "smoke", priority = 1)
     void fillUpTheSiteTest() {
         BasicSettings basicSettings = new BasicSettings();
         ElementActions elementActions = new ElementActions();

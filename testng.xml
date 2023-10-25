@@ -37,7 +37,7 @@
             </class>
             <class name="com.digital.categoriesTest.CategoriesTest">
                 <methods>
-                    <include name="testCategories"/>
+                    <include name="testClickBtnAddCategory"/>
                 </methods>
             </class>
             <class name="com.digital.coursesTest.InvalidTestAddCoursePage">
@@ -116,6 +116,36 @@
                     <include name="testSortUserEmailAfterClickToEmailTab"/>
                     <include name="testUserTypeSorting"/>
                     <include name="checkTable"/>
+                </methods>
+            </class>
+            <class name="com.digital.accountSettingTest.AccountSettingsEnter">
+                <methods>
+                    <include name="BasicSettingsTest"/>
+                </methods>
+            </class>
+            <class name="com.digital.accountSettingTest.BasicSettingsTest">
+                <methods>
+                    <include name="fillUpTheSiteTest"/>
+                </methods>
+            </class>
+            <class name="com.digital.accountSettingTest.AccountHomePageTest">
+                <methods>
+                    <include name="openHomePageTest"/>
+                    <include name="maximizeVideoWindowTest"/>
+                    <include name="clickPlayBtn"/>
+                </methods>
+            </class>
+            <class name="com.digital.accountSettingTest.CertificatesTest">
+                <methods>
+                    <include name="dropdownMenuOfCertificates"/>
+                </methods>
+            </class>
+            <class name="com.digital.accountSettingTest.EcommercePageTest">
+                <methods>
+                </methods>
+            </class>
+            <class name="com.digital.accountSettingTest.TalentLMSBetaTest">
+                <methods>
                 </methods>
             </class>
         </classes>

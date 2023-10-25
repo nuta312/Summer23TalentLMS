@@ -1,10 +1,10 @@
-//package com.digital.AccountSettingTest;
-//
-//import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
-//import org.testng.annotations.Test;
-//
-//public class TalentLMSBetaTest extends AccountSettingsEnter {
-//    @Test
+package com.digital.accountSettingTest;
+
+import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
+import org.testng.annotations.Test;
+
+public class TalentLMSBetaTest extends AccountSettingsEnter {
+//    @Test (groups = "regression")
 //    void talentLMS() {
 //        talentLMSBetaPage = new TalentLMSBetaPage();
 //        talentLMSBetaPage.openTalentLMS()
@@ -14,5 +14,4 @@
 //                .feedback()
 //                .elementActions.navigateBack();
 //    }
-//}
-//закомментировала
+}
