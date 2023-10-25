@@ -29,11 +29,11 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                 .pictureInput()
+                .pictureInput()
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
-            Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
-            System.out.println("prowel");
+        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+
 
     }
 
@@ -57,20 +57,14 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .pictureInput()
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
-        try {
-            for (WebElement val : CreateCoursePage.newCourse) {
-                if (val.getText().contains(nameCourse)) {
-                }
-            }
-        } catch (RuntimeException exception) {
-        }
+        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
     }
 
     @Test (priority = 2, description = "This test checks the ability to enter the name of the symbol")
     public void nameSymbolValidTest() {
         driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
         String nameCourse = "!@#$%^&*(";
-        String generatedBio = FakeDataProvider.generateLongText(150);
+        String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
                 .choosyCategory("it")
                 .descriptionInput(generatedBio)
@@ -83,11 +77,8 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .selectDurations("Custom")
                 .moveSlider()
                 .levelInput("3")
-                //  .pictureInput()
+                .pictureInput()
                 .saveBtn();
-        for (WebElement val : CreateCoursePage.newCourse) {
-            if (val.getText().contains(nameCourse)) {
-            }
-        }
+        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
     }
 }

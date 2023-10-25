@@ -184,7 +184,7 @@ public class CreateCoursePage extends CreateUserPage {
         return this;
     }
     public CreateCoursePage pictureInput() {
-        pictureBtn.sendKeys("C:\\Users\\user\\projectHTML\\Summer23TalentLMS\\src\\main\\resources\\java.png");
+        pictureBtn.sendKeys("/Users/zhyldyzzheenbaeva/Desktop/project.html/Summer23TalentLMS/src/main/resources/java.png");
         return this;
     }
 }
