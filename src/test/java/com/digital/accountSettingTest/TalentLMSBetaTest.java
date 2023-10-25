@@ -3,6 +3,7 @@ package com.digital.accountSettingTest;
 import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
 import org.testng.annotations.Test;
 
+
 public class TalentLMSBetaTest extends AccountSettingsEnter {
     @Test
     void talentLMS() {

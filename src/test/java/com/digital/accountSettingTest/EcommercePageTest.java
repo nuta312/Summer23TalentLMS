@@ -1,8 +1,9 @@
 package com.digital.accountSettingTest;
 
 import com.digital.pages.accountSettingsPage.EcommercePage;
+import io.qameta.allure.Epic;
 import org.testng.annotations.Test;
-
+@Epic("EcommercePage")
 public class EcommercePageTest extends AccountSettingsEnter {
     @Test(priority = 1)
     void openOption(){

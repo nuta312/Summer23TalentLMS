@@ -232,12 +232,6 @@ public class EcommercePage extends AccountSettingsPage{
         return this;
     }
 
-//    public EcommercePage openDate(){
-//
-//        elementActions.clickElement(openDate);
-//        return this;
-//    }
-
     public EcommercePage selectRandomDate(){
         elementActions.waitElementToBeClickable(openDate);
         elementActions.clickElement(openDate);
