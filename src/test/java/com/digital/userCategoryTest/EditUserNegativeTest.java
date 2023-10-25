@@ -25,25 +25,38 @@ public class EditUserNegativeTest extends BaseTest {
                 "\n" + "Искусство - это также зеркало общества и времени, в котором оно рождается. Оно отражает ценности, убеждения и противоречия общества, его духовные и материальные аспекты. Искусство может поднимать важные вопросы и вызывать обсуждения, оно может быть инструментом изменения и преобразования.\n" +
                 "\n" + "Искусство - это навсегда живая и развивающаяся сфера, которая никогда не ограничивается рамками и ожиданиями. Она стремится к новым высотам, открывая перед нами бескрайние просторы для исследования и творчества. И, возможно, именно в этой бесконечной разнообразности искусства скрыто будущее человечества, где каждый может найти свое место и свой голос.\n" +
                 "\n" + "Таким образом, искусство остается вечным источником вдохновения, истории и культуры, и его значение невозможно переоценить.";
+
         editUserInfoPage
                 .clickToEditBtn()
                 .editFirstName(fakeNegr)
                 .editLastName(fakeNegr)
                 .editUserName(fakeNegr)
                 .editBio(BIO)
+                .userTypeSelected()
                 .timeZoneChosen()
                 .timeZoneSelect()
                 .languageChosenClick()
                 .languageSelect()
-                .userTypeSelected()
                 .clickActivateCheckBox()
                 .clickExcludeCheckBox()
                 .updateBtn();
 
-        Assert.assertEquals(editUserInfoPage.popUpWarningFirstName.getAttribute("innerText"), "'First name' cannot exceed 50 characters");
-        Assert.assertEquals(editUserInfoPage.popUpWarningLastName.getAttribute("innerText"), "'Last name' cannot exceed 50 characters");
-        Assert.assertEquals(editUserInfoPage.popUpWarningUserName.getAttribute("innerText"), "'Username' cannot exceed 150 characters");
-        Assert.assertEquals(editUserInfoPage.popUpWarningBIO.getAttribute("innerText"), "'Bio' cannot exceed 800 characters");
+        String expectedWarningText = "The system is currently lockedThe system is currently lockedThe system is currently lockedThe system is currently locked";
+        String actualWarningText = editUserInfoPage.popUpWarningSystem.getText().trim();
+        String expectedPopUpFirstNameText = "'First name' cannot exceed 50 characters";
+        String actualPopUpFirstNameText = editUserInfoPage.popUpWarningFirstName.getAttribute("innerText");
+        String expectedPopUpLastNameText = "'Last name' cannot exceed 50 characters";
+        String actualPopUpLastNameText = editUserInfoPage.popUpWarningLastName.getAttribute("innerText");
+        String expectedPopUpUserNameText = "'Username' cannot exceed 150 characters";
+        String actualPopUpUserNameText = editUserInfoPage.popUpWarningUserName.getAttribute("innerText");
+        String expectedPopUpBIOText = "'Bio' cannot exceed 800 characters";
+        String actualPopUpBIOText = editUserInfoPage.popUpWarningBIO.getAttribute("innerText");
+
+        Assert.assertEquals(actualPopUpFirstNameText, expectedPopUpFirstNameText);
+        Assert.assertEquals(actualPopUpLastNameText, expectedPopUpLastNameText);
+        Assert.assertEquals(actualPopUpUserNameText, expectedPopUpUserNameText);
+        Assert.assertEquals(actualPopUpBIOText, expectedPopUpBIOText);
+        Assert.assertEquals(actualWarningText, expectedWarningText);
 
     }
 }

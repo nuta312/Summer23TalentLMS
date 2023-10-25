@@ -119,11 +119,11 @@ public class EditUserTest extends UserHomePageTest{
                 .editLastName(fakeLastName)
                 .editUserName(fakeUserName)
                 .editBio(BIO)
+                .userTypeSelected()
                 .timeZoneChosen()
                 .timeZoneSelect()
                 .languageChosenClick()
                 .languageSelect()
-                .userTypeSelected()
                 .clickActivateCheckBox()
                 .clickExcludeCheckBox()
                 .updateBtn();
