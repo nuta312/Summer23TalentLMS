@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Suite">
+    <test name="Smoke Tests">
+        <classes>
+            <class name="com.digital.userCategoryTest.CreateUserTest"></class>
+            <class name="com.digital.userCategoryTest.EditUserTest"></class>
+            <class name="com.digital.coursesTest.InvalidTestAddCoursePage"></class>
+            <class name="com.digital.coursesTest.ValidTestAddCoursesPage"></class>
+            <class name="com.digital.accountSettingTest.BasicSettingsTest"></class>
+        </classes>
+    </test>
+</suite>

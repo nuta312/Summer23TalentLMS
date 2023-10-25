@@ -1,15 +1,15 @@
 package com.digital.accountSettingTest;
 
-import com.digital.BaseTest;
-import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 
-public class CertificatesTest extends AccountSettingsEnter {
+public class CertificatesTest extends AccountSettingsEnter{
 
-    @Test
-    public void CertificatesList () {
-        certificatesPage = new CertificatesPage();
-        certificatesPage.clickDropdown();
+    @Test (groups = "regression")
+    @Description ("Testing dropdown list of Certificates")
+    public void dropdownMenuOfCertificates(){
+        CertificatesPage certificates = new CertificatesPage();
+        certificates.enterCertificatesPage().clickDropdown().selectCertificate();
     }
 }
