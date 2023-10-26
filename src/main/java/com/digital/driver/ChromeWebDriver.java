@@ -14,7 +14,7 @@ public class ChromeWebDriver {
 		ChromeOptions options = new ChromeOptions();
 		// options - об]ект для настройки различных параметров и опций в для драйвера хром
 		options.addArguments("--disable-extensions");// отключить расширения
-
+                options.addArguments("--no-sandbox");
 		if ( Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
 			options.addArguments("--headless");
 		}
