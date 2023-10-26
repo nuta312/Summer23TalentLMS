@@ -15,7 +15,7 @@ public class UserCoursesTest extends UserHomePageTest {
         Assert.assertTrue(Boolean.parseBoolean(userCoursesPage.coursesIsDisplayed));
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1,groups = "RegressionTests")
     void userCoursePage1() {
         userCoursesPage.clickCheckBox();
         Assert.assertFalse(userCoursesPage.checkBoxAction);
