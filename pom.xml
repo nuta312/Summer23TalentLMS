@@ -146,9 +146,9 @@
                 <version>3.8.0</version>
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
-                    <source>9</source>
+                    <source>${mvn.source.version}</source>
                     <!--suppress UnresolvedMavenProperty -->
-                    <target>9</target>
+                    <target>${mvn.target.version}</target>
                 </configuration>
             </plugin>
             <plugin>

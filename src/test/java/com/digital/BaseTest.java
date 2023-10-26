@@ -12,9 +12,11 @@ import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import  com.digital.pages.categoriesPage.CategoriesPage;
 import com.digital.pages.coursesPage.ByCoursePage;
+import org.testng.annotations.BeforeMethod;
 
 
 public abstract class BaseTest {
@@ -30,7 +32,6 @@ public abstract class BaseTest {
     public AccountHomePage accountHomePage;
     public ElementActions elementActions;
     public ByCoursePage byCoursePage;
-
 
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
@@ -48,7 +49,7 @@ public abstract class BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        Driver.closeDriver();
+       Driver.closeDriver();
     }
 
 
