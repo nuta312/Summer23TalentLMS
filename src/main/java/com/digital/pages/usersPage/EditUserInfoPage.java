@@ -1,6 +1,7 @@
 package com.digital.pages.usersPage;
 import com.digital.helper.ScreenShotMethods;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
