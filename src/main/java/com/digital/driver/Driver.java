@@ -28,21 +28,15 @@ public class Driver {
 
 
 	public static void closeDriver(){
-		try{
-			if (driver!=null){
-				if(ConfigReader.getProperty("browser").equals("firefox")){
-					driver.quit();
-					driver=null;
-				} else {
-					driver.close();
-					driver.quit();
-					driver = null;
-				}
+		try {
+			if (driver != null){
+				driver.close();
+				driver.quit();
+				driver = null;
 			}
-		} catch (Exception e) {
-			System.out.println("Error while closing the driver: " + e.getMessage());
+
+		}catch (Exception e){
+			System.out.println("Error while closing driver");
 		}
 	}
-
-
 }
