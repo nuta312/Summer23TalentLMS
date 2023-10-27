@@ -15,6 +15,7 @@ public class ChromeWebDriver {
         // options - об]ект для настройки различных параметров и опций в для драйвера хром
         options.addArguments("--disable-extensions");// отключить расширения
         options.addArguments("--no-sandbox");
+        options.addArguments("--window-size=1920,1080");
         if (Boolean.parseBoolean(ConfigReader.getProperty("headless"))) {
             options.addArguments("--headless");
         }
