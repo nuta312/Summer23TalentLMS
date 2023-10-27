@@ -82,8 +82,13 @@ public class CreateCoursePage extends CreateUserPage {
     public WebElement pictureClick;
     @FindBy(xpath = "//span[@class='tl-formatted-course-name']")
     public static List<WebElement> newCourse;
+    @FindBy(xpath = "//div[@id ='tl-admin-courses']/div/div[2]/a[1]")
+    public WebElement addCourse;
 
-
+    public CreateCoursePage addCoursePage(){
+        elementActions.clickElement(addCourse);
+        return this;
+    }
     public CreateCoursePage nameInput(String txt) {
         elementActions.waitElementToBeVisible(courseNameInput)
                 .writeText(courseNameInput, txt);

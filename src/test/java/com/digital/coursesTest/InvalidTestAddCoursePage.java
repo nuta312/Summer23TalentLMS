@@ -10,7 +10,7 @@ import org.testng.asserts.SoftAssert;
 public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     @Test (priority = 0, description = "This test checks for inconsistent data entry in Description, Price, Code,Capacity")
     public void invalidAllTest(){
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(1000);
         String firstName2 = faker.name().firstName();
         StringBuilder longName = new StringBuilder(firstName2);
@@ -43,7 +43,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 1, description = "This is test check exceeding title length for name course")
     public void NameLengthInvalidTest() {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String firstName2 = faker.name().firstName();
         StringBuilder longName = new StringBuilder(firstName2);
         String generatedBio = FakeDataProvider.generateLongText(50);
@@ -71,7 +71,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     @Test (priority = 2, description = "This is test check exceeding title length for description course")
     public void descriptionInvalidTest() {
         String generatedBio = FakeDataProvider.generateLongText(1000);
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
                 .choosyCategory("it")
                 .descriptionInput(generatedBio)
@@ -91,7 +91,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     @Test (priority = 3, description = "This is test checking the letters entered in the price field ")
     public void priceInvalidTest() {
         String generatedBio = FakeDataProvider.generateLongText(50);
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
                 .choosyCategory("it")
                 .descriptionInput(generatedBio)
@@ -113,7 +113,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     @Test (priority = 4, description = "This is test checking negative value in price")
     public void priceInvalidTestMinus() {
         String generatedBio = FakeDataProvider.generateLongText(50);
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
                 .choosyCategory("it")
                 .descriptionInput(generatedBio)
@@ -132,7 +132,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 5, description = "This is test check exceeding title length for price course")
     public void codeInvalidTest() {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String code = faker.name().firstName();
         StringBuilder longName = new StringBuilder(code);
         String generatedBio = FakeDataProvider.generateLongText(50);
@@ -159,7 +159,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 6, description = "This is test entering letters into a capacity field")
     public void capacityInvalidTest() {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
                 .choosyCategory("it")
@@ -180,7 +180,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 7, description = "This is test entering symbol into a capacity field")
     public void capacityInvalidSymbolTest() {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
                 .choosyCategory("it")
@@ -201,7 +201,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 8, description = "This is test checking negative value in capacity")
     public void capacityInvalidMinusTest() {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
                 .choosyCategory("it")
