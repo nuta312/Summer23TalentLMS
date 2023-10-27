@@ -4,24 +4,19 @@ import com.digital.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CheckDropMenuTest extends UserHomePageTest{
-    @Test(priority = 1)
+public class CheckDropMenuTest extends UserHomePageTest {
+
+    @Test(priority = 1 , groups = "RegressionTests")
     void checkDropMenu() {
         homePage = new HomePage();
-        checkDropMenu.checkMenu()
-                .clickActivate()
-                .clickDeactivate()
-                .clickDelete()
-                .clickBranchAdd()
-                .clickBranchRemove()
-                .clickAddGroup()
-                .clickRemoveGroup()
-                .clickMessage();
-
+        checkDropMenu.clickAllChecBox();
+        Assert.assertTrue(checkDropMenu.isCheckt);
+        checkDropMenu.massActionsList();
+        Assert.assertEquals(checkDropMenu.actualTextList.toString(), checkDropMenu.visiblText);
     }
 
-    @Test(priority = 2)
-    void assertTest() {
+    @Test(priority = 2, groups = "RegressionTests")
+    void checkMassAction() {
         checkDropMenu.clickActivate();
         Assert.assertEquals(checkDropMenu.actualTextActivate, "Activate");
         checkDropMenu.clickDeactivate();
@@ -37,6 +32,14 @@ public class CheckDropMenuTest extends UserHomePageTest{
         checkDropMenu.clickRemoveGroup();
         Assert.assertEquals(checkDropMenu.actualTextRemoveGroup, "Remove users from group");
         checkDropMenu.clickMessage();
-        Assert.assertEquals(checkDropMenu.actualTextSendMessage,"Send message");
+        Assert.assertEquals(checkDropMenu.actualTextSendMessage, "Send message");
     }
+//    @Test(priority = 3,groups = "RegressionTests")
+//    void CheckFilterIcon(){
+//        checkDropMenu.getAllUsersInTable();
+//        checkDropMenu.activeUserFilter()
+//         .getFilterUsersInTable();
+//        Assert.assertEquals(checkDropMenu.usersListInTable,checkDropMenu.usersInTableToActive);
+//        checkDropMenu.onClickActivFilter();
+//    }
 }

@@ -1,9 +1,8 @@
-package com.digital.pages.coursesPage;
+package com.digital.pages.categoriesPage;
 
 import com.digital.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class CategoriesPage extends BasePage {
 
@@ -45,15 +44,11 @@ public class CategoriesPage extends BasePage {
 
     public CategoriesPage clickBtnAddCategory() {
         elementActions.clickElement(addCategoryBtn);
-        Assert.assertTrue(expectedTextName.getText().contains("Name"));
-        elementActions.navigateBack();
         return this;
     }
 
     public CategoriesPage clickSampleCategory() {
         elementActions.clickElement(samplesCategory);
-        Assert.assertTrue(expectedAfterClickSamplesCategory.getText().contains("Name"));
-        elementActions.navigateBack();
         return this;
     }
 
@@ -66,8 +61,6 @@ public class CategoriesPage extends BasePage {
         CategoriesPage categoriesPage = new CategoriesPage();
         categoriesPage.hoverMouseToSamplesCategoryOptions();
         elementActions.clickElement(samplesCategoryOptionsEditBtn);
-        Assert.assertTrue(expectedAfterClickSamplesCategoryOptionsBtn.getText().contains("Name"));
-        elementActions.navigateBack();
         return this;
     }
 
@@ -86,8 +79,6 @@ public class CategoriesPage extends BasePage {
 
     public CategoriesPage clickViewCourseCatalogBtn() {
         elementActions.clickElement(viewCourseCatalogBtn);
-        Assert.assertTrue(expectedAfterClickViewCourseCatalogBtn.getText().contains("Name"));
-        elementActions.navigateBack();
         return this;
     }
 
@@ -95,11 +86,4 @@ public class CategoriesPage extends BasePage {
         elementActions.clickElement(saveAsCSVBtn);
         return this;
     }
-
-    public CategoriesPage allClickMethods() {
-        clickBtnAddCategory().clickSampleCategory().clickSamplesCategoryOptionsEditBtn()
-                .clickSamplesCategoryOptionsDeleteBtn().clickViewCourseCatalogBtn().clickSaveAsCSVBtn();
-        return this;
-    }
-
 }

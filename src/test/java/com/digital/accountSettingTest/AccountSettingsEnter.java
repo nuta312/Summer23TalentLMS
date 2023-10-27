@@ -1,16 +1,23 @@
 package com.digital.accountSettingTest;
 
 import com.digital.BaseTest;
-import com.digital.pages.accountSettingsPage.AccountSettingsPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
+
+import com.digital.pages.accountSettingsPage.AccountSettingsTest;
+import com.digital.pages.accountSettingsPage.BasicSettings;
+import com.digital.pages.accountSettingsPage.EcommercePage;
+import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
+
+import org.testng.annotations.BeforeClass;
 
 public class AccountSettingsEnter extends BaseTest {
 
-    @Test
+    public BasicSettings basicSettings;
+    public EcommercePage ecommercePage;
+    public TalentLMSBetaPage talentLMSBetaPage;
+    @BeforeClass
     public void BasicSettingsTest () {
-        accountSettingsPage = new AccountSettingsPage();
+        accountSettingsPage = new AccountSettingsTest();
         accountSettingsPage.enterAccountSettingsPage();
     }
+
 }

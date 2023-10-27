@@ -5,14 +5,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
-    /**
-     * Загружает конфигурационные данные из файла config.properties.
-     */
     private static Properties properties;
-
     static { // статичный блок загружается при загрузке класса и инициал поля
         try {
-            String path = "src\\main\\resources\\config.properties";
+            String path = "src/main/resources/config.properties";
             FileInputStream inputStream = new FileInputStream(path);
             // для чтения содержимого файла по указанному пути
             properties = new Properties();
@@ -26,7 +22,6 @@ public class ConfigReader {
             // распечатали ошибку в случае чего
         }
     }
-
     public static String getProperty(String key) {
         return properties.getProperty(key).trim();//возвращает ключ
     }
