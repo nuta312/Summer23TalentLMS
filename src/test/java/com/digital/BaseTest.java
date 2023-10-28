@@ -7,23 +7,21 @@ import com.digital.pages.LoginPage;
 import com.digital.pages.accountSettingsPage.AccountHomePage;
 import com.digital.pages.accountSettingsPage.BasicSettings;
 import com.digital.pages.usersPage.UserHomePage;
-import com.digital.pages.accountSettingsPage.AccountSettingsTest;
+import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import  com.digital.pages.categoriesPage.CategoriesPage;
 import com.digital.pages.coursesPage.ByCoursePage;
-import org.testng.annotations.BeforeMethod;
 
 
 public abstract class BaseTest {
     public BasicSettings basicSettings;
     public WebDriver driver;
     public LoginPage loginPage;
-    public AccountSettingsTest accountSettingsPage;
+    public AccountSettingsPage accountSettingsPage;
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
     public HomePage homePage;
