@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 
-public class EcommercePage extends AccountSettingsTest {
+public class EcommercePage extends AccountSettingsPage {
 
     @FindBy(xpath="//li/a[@href='https://nbu111.talentlms.com/account/ecommerce_index']")
     public WebElement enterEcommerce;
