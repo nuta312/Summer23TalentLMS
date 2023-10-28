@@ -57,6 +57,32 @@ public class EcommercePage extends AccountSettingsPage {
     @FindBy(xpath = "//a[@id='add-coupon-button']")
     public WebElement addCouponButton;
 
+    @FindBy(xpath = "//input[@name='code']")
+    public WebElement couponInputCode;
+    @FindBy(xpath = "//input[@name='valid_from']")
+    public WebElement couponInputFrom;
+
+    @FindBy(xpath = "//input[@name='valid_to']")
+    public WebElement couponInputTo;
+
+    @FindBy(xpath = "//input[@name='percentage_discount']")
+    public WebElement couponInputPercentage;
+
+    @FindBy(xpath = "//input[@name='max_redemptions']")
+    public WebElement couponInputRedemptions;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-coupons-courses-filter']")
+    public WebElement couponValidCourse;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-coupons-groups-filter']")
+    public WebElement couponValidGroups;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-coupons-categories-filter']")
+    public WebElement couponValidCategories;
+
+    @FindBy(xpath = "//input[@name='submit_coupon']")
+    public WebElement submitCoupon;
+
     @FindBy(linkText = "Credits")
     public WebElement showCredits;
 

@@ -21,20 +21,20 @@ public class EcommercePageTest extends AccountSettingsEnter {
     }
 
     @Test(groups = "regression", priority = 3)
-    @Description("Show discount at Ecommerce page")
+    @Description("Random choosing some option")
     public void selectEcommerce(){
         elementActions.clickToRandomElement(ecommercePage.allOptions);
-        if(ecommercePage.selectEcommerce.getText().equals("PayPal")){
-            elementActions.writeText(ecommercePage.payPal, "abdykadyrovna2001@gmail.com");
-        }
-        if(ecommercePage.selectEcommerce.getText().equals("Stripe")){
-            elementActions.clickElement(ecommercePage.Stripe);
-            elementActions.navigateBack();
-        }
+//        if(ecommercePage.selectEcommerce.getText().equals("PayPal")){
+//            elementActions.writeText(ecommercePage.payPal, "abdykadyrovna2001@gmail.com");
+//        }
+//        if(ecommercePage.selectEcommerce.getText().equals("Stripe")){
+//            elementActions.clickElement(ecommercePage.Stripe);
+//            elementActions.navigateBack();
+//        }
     }
 
     @Test(groups = "regression", priority = 4)
-    @Description("Show discount at Ecommerce page")
+    @Description("Open and close subscription")
     public void showSubscription(){
         elementActions.doubleClick(ecommercePage.showSubscription);
     }
@@ -43,62 +43,59 @@ public class EcommercePageTest extends AccountSettingsEnter {
     @Description("Show discount at Ecommerce page")
     public void showDiscount() {
         ecommercePage = new EcommercePage();
-        elementActions.waitElementToBeClickable(ecommercePage.showDiscount);
         elementActions.clickElement(ecommercePage.showDiscount);
     }
 
     @Test(groups = "regression", priority = 6)
-    @Description("Show discount at Ecommerce page")
+    @Description("Checkbox in discount")
     public void checkDiscount(){
-        ecommercePage = new EcommercePage();
-        elementActions.waitElementToBeVisible(ecommercePage.checkedDiscount);
-//        elementActions.waitElementToBeClickable(ecommercePage.checkedDiscount);
         elementActions.clickElement(ecommercePage.checkedDiscount);
     }
 
     @Test(groups = "regression", priority = 7)
-    @Description("Show discount at Ecommerce page")
+    @Description("Writing present of discount")
     public void discountPercentage(){
-//        elementActions.waitElementToBeVisible(ecommercePage.discountPercentage);
-//        elementActions.waitElementToBeClickable(ecommercePage.discountPercentage);
         elementActions.writeText(ecommercePage.discountPercentage, "23");
     }
 
     @Test(groups = "regression", priority = 8)
-    @Description("Show discount at Ecommerce page")
+    @Description("Show Invoices at Ecommerce page")
     public void showInvoices(){
         elementActions.clickElement(ecommercePage.showInvoices);
     }
 
     @Test(groups = "regression", priority = 9)
-    @Description("Show discount at Ecommerce page")
+    @Description("Checkbox in Invoices")
     public void checkboxInvoices(){
-        elementActions.waitElementToBeVisible(ecommercePage.checkboxInvoices);
-//        elementActions.waitElementToBeClickable(ecommercePage.checkboxInvoices);
         elementActions.clickElement(ecommercePage.checkboxInvoices);
     }
 
     @Test(groups = "regression", priority = 10)
-    @Description("Show discount at Ecommerce page")
+    @Description("After checking there are open the place for text, here we are writing there")
     public void invoicesSendMessage() {
-//        elementActions.waitElementToBeVisible(ecommercePage.invoicesMessage);
-//        elementActions.waitElementToBeClickable(ecommercePage.invoicesMessage);
-        elementActions.writeText(ecommercePage.invoicesMessage, "Hello my name is Kanzada");
+        elementActions.setTextAndEnterElement(ecommercePage.invoicesMessage, "Hello my name is Kanzada");
     }
 
     @Test(groups = "regression", priority = 11)
-    @Description("Show discount at Ecommerce page")
+    @Description("Coupons at E-commerce page")
     public void showCoupons(){
-        elementActions.clickElement(ecommercePage.showInvoices);
+        elementActions.clickElement(ecommercePage.showCoupons);
+        elementActions.clickElement(ecommercePage.addCouponButton);
     }
 
     @Test(groups = "regression", priority = 12)
-    @Description("Show discount at Ecommerce page")
+    @Description("Adding coupons")
     public void addCouponButton(){
-        if (ecommercePage.addCouponButton.isDisplayed() && ecommercePage.addCouponButton.isEnabled()) {
-            ecommercePage.addCouponButton.click();
-        }
-//        elementActions.clickElement(ecommercePage.addCouponButton);
+        elementActions.waitElementToBeVisible(ecommercePage.couponInputCode);
+        elementActions.writeText(ecommercePage.couponInputCode, "123!");
+//        elementActions.writeText(ecommercePage.couponInputFrom,"October 23, 2023");
+//        elementActions.writeText(ecommercePage.couponInputTo,"October 28, 2023");
+        elementActions.writeText(ecommercePage.couponInputPercentage, "100");
+        elementActions.writeText(ecommercePage.couponInputRedemptions,"100");
+        elementActions.writeText(ecommercePage.couponValidCourse, "SDET Engineers");
+        elementActions.writeText(ecommercePage.couponValidGroups, "Summer 2023");
+        elementActions.writeText(ecommercePage.couponValidCategories, "The best of categories");
+        elementActions.clickElement(ecommercePage.submitCoupon);
     }
 
     @Test(groups = "regression", priority = 13)

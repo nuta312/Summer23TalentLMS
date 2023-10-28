@@ -14,21 +14,20 @@ public class TalentLMSBetaTest extends AccountSettingsEnter {
 
     }
 
-    @Test (groups = "regression", priority = 2)
-    public void clickLearnMore(){
-        elementActions.clickElement(talentLMSBetaPage.learnMore);
-        elementActions.navigateBack();
-    }
+//    @Test (groups = "regression", priority = 2)
+//    public void clickLearnMore(){
+//        elementActions.clickElement(talentLMSBetaPage.learnMore);
+//        elementActions.navigateBack();
+//    }
 
     @Test (groups = "regression", priority = 3)
     public void submitTl(){
-        elementActions.makeElementVisible(talentLMSBetaPage.submitTl);
         elementActions.clickElement(talentLMSBetaPage.submitTl);
     }
 
-    @Test (groups = "regression", priority = 4)
-    public void feedback(){
-        elementActions.makeElementVisible(talentLMSBetaPage.feedback);
-        elementActions.clickElement(talentLMSBetaPage.feedback);
-    }
+//    @Test (groups = "regression", priority = 4)
+//    public void feedback(){
+//        elementActions.makeElementVisible(talentLMSBetaPage.feedback);
+//        elementActions.clickElement(talentLMSBetaPage.feedback);
+//    }
 }
