@@ -39,18 +39,21 @@ public class UserTableTest extends UserHomePageTest {
     @Test(priority = 4, description = "This test checks if user data is sorted by email after clicking on the email tab.",groups = "RegressionTests")
     void testSortUserEmailAfterClickToEmailTab() {
         userTable.clickToEmailTab();
+        elementActions.pause(3000);
         List<String> expectedSort = new LinkedList<>(userTable.listOfUserEmailText);
         Collections.sort(expectedSort);
         List<String> actual = new ArrayList<>();
         for (WebElement el : userTable.listOfUserEmail) {
             actual.add(el.getText());
         }
+        elementActions.pause(3000);
         Assert.assertEquals(expectedSort, actual);
     }
 
     @Test(priority = 5, description = "This test checks if user data is sorted by user type after clicking on the usertype tab.",groups = "RegressionTests")
     void testUserTypeSorting() {
         userTable.clickToUserTypeTab();
+        elementActions.pause(3000);
         Comparator<String> userTypeComparator = (s1, s2) -> {
             if (s1.equals("SuperAdmin")) {
                 return -1; // "SuperAdmin" всегда впереди
@@ -60,6 +63,7 @@ public class UserTableTest extends UserHomePageTest {
                 return s1.compareTo(s2);
             }
         };
+        elementActions.pause(3000);
         List<String> expectedOrder = new ArrayList<>(userTable.listOfUserTypeText);
         Collections.sort(expectedOrder, userTypeComparator);
         List<String> actual = new ArrayList<>();

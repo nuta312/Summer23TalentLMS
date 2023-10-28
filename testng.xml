@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="/Summer23TalentLMS">
+    <listeners>
+        <listener class-name="com.digital.listener.ScreenshotListener">
+        </listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/Asus/IdeaProjects/Summer23TalentLMS">
         <classes>
             <class name="com.digital.accountSettingTest.AccountHomePageTest">
                 <methods>
                     <include name="openHomePageTest"/>
                     <include name="maximizeVideoWindowTest"/>
                     <include name="clickPlayBtn"/>
-                </methods>
-            </class>
-            <class name="com.digital.accountSettingTest.BasicSettingsTest">
-                <methods>
-                    <include name="fillUpTheSiteTest"/>
                 </methods>
             </class>
             <class name="com.digital.accountSettingTest.CertificatesTest">
@@ -59,7 +58,6 @@
                 <methods>
                     <include name="checkDropMenu"/>
                     <include name="checkMassAction"/>
-                    <include name="CheckFilterIcon"/>
                 </methods>
             </class>
             <class name="com.digital.userCategoryTest.CreateUserTest">

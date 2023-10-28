@@ -32,5 +32,9 @@ public class AccountHomePageTest extends BaseTest {
     public void clickPlayBtn() {
         elementActions.clickElement(accountHomePage.playButton);
         assertTrue(accountHomePage.playButton.isEnabled());
+        elementActions.moveToElement(accountHomePage.playButton);
+        elementActions.clickElement(accountHomePage.playButton);
     }
+
+
 }
