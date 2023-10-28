@@ -1,12 +1,12 @@
 
-package com.digital.accountSettingTest;
+package com.digital.AccountSettingTest;
 
 import com.digital.helper.ElementActions;
 import com.digital.pages.accountSettingsPage.BasicSettings;
 import org.testng.annotations.Test;
 
 
-public class BasicSettingsTest extends AccountSettingsEnter {
+public class BasicSettingsTest extends com.digital.accountSettingTest.AccountSettingsEnter {
     @Test(groups = "smoke", priority = 1)
     void fillUpTheSiteTest() {
         BasicSettings basicSettings = new BasicSettings();
