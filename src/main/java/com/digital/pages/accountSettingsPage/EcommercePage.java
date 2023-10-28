@@ -10,6 +10,7 @@ import java.util.List;
 
 public class EcommercePage extends AccountSettingsPage {
 
+    public String discountPercentageText  = "23";
     @FindBy(xpath="//li/a[@href='https://nbu111.talentlms.com/account/ecommerce_index']")
     public WebElement enterEcommerce;
     @FindBy(xpath = "//div[@id='s2id_tl-payment-processor']")

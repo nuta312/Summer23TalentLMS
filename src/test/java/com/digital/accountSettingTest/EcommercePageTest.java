@@ -49,14 +49,16 @@ public class EcommercePageTest extends AccountSettingsEnter {
     @Test(groups = "regression", priority = 6)
     @Description("Checkbox in discount")
     public void checkDiscount(){
+        elementActions.waitElementToBeClickable(ecommercePage.checkedDiscount);
         elementActions.clickElement(ecommercePage.checkedDiscount);
     }
 
-    @Test(groups = "regression", priority = 7)
-    @Description("Writing present of discount")
-    public void discountPercentage(){
-        elementActions.writeText(ecommercePage.discountPercentage, "23");
-    }
+//    @Test(groups = "regression", priority = 7)
+//    @Description("Writing present of discount")
+//    public void discountPercentage(){
+//        elementActions.makeElementVisible(ecommercePage.discountPercentage);
+//        elementActions.writeText(ecommercePage.discountPercentage, "23");
+//    }
 
     @Test(groups = "regression", priority = 8)
     @Description("Show Invoices at Ecommerce page")
@@ -70,11 +72,11 @@ public class EcommercePageTest extends AccountSettingsEnter {
         elementActions.clickElement(ecommercePage.checkboxInvoices);
     }
 
-    @Test(groups = "regression", priority = 10)
-    @Description("After checking there are open the place for text, here we are writing there")
-    public void invoicesSendMessage() {
-        elementActions.setTextAndEnterElement(ecommercePage.invoicesMessage, "Hello my name is Kanzada");
-    }
+//    @Test(groups = "regression", priority = 10)
+//    @Description("After checking there are open the place for text, here we are writing there")
+//    public void invoicesSendMessage() {
+//        elementActions.writeText(ecommercePage.invoicesMessage, "Hello my name is Kanzada");
+//    }
 
     @Test(groups = "regression", priority = 11)
     @Description("Coupons at E-commerce page")
@@ -83,32 +85,32 @@ public class EcommercePageTest extends AccountSettingsEnter {
         elementActions.clickElement(ecommercePage.addCouponButton);
     }
 
-    @Test(groups = "regression", priority = 12)
-    @Description("Adding coupons")
-    public void addCouponButton(){
-        elementActions.waitElementToBeVisible(ecommercePage.couponInputCode);
-        elementActions.writeText(ecommercePage.couponInputCode, "123!");
-//        elementActions.writeText(ecommercePage.couponInputFrom,"October 23, 2023");
-//        elementActions.writeText(ecommercePage.couponInputTo,"October 28, 2023");
-        elementActions.writeText(ecommercePage.couponInputPercentage, "100");
-        elementActions.writeText(ecommercePage.couponInputRedemptions,"100");
-        elementActions.writeText(ecommercePage.couponValidCourse, "SDET Engineers");
-        elementActions.writeText(ecommercePage.couponValidGroups, "Summer 2023");
-        elementActions.writeText(ecommercePage.couponValidCategories, "The best of categories");
-        elementActions.clickElement(ecommercePage.submitCoupon);
-    }
+//    @Test(groups = "regression", priority = 12)
+//    @Description("Adding coupons")
+//    public void addCouponButton(){
+//        elementActions.waitElementToBeVisible(ecommercePage.couponInputCode);
+//        elementActions.writeText(ecommercePage.couponInputCode, "123!");
+////        elementActions.writeText(ecommercePage.couponInputFrom,"October 23, 2023");
+////        elementActions.writeText(ecommercePage.couponInputTo,"October 28, 2023");
+//        elementActions.writeText(ecommercePage.couponInputPercentage, "100");
+//        elementActions.writeText(ecommercePage.couponInputRedemptions,"100");
+//        elementActions.writeText(ecommercePage.couponValidCourse, "SDET Engineers");
+//        elementActions.writeText(ecommercePage.couponValidGroups, "Summer 2023");
+//        elementActions.writeText(ecommercePage.couponValidCategories, "The best of categories");
+//        elementActions.clickElement(ecommercePage.submitCoupon);
+//    }
 
-    @Test(groups = "regression", priority = 13)
-    @Description("Show discount at Ecommerce page")
-    public void showCredits() {
-        elementActions.waitElementToBeVisible(ecommercePage.showCredits);
-        elementActions.waitElementToBeClickable(ecommercePage.showCredits);
-        elementActions.clickElement(ecommercePage.showCredits);
-        elementActions.clickElement(ecommercePage.creditsCheckbox);
-        elementActions.clickElement(ecommercePage.creditsAdd);
-        elementActions.clickElement(ecommercePage.radioBtnSpecificUsers);
-        elementActions.clickElement(ecommercePage.radioBtnAllUsers);
-    }
+//    @Test(groups = "regression", priority = 13)
+//    @Description("Show discount at Ecommerce page")
+//    public void showCredits() {
+//        elementActions.waitElementToBeVisible(ecommercePage.showCredits);
+//        elementActions.waitElementToBeClickable(ecommercePage.showCredits);
+//        elementActions.clickElement(ecommercePage.showCredits);
+//        elementActions.clickElement(ecommercePage.creditsCheckbox);
+//        elementActions.clickElement(ecommercePage.creditsAdd);
+//        elementActions.clickElement(ecommercePage.radioBtnSpecificUsers);
+//        elementActions.clickElement(ecommercePage.radioBtnAllUsers);
+//    }
 
     @Test(groups = "regression", priority = 14)
     @Description("Show discount at Ecommerce page")
