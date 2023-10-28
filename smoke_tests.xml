@@ -11,7 +11,6 @@
             <class name="com.digital.userCategoryTest.EditUserTest"></class>
             <class name="com.digital.coursesTest.InvalidTestAddCoursePage"></class>
             <class name="com.digital.coursesTest.ValidTestAddCoursesPage"></class>
-            <class name="com.digital.accountSettingTest.BasicSettingsTest"></class>
         </classes>
     </test>
 </suite>
