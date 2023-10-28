@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * @author Datkaeva Meervan
  */
-public class AccountHomePage extends AccountSettingsTest {
+public class AccountHomePage extends AccountSettingsPage {
 
     @FindBy(xpath = "//a[contains(text(),'Homepage')]")
     public WebElement openHomePage;
