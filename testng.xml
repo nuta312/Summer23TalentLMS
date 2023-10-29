@@ -14,11 +14,6 @@
                     <include name="clickPlayBtn"/>
                 </methods>
             </class>
-            <class name="com.digital.accountSettingTest.BasicSettingsTest">
-                <methods>
-                    <include name="fillUpTheSiteTest"/>
-                </methods>
-            </class>
             <class name="com.digital.accountSettingTest.CertificatesTest">
                 <methods>
                     <include name="dropdownMenuOfCertificates"/>
