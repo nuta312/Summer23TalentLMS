@@ -57,6 +57,7 @@ public class UserTable extends BasePage {
 
 
     public UserTable clickToDeleteBtn() {
+        if(choosingUserToDelete.size() != 0){
         int randomIndex = new Random().nextInt(choosingUserToDelete.size());
         WebElement randomLabel = choosingUserToDelete.get(randomIndex);
         elementActions.moveToElement(randomLabel);
@@ -65,7 +66,7 @@ public class UserTable extends BasePage {
         elementActions.moveToElement(randomLabel);
         WebElement deleteBtn = findDeleteModalBtn(userEmail);
         elementActions.clickElement(deleteBtn);
-        elementActions.pause(3000);
+        elementActions.pause(3000);};
         return this;
     }
 
