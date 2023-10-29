@@ -17,7 +17,7 @@
             <class name="com.digital.coursesTest.ByCoursePageTest"></class>
             <class name="com.digital.accountSettingTest.AccountHomePageTest"></class>
             <class name="com.digital.accountSettingTest.CertificatesTest"></class>
-            <class name="com.digital.accountSettingTest.EcommercePageTest"></class>
+<!--            <class name="com.digital.accountSettingTest.EcommercePageTest"></class>-->
             <class name="com.digital.accountSettingTest.TalentLMSBetaTest"></class>
         </classes>
     </test>

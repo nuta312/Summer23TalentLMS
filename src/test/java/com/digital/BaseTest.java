@@ -45,10 +45,10 @@ public abstract class BaseTest {
         elementActions = new ElementActions();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-       Driver.closeDriver();
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//       Driver.closeDriver();
+//    }
 
 
 }

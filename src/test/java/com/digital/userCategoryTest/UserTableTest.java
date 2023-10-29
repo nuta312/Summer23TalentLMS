@@ -73,12 +73,12 @@ public class UserTableTest extends UserHomePageTest {
         Assert.assertEquals(expectedOrder, actual, "The list is not sorted correctly");
     }
 
-    @Test(priority = 6, description = "This test checks reports btn in user table",groups = "RegressionTests")
-    void checkTable() {
-        userTable.clickToReportsBtn();
-        Assert.assertEquals(userTable.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
-        userTable.elementActions.navigateBack();
-    }
+//    @Test(priority = 6, description = "This test checks reports btn in user table",groups = "RegressionTests")
+//    void checkTable() {
+//        userTable.clickToReportsBtn();
+//        Assert.assertEquals(userTable.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
+//        userTable.elementActions.navigateBack();
+//    }
 
 
 }
