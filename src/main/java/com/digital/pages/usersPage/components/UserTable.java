@@ -19,10 +19,10 @@ public class UserTable extends BasePage {
 
     @FindBy(xpath = "//div[@id='tl-confirm']//a[@id='tl-confirm-submit']")
     public WebElement deleteModalBtn;
-    @FindBy(xpath = "//span[contains(text(), 'Type')]/../../td[2]/a/span")
+    @FindBy(xpath = "//span[contains(text(), 'Type')]/../../td[2]/a/span/../../../td[3]/span")
     public List<WebElement> choosingUserToDelete;
 
-    public String userFirstName;
+    public String userEmail;
 
     @FindBy(xpath = "//div[@id='tl-users-grid_wrapper']//tbody/tr")
     public List<WebElement> allUsersInTable;
@@ -61,20 +61,22 @@ public class UserTable extends BasePage {
         WebElement randomLabel = choosingUserToDelete.get(randomIndex);
         elementActions.moveToElement(randomLabel);
         System.out.println(randomLabel.getText());
-        userFirstName = randomLabel.getText();
+        userEmail = randomLabel.getText();
         elementActions.moveToElement(randomLabel);
-        WebElement deleteBtn = findDeleteModalBtn(userFirstName);
+        WebElement deleteBtn = findDeleteModalBtn(userEmail);
         elementActions.clickElement(deleteBtn);
         elementActions.pause(3000);
         return this;
     }
 
-    private WebElement findDeleteModalBtn(String userFirstName) {
-        return Driver.getDriver().findElement(By.xpath("//tr[.//span[text()='" + userFirstName + "']]//i[@title='Delete']"));
+    private WebElement findDeleteModalBtn(String userEmail) {
+        return Driver.getDriver().findElement(By.xpath("//span[contains(text(), 'Type')]/../../td[2]/a/span/../../../td[3]/span[text()='" + userEmail + "']/../..//i[@title='Delete']"));
+
     }
 
 
     public List<String> getAllUsersInTable() {
+        elementActions.pause(2000);
         usersListInTable = new ArrayList<>();
         for (WebElement el : allUsersInTable) {
             String userText = el.getText();
@@ -84,6 +86,7 @@ public class UserTable extends BasePage {
     }
 
     public UserTable clickToEmailTab() {
+        elementActions.pause(2000);
         listOfUserEmailText = new ArrayList<>();
         for (WebElement el : listOfUserEmail) {
             listOfUserEmailText.add(el.getText());

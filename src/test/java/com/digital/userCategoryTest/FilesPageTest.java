@@ -16,7 +16,7 @@ public class FilesPageTest extends UserHomePageTest {
                 .clickFileBtn();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2,groups = "RegressionTests")
     void checkFilesTableOptions() {
         filePage.clickTable1();
         filePage.clickPreview();
@@ -26,7 +26,7 @@ public class FilesPageTest extends UserHomePageTest {
 
     }
 
-    @Test(priority = 1, description = "this test checks if the uploaded file appears in the table")
+    @Test(priority = 1, description = "this test checks if the uploaded file appears in the table",groups = "SmokeTests")
     void checkToUploadFile() {
         filePage.clickCloudBtn();
         filePage.pause();
@@ -38,7 +38,7 @@ public class FilesPageTest extends UserHomePageTest {
     }
 
 
-    @Test(priority = 3, description = "this test checks whether the edited file appears in the table")
+    @Test(priority = 3, description = "this test checks whether the edited file appears in the table",groups = "RegressionTests")
     void checkEditFileInput() {
         filePage.clickToRenameInputAndEdit();
         filePage.pause();
