@@ -31,6 +31,7 @@ public abstract class BaseTest {
     public ElementActions elementActions;
     public ByCoursePage byCoursePage;
 
+
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
         driver = Driver.getDriver();
