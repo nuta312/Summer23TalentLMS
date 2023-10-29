@@ -2,6 +2,7 @@ package com.digital.coursesTest;
 
 import com.digital.config.ConfigReader;
 import com.digital.CoursesCategoriesBaseTest;
+import com.digital.pages.HomePage;
 import com.digital.utils.FakeDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -43,6 +44,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 1, description = "This is test check exceeding title length for name course")
     public void NameLengthInvalidTest() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         createCoursePage.addCoursePage();
         String firstName2 = faker.name().firstName();
         StringBuilder longName = new StringBuilder(firstName2);
@@ -70,6 +73,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 2, description = "This is test check exceeding title length for description course")
     public void descriptionInvalidTest() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         String generatedBio = FakeDataProvider.generateLongText(1000);
         createCoursePage.addCoursePage();
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
@@ -90,6 +95,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 3, description = "This is test checking the letters entered in the price field ")
     public void priceInvalidTest() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.addCoursePage();
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
@@ -112,6 +119,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
 
     @Test (priority = 4, description = "This is test checking negative value in price")
     public void priceInvalidTestMinus() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.addCoursePage();
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
@@ -132,6 +141,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 5, description = "This is test check exceeding title length for price course")
     public void codeInvalidTest() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         createCoursePage.addCoursePage();
         String code = faker.name().firstName();
         StringBuilder longName = new StringBuilder(code);
@@ -159,6 +170,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 6, description = "This is test entering letters into a capacity field")
     public void capacityInvalidTest() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
@@ -180,6 +193,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 7, description = "This is test entering symbol into a capacity field")
     public void capacityInvalidSymbolTest() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
@@ -201,6 +216,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
     }
     @Test (priority = 8, description = "This is test checking negative value in capacity")
     public void capacityInvalidMinusTest() {
+        driver.get(ConfigReader.getProperty("BASE_URL"));
+        homePage = new HomePage();
         createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(FakeDataProvider.generateFakeFirstName())
@@ -218,6 +235,5 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .pictureInput()
                 .saveBtn();
         Assert.assertTrue(createCoursePage.exceptionTextOfCapacity.getText().contains("This is not a valid"));
-
     }
 }

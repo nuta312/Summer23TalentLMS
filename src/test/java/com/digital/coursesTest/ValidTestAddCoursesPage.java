@@ -2,6 +2,7 @@ package com.digital.coursesTest;
 
 import com.digital.config.ConfigReader;
 import com.digital.CoursesCategoriesBaseTest;
+import com.digital.driver.Driver;
 import com.digital.pages.coursesPage.CreateCoursePage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ import java.io.FileNotFoundException;
 
 public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
     @Test (priority = 0, description = "This is test meets all parameters")
-    public void allMethodsValid() throws AWTException, FileNotFoundException {
+    public void allMethodsValid(){
         createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         String nameCourse = "Java";
@@ -33,6 +34,7 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+    createCoursePage.homePage();
 
 
     }
@@ -58,6 +60,7 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+        createCoursePage.homePage();
     }
 
     @Test (priority = 2, description = "This test checks the ability to enter the name of the symbol")
@@ -80,5 +83,6 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .pictureInput()
                 .saveBtn();
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+        createCoursePage.homePage();
     }
 }
