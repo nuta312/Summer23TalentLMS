@@ -2,6 +2,7 @@ package com.digital.coursesTest;
 
 import com.digital.config.ConfigReader;
 import com.digital.CoursesCategoriesBaseTest;
+import com.digital.driver.Driver;
 import com.digital.pages.coursesPage.CreateCoursePage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebElement;
@@ -12,9 +13,9 @@ import java.awt.*;
 import java.io.FileNotFoundException;
 
 public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
-    @Test (priority = 0, description = "This is test meets all parameters")
-    public void allMethodsValid() throws AWTException, FileNotFoundException {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+    @Test(priority = 0, description = "This is test meets all parameters")
+    public void allMethodsValid() {
+        createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         String nameCourse = "Java";
         createCoursePage.nameInput(nameCourse)
@@ -32,14 +33,15 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .pictureInput()
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
-        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
+        createCoursePage.homePage();
 
 
     }
 
-    @Test (priority = 1, description = "This test checks the ability to enter the name of the int")
+    @Test(priority = 1, description = "This test checks the ability to enter the name of the int")
     public void nameIntValidTest() {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String nameCourse = "55";
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
@@ -57,12 +59,13 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .pictureInput()
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
-        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
+        createCoursePage.homePage();
     }
 
-    @Test (priority = 2, description = "This test checks the ability to enter the name of the symbol")
+    @Test(priority = 2, description = "This test checks the ability to enter the name of the symbol")
     public void nameSymbolValidTest() {
-        driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
+        createCoursePage.addCoursePage();
         String nameCourse = "!@#$%^&*(";
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
@@ -79,6 +82,7 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .levelInput("3")
                 .pictureInput()
                 .saveBtn();
-        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s-> s.getText().contains(nameCourse)));
+        Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
+        createCoursePage.homePage();
     }
 }
