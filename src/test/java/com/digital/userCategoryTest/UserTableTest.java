@@ -16,6 +16,7 @@ public class UserTableTest extends UserHomePageTest {
 
     @Test(priority = 2,groups = "SmokeTests")
     void checkTextInModal() {
+        elementActions.pause(2000);
         Assert.assertTrue(userTable.modalHeaderTitle.getText().contains("Delete User?"));
         Assert.assertTrue(userTable.modalBodyText.getText().contains("Are you sure you want to delete the user "));
         Assert.assertTrue(userTable.cancelModalBtn.getText().contains("Cancel"));
@@ -73,12 +74,12 @@ public class UserTableTest extends UserHomePageTest {
         Assert.assertEquals(expectedOrder, actual, "The list is not sorted correctly");
     }
 
-//    @Test(priority = 6, description = "This test checks reports btn in user table",groups = "RegressionTests")
-//    void checkTable() {
-//        userTable.clickToReportsBtn();
-//        Assert.assertEquals(userTable.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
-//        userTable.elementActions.navigateBack();
-//    }
+    @Test(priority = 6, description = "This test checks reports btn in user table",groups = "RegressionTests")
+    void checkTable() {
+        userTable.clickToReportsBtn();
+        Assert.assertEquals(userTable.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
+        userTable.elementActions.navigateBack();
+    }
 
 
 }

@@ -46,7 +46,7 @@ public class UserTable extends BasePage {
     @FindBy(xpath = "//tr[@class='odd'][1]")
     public WebElement firstTable;
 
-    @FindBy(xpath = "//span[@title='J. Torphy (admin)']")
+    @FindBy(xpath = "(//span[contains(text(),'Torphy')])[2]")
     public WebElement moveToBtn;
 
     @FindBy(xpath = "//span[contains(text(),'SuperAdmin')]/../../td[7]/div/div/i[1]")
