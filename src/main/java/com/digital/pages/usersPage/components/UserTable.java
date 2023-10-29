@@ -46,7 +46,7 @@ public class UserTable extends BasePage {
     @FindBy(xpath = "//tr[@class='odd'][1]")
     public WebElement firstTable;
 
-    @FindBy(xpath = "//span[@title='J. Torphy (admin)']")
+    @FindBy(xpath = "(//span[contains(text(),'Torphy')])[2]")
     public WebElement moveToBtn;
 
     @FindBy(xpath = "//span[contains(text(),'SuperAdmin')]/../../td[7]/div/div/i[1]")
@@ -57,6 +57,7 @@ public class UserTable extends BasePage {
 
 
     public UserTable clickToDeleteBtn() {
+        if(choosingUserToDelete.size() != 0){
         int randomIndex = new Random().nextInt(choosingUserToDelete.size());
         WebElement randomLabel = choosingUserToDelete.get(randomIndex);
         elementActions.moveToElement(randomLabel);
@@ -65,7 +66,7 @@ public class UserTable extends BasePage {
         elementActions.moveToElement(randomLabel);
         WebElement deleteBtn = findDeleteModalBtn(userEmail);
         elementActions.clickElement(deleteBtn);
-        elementActions.pause(3000);
+        elementActions.pause(3000);};
         return this;
     }
 

@@ -2,7 +2,7 @@ package com.digital.accountSettingTest;
 
 import com.digital.BaseTest;
 
-import com.digital.pages.accountSettingsPage.AccountSettingsTest;
+import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.BasicSettings;
 import com.digital.pages.accountSettingsPage.EcommercePage;
 import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
@@ -16,7 +16,7 @@ public class AccountSettingsEnter extends BaseTest {
     public TalentLMSBetaPage talentLMSBetaPage;
     @BeforeClass
     public void BasicSettingsTest () {
-        accountSettingsPage = new AccountSettingsTest();
+        accountSettingsPage = new AccountSettingsPage();
         accountSettingsPage.enterAccountSettingsPage();
     }
 

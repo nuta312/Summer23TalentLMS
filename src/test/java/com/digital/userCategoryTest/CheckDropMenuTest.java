@@ -34,12 +34,13 @@ public class CheckDropMenuTest extends UserHomePageTest {
         checkDropMenu.clickMessage();
         Assert.assertEquals(checkDropMenu.actualTextSendMessage, "Send message");
     }
-//    @Test(priority = 3,groups = "RegressionTests")
-//    void CheckFilterIcon(){
-//        checkDropMenu.getAllUsersInTable();
-//        checkDropMenu.activeUserFilter()
-//         .getFilterUsersInTable();
-//        Assert.assertEquals(checkDropMenu.usersListInTable,checkDropMenu.usersInTableToActive);
-//        checkDropMenu.onClickActivFilter();
-//    }
+    @Test(priority = 3,groups = "RegressionTests")
+    void CheckFilterIcon(){
+        checkDropMenu.getAllUsersInTable();
+        elementActions.pause(500);
+        checkDropMenu.activeUserFilter()
+         .getFilterUsersInTable();
+        Assert.assertEquals(checkDropMenu.usersListInTable,checkDropMenu.usersInTableToActive);
+        checkDropMenu.onClickActivFilter();
+    }
 }

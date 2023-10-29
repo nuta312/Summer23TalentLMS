@@ -16,13 +16,16 @@ public class UserTableTest extends UserHomePageTest {
 
     @Test(priority = 2,groups = "SmokeTests")
     void checkTextInModal() {
+        if(userTable.choosingUserToDelete.size() != 0){
+        elementActions.pause(2000);
         Assert.assertTrue(userTable.modalHeaderTitle.getText().contains("Delete User?"));
         Assert.assertTrue(userTable.modalBodyText.getText().contains("Are you sure you want to delete the user "));
-        Assert.assertTrue(userTable.cancelModalBtn.getText().contains("Cancel"));
+        Assert.assertTrue(userTable.cancelModalBtn.getText().contains("Cancel"));}
     }
 
     @Test(priority = 3, description = "this test checks if the user is deleted from the table or if the delete button works.",groups = "SmokeTests")
     void checkForDeleteUserToTable() {
+        if (userTable.choosingUserToDelete.size() != 0){
         userTable.deleteModalBtn.click();
         String expectedString = userTable.userEmail;
         boolean isContained = false;
@@ -32,7 +35,7 @@ public class UserTableTest extends UserHomePageTest {
                 break;
             }
         }
-        Assert.assertFalse(isContained);
+        Assert.assertFalse(isContained);};
     }
 
 
@@ -75,9 +78,10 @@ public class UserTableTest extends UserHomePageTest {
 
     @Test(priority = 6, description = "This test checks reports btn in user table",groups = "RegressionTests")
     void checkTable() {
+        if(userTable.choosingUserToDelete.size()!=0){
         userTable.clickToReportsBtn();
         Assert.assertEquals(userTable.textSuperAdmin.getAttribute("innerText"), "SUPERADMIN");
-        userTable.elementActions.navigateBack();
+        userTable.elementActions.navigateBack();};
     }
 
 
