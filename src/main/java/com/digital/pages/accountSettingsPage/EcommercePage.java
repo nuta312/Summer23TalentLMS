@@ -1,5 +1,6 @@
 package com.digital.pages.accountSettingsPage;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -7,24 +8,22 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 
-public class EcommercePage extends AccountSettingsTest {
+public class EcommercePage extends AccountSettingsPage {
 
+    public String discountPercentageText  = "23";
     @FindBy(xpath="//li/a[@href='https://nbu111.talentlms.com/account/ecommerce_index']")
     public WebElement enterEcommerce;
     @FindBy(xpath = "//div[@id='s2id_tl-payment-processor']")
     public WebElement selectEcommerce;
 
-    @FindBy(linkText = "Select your e-commerce processor")
-    public WebElement selectFirstOption;
+    @FindBy(xpath = "//input[@name='paypal_address']")
+    public WebElement payPal;
 
-    @FindBy(xpath = "//option[text()='PayPal']")
-    public WebElement selectSecondOption;
+    @FindBy(xpath = "//div[@class='controls']/a")
+    public WebElement Stripe;
 
-    @FindBy(xpath = "//option[text()='Stripe']")
-    public WebElement selectThirdOption;
-
-    @FindBy(xpath = "//ul[@class='select2-results']/li")
-    public static List<WebElement> allOptions;
+    @FindBy(xpath = "//div[@class='select2-result-label']")
+    public List<WebElement> allOptions;
 
     @FindBy(linkText = "Subscription")
     public WebElement showSubscription;
@@ -59,6 +58,32 @@ public class EcommercePage extends AccountSettingsTest {
     @FindBy(xpath = "//a[@id='add-coupon-button']")
     public WebElement addCouponButton;
 
+    @FindBy(xpath = "//input[@name='code']")
+    public WebElement couponInputCode;
+    @FindBy(xpath = "//input[@name='valid_from']")
+    public WebElement couponInputFrom;
+
+    @FindBy(xpath = "//input[@name='valid_to']")
+    public WebElement couponInputTo;
+
+    @FindBy(xpath = "//input[@name='percentage_discount']")
+    public WebElement couponInputPercentage;
+
+    @FindBy(xpath = "//input[@name='max_redemptions']")
+    public WebElement couponInputRedemptions;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-coupons-courses-filter']")
+    public WebElement couponValidCourse;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-coupons-groups-filter']")
+    public WebElement couponValidGroups;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-coupons-categories-filter']")
+    public WebElement couponValidCategories;
+
+    @FindBy(xpath = "//input[@name='submit_coupon']")
+    public WebElement submitCoupon;
+
     @FindBy(linkText = "Credits")
     public WebElement showCredits;
 
@@ -81,168 +106,51 @@ public class EcommercePage extends AccountSettingsTest {
     public WebElement specificUser;
 
     @FindBy(xpath = "//input[@name='submit_ecommerce']")
-    public WebElement submitEcommerce;
+    public WebElement saveEcommerce;
 
-    @FindBy(xpath = "//div[@class='pull-right']/a[@href='https://nbu111.talentlms.com/reports/timeline/mode:ecommerce']")
+    @FindBy(xpath = "//div[@class='pull-right']/a[text()='E-commerce timeline']")
     public WebElement timeline;
 
     @FindBy(xpath = "//input[@id='tl-filter-timeline-from']")
     public WebElement openDate;
     @FindBy(xpath = "//th[@class='dow']")
     public static List<WebElement> year;
-
     @FindBy(xpath = "//tr/td")
     public List<WebElement> day;
     @FindBy(xpath = "//input[@id='s2id_autogen2']")
     public WebElement openSelectUser;
 
+    @FindBy(xpath = "//input[@id='tl-filter-timeline-to']")
+    public WebElement openFinishDate;
+
+    @FindBy(xpath = "//table[@class=' table-condensed']/thead/tr/th")
+    public List<WebElement> selectFinishYear;
+
+    @FindBy(xpath = "//tr/td[@class='day  old']")
+    public List<WebElement> selectFinishDay;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-filter-timeline-event']")
+    public WebElement openTimeLine;
+
+    @FindBy(xpath = "//div[@id='s2id_tl-filter-timeline-user']")
+    public WebElement openUser;
     @FindBy(xpath = "//div[@class='select2-result-label']")
-    public List<WebElement> usersTimeLine;
+    public List<WebElement> eventTimeLine;
 
+    @FindBy(xpath = "//div[@id='s2id_tl-filter-timeline-user']")
+    public WebElement openUserInput;
 
-    public EcommercePage enterEcommerce(){
-        elementActions.clickElement(enterEcommerce);
-        return this;
-    }
-    public EcommercePage openOptionsEcommerce(){
-        elementActions.clickElement(selectEcommerce);
-        return this;
-    }
+    @FindBy(xpath = "//div[@class='select2-result-label']")
+    public List<WebElement> chooseUser;
 
-    public EcommercePage selectFirst(){
-//        elementActions.waitElementToBeClickable(selectFirstOption);
-        elementActions.clickElement(selectFirstOption);
-        return this;
-    }
+    @FindBy(xpath = "//div[@id='s2id_tl-filter-timeline-course']")
+    public WebElement openCourseInput;
 
-//    public EcommercePage selectRandom(){
-//        Select selectOption = new Select(options);
-//        elementActions.clickToRandomElement(selectOption.getAllSelectedOptions());
-//        return this;
-//    }
+    @FindBy(xpath = "//select[@id='tl-filter-timeline-course']/option")
+    public List<WebElement> chooseCourse;
 
-    public EcommercePage showSubscription(){
-        elementActions.clickElement(showSubscription);
-        return this;
-    }
-
-    public EcommercePage showDiscount(){
-        elementActions.waitElementToBeClickable(showDiscount);
-        elementActions.clickElement(showDiscount);
-        return this;
-    }
-
-    public EcommercePage checkedDiscount(){
-        elementActions.clickElement(checkedDiscount);
-        return this;
-    }
-
-    public EcommercePage discountPercentage(){
-        elementActions.writeText(discountPercentage, "23");
-        return this;
-    }
-
-    public EcommercePage subscriptionChecked(){
-        elementActions.waitElementToBeClickable(subscriptionChecked);
-        elementActions.clickElement(subscriptionChecked);
-        return this;
-    }
-
-    public EcommercePage subscriptionPrice(){
-        elementActions.waitElementToBeVisible(subscriptionPrice);
-        elementActions.writeText(subscriptionPrice, "5000$");
-        return this;
-    }
-
-    public EcommercePage showInvoices(){
-        elementActions.clickElement(showInvoices);
-        return this;
-    }
-
-    public EcommercePage checkboxInvoices(){
-        elementActions.waitElementToBeClickable(checkboxInvoices);
-        elementActions.clickElement(checkboxInvoices);
-        return this;
-    }
-
-    public EcommercePage invoicesSendMessage() {
-        elementActions.waitElementToBeClickable(invoicesMessage);
-        elementActions.writeText(invoicesMessage, "Hello my name is Kanzada");
-        return this;
-    }
-
-    public EcommercePage showCoupons(){
-        elementActions.clickElement(showInvoices);
-        return this;
-    }
-
-    public EcommercePage addCouponButton(){
-        elementActions.waitElementToBeClickable(addCouponButton);
-        elementActions.scrollToTheElement(addCouponButton);
-        elementActions.clickElement(addCouponButton);
-        return this;
-    }
-
-    public EcommercePage showCredits() {
-        elementActions.clickElement(showCredits);
-        return this;
-    }
-
-    public EcommercePage creditsChecked(){
-        elementActions.clickElement(creditsCheckbox);
-        return this;
-    }
-
-    public EcommercePage haveNotCredits(){
-        elementActions.clickElement(haveCredits);
-        return this;
-    }
-
-    public EcommercePage creditsAdd(){
-        elementActions.writeText(creditsAdd, "2");
-        return this;
-    }
-
-    public EcommercePage radioBtnAllUsers(){
-        elementActions.clickElement(radioBtnAllUsers);
-        return this;
-    }
-
-    public EcommercePage radioBtnSpecificUsers(){
-        elementActions.clickElement(radioBtnSpecificUsers);
-        return this;
-    }
-
-    public EcommercePage specificUser(){
-        elementActions.writeText(specificUser, "For specific user");
-        return this;
-    }
-
-    public EcommercePage submitEcommerce(){
-        elementActions.waitElementToBeClickable(submitEcommerce);
-        elementActions.clickElement(submitEcommerce);
-        return this;
-    }
-
-    public EcommercePage timeLine(){
-        elementActions.waitElementToBeClickable(timeline);
-        elementActions.clickElement(timeline);
-        return this;
-    }
-
-//    public EcommercePage openDate(){
-//
-//        elementActions.clickElement(openDate);
-//        return this;
-//    }
-
-    public EcommercePage selectRandomDate(){
-        elementActions.waitElementToBeClickable(openDate);
-        elementActions.clickElement(openDate);
-        elementActions.clickToRandomElement(year);
-        elementActions.clickToRandomElement(day);
-        return this;
-    }
+    @FindBy(xpath = "//option[@value='131']")
+    public WebElement courseOption;
 
     public EcommercePage openSelectUser(){
         elementActions.waitElementToBeClickable(openSelectUser);
@@ -250,4 +158,62 @@ public class EcommercePage extends AccountSettingsTest {
         elementActions.clickElement(openSelectUser);
         return this;
     }
+
+
+    public EcommercePage selectRandomDate() {
+        for (WebElement element : year) {
+            if (element.getText().equals("October 2023")) {
+                try {
+                    elementActions.waitElementToBeClickable(element);
+                    elementActions.clickToRandomElement(year);
+                    break; // Exit the loop once the desired element is clicked
+                } catch (TimeoutException e) {
+                    // Handle the TimeoutException or take appropriate action (e.g., logging)
+                    System.out.println("Timeout waiting for element to become clickable.");
+                }
+            }
+        }
+        for (WebElement element : day) {
+            if (element.getText().equals("23")) {
+                try {
+                    elementActions.waitElementToBeClickable(element);
+                    elementActions.clickToRandomElement(day);
+                    break; // Exit the loop once the desired element is clicked
+                } catch (TimeoutException e) {
+                    // Handle the TimeoutException or take appropriate action (e.g., logging)
+                    System.out.println("Timeout waiting for element to become clickable.");
+                }
+            }
+        }
+        return this;
+    }
+
+    public EcommercePage selectFinishDate() {
+        for (WebElement element : selectFinishYear) {
+            if (element.getText().equals("October 2023")) {
+                try {
+                    elementActions.waitElementToBeClickable(element);
+                    elementActions.clickToRandomElement(selectFinishYear);
+                    break; // Exit the loop once the desired element is clicked
+                } catch (TimeoutException e) {
+                    // Handle the TimeoutException or take appropriate action (e.g., logging)
+                    System.out.println("Timeout waiting for element to become clickable.");
+                }
+            }
+        }
+        for (WebElement element : selectFinishDay) {
+            if (element.getText().equals("28")) {
+                try {
+                    elementActions.waitElementToBeClickable(element);
+                    elementActions.clickToRandomElement(selectFinishDay);
+                    break; // Exit the loop once the desired element is clicked
+                } catch (TimeoutException e) {
+                    // Handle the TimeoutException or take appropriate action (e.g., logging)
+                    System.out.println("Timeout waiting for element to become clickable.");
+                }
+            }
+        }
+        return this;
+    }
+
 }
