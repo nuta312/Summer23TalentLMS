@@ -19,6 +19,7 @@
             <class name="com.digital.accountSettingTest.CertificatesTest"></class>
             <class name="com.digital.accountSettingTest.EcommercePageTest"></class>
             <class name="com.digital.accountSettingTest.TalentLMSBetaTest"></class>
+            <class name="com.digital.categoriesTest.AddCategoryTest"></class>
         </classes>
     </test>
 </suite>
