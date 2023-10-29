@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
-    @Test (priority = 0, description = "This test checks for inconsistent data entry in Description, Price, Code,Capacity")
-    public void invalidAllTest(){
+    @Test(priority = 0, description = "This test checks for inconsistent data entry in Description, Price, Code,Capacity")
+    public void invalidAllTest() {
         createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(1000);
         String firstName2 = faker.name().firstName();
@@ -19,22 +19,22 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
             longName.append(firstName2);
         }
         String resultName = longName.toString().substring(0, 101);
-            createCoursePage.nameInput(resultName)
-                    .choosyCategory("it")
-                    .descriptionInput(generatedBio)
-                    .courseCode(resultName)
-                    .priceInput(FakeDataProvider.generateSalary()+"LOK")
-                    .inputVideo()
-                    .capacityInput(resultName)
-                    .selectDate("1000000")
-                    .selectCertificate("Fan")
-                    .selectDurations("Custom")
-                    .moveSlider()
-                    .levelInput("20")
-                    .pictureInput()
-                    .saveBtn();
+        createCoursePage.nameInput(resultName)
+                .choosyCategory("it")
+                .descriptionInput(generatedBio)
+                .courseCode(resultName)
+                .priceInput(FakeDataProvider.generateSalary() + "LOK")
+                .inputVideo()
+                .capacityInput(resultName)
+                .selectDate("1000000")
+                .selectCertificate("Fan")
+                .selectDurations("Custom")
+                .moveSlider()
+                .levelInput("20")
+                .pictureInput()
+                .saveBtn();
 
-        SoftAssert soft= new SoftAssert();
+        SoftAssert soft = new SoftAssert();
         soft.assertTrue(createCoursePage.text1.getText().contains("cannot exceed 100 characters"));
         soft.assertTrue(createCoursePage.exceptionTextOfCourseCode.getText().contains("cannot exceed 20 characters"));
         soft.assertTrue(createCoursePage.exceptionTextOfCoursePrice.getText().contains("This is not a valid"));
@@ -42,7 +42,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
         soft.assertTrue(createCoursePage.exceptionTextOfCapacity.getText().contains("This is not a valid"));
         soft.assertAll();
     }
-    @Test (priority = 1, description = "This is test check exceeding title length for name course")
+
+    @Test(priority = 1, description = "This is test check exceeding title length for name course")
     public void NameLengthInvalidTest() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
@@ -71,7 +72,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
         Assert.assertTrue(createCoursePage.text1.getText().contains("cannot exceed 100 characters"));
 
     }
-    @Test (priority = 2, description = "This is test check exceeding title length for description course")
+
+    @Test(priority = 2, description = "This is test check exceeding title length for description course")
     public void descriptionInvalidTest() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
@@ -93,7 +95,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .saveBtn();
         Assert.assertTrue(createCoursePage.exceptionTextOfDescription.getText().contains("cannot exceed 5000 characters"));
     }
-    @Test (priority = 3, description = "This is test checking the letters entered in the price field ")
+
+    @Test(priority = 3, description = "This is test checking the letters entered in the price field ")
     public void priceInvalidTest() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
@@ -117,7 +120,7 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
 
     }
 
-    @Test (priority = 4, description = "This is test checking negative value in price")
+    @Test(priority = 4, description = "This is test checking negative value in price")
     public void priceInvalidTestMinus() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
@@ -139,7 +142,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
                 .saveBtn();
         Assert.assertTrue(createCoursePage.exceptionTextOfCoursePrice.getText().contains("This is not a valid"));
     }
-    @Test (priority = 5, description = "This is test check exceeding title length for price course")
+
+    @Test(priority = 5, description = "This is test check exceeding title length for price course")
     public void codeInvalidTest() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
@@ -168,7 +172,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
         Assert.assertTrue(createCoursePage.exceptionTextOfCourseCode.getText().contains("cannot exceed 20 characters"));
 
     }
-    @Test (priority = 6, description = "This is test entering letters into a capacity field")
+
+    @Test(priority = 6, description = "This is test entering letters into a capacity field")
     public void capacityInvalidTest() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
@@ -191,7 +196,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
         Assert.assertTrue(createCoursePage.exceptionTextOfCapacity.getText().contains("This is not a valid"));
 
     }
-    @Test (priority = 7, description = "This is test entering symbol into a capacity field")
+
+    @Test(priority = 7, description = "This is test entering symbol into a capacity field")
     public void capacityInvalidSymbolTest() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
@@ -214,7 +220,8 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
         Assert.assertTrue(createCoursePage.exceptionTextOfCapacity.getText().contains("This is not a valid"));
 
     }
-    @Test (priority = 8, description = "This is test checking negative value in capacity")
+
+    @Test(priority = 8, description = "This is test checking negative value in capacity")
     public void capacityInvalidMinusTest() {
         driver.get(ConfigReader.getProperty("BASE_URL"));
         homePage = new HomePage();
