@@ -11,7 +11,6 @@ public class TalentLMSBetaTest extends AccountSettingsEnter {
     public void openTalentLMS(){
         talentLMSBetaPage = new TalentLMSBetaPage();
         elementActions.clickElement(talentLMSBetaPage.openTalentLMS);
-
     }
 
 //    @Test (groups = "regression", priority = 2)
