@@ -7,7 +7,7 @@ pipeline {
         stage('Build and Run Tests') {
             steps {
                 script {
-                    def mavenHome = env.MAVEN_HOME 
+                    def mavenHome = '/usr/share/maven' 
                     def mavenProfile
                     switch (params.TEST_TYPE) {
                         case 'Smoke':
