@@ -1,4 +1,4 @@
-package com.digital.driver;
+package com.digital.utils;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SauceLabsChromeWindows {
+public class SauceLab {
     @Test
     public void  loadSauceLabWindowsChromeDriver() throws MalformedURLException, InterruptedException {
         ChromeOptions browserOptions = new ChromeOptions();
