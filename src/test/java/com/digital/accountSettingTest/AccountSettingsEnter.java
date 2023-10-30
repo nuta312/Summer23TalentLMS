@@ -1,12 +1,6 @@
-
-package com.digital.AccountSettingTest;
-
+package com.digital.accountSettingTest;
 import com.digital.pages.accountSettingsPage.AccountSettingsPage;
-
-
 import com.digital.BaseTest;
-
-import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.BasicSettings;
 import com.digital.pages.accountSettingsPage.EcommercePage;
 import com.digital.pages.accountSettingsPage.TalentLMSBetaPage;
