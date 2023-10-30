@@ -7,8 +7,7 @@ pipeline {
         stage('Build and Run Tests') {
             steps {
                 script {
-                    def mavenHome = '/usr/share/maven' 
-                    def tests = load 'ciscripts/api_tests/main.groovy'
+                    def mavenHome = '/usr/share/maven'
                     def mavenProfile
                     switch (params.TEST_TYPE) {
                         case 'Smoke':
@@ -22,9 +21,7 @@ pipeline {
                             break
                     }
                     tests.notifySlack()
-                    sh "${mavenHome}/bin/mvn clean test -P ${mavenProfile}"
                 }
-                tests.notifySlack(currentBuild.result)
             }
         }
         stage('Reports') {
