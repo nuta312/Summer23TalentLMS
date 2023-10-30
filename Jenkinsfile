@@ -30,13 +30,13 @@ pipeline {
                 script {
                     def allureResults = "${env.WORKSPACE}/target/allure-results"
                     def allureReport = "${env.WORKSPACE}/allure-report"
-                    sh "allure generate ${allureResults} -o ${allureReport}"
+                    def allureCommand = "/var/lib/jenkins/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/Allure/bin/allure"
+                    sh "${allureCommand} generate ${allureResults} -o ${allureReport}"
                     archiveArtifacts artifacts: '**/allure-report/*', allowEmptyArchive: true
                 }
             }
         }
     }
 }
-
 
 
