@@ -8,6 +8,7 @@ pipeline {
             steps {
                 script {
                     def mavenHome = '/usr/share/maven' 
+                    def tests = load 'ciscripts/api_tests/main.groovy'
                     def mavenProfile
                     switch (params.TEST_TYPE) {
                         case 'Smoke':
@@ -20,8 +21,10 @@ pipeline {
                             mavenProfile = 'EndToEndTest'
                             break
                     }
+                    tests.notifySlack()
                     sh "${mavenHome}/bin/mvn clean test -P ${mavenProfile}"
                 }
+                tests.notifySlack(currentBuild.result)
             }
         }
         stage('Reports') {
