@@ -24,6 +24,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Publish Allure Reports') {
+            steps {
+                script {
+                    def allureResults = "${env.WORKSPACE}/target/allure-results"
+                    def allureReport = "${env.WORKSPACE}/allure-report"
+                    sh "allure generate ${allureResults} -o ${allureReport}"
+                    archiveArtifacts artifacts: '**/allure-report/*', allowEmptyArchive: true
+                }
+            }
+        }
     }
 }
 
