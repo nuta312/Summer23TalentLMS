@@ -20,7 +20,7 @@ public class FilesPageTest extends UserHomePageTest {
     void checkFilesTableOptions() {
         filePage.clickTable1();
         filePage.clickPreview();
-        Assert.assertEquals(filePage.pictureNameText, "as.jpg");
+        Assert.assertEquals(filePage.pictureNameText, "User 03as.jpg");
         filePage.pause();
         Assert.assertTrue(filePage.editModalHeader.getText().contains("Edit file"));
 
@@ -34,7 +34,7 @@ public class FilesPageTest extends UserHomePageTest {
         for (WebElement el : filePage.allFilesInTable) {
             allFilesText.add(el.getText());
         }
-        Assert.assertTrue(allFilesText.contains("as.jpg"));
+        Assert.assertTrue(allFilesText.contains("User 03as.jpg"));
     }
 
 

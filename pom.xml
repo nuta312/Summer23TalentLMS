@@ -25,31 +25,30 @@
     </properties>
     <profiles>
         <profile>
-            <id>RegressionTest</id>
+            <id>SmokeTest</id>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.8.0</version>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M5</version>
                         <configuration>
-                            <!--suppress UnresolvedMavenProperty -->
-                            <source>${mvn.source.version}</source>
-                            <!--suppress UnresolvedMavenProperty -->
-                            <target>${mvn.target.version}</target>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>smoke_tests.xml</suiteXmlFile>
+                            </suiteXmlFiles>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
         <profile>
-            <id>Regression</id>
+            <id>RegressionTest</id>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.18.1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <suiteXmlFiles>
                                 <suiteXmlFile>regression_tests.xml</suiteXmlFile>
@@ -59,7 +58,25 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>EndToEndTest</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M5</version>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>end_to_end_tests.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->

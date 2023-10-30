@@ -37,6 +37,7 @@ public class CheckDropMenuTest extends UserHomePageTest {
     @Test(priority = 3,groups = "RegressionTests")
     void CheckFilterIcon(){
         checkDropMenu.getAllUsersInTable();
+        elementActions.pause(500);
         checkDropMenu.activeUserFilter()
          .getFilterUsersInTable();
         Assert.assertEquals(checkDropMenu.usersListInTable,checkDropMenu.usersInTableToActive);

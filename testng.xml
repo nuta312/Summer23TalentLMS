@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <listeners>
-        <listener class-name="com.digital.listener.ScreenshotListener"></listener>
-    </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/Asus/IdeaProjects/Summer23TalentLMS">
     <test verbose="2" preserve-order="true" name="/Summer23TalentLMS">
         <classes>
             <class name="com.digital.accountSettingTest.AccountHomePageTest">
@@ -16,28 +12,35 @@
             </class>
             <class name="com.digital.accountSettingTest.CertificatesTest">
                 <methods>
-                    <include name="CertificatesList"/>
+                    <include name="dropdownMenuOfCertificates"/>
                 </methods>
             </class>
-            <class name="com.digital.accountSettingTest.EcommercePageTest">
+            <class name="com.digital.categoriesTest.CategoriesTest">
                 <methods>
-                    <include name="openOption"/>
-                    <include name="timeLine"/>
+                    <include name="testClickBtnAddCategory"/>
+                    <include name="testClickSampleCategory"/>
+                    <include name="testClickSamplesCategoryOptionsEditBtn"/>
+                    <include name="testClickSamplesCategoryOptionsDeleteBtn"/>
+                    <include name="testClickViewCourseCatalogBtn"/>
+                    <include name="testClickSaveAsCSVBtn"/>
                 </methods>
             </class>
-            <class name="com.digital.accountSettingTest.TalentLMSBetaTest">
+            <class name="com.digital.categoriesTest.AddCategoryTest">
                 <methods>
-                    <include name="talentLMS"/>
+                    <include name="testClickAddCategoryBtnOnHomePage"/>
+                    <include name="testFillUpFieldNameInput"/>
+                    <include name="testChooseParentCategory"/>
+                    <include name="testClickPriceBtn"/>
+                    <include name="testFillUpFieldPriceInput"/>
+                    <include name="testClickAddNewCategoryBtn"/>
+                    <include name="testClickNewAddedCategoryOptionsDeleteBtn"/>
+                    <include name="testClickDeleteBtn"/>
                 </methods>
             </class>
+
             <class name="com.digital.coursesTest.ByCoursePageTest">
                 <methods>
                     <include name="test"/>
-                </methods>
-            </class>
-            <class name="com.digital.coursesTest.CategoriesTest">
-                <methods>
-                    <include name="testCategories"/>
                 </methods>
             </class>
             <class name="com.digital.coursesTest.InvalidTestAddCoursePage">
@@ -76,6 +79,11 @@
                     <include name="checkDisplayedDeactiveInput"/>
                     <include name="checkEmptyFieldValidation"/>
                     <include name="checkInputsCharactersLimit"/>
+                </methods>
+            </class>
+            <class name="com.digital.userCategoryTest.EditUserNegativeTest">
+                <methods>
+                    <include name="editAndAssertUserInfo"/>
                 </methods>
             </class>
             <class name="com.digital.userCategoryTest.EditUserTest">

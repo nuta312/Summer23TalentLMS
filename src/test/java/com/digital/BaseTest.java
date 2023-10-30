@@ -7,7 +7,7 @@ import com.digital.pages.LoginPage;
 import com.digital.pages.accountSettingsPage.AccountHomePage;
 import com.digital.pages.accountSettingsPage.BasicSettings;
 import com.digital.pages.usersPage.UserHomePage;
-import com.digital.pages.accountSettingsPage.AccountSettingsTest;
+import com.digital.pages.accountSettingsPage.AccountSettingsPage;
 import com.digital.pages.accountSettingsPage.CertificatesPage;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +21,7 @@ public abstract class BaseTest {
     public BasicSettings basicSettings;
     public WebDriver driver;
     public LoginPage loginPage;
-    public AccountSettingsTest accountSettingsPage;
+    public AccountSettingsPage accountSettingsPage;
     public CertificatesPage certificatesPage;
     public UserHomePage userHomePage;
     public HomePage homePage;
@@ -46,10 +46,10 @@ public abstract class BaseTest {
         elementActions = new ElementActions();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+   @AfterClass(alwaysRun = true)
+   public void tearDown() {
+      Driver.closeDriver();
+   }
 
 
 }
