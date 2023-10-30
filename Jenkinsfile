@@ -31,7 +31,7 @@ pipeline {
                     def allureResults = "${env.WORKSPACE}/target/allure-results"
                     def allureCommand = "/var/lib/jenkins/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/Allure/bin/allure"
                     // Генерировать отчеты в target/allure-results
-                    sh "${allureCommand} generate ${allureResults}"
+                    sh "${allureCommand} generate ${allureResults} -o ${allureReport} --clean"
                     // Сервировать отчеты сразу
                     sh "${allureCommand} serve ${allureResults}"
                 }
