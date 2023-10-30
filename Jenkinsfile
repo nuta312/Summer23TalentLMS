@@ -29,10 +29,11 @@ pipeline {
             steps {
                 script {
                     def allureResults = "${env.WORKSPACE}/target/allure-results"
-                    def allureReport = "${env.WORKSPACE}/allure-report"
                     def allureCommand = "/var/lib/jenkins/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/Allure/bin/allure"
-                    sh "${allureCommand} generate ${allureResults} -o ${allureReport}"
-                    archiveArtifacts artifacts: '**/allure-report/*', allowEmptyArchive: true
+                    // Генерировать отчеты в target/allure-results
+                    sh "${allureCommand} generate ${allureResults}"
+                    // Сервировать отчеты сразу
+                    sh "${allureCommand} serve ${allureResults}"
                 }
             }
         }
