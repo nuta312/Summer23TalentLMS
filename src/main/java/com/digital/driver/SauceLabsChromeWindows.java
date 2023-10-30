@@ -1,13 +1,16 @@
 package com.digital.driver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SauceLabsChromeWindows {
-    public void  loadSauceLabWindowsChromeDriver() throws MalformedURLException {
+    @Test
+    public void  loadSauceLabWindowsChromeDriver() throws MalformedURLException, InterruptedException {
         ChromeOptions browserOptions = new ChromeOptions();
         browserOptions.setPlatformName("Windows 11");
         browserOptions.setBrowserVersion("latest");
@@ -19,6 +22,8 @@ public class SauceLabsChromeWindows {
         browserOptions.setCapability("sauce:options", sauceOptions);
         URL url = new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
         RemoteWebDriver driver = new RemoteWebDriver(url, browserOptions);
-
+        Thread.sleep(5000);
+        driver.close();
+        driver.quit();
 }
 }
