@@ -20,7 +20,6 @@ pipeline {
                             mavenProfile = 'EndToEndTest'
                             break
                     }
-                    tests.notifySlack()
                     sh "${mavenHome}/bin/mvn clean test -P ${mavenProfile}"
                 }
             }
