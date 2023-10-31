@@ -1,14 +1,7 @@
 package com.digital.pages.usersPage;
-import com.digital.helper.ScreenShotMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.ArrayList;
 import java.util.List;
-import static com.digital.driver.Driver.getDriver;
 
 public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "//a[@class='tl-tool-tip']/span")
@@ -183,7 +176,6 @@ public class EditUserInfoPage extends UserHomePage {
         }catch (Exception e){
             elementActions.clickElement(excludeCheckBox);
         }
-
         return this;
     }
 
