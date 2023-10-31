@@ -5,7 +5,7 @@ import com.digital.config.ConfigReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CategoriesTest extends CoursesCategoriesBaseTest {
+public class CategoriesTest extends CategoriesBaseTest {
     @Test(priority = 1)
     void testClickBtnAddCategory() {
         driver.get(ConfigReader.getProperty("CATEGORY_URL"));

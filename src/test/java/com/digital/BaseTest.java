@@ -26,7 +26,6 @@ public abstract class BaseTest {
     public UserHomePage userHomePage;
     public HomePage homePage;
     public FakeDataProvider fakeDataProvider;
-    public CategoriesPage categoriesPage;
     public AccountHomePage accountHomePage;
     public ElementActions elementActions;
     public ByCoursePage byCoursePage;
@@ -41,7 +40,6 @@ public abstract class BaseTest {
         homePage = new HomePage();
         fakeDataProvider = new FakeDataProvider();
         byCoursePage = new ByCoursePage();
-        categoriesPage = new CategoriesPage();
         accountHomePage= new AccountHomePage();
         elementActions = new ElementActions();
     }
