@@ -35,3 +35,4 @@ headless=true
 
 # TalentLMS URL
 BASE_URL=https://nbu111.talentlms.com/dashboard
+

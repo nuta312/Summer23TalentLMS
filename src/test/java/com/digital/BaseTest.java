@@ -31,6 +31,7 @@ public abstract class BaseTest {
     public ElementActions elementActions;
     public ByCoursePage byCoursePage;
 
+
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() {
         driver = Driver.getDriver();
@@ -45,10 +46,10 @@ public abstract class BaseTest {
         elementActions = new ElementActions();
     }
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown() {
-//       Driver.closeDriver();
-//    }
+   @AfterClass(alwaysRun = true)
+   public void tearDown() {
+      Driver.closeDriver();
+   }
 
 
 }
