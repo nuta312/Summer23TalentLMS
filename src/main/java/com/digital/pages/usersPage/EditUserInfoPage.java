@@ -57,6 +57,9 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "//input[@id='user_update_submit']")
     public WebElement updateUserBtn;
 
+    @FindBy(id = "deactivate_user")
+    public WebElement deactivateUser;
+
     @FindBy(xpath = "//input[@name='name']")
     public WebElement firsName;
 
@@ -83,16 +86,12 @@ public class EditUserInfoPage extends UserHomePage {
 
     public EditUserInfoPage clickToEditBtn() {
 
-            if (move2EditedUser.getAttribute("innerText").equals("J. Torphy")){
-            elementActions.moveToElement(moveToEditedUser);}
-            else {
+            if (!move2EditedUser.getAttribute("innerText").equals("J. Torphy")){
             elementActions.clickElement(move2EditedUser);
             }
-//                if (clickEditedUser.getAttribute("title").equals("J. Torphy (admin)")){
-//            elementActions.clickElement(click2EditedUser);}
-//                else {
-//                    elementActions.clickElement(clickEditedUser);
-//                }
+            else {
+            elementActions.clickElement(moveToEditedUser);
+            }
             return this;
     }
 
@@ -155,9 +154,8 @@ public class EditUserInfoPage extends UserHomePage {
     public EditUserInfoPage clickActivateCheckBox() {
        try {
            elementActions.clickElement(clickActivateCheckbox);
-           screenShotMethods.takeScreenShot();
        }catch (Exception e){
-           elementActions.clickElement(updateUserBtn);
+           elementActions.clickElement(deactivateUser);
        }
         return this;
     }
@@ -168,13 +166,7 @@ public class EditUserInfoPage extends UserHomePage {
     }
 
     public EditUserInfoPage updateBtn() {
-        try {
             elementActions.clickElement(updateUserBtn);
-            screenShotMethods.takeScreenShot();
-        }catch (Exception e){
-
-        }
-
         return this;
     }
 
