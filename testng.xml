@@ -10,11 +10,6 @@
                     <include name="clickPlayBtn"/>
                 </methods>
             </class>
-            <class name="com.digital.accountSettingTest.BasicSettingsTest">
-                <methods>
-                    <include name="fillUpTheSiteTest"/>
-                </methods>
-            </class>
             <class name="com.digital.accountSettingTest.CertificatesTest">
                 <methods>
                     <include name="dropdownMenuOfCertificates"/>
@@ -30,6 +25,19 @@
                     <include name="testClickSaveAsCSVBtn"/>
                 </methods>
             </class>
+            <class name="com.digital.categoriesTest.AddCategoryTest">
+                <methods>
+                    <include name="testClickAddCategoryBtnOnHomePage"/>
+                    <include name="testFillUpFieldNameInput"/>
+                    <include name="testChooseParentCategory"/>
+                    <include name="testClickPriceBtn"/>
+                    <include name="testFillUpFieldPriceInput"/>
+                    <include name="testClickAddNewCategoryBtn"/>
+                    <include name="testClickNewAddedCategoryOptionsDeleteBtn"/>
+                    <include name="testClickDeleteBtn"/>
+                </methods>
+            </class>
+
             <class name="com.digital.coursesTest.ByCoursePageTest">
                 <methods>
                     <include name="test"/>

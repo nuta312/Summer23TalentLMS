@@ -10,14 +10,14 @@ public class FilesPage extends BasePage {
 
     @FindBy(xpath = "//tr[@class='odd']")
     public WebElement clickTableRowInFile;
-    @FindBy(xpath = "//tr[.//span[@title='as.jpg']]//i[@title='Edit']")
+    @FindBy(xpath = "//tr[.//span[@title='User 03as.jpg']]//i[@title='Edit']")
     public WebElement clickPreviewInTableFile;
 
 
-    @FindBy(xpath = "//tr[.//span[@title='as.jpg']]")
+    @FindBy(xpath = "//tr[.//span[@title='User 03as.jpg']]")
     public WebElement asFile;
 
-    @FindBy(xpath = "//span[@title='as.jpg']")
+    @FindBy(xpath = "//span[@title='User 03as.jpg']")
     public WebElement resultPictureName;
     public String pictureNameText;
 
@@ -25,7 +25,7 @@ public class FilesPage extends BasePage {
     @FindBy(xpath = "//div[@class='modal-header']//h3")
     public WebElement editModalHeader;
 
-    @FindBy(xpath = "(//span[text()='J. Torphy'])[2]")
+    @FindBy(xpath = "(//span[contains(text(),'Torphy')])[2]")
     public WebElement clickPerson;
     //aida
     @FindBy(xpath = "//li/a[contains(text(),'Files')]")
@@ -58,7 +58,7 @@ public class FilesPage extends BasePage {
 
     public FilesPage clickCloudBtn() {
         elementActions.pause(2000);
-        newUploadFile = "C:\\Users\\Asus\\Pictures\\as.jpg";
+        newUploadFile = "D:\\Summer23TalentLMS\\src\\main\\resources\\image\\User 03as.jpg";
         elementActions.makeElementVisible(inputForUploadPicture);
         elementActions.writeText(inputForUploadPicture, newUploadFile);
         return this;

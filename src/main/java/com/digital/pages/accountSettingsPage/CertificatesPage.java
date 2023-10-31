@@ -10,7 +10,7 @@ import org.testng.annotations.Optional;
 
 import java.util.List;
 
-import static com.digital.driver.Driver.driver;
+
 
 public class CertificatesPage extends BasePage {
 
