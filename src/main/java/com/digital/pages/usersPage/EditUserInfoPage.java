@@ -1,19 +1,17 @@
 package com.digital.pages.usersPage;
-import com.digital.helper.ScreenShotMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
-import static com.digital.driver.Driver.getDriver;
 
 public class EditUserInfoPage extends UserHomePage {
-    public ScreenShotMethods screenShotMethods;
     @FindBy(xpath = "//a[@class='tl-tool-tip']/span")
     public WebElement move2EditedUser;
 
-    @FindBy(xpath = "(//a[@class='tl-tool-tip']/span)[2]")
-    public WebElement moveToEditedUser;
+    @FindBy(xpath = "//a[@class='tl-tool-tip']/span")
+    public List<WebElement> moveToEditedUser;
+
+    @FindBy(xpath = "//td[@class=' tl-align-left']")
+    public List<WebElement> allUsers;
 
     @FindBy(xpath = "//a[@rel='tooltip']/span")
     public WebElement clickEditedUser;
@@ -39,8 +37,17 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "(//span[@class='select2-arrow'])[3]")
     public WebElement selectLanguageChosen;
 
+    @FindBy(xpath = "//li[@class='select2-results-dept-0 select2-result select2-result-selectable']")
+    public List<WebElement> languages;
+
     @FindBy(xpath = "(//span[@class='select2-arrow'])[1]")
     public WebElement userTypeChosen;
+
+    @FindBy(xpath = "//li[@class='select2-results-dept-0 select2-result select2-result-selectable']")
+    public List<WebElement> userTypes;
+
+    @FindBy(xpath = "//li[@class='select2-results-dept-0 select2-result select2-result-selectable']")
+    public List<WebElement> timeZoneElements;
 
     @FindBy(xpath = "//input[@id='status']")
     public WebElement clickActivateCheckbox;
@@ -56,6 +63,15 @@ public class EditUserInfoPage extends UserHomePage {
 
     @FindBy(xpath = "//input[@id='user_update_submit']")
     public WebElement updateUserBtn;
+
+    @FindBy(id = "deactivate_user")
+    public WebElement deactivateUser;
+
+    @FindBy(xpath = "(//th[@class='next'])[1]")
+    public WebElement clickNextDate;
+
+    @FindBy(xpath = "//td[@class='day ']")
+    public List<WebElement> selectDeactivateDate;
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement firsName;
@@ -82,21 +98,15 @@ public class EditUserInfoPage extends UserHomePage {
     public WebElement popUpWarningSystem;
 
     public EditUserInfoPage clickToEditBtn() {
-
-            if (move2EditedUser.getAttribute("innerText").equals("J. Torphy")){
-            elementActions.moveToElement(moveToEditedUser);}
-            else {
+        if (move2EditedUser.getAttribute("innerText").contains("J. Torphy")) {
+            elementActions.clickToRandomElement(moveToEditedUser);
+        } else {
             elementActions.clickElement(move2EditedUser);
-            }
-//                if (clickEditedUser.getAttribute("title").equals("J. Torphy (admin)")){
-//            elementActions.clickElement(click2EditedUser);}
-//                else {
-//                    elementActions.clickElement(clickEditedUser);
-//                }
-            return this;
+        }
+        return this;
     }
 
-        public EditUserInfoPage editFirstName(String firstName) {
+    public EditUserInfoPage editFirstName(String firstName) {
         elementActions.writeText(inputfFirstName, firstName);
         return this;
     }
@@ -122,8 +132,6 @@ public class EditUserInfoPage extends UserHomePage {
     }
 
     public EditUserInfoPage timeZoneSelect() {
-        List<WebElement> timeZoneElements = getDriver()
-        .findElements(By.xpath("//li[@class='select2-results-dept-0 select2-result select2-result-selectable']"));
         elementActions.clickToRandomElement(timeZoneElements);
         return this;
     }
@@ -134,8 +142,6 @@ public class EditUserInfoPage extends UserHomePage {
     }
 
     public EditUserInfoPage languageSelect() {
-                    List<WebElement> languages = getDriver()
-                    .findElements(By.xpath("//li[@class='select2-results-dept-0 select2-result select2-result-selectable']"));
                     elementActions.clickToRandomElement(languages);
         return this;
     }
@@ -143,8 +149,6 @@ public class EditUserInfoPage extends UserHomePage {
     public EditUserInfoPage userTypeSelected(){
        try {
            elementActions.clickElement(userTypeChosen);
-           List<WebElement> userTypes = getDriver()
-                   .findElements(By.xpath("//li[@class='select2-results-dept-0 select2-result select2-result-selectable']"));
            elementActions.clickToRandomElement(userTypes);
        }catch (Exception e){
            elementActions.clickElement(excludeCheckBox);
@@ -153,12 +157,25 @@ public class EditUserInfoPage extends UserHomePage {
     }
 
     public EditUserInfoPage clickActivateCheckBox() {
-       try {
            elementActions.clickElement(clickActivateCheckbox);
-           screenShotMethods.takeScreenShot();
-       }catch (Exception e){
-           elementActions.clickElement(updateUserBtn);
-       }
+        return this;
+    }
+
+    public EditUserInfoPage clickDeactivateCheckBox(){
+        try{
+        elementActions.clickElement(deactivateUser);
+        }catch (Exception e){
+            elementActions.clickElement(clickActivateCheckbox).clickElement(deactivateUser);
+        }
+        return this;
+    }
+
+    public EditUserInfoPage selectDeactivate(){
+        try {
+            elementActions.clickElement(clickNextDate).clickToRandomElement(selectDeactivateDate);
+        }catch (Exception e){
+            elementActions.clickElement(excludeCheckBox);
+        }
         return this;
     }
 
@@ -168,13 +185,7 @@ public class EditUserInfoPage extends UserHomePage {
     }
 
     public EditUserInfoPage updateBtn() {
-        try {
             elementActions.clickElement(updateUserBtn);
-            screenShotMethods.takeScreenShot();
-        }catch (Exception e){
-
-        }
-
         return this;
     }
 
