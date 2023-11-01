@@ -1,19 +1,13 @@
 package com.digital.coursesTest;
 
 import com.digital.config.ConfigReader;
-import com.digital.CoursesCategoriesBaseTest;
-import com.digital.driver.Driver;
 import com.digital.pages.coursesPage.CreateCoursePage;
 import com.digital.utils.FakeDataProvider;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-import java.io.FileNotFoundException;
-
-public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
-    @Test(priority = 0, description = "This is test meets all parameters")
+public class ValidTestAddCoursesPage extends CoursesBaseTest {
+    @Test(priority = 0, description = "This is test meets all parameters", groups = "Smoke Tests")
     public void allMethodsValid() {
         createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
@@ -39,7 +33,7 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
 
     }
 
-    @Test(priority = 1, description = "This test checks the ability to enter the name of the int")
+    @Test(priority = 1, description = "This test checks the ability to enter the name of the int", groups = "Smoke Tests")
     public void nameIntValidTest() {
         createCoursePage.addCoursePage();
         String nameCourse = "55";
@@ -63,7 +57,7 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
         createCoursePage.homePage();
     }
 
-    @Test(priority = 2, description = "This test checks the ability to enter the name of the symbol")
+    @Test(priority = 2, description = "This test checks the ability to enter the name of the symbol", groups = "Smoke Tests")
     public void nameSymbolValidTest() {
         createCoursePage.addCoursePage();
         String nameCourse = "!@#$%^&*(";

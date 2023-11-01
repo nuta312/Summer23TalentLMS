@@ -1,10 +1,10 @@
 package com.digital.categoriesTest;
 
-import com.digital.CoursesCategoriesBaseTest;
+import com.digital.coursesTest.CoursesBaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddCategoryTest extends CoursesCategoriesBaseTest {
+public class AddCategoryTest extends CoursesBaseTest {
     @Test(priority = 1,groups = "Regression Tests")
     void testClickAddCategoryBtnOnHomePage(){
        addCategoryPage.clickAddCategoryBtnOnHomePage();
