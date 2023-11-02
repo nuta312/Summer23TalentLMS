@@ -4,7 +4,7 @@ import com.digital.coursesTest.CoursesBaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddCategoryTest extends CoursesBaseTest {
+public class AddCategoryTest extends CategoriesBaseTest {
     @Test(priority = 1,groups = "Regression Tests")
     void testClickAddCategoryBtnOnHomePage(){
        addCategoryPage.clickAddCategoryBtnOnHomePage();
