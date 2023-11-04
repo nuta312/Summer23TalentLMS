@@ -7,9 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ValidTestAddCoursesPage extends CoursesBaseTest {
-    @Test(priority = 0, description = "This is test meets all parameters", groups = "Smoke Tests")
+    @Test(description = "This is test meets all parameters", groups = "Smoke Tests")
     public void allMethodsValid() {
-        createCoursePage.addCoursePage();
+       createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         String nameCourse = "Java";
         createCoursePage.nameInput(nameCourse)
@@ -28,14 +28,14 @@ public class ValidTestAddCoursesPage extends CoursesBaseTest {
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
-        createCoursePage.homePage();
+      createCoursePage.homePage();
 
 
     }
 
-    @Test(priority = 1, description = "This test checks the ability to enter the name of the int", groups = "Smoke Tests")
+    @Test(description = "This test checks the ability to enter the name of the int", groups = "Smoke Tests")
     public void nameIntValidTest() {
-        createCoursePage.addCoursePage();
+       createCoursePage.addCoursePage();
         String nameCourse = "55";
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
@@ -54,12 +54,12 @@ public class ValidTestAddCoursesPage extends CoursesBaseTest {
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
-        createCoursePage.homePage();
+       createCoursePage.homePage();
     }
 
-    @Test(priority = 2, description = "This test checks the ability to enter the name of the symbol", groups = "Smoke Tests")
+    @Test(description = "This test checks the ability to enter the name of the symbol", groups = "Smoke Tests")
     public void nameSymbolValidTest() {
-        createCoursePage.addCoursePage();
+      createCoursePage.addCoursePage();
         String nameCourse = "!@#$%^&*(";
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
@@ -77,6 +77,6 @@ public class ValidTestAddCoursesPage extends CoursesBaseTest {
                 .pictureInput()
                 .saveBtn();
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
-        createCoursePage.homePage();
+       createCoursePage.homePage();
     }
 }
