@@ -98,7 +98,7 @@ public class EditUserInfoPage extends UserHomePage {
     public WebElement popUpWarningSystem;
 
     public EditUserInfoPage clickToEditBtn() {
-        if (move2EditedUser.getAttribute("innerText").contains("J. Torphy")) {
+        if (move2EditedUser.getAttribute("title").contains("Torphy")) {
             elementActions.clickToRandomElement(moveToEditedUser);
         } else {
             elementActions.clickElement(move2EditedUser);
@@ -157,7 +157,12 @@ public class EditUserInfoPage extends UserHomePage {
     }
 
     public EditUserInfoPage clickActivateCheckBox() {
-           elementActions.clickElement(clickActivateCheckbox);
+        try {
+            elementActions.clickElement(clickActivateCheckbox);
+        }catch (Exception e){
+            elementActions.clickElement(excludeCheckBox);
+        }
+
         return this;
     }
 
@@ -180,7 +185,7 @@ public class EditUserInfoPage extends UserHomePage {
     }
 
     public EditUserInfoPage clickExcludeCheckBox(){
-        elementActions.clickElement(excludeCheckBox);
+        elementActions.clickElement(excludeCheckBox).clickElement(excludeCheckBox);
         return this;
     }
 
