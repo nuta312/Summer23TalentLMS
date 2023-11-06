@@ -1,7 +1,6 @@
 package com.digital.userCategoryTest;
 import com.digital.pages.HomePage;
 import com.digital.pages.usersPage.EditUserInfoPage;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
