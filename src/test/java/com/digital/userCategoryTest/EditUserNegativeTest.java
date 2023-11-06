@@ -31,6 +31,7 @@ public class EditUserNegativeTest extends BaseTest {
                 .editFirstName(fakeNegr)
                 .editLastName(fakeNegr)
                 .editUserName(fakeNegr)
+                .editUserEmail(fakeNegr)
                 .editBio(BIO)
                 .userTypeSelected()
                 .timeZoneChosen()
