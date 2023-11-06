@@ -5,8 +5,8 @@ import io.qameta.allure.Epic;
 import org.testng.annotations.Test;
 
 
-//@Epic("Talent_LMS_Beta_Page")
-//public class TalentLMSBetaTest extends AccountSettingsEnter {
+@Epic("Talent_LMS_Beta_Page")
+public class TalentLMSBetaTest extends AccountSettingsEnter {
 //    @Test (groups = "regression", priority = 1)
 //    public void openTalentLMS(){
 //        talentLMSBetaPage = new TalentLMSBetaPage();
@@ -30,4 +30,4 @@ import org.testng.annotations.Test;
 //        elementActions.makeElementVisible(talentLMSBetaPage.feedback);
 //        elementActions.clickElement(talentLMSBetaPage.feedback);
 //    }
-//}
+}
