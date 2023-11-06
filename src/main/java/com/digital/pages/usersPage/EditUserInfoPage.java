@@ -98,7 +98,7 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "//div[@class='toast-message']")
     public WebElement updatedMessage;
 
-    @FindBy(xpath = "//input[@name='login']")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement userEmail;
 
     @FindBy(xpath = "//img[@class='avatar-square']")
