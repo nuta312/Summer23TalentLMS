@@ -1,21 +1,15 @@
 package com.digital.coursesTest;
 
 import com.digital.config.ConfigReader;
-import com.digital.CoursesCategoriesBaseTest;
-import com.digital.driver.Driver;
 import com.digital.pages.coursesPage.CreateCoursePage;
 import com.digital.utils.FakeDataProvider;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-import java.io.FileNotFoundException;
-
-public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
-    @Test(priority = 0, description = "This is test meets all parameters")
+public class ValidTestAddCoursesPage extends CoursesBaseTest {
+    @Test(description = "This is test meets all parameters", groups = "Smoke Tests")
     public void allMethodsValid() {
-        createCoursePage.addCoursePage();
+       createCoursePage.addCoursePage();
         String generatedBio = FakeDataProvider.generateLongText(50);
         String nameCourse = "Java";
         createCoursePage.nameInput(nameCourse)
@@ -34,14 +28,14 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
-        createCoursePage.homePage();
+      createCoursePage.homePage();
 
 
     }
 
-    @Test(priority = 1, description = "This test checks the ability to enter the name of the int")
+    @Test(description = "This test checks the ability to enter the name of the int", groups = "Smoke Tests")
     public void nameIntValidTest() {
-        createCoursePage.addCoursePage();
+       createCoursePage.addCoursePage();
         String nameCourse = "55";
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
@@ -60,12 +54,12 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .saveBtn();
         driver.get(ConfigReader.getProperty("COURSE_INDEX"));
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
-        createCoursePage.homePage();
+       createCoursePage.homePage();
     }
 
-    @Test(priority = 2, description = "This test checks the ability to enter the name of the symbol")
+    @Test(description = "This test checks the ability to enter the name of the symbol", groups = "Smoke Tests")
     public void nameSymbolValidTest() {
-        createCoursePage.addCoursePage();
+      createCoursePage.addCoursePage();
         String nameCourse = "!@#$%^&*(";
         String generatedBio = FakeDataProvider.generateLongText(50);
         createCoursePage.nameInput(nameCourse)
@@ -83,6 +77,6 @@ public class ValidTestAddCoursesPage extends CoursesCategoriesBaseTest {
                 .pictureInput()
                 .saveBtn();
         Assert.assertTrue(CreateCoursePage.newCourse.stream().anyMatch(s -> s.getText().contains(nameCourse)));
-        createCoursePage.homePage();
+       createCoursePage.homePage();
     }
 }
