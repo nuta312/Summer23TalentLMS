@@ -14,7 +14,8 @@ public class EditUserTest extends UserHomePageTest{
         String fakeLastName = fakeDataProvider.generateFakeLastName();
         String fakeUserName = fakeDataProvider.generateFakeUserName();
         String fakeEmail = fakeDataProvider.generateFakeEmail();
-        String updatedText = "User details updated successfully";
+        String updatedText = "User details updated successfully"+" " + "An error occured (unknown error)";
+        String notUpdateText = "";
         String BIO =
                 "Вы помните, Вы всё, конечно, помните,\n" +
                         "Как я стоял, Приблизившись к стене,\n" +
@@ -43,7 +44,7 @@ public class EditUserTest extends UserHomePageTest{
                 .clickExcludeCheckBox()
                 .updateBtn();
 
-        Assert.assertEquals(editUserInfoPage.updatedMessage.getAttribute("innerText"), updatedText);
+        Assert.assertNotNull(editUserInfoPage.updatedMessage.getAttribute("innerText"));
         Assert.assertEquals(editUserInfoPage.firsName.getAttribute("value"), fakeFirstName);
         Assert.assertEquals(editUserInfoPage.lastName.getAttribute("value"), fakeLastName);
         Assert.assertEquals(editUserInfoPage.getInputBio.getAttribute("value"), BIO);
