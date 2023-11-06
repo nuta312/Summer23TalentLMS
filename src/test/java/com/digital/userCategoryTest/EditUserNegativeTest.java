@@ -48,7 +48,7 @@ public class EditUserNegativeTest extends BaseTest {
         String actualPopUpFirstNameText = editUserInfoPage.popUpWarningFirstName.getAttribute("innerText");
         String expectedPopUpLastNameText = "'Last name' cannot exceed 50 characters";
         String actualPopUpLastNameText = editUserInfoPage.popUpWarningLastName.getAttribute("innerText");
-        String expectedPopUpUserNameText = "'Username' cannot exceed 150 characters";
+        String expectedPopUpUserNameText = "'Email address' cannot exceed 150 characters";
         String actualPopUpUserNameText = editUserInfoPage.popUpWarningUserName.getAttribute("innerText");
         String expectedPopUpBIOText = "'Bio' cannot exceed 800 characters";
         String actualPopUpBIOText = editUserInfoPage.popUpWarningBIO.getAttribute("innerText");
