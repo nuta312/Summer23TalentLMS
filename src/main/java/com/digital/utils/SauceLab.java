@@ -1,10 +1,4 @@
 package com.digital.utils;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.Test;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 public class SauceLab {
 //    @Test
 //    void test123() throws MalformedURLException, InterruptedException {
@@ -23,6 +17,4 @@ public class SauceLab {
 //        driver.close();
 //        driver.quit();
 //    }
-
-
 }

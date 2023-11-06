@@ -4,6 +4,7 @@ import com.digital.BaseTest;
 import com.digital.helper.ElementActions;
 import com.digital.pages.categoriesPage.AddCategoryPage;
 import com.digital.pages.categoriesPage.CategoriesPage;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 public class CategoriesBaseTest extends BaseTest {
@@ -11,7 +12,7 @@ public class CategoriesBaseTest extends BaseTest {
     public CategoriesPage categoriesPage;
     public AddCategoryPage addCategoryPage;
 
-    @BeforeTest
+    @BeforeClass
     public void setUpCoursesHome() {
         addCategoryPage = new AddCategoryPage();
         categoriesPage = new CategoriesPage();
