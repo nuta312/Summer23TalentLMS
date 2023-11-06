@@ -302,13 +302,13 @@ public class EditUserInfoPage extends UserHomePage {
         try {
             elementActions.clickElement(clickNextDate).clickToRandomElement(selectDeactivateDate);
         }catch (Exception e){
-            elementActions.clickElement(excludeCheckBox);
+            System.out.println("Дата деактивации выбрана");
         }
         return this;
     }
 
     public EditUserInfoPage clickExcludeCheckBox(){
-        elementActions.clickElement(excludeCheckBox).clickElement(excludeCheckBox);
+        elementActions.clickElement(excludeCheckBox);
         return this;
     }
 
