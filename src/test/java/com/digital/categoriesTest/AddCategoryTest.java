@@ -1,6 +1,5 @@
 package com.digital.categoriesTest;
 
-import com.digital.coursesTest.CoursesBaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
