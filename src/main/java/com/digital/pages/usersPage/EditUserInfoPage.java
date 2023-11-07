@@ -1,11 +1,8 @@
 package com.digital.pages.usersPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "(//td[@class=' tl-align-left'])[2]")
@@ -13,9 +10,6 @@ public class EditUserInfoPage extends UserHomePage {
 
     @FindBy(xpath = "//a[@class='tl-tool-tip']")
     public List<WebElement> moveToEditedUser;
-
-    @FindBy(xpath = "//a[@class='tl-tool-tip']")
-    public WebElement allUsers;
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement inputfFirstName;
@@ -98,7 +92,7 @@ public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "//div[@class='toast-message']")
     public WebElement updatedMessage;
 
-    @FindBy(xpath = "//input[@name='login']")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement userEmail;
 
     @FindBy(xpath = "//img[@class='avatar-square']")
@@ -302,13 +296,13 @@ public class EditUserInfoPage extends UserHomePage {
         try {
             elementActions.clickElement(clickNextDate).clickToRandomElement(selectDeactivateDate);
         }catch (Exception e){
-            elementActions.clickElement(excludeCheckBox);
+            System.out.println("Дата деактивации выбрана");
         }
         return this;
     }
 
     public EditUserInfoPage clickExcludeCheckBox(){
-        elementActions.clickElement(excludeCheckBox).clickElement(excludeCheckBox);
+        elementActions.clickElement(excludeCheckBox);
         return this;
     }
 

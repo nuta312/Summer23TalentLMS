@@ -48,6 +48,7 @@ public class EditUserTest extends UserHomePageTest{
         Assert.assertEquals(editUserInfoPage.lastName.getAttribute("value"), fakeLastName);
         Assert.assertEquals(editUserInfoPage.getInputBio.getAttribute("value"), BIO);
         Assert.assertEquals(editUserInfoPage.userEmail.getAttribute("value"), fakeEmail);
+        Assert.assertNotNull(editUserInfoPage.avatareSquare.getAttribute("src"));
         Assert.assertNotNull(editUserInfoPage.dropdownToggle.getAttribute("innerText"), "это not null");
         Assert.assertEquals(editUserInfoPage.dropDown1.getAttribute("innerText"), "GO TO   ");
         Assert.assertEquals(editUserInfoPage.dropDown2.getAttribute("innerText"), "MESSAGES ");
