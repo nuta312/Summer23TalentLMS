@@ -1,11 +1,8 @@
 package com.digital.pages.usersPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class EditUserInfoPage extends UserHomePage {
     @FindBy(xpath = "(//td[@class=' tl-align-left'])[2]")
@@ -13,9 +10,6 @@ public class EditUserInfoPage extends UserHomePage {
 
     @FindBy(xpath = "//a[@class='tl-tool-tip']")
     public List<WebElement> moveToEditedUser;
-
-    @FindBy(xpath = "//a[@class='tl-tool-tip']")
-    public WebElement allUsers;
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement inputfFirstName;
