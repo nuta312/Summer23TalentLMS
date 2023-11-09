@@ -1,22 +1,21 @@
 package com.digital.db.db_utils;
 
-import com.digital.db.db_config.Config;
+
+import com.digital.config.ConfigReader;
 import com.mysql.cj.jdbc.MysqlDataSource;
-import org.apache.commons.dbutils.QueryRunner;
+
 
 import java.sql.*;
 
 public class DBConnection {
     private static Connection connection;
     private static Statement statement;
-    private static QueryRunner queryRunner;
 
     private DBConnection() {
     }
 
     public static void open(String db) throws SQLException {
         if (connection == null) {
-            queryRunner = new QueryRunner(getBaseDataSource(db));
             connection = getBaseDataSource(db).getConnection();
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         }
@@ -55,10 +54,10 @@ public class DBConnection {
 
     private static MysqlDataSource getBaseDataSource(String database) {
         MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setServerName(Config.getProperty("server"));
-        dataSource.setPortNumber(Integer.parseInt(Config.getProperty("port")));
-        dataSource.setUser(Config.getProperty("user"));
-        dataSource.setPassword(Config.getProperty("password"));
+        dataSource.setServerName(ConfigReader.getProperty("server"));
+        dataSource.setPortNumber(Integer.parseInt(ConfigReader.getProperty("port")));
+        dataSource.setUser(ConfigReader.getProperty("user"));
+        dataSource.setPassword(ConfigReader.getProperty("password"));
         dataSource.setDatabaseName(database);
         return dataSource;
     }
