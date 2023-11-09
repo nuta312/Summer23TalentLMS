@@ -31,7 +31,7 @@ public class EcommercePage extends AccountSettingsPage {
     @FindBy(xpath = "//div/a[@id='show-discount']")
     public WebElement showDiscount;
 
-    @FindBy(xpath = "//input[@id='global_discount']")
+    @FindBy(xpath = "//input[@name='global_discount']")
     public WebElement checkedDiscount;
 
     @FindBy(xpath = "//input[@id='global_discount_percentage']")
@@ -49,7 +49,7 @@ public class EcommercePage extends AccountSettingsPage {
     @FindBy(xpath = "//input[@id='issue_invoices']")
     public WebElement checkboxInvoices;
 
-    @FindBy(xpath = "//textarea[@id='invoices_message']")
+    @FindBy(xpath = "//textarea[@name='invoices_message']")
     public WebElement invoicesMessage;
 
     @FindBy(xpath = "//a[@id='show-coupons']")
@@ -60,8 +60,21 @@ public class EcommercePage extends AccountSettingsPage {
 
     @FindBy(xpath = "//input[@name='code']")
     public WebElement couponInputCode;
+
     @FindBy(xpath = "//input[@name='valid_from']")
-    public WebElement couponInputFrom;
+    public WebElement clickFirstDate;
+    @FindBy(xpath = "//table[@class=' table-condensed']/thead/tr/th")
+    public List<WebElement> startYearDate;
+
+    @FindBy(xpath = "//table[@class=' table-condensed']/tbody/tr/td")
+    public List<WebElement> startDayDate;
+
+    public EcommercePage selectStartDate(){
+        elementActions.clickElement(clickFirstDate);
+        elementActions.clickToRandomElement(startYearDate);
+        elementActions.clickToRandomElement(startDayDate);
+        return this;
+    }
 
     @FindBy(xpath = "//input[@name='valid_to']")
     public WebElement couponInputTo;
@@ -75,6 +88,9 @@ public class EcommercePage extends AccountSettingsPage {
     @FindBy(xpath = "//div[@id='s2id_tl-coupons-courses-filter']")
     public WebElement couponValidCourse;
 
+    @FindBy(xpath = "//ul[@class='select2-result-sub']/li")
+    public List<WebElement> courseOptions;
+
     @FindBy(xpath = "//div[@id='s2id_tl-coupons-groups-filter']")
     public WebElement couponValidGroups;
 
@@ -87,7 +103,7 @@ public class EcommercePage extends AccountSettingsPage {
     @FindBy(linkText = "Credits")
     public WebElement showCredits;
 
-    @FindBy(xpath = "//input[@id='tl-ecommerce-credits']")
+    @FindBy(xpath = "//input[@name='ecommerce_credits']")
     public WebElement creditsCheckbox;
 
     @FindBy(xpath = "//input[@name='credits_to_add']")
@@ -99,7 +115,7 @@ public class EcommercePage extends AccountSettingsPage {
     @FindBy(xpath = "//label[@class='radio inline']/input[@value='1']")
     public WebElement radioBtnAllUsers;
 
-    @FindBy(xpath = "//label[@class='radio inline']/input[@value='4']")
+    @FindBy(xpath = "(//input[@name='add-reset-option'])[1]")
     public WebElement radioBtnSpecificUsers;
 
     @FindBy(xpath = "//input[@id='s2id_autogen4']")

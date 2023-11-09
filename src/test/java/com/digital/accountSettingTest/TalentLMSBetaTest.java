@@ -24,9 +24,8 @@ public class TalentLMSBetaTest extends AccountSettingsEnter {
         elementActions.clickElement(talentLMSBetaPage.submitTl);
     }
 
-//    @Test (groups = "regression", priority = 4)
-//    public void feedback(){
-//        elementActions.makeElementVisible(talentLMSBetaPage.feedback);
-//        elementActions.clickElement(talentLMSBetaPage.feedback);
-//    }
+    @Test (groups = "regression", priority = 4)
+    public void feedback(){
+        elementActions.clickElement(talentLMSBetaPage.feedback);
+    }
 }
