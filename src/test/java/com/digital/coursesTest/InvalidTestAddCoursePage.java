@@ -1,13 +1,12 @@
 package com.digital.coursesTest;
 
 import com.digital.config.ConfigReader;
-import com.digital.CoursesCategoriesBaseTest;
 import com.digital.utils.FakeDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
+public class InvalidTestAddCoursePage extends CoursesBaseTest {
     @Test (priority = 0, description = "This test checks for inconsistent data entry in Description, Price, Code,Capacity")
     public void invalidAllTest(){
         driver.get(ConfigReader.getProperty("COURSE_CREATE_URL"));
@@ -18,20 +17,20 @@ public class InvalidTestAddCoursePage extends CoursesCategoriesBaseTest {
             longName.append(firstName2);
         }
         String resultName = longName.toString().substring(0, 101);
-            createCoursePage.nameInput(resultName)
-                    .choosyCategory("it")
-                    .descriptionInput(generatedBio)
-                    .courseCode(resultName)
-                    .priceInput(FakeDataProvider.generateSalary()+"LOK")
-                    .inputVideo()
-                    .capacityInput(resultName)
-                    .selectDate("1000000")
-                    .selectCertificate("Fan")
-                    .selectDurations("Custom")
-                    .moveSlider()
-                    .levelInput("20")
-                    .pictureInput()
-                    .saveBtn();
+        createCoursePage.nameInput(resultName)
+                .choosyCategory("it")
+                .descriptionInput(generatedBio)
+                .courseCode(resultName)
+                .priceInput(FakeDataProvider.generateSalary()+"LOK")
+                .inputVideo()
+                .capacityInput(resultName)
+                .selectDate("1000000")
+                .selectCertificate("Fan")
+                .selectDurations("Custom")
+                .moveSlider()
+                .levelInput("20")
+                .pictureInput()
+                .saveBtn();
 
         SoftAssert soft= new SoftAssert();
         soft.assertTrue(createCoursePage.text1.getText().contains("cannot exceed 100 characters"));

@@ -82,6 +82,10 @@ public class CreateCoursePage extends CreateUserPage {
     public WebElement pictureClick;
     @FindBy(xpath = "//span[@class='tl-formatted-course-name']")
     public static List<WebElement> newCourse;
+    @FindBy (xpath = "(//a[contains(., 'Add course') and @href='https://nbu111.talentlms.com/course/create'])[2]")
+    public WebElement addCoursePage;
+    @FindBy (xpath = "//span[@class='tl-box-title-options']")
+    public WebElement addHomePage;
 
 
     public CreateCoursePage nameInput(String txt) {
@@ -134,7 +138,7 @@ public class CreateCoursePage extends CreateUserPage {
         return this;
     }
     public CreateCoursePage selectCertificate(String str) {
-      elementActions.clickElement(certificateBtn)
+        elementActions.clickElement(certificateBtn)
                 .clickElement(selectCertificateDuration);
         try {
             for (WebElement val : inputLevel) {
@@ -184,7 +188,19 @@ public class CreateCoursePage extends CreateUserPage {
         return this;
     }
     public CreateCoursePage pictureInput() {
-        pictureBtn.sendKeys("/Users/zhyldyzzheenbaeva/Desktop/project.html/Summer23TalentLMS/src/main/resources/java.png");
+        pictureBtn.sendKeys("C:\\Users\\user\\projectHTML\\Summer23TalentLMS\\src\\main\\resources\\image\\java.png");
+        return this;
+    }
+    public CreateCoursePage addCoursePage(){
+        elementActions.clickElement(addCoursePage);
+return this;
+    }
+    public CreateCoursePage homePage(){
+        elementActions.clickElement(addHomePage);
         return this;
     }
 }
+
+
+
+
