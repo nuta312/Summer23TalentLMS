@@ -1,10 +1,8 @@
 package com.digital.db.beans;
-
 import com.digital.db.db_utils.DBConnection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.apache.commons.dbutils.BeanProcessor;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;

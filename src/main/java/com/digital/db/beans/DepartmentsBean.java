@@ -1,6 +1,4 @@
 package com.digital.db.beans;
-
-
 import com.digital.db.db_utils.DBConnection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +9,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Data
-//data - getter setter tostring equals and hashcode
 @AllArgsConstructor
 public class DepartmentsBean {
     private String dept_no;
@@ -29,10 +26,6 @@ public class DepartmentsBean {
       ResultSet resultSet = DBConnection.query(query,value);
         return resultSet.next() ? new BeanProcessor().toBean(resultSet, DepartmentsBean.class) : null;
     };
-
-
-
-
 
 
 }
