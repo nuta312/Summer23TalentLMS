@@ -10,7 +10,7 @@ public class Tst {
     public static void main(String[] args) throws SQLException {
         DBConnection.open("employees");
 
-      // EmployeeBean.getAllEmployees().forEach(System.out::println);
+    //   EmployeeBean.getAllEmployees().forEach(System.out::println);
 
 
 //        ResultSet rs= DBConnection.query("select * from employees where first_name = ?;" ,"Leandro");
@@ -19,11 +19,7 @@ public class Tst {
 
      //   System.out.println(EmployeeBean.getBy("first_name", "Leandro"));
 
-        System.out.println(EmployeeBean.searchByFirstNameLastNameDate("Leandro", " Speel", "1986-06-26"));
-
-
-
-
+     //   System.out.println(EmployeeBean.searchByFirstNameLastNameDate("Leandro", " Speel", "1986-06-26"));
 
         DBConnection.close();
 
