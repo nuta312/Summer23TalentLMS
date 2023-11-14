@@ -35,7 +35,12 @@ public class EmployeeBean {
         if(!rs.next()) return null;
         return new BeanProcessor().toBean(rs, EmployeeBean.class);
     }
-
+    public static EmployeeBean searchByFirstNameLastNameDate(String firstName, String lastName, String date) throws SQLException {
+        String query = "SELECT * FROM employees WHERE first_name = " + firstName + "and last_name = " + lastName +  "and hire_date" + date;
+        ResultSet rs = DBConnection.query(query);
+        if(!rs.next()) return null;
+        return new BeanProcessor().toBean(rs, EmployeeBean.class);
+    }
     public EmployeeBean(ResultSet rs) throws SQLException {
         new BeanProcessor().populateBean(rs, this);
     }
