@@ -27,9 +27,7 @@ public abstract class ApiRequest {
         this.requestSpecification = given()
                 .baseUri(this.url)
                 .auth()
-                .basic(ConfigReader.getProperty("apiKey"), "")
-                .contentType(ContentType.JSON);
-
+                .basic(ConfigReader.getProperty("apiKey"), "");
     }
 
 
