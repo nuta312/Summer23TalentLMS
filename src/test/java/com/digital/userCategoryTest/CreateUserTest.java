@@ -1,6 +1,5 @@
 package com.digital.userCategoryTest;
 
-import com.digital.BaseTest;
 import com.digital.models.User;
 import com.digital.utils.FakeDataProvider;
 import org.openqa.selenium.WebElement;
@@ -16,7 +15,7 @@ public class CreateUserTest extends UserHomePageTest {
         User user = fakeDataProvider.createFakeUser();
         createUser
                 .clickAddUserBtn()
-                .fillUpFirstNameInput(user.getUserName())
+                .fillUpFirstNameInput(user.getUserFirstName())
                 .fillUpLastNameInput(user.getUserLastName())
                 .fillUpEmailInput(user.getUserEmail())
                 .fillUpUsernamenput(user.getUserUsername())

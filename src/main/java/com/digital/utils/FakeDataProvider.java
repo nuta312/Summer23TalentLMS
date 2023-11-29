@@ -51,7 +51,8 @@ public class FakeDataProvider {
         return faker.address().streetName() + " " + faker.address().streetAddressNumber();
     }
 
-    public static String generateFakeUserName(){
+    public static String generateFakeUserName() {
+
         return faker.name().username();
     }
 
@@ -88,7 +89,7 @@ public class FakeDataProvider {
 
     public User createFakeUser() {
         User user = new User();
-        user.setUserName(generateFakeFirstName());
+        user.setUserFirstName(generateFakeFirstName());
         user.setUserLastName(generateFakeLastName());
         user.setUserEmail(generateFakeEmail());
         user.setUserUsername(generateLogin());
