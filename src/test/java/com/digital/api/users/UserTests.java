@@ -25,7 +25,7 @@ public class UserTests extends BaseApiTest {
         assertEquals("User first name is not correct", "Aidin", user.getUserFirstName());
     }
 
-    @Test
+    @Test()
     public void createUser() {
         user = EntityManager.generateUser();
         user = userController.createUser(user);
