@@ -1,0 +1,2 @@
+package com.digital.api.users;public class UserTests {
+}
