@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-
+import io.restassured.http.ContentType;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +27,9 @@ public abstract class ApiRequest {
         this.requestSpecification = given()
                 .baseUri(this.url)
                 .auth()
-                .basic(ConfigReader.getProperty("apiKey"), "");
+                .basic(ConfigReader.getProperty("apiKey"), "")
+                .contentType(ContentType.JSON);
+
     }
 
 
@@ -51,7 +53,7 @@ public abstract class ApiRequest {
         this.response = given()
                 .spec(requestSpecification)
                 .body(body)
-                .post();
+                .post(endPoint);
         logResponse();
         return this.response;
     };

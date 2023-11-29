@@ -5,12 +5,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public abstract class BaseEntity {
 
-    public String toJson() {
+    public static String toJson(Object object) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            return objectMapper.writeValueAsString(this);
+            return objectMapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }
 }
+
