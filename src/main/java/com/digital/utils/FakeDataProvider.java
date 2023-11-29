@@ -90,12 +90,12 @@ public class FakeDataProvider {
 
     public User createFakeUser() {
         User user = new User();
-//        user.setUserName(generateFakeFirstName());
-//        user.setUserLastName(generateFakeLastName());
-//        user.setUserEmail(generateFakeEmail());
-//        user.setUserUsername(generateLogin());
-//        user.setUserPass(generateStrongPassword());
-//        user.setUserBio(generateRandomBio());
+//      user.setUserName(generateFakeFirstName());
+        user.setUserLastName(generateFakeLastName());
+        user.setUserEmail(generateFakeEmail());
+        user.setUserUsername(generateLogin());
+        user.setUserPass(generateStrongPassword());
+        user.setUserBio(generateRandomBio());
         return user;
     }
 

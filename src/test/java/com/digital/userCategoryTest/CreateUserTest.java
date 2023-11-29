@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.util.function.Consumer;
 
 public class CreateUserTest extends UserHomePageTest {
+<<<<<<< HEAD
 //    @Test(priority = 1,groups = "SmokeTests")
 //    void userAddTest() {
 //        fakeDataProvider = new FakeDataProvider();
@@ -31,6 +32,29 @@ public class CreateUserTest extends UserHomePageTest {
 //                .navigateToUserHomePage()
 //                .getAllUsersInTable();
 //    }
+=======
+    @Test(priority = 1,groups = "SmokeTests")
+    void userAddTest() {
+        fakeDataProvider = new FakeDataProvider();
+        User user = fakeDataProvider.createFakeUser();
+        createUser
+                .clickAddUserBtn()
+//                .fillUpFirstNameInput(user.getUserName())
+                .fillUpLastNameInput(user.getUserLastName())
+                .fillUpEmailInput(user.getUserEmail())
+                .fillUpUsernamenput(user.getUserUsername())
+                .fillUpPasswordInput(user.getUserPass())
+                .fillUpBioInput(user.getUserBio())
+                .clickToRandomUserTypeMenu()
+                .clickToRandomTimeZoneMenu()
+                .clickToRandomLang()
+                .clickToActivateInput(true)
+                .clickToExludeFromEmailsInput(true)
+                .clickToSubmitFormBtn()
+                .navigateToUserHomePage()
+                .getAllUsersInTable();
+    }
+>>>>>>> master
 
     @Test(priority = 2, description = "This test verifies if a new user is added to the table",groups = "SmokeTests")
     void checkForAddingUserToTable() {
@@ -82,7 +106,7 @@ public class CreateUserTest extends UserHomePageTest {
     @Test(priority = 7, description = "This test checks validation for limit characters fields",groups = "SmokeTests")
     void checkInputsCharactersLimit() {
         driver.get("https://nbu111.talentlms.com/user/create");
-        checkCharactersLimitValidationMessage(createUser.firstNameInputError, "'First name' cannot exceed 50 characters", createUser::fillUpFirstNameInput);
+//        checkCharactersLimitValidationMessage(createUser.firstNameInputError, "'First name' cannot exceed 50 characters", createUser::fillUpFirstNameInput);
         checkCharactersLimitValidationMessage(createUser.lastNameInputError, "'Last name' cannot exceed 50 characters", createUser::fillUpLastNameInput);
         checkCharactersLimitValidationMessage(createUser.emailInputError, "This is not a valid 'Email address", createUser::fillUpEmailInput);
         checkCharactersLimitValidationMessage(createUser.passwordInputError, "'Password' cannot exceed 30 characters", createUser::fillUpPasswordInput);

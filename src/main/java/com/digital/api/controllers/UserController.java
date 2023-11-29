@@ -39,7 +39,7 @@ public class UserController extends ApiRequest {
         HashMap<String, String> map = new HashMap<>(){{
             put(key.nameOfKey, value);
         }};
-        return super.get(getEndpoint(API, V1, USERS, formatParameters(map))).as(User.class);
+        return super.get(getEndpoint(API, V1, USERS, formatParameter(map))).as(User.class);
     }
 
     public  User createUser(User user){

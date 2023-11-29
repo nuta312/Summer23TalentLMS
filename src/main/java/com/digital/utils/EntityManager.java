@@ -2,16 +2,13 @@ package com.digital.utils;
 
 import com.digital.models.User;
 
-import static com.digital.utils.FakeDataProvider.*;
-
 public class EntityManager {
-    public static User generateUser(){
+    public static User generateUser() {
         return User.builder()
-                .userFirstName(generateFakeFirstName())
-                .userLastName(generateFakeLastName())
-                .userEmail(generateFakeEmail())
-                .userUsername(generateFakeUserName())
-                .userPass(generatePassword())
-                .build();
+                .userFirstName(FakeDataProvider.generateFakeFirstName())
+                .userLastName(FakeDataProvider.generateFakeLastName())
+                .userEmail(FakeDataProvider.generateFakeEmail())
+                .userUsername(FakeDataProvider.generateLogin())
+                .userPass(FakeDataProvider.generateStrongPassword()).build();
     }
 }

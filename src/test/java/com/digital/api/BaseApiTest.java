@@ -1,7 +1,8 @@
 package com.digital.api;
 
-import com.digital.api.controllers.UserController;
+import com.digital.controllers.UserController;
 
 public class BaseApiTest {
     protected UserController userController;
+
 }

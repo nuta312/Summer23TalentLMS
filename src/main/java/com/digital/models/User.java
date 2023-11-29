@@ -10,23 +10,19 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User extends BaseEntity {
-    String id;
-    @JsonProperty(value = "login")
-    String userUsername;
+    private String id;
     @JsonProperty(value = "first_name")
-    String userFirstName;
+    private String userFirstName;
     @JsonProperty(value = "last_name")
-    String userLastName;
+    private String userLastName;
     @JsonProperty(value = "email")
-    String userEmail;
-    @JsonProperty(value = "bio")
-    String userBio;
+    private String userEmail;
+    @JsonProperty(value = "login")
+    private String userUsername;
     @JsonProperty(value = "password")
-    String userPass;
+    private String userPass;
+    @JsonProperty(value = "bio")
+    private String userBio;
 
 }
