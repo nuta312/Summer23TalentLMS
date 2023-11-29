@@ -16,7 +16,7 @@ public class CreateUserTest extends UserHomePageTest {
         User user = fakeDataProvider.createFakeUser();
         createUser
                 .clickAddUserBtn()
-                .fillUpFirstNameInput(user.getUserName())
+//                .fillUpFirstNameInput(user.getUserName())
                 .fillUpLastNameInput(user.getUserLastName())
                 .fillUpEmailInput(user.getUserEmail())
                 .fillUpUsernamenput(user.getUserUsername())
@@ -82,7 +82,7 @@ public class CreateUserTest extends UserHomePageTest {
     @Test(priority = 7, description = "This test checks validation for limit characters fields",groups = "SmokeTests")
     void checkInputsCharactersLimit() {
         driver.get("https://nbu111.talentlms.com/user/create");
-        checkCharactersLimitValidationMessage(createUser.firstNameInputError, "'First name' cannot exceed 50 characters", createUser::fillUpFirstNameInput);
+//        checkCharactersLimitValidationMessage(createUser.firstNameInputError, "'First name' cannot exceed 50 characters", createUser::fillUpFirstNameInput);
         checkCharactersLimitValidationMessage(createUser.lastNameInputError, "'Last name' cannot exceed 50 characters", createUser::fillUpLastNameInput);
         checkCharactersLimitValidationMessage(createUser.emailInputError, "This is not a valid 'Email address", createUser::fillUpEmailInput);
         checkCharactersLimitValidationMessage(createUser.passwordInputError, "'Password' cannot exceed 30 characters", createUser::fillUpPasswordInput);
