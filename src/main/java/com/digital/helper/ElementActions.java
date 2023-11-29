@@ -29,7 +29,6 @@ public class ElementActions {
         return this;
     }
 
-
     public ElementActions waitElementToBeVisible(WebElement element) {
         if (element.isDisplayed()) {
             return this;

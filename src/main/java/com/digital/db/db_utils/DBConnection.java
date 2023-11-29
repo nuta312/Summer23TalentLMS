@@ -35,7 +35,6 @@ public class DBConnection {
         }
     }
 
-
     public static void close() {
         try {
             if (statement != null) {
@@ -52,12 +51,13 @@ public class DBConnection {
         }
     }
 
-    private static MysqlDataSource getBaseDataSource(String database) {
+    private static MysqlDataSource getBaseDataSource(String database) throws SQLException {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setServerName(ConfigReader.getProperty("server"));
         dataSource.setPortNumber(Integer.parseInt(ConfigReader.getProperty("port")));
         dataSource.setUser(ConfigReader.getProperty("user"));
         dataSource.setPassword(ConfigReader.getProperty("password"));
+        dataSource.setServerTimezone("UTC");
         dataSource.setDatabaseName(database);
         return dataSource;
     }

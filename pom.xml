@@ -79,38 +79,32 @@
 
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.8.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.12.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.5.3</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
@@ -135,8 +129,18 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.21</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.3.2</version>
+        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.35</version>
+        </dependency>
         <dependency>
             <groupId>commons-dbutils</groupId>
             <artifactId>commons-dbutils</artifactId>
@@ -152,9 +156,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <!--suppress UnresolvedMavenProperty -->
                     <source>9</source>
-                    <!--suppress UnresolvedMavenProperty -->
                     <target>9</target>
                 </configuration>
             </plugin>
@@ -166,20 +168,13 @@
                     <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
                     <failIfNoTests>false</failIfNoTests>
                     <encoding>UTF-8</encoding>
-                    <!--                    <reuseForks>true</reuseForks>-->
-                    <!--                    <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>-->
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <!-- java heap size = Xms2048m = 2GB -->
-                    <!-- JVM Option to set command line -->
-                    <!-- javaagent: used to take this jar files as paramater to pass To JVM -->
-                    <!--suppress UnresolvedMavenProperty -->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <!-- Take output to target -->
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
@@ -192,14 +187,11 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            <!-- give IntelliJ acceptable to run and open allure report automatic By download allure binary in project
-            download allure binary -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
                 <configuration>
-                    <!--suppress UnresolvedMavenProperty -->
                     <reportVersion>${allure.version}</reportVersion>
                 </configuration>
             </plugin>

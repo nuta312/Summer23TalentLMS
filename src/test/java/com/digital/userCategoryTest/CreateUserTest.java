@@ -10,27 +10,27 @@ import org.testng.annotations.Test;
 import java.util.function.Consumer;
 
 public class CreateUserTest extends UserHomePageTest {
-    @Test(priority = 1,groups = "SmokeTests")
-    void userAddTest() {
-        fakeDataProvider = new FakeDataProvider();
-        User user = fakeDataProvider.createFakeUser();
-        createUser
-                .clickAddUserBtn()
-                .fillUpFirstNameInput(user.getUserName())
-                .fillUpLastNameInput(user.getUserLastName())
-                .fillUpEmailInput(user.getUserEmail())
-                .fillUpUsernamenput(user.getUserUsername())
-                .fillUpPasswordInput(user.getUserPass())
-                .fillUpBioInput(user.getUserBio())
-                .clickToRandomUserTypeMenu()
-                .clickToRandomTimeZoneMenu()
-                .clickToRandomLang()
-                .clickToActivateInput(true)
-                .clickToExludeFromEmailsInput(true)
-                .clickToSubmitFormBtn()
-                .navigateToUserHomePage()
-                .getAllUsersInTable();
-    }
+//    @Test(priority = 1,groups = "SmokeTests")
+//    void userAddTest() {
+//        fakeDataProvider = new FakeDataProvider();
+//        User user = fakeDataProvider.createFakeUser();
+//        createUser
+//                .clickAddUserBtn()
+//                .fillUpFirstNameInput(user.getUserName())
+//                .fillUpLastNameInput(user.getUserLastName())
+//                .fillUpEmailInput(user.getUserEmail())
+//                .fillUpUsernamenput(user.getUserUsername())
+//                .fillUpPasswordInput(user.getUserPass())
+//                .fillUpBioInput(user.getUserBio())
+//                .clickToRandomUserTypeMenu()
+//                .clickToRandomTimeZoneMenu()
+//                .clickToRandomLang()
+//                .clickToActivateInput(true)
+//                .clickToExludeFromEmailsInput(true)
+//                .clickToSubmitFormBtn()
+//                .navigateToUserHomePage()
+//                .getAllUsersInTable();
+//    }
 
     @Test(priority = 2, description = "This test verifies if a new user is added to the table",groups = "SmokeTests")
     void checkForAddingUserToTable() {

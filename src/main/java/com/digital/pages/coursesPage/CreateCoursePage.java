@@ -82,7 +82,7 @@ public class CreateCoursePage extends CreateUserPage {
     public WebElement pictureClick;
     @FindBy(xpath = "//span[@class='tl-formatted-course-name']")
     public static List<WebElement> newCourse;
-    @FindBy (xpath = "(//a[contains(., 'Add course') and @href='https://nbu111.talentlms.com/course/create'])[2]")
+    @FindBy (xpath = "(//a[contains(., 'Add course') and @href='https://kanzada.talentlms.com/course/create'])[2]")
     public WebElement addCoursePage;
     @FindBy (xpath = "//span[@class='tl-box-title-options']")
     public WebElement addHomePage;

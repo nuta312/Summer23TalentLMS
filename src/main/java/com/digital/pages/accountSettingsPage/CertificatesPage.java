@@ -15,7 +15,7 @@ import java.util.List;
 public class CertificatesPage extends BasePage {
 
 
-    @FindBy(xpath="//li/a[@href='https://nbu111.talentlms.com/account/certifications_index']")
+    @FindBy(xpath="//li/a[@href='https://kanzada.talentlms.com/account/certifications_index']")
     public WebElement enterCertificates;
     @FindBy(xpath = "//span[@class='select2-arrow']")
     public WebElement dropdownCertificate;

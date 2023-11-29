@@ -1,8 +1,10 @@
 package com.digital.accountSettingTest;
 
 import com.digital.pages.accountSettingsPage.EcommercePage;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,7 +16,7 @@ public class EcommercePageTest extends AccountSettingsEnter {
         ecommercePage = new EcommercePage();
         elementActions.clickElement(ecommercePage.enterEcommerce);
         Assert.assertTrue(ecommercePage.enterEcommerce.isEnabled());
-        Assert.assertEquals(driver.getCurrentUrl(), "https://nbu111.talentlms.com/account/ecommerce_index");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://kanzada.talentlms.com/account/ecommerce_index");
     }
 
 
@@ -22,20 +24,23 @@ public class EcommercePageTest extends AccountSettingsEnter {
     @Description("Click and select options")
     public void openSelect(){
         elementActions.clickElement(ecommercePage.selectEcommerce);
-        // Assuming you want to assert that an option is selected
+        Assert.assertTrue(ecommercePage.selectEcommerce.isEnabled());
     }
-
 
     @Test(groups = "regression", priority = 3)
     @Description("Random choosing some option")
     public void selectEcommerce(){
+        ecommercePage = new EcommercePage();
         elementActions.clickToRandomElement(ecommercePage.allOptions);
+
         if(ecommercePage.selectEcommerce.getText().equals("PayPal")){
             elementActions.writeText(ecommercePage.payPal, "abdykadyrovna2001@gmail.com");
+            Assert.assertTrue(ecommercePage.payPal.isDisplayed(), "PayPal input field is not displayed");
         }
         if(ecommercePage.selectEcommerce.getText().equals("Stripe")){
             elementActions.clickElement(ecommercePage.Stripe);
             elementActions.navigateBack();
+            Assert.assertTrue(ecommercePage.Stripe.isSelected(), "Stripe option is not selected");
         }
     }
 
@@ -43,65 +48,48 @@ public class EcommercePageTest extends AccountSettingsEnter {
     @Description("Open and close subscription")
     public void showSubscription(){
         elementActions.doubleClick(ecommercePage.showSubscription);
+        Assert.assertTrue(ecommercePage.showSubscription.isDisplayed(), "Subscription is not displayed after double click");
+//        Assert.assertFalse(ecommercePage.showSubscription.isDisplayed(), "Subscription is still displayed after closing");
     }
 
     @Test(groups = "regression", priority = 5)
     @Description("Show discount at Ecommerce page")
     public void showDiscount() {
-        ecommercePage = new EcommercePage();
         elementActions.clickElement(ecommercePage.showDiscount);
+        boolean isDiscountVisible = ecommercePage.checkedDiscount.isEnabled();
+        Assert.assertTrue(isDiscountVisible, "The discount element is not visible after clicking 'Show Discount'");
+
         elementActions.waitElementToBeClickable(ecommercePage.checkedDiscount);
-        elementActions.clickElement(ecommercePage.checkedDiscount);
-        elementActions.waitElementToBeVisible(ecommercePage.discountPercentage);
-        elementActions.writeText(ecommercePage.discountPercentage, "23");
+        elementActions.clickByJS(ecommercePage.checkedDiscount);
+        boolean isChecked = (boolean) ((JavascriptExecutor) driver)
+                .executeScript("return arguments[0].checked;", ecommercePage.checkedDiscount);
+        Assert.assertTrue(isChecked, "The element should be checked");
+
+
+        ecommercePage.discountPercentage.sendKeys( "10");
+        String enteredDiscount = ecommercePage.discountPercentage.getAttribute("value");
+        Assert.assertEquals(enteredDiscount, "10", "Entered discount percentage is incorrect");
+
     }
-
-//    opp 4 conselp
-//      for lopp 4
-//    acsess modefires
-//    linkedList ArrayList
-
-
-//    @Test(groups = "regression", priority = 6)
-//    @Description("Checkbox in discount")
-//    public void checkDiscount(){
-//
-//    }
-
-//    @Test(groups = "regression", priority = 7)
-//    @Description("Writing present of discount")
-//    public void discountPercentage(){
-//
-//    }
 
     @Test(groups = "regression", priority = 8)
     @Description("Show Invoices at Ecommerce page")
     public void showInvoices(){
-
         elementActions.clickElement(ecommercePage.showInvoices);
-        elementActions.clickElement(ecommercePage.checkboxInvoices);
-        elementActions.writeText(ecommercePage.invoicesMessage, "Hello my name is Kanzada");
+        Assert.assertTrue(ecommercePage.showInvoices.isEnabled(),"Inices checkbox is not displayed");
+
+        String expectedMessage = "Hello my name is Kanzada";
+        elementActions.waitElementToBeVisible(ecommercePage.invoicesMessage);
+        elementActions.writeText(ecommercePage.invoicesMessage, expectedMessage);
+        String actualMessage = ecommercePage.invoicesMessage.getAttribute("value");
+        Assert.assertEquals(actualMessage, expectedMessage);
     }
-
-//    Abdykadyrovna.2001!
-
-//    @Test(groups = "regression", priority = 9)
-//    @Description("Checkbox in Invoices")
-//    public void checkboxInvoices(){
-//
-//    }
-
-//    @Test(groups = "regression", priority = 10)
-//    @Description("After checking there are open the place for text, here we are writing there")
-//    public void invoicesSendMessage() {
-////        elementActions.waitElementToBeVisible(ecommercePage.invoicesMessage);
-//
-//    }
 
     @Test(groups = "regression", priority = 11)
     @Description("Coupons at E-commerce page")
     public void showCoupons(){
         elementActions.clickElement(ecommercePage.showCoupons);
+        Assert.assertTrue(ecommercePage.addCouponButton.isDisplayed(), "Coupon element is not displayed after clicking 'Show Coupons'");
 //        elementActions.clickElement(ecommercePage.addCouponButton);
     }
 
@@ -124,11 +112,26 @@ public class EcommercePageTest extends AccountSettingsEnter {
     @Description("Show discount at Ecommerce page")
     public void showCredits() {
         elementActions.clickElement(ecommercePage.showCredits);
+        boolean isCreditVisible = ecommercePage.creditsCheckbox.isEnabled();
+        Assert.assertTrue(isCreditVisible, "The discount element is not visible after clicking 'Show Discount'");
+
         elementActions.waitElementToBeClickable(ecommercePage.creditsCheckbox);
-        elementActions.clickElement(ecommercePage.creditsCheckbox);
-        elementActions.clickByJS(ecommercePage.creditsAdd);
-        elementActions.clickElement(ecommercePage.creditsAdd);
+        elementActions.clickByJS(ecommercePage.creditsCheckbox);
+        boolean isChecked = (boolean) ((JavascriptExecutor) driver)
+                .executeScript("return arguments[0].checked;", ecommercePage.creditsCheckbox);
+        Assert.assertTrue(isChecked, "The element should be checked");
+
+        ecommercePage.creditsAdd.sendKeys("2");
+        boolean isCreditsEntered = ecommercePage.creditsAdd.isDisplayed();
+        String actualEnteredValue = ecommercePage.creditsAdd.getAttribute("value");
+
+        // Assert that the entered value is displayed correctly
+        Assert.assertTrue(isCreditsEntered, "The entered credits element is not displayed after entering value");
+        Assert.assertEquals(actualEnteredValue, "2", "The entered value is incorrect");
+
+
         elementActions.clickElement(ecommercePage.radioBtnSpecificUsers);
+        elementActions.waitElementToBeVisible(ecommercePage.radioBtnAllUsers);
         elementActions.clickElement(ecommercePage.radioBtnAllUsers);
     }
 
@@ -142,6 +145,7 @@ public class EcommercePageTest extends AccountSettingsEnter {
     @Description("Show discount at Ecommerce page")
     public void timeLine() {
         elementActions.clickElement(ecommercePage.timeline);
+//        Assert.assertTrue(ecommercePage.savedConfirmation.isDisplayed(), "Save confirmation message is not displayed");
     }
 
     @Test(groups = "regression", priority = 16)
@@ -149,6 +153,7 @@ public class EcommercePageTest extends AccountSettingsEnter {
     public void openSelectDate(){
         elementActions.waitElementToBeClickable(ecommercePage.openDate);
         elementActions.clickElement(ecommercePage.openDate);
+        Assert.assertTrue(true, "Assertion message indicating that the 'openDate' element was clicked successfully");
     }
 
     @Test(groups = "regression", priority = 17)
@@ -183,7 +188,8 @@ public class EcommercePageTest extends AccountSettingsEnter {
     @Test(groups = "regression", priority = 22)
     @Description("Show discount at Ecommerce page")
     public void openUsersInput(){
-        elementActions.clickElement(ecommercePage.openUserInput);
+        elementActions.waitElementToBeClickable(ecommercePage.openUserInput);
+        elementActions.clickByJS(ecommercePage.openUserInput);
     }
 
     @Test(groups = "regression", priority = 23)

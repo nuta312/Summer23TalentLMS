@@ -1,74 +1,32 @@
 package com.digital.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class User {
-    private String userName;
-    private String userLastName;
-    private String userEmail;
-    private String userUsername;
-    private String userPass;
-    private String userBio;
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class User extends BaseEntity {
+    String id;
+    @JsonProperty(value = "login")
+    String userUsername;
+    @JsonProperty(value = "first_name")
+    String userFirstName;
+    @JsonProperty(value = "last_name")
+    String userLastName;
+    @JsonProperty(value = "email")
+    String userEmail;
+    @JsonProperty(value = "bio")
+    String userBio;
+    @JsonProperty(value = "password")
+    String userPass;
 
-    public User(String userName, String userLastName, String userEmail, String userUsername, String userPass, String userBio) {
-        this.userName = userName;
-        this.userLastName = userLastName;
-        this.userEmail = userEmail;
-        this.userUsername = userUsername;
-        this.userPass = userPass;
-        this.userBio = userBio;
-    }
-
-    public User() {
-
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserLastName() {
-        return userLastName;
-    }
-
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getUserUsername() {
-        return userUsername;
-    }
-
-    public void setUserUsername(String userUsername) {
-        this.userUsername = userUsername;
-    }
-
-    public String getUserPass() {
-        return userPass;
-    }
-
-    public void setUserPass(String userPass) {
-        this.userPass = userPass;
-    }
-
-    public String getUserBio() {
-        return userBio;
-    }
-
-    public void setUserBio(String userBio) {
-        this.userBio = userBio;
-    }
 }

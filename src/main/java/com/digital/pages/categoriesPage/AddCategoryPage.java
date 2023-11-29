@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class AddCategoryPage extends BasePage {
-    @FindBy(xpath = "//a[@href='https://nbu111.talentlms.com/category/create']")
+    @FindBy(xpath = "//a[@href='https://kanzada.talentlms.com/category/create']")
     public WebElement addCategoryBtnOnHomePage;
 
     @FindBy(xpath = "//input[@name='name']")

@@ -11,7 +11,7 @@ import java.util.List;
 public class EcommercePage extends AccountSettingsPage {
 
     public String discountPercentageText  = "23";
-    @FindBy(xpath="//li/a[@href='https://nbu111.talentlms.com/account/ecommerce_index']")
+    @FindBy(xpath="//li/a[@href='https://kanzada.talentlms.com/account/ecommerce_index']")
     public WebElement enterEcommerce;
     @FindBy(xpath = "//div[@id='s2id_tl-payment-processor']")
     public WebElement selectEcommerce;
@@ -153,10 +153,10 @@ public class EcommercePage extends AccountSettingsPage {
     @FindBy(xpath = "//div[@class='select2-result-label']")
     public List<WebElement> eventTimeLine;
 
-    @FindBy(xpath = "//div[@id='s2id_tl-filter-timeline-user']")
+    @FindBy(xpath = "//input[@id='s2id_autogen2']")
     public WebElement openUserInput;
 
-    @FindBy(xpath = "//div[@class='select2-result-label']")
+    @FindBy(xpath = "//ul[@class='select2-results']")
     public List<WebElement> chooseUser;
 
     @FindBy(xpath = "//div[@id='s2id_tl-filter-timeline-course']")
