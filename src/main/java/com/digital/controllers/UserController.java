@@ -2,7 +2,7 @@ package com.digital.controllers;
 
 import com.digital.api.ApiRequest;
 import com.digital.models.User;
-
+import com.digital.models.BaseEntity;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +30,7 @@ public class UserController extends ApiRequest {
     }
 
     public User createUser(User user) {
-        this.response = super.post(getEndpoint(API, V1, USERS, USER_SIGNUP), user.toJson());
+        this.response = super.post(getEndpoint(API, V1, USER_SIGNUP), BaseEntity.toJson(user));
         return this.response.as(User.class);
     }
 
