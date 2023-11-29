@@ -53,7 +53,7 @@ public abstract class ApiRequest {
         this.response = given()
                 .spec(requestSpecification)
                 .body(body)
-                .post();
+                .post(endPoint);
         logResponse();
         return this.response;
     };
