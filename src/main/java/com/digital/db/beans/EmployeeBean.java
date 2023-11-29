@@ -43,16 +43,6 @@ public class EmployeeBean {
         // что полезно при работе с базой данных, когда нужно извлекать данные и преобразовывать их в объекты для дальнейшей обработки в приложении.
     }
 
-
-<<<<<<< HEAD
-    public static EmployeeBean searchByFirstNameLastNameDate(String firstName, String lastName, String date) throws SQLException {
-        String query = "SELECT * FROM employees WHERE first_name = ? AND last_name = ? AND hire_date = ?;";
-        ResultSet rs = DBConnection.query(query,firstName,lastName,date);
-        if(!rs.next()) return null;
-        return new BeanProcessor().toBean(rs, EmployeeBean.class);
-    }
-
-=======
     public static EmployeeBean createNewEmployee(EmployeeBean employeeBean,int expectedIndex) throws SQLException {
         String columns = getAllColumns(employeeBean);
         String values = getValuesPlaceholder(employeeBean);
@@ -113,7 +103,7 @@ public class EmployeeBean {
         ResultSet resultSet = DBConnection.query(query,firstName,lastName);
         return resultSet.next() ? new BeanProcessor().toBean(resultSet,EmployeeBean.class) : null;
     }
->>>>>>> master
+
     public EmployeeBean(ResultSet rs) throws SQLException {
         new BeanProcessor().populateBean(rs, this);
     }

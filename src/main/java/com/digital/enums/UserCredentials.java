@@ -1,11 +1,8 @@
 package com.digital.enums;
 
 public enum UserCredentials {
-<<<<<<< HEAD
+
     ADMIN("Kanzada", "Kanzada.01!");
-=======
-    ADMIN("admin", "Admin1234!");
->>>>>>> master
 
     private final String username;
     private final String password;

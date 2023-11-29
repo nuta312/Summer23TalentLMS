@@ -40,8 +40,6 @@ public class DBConnection {
         }
     }
 
-<<<<<<< HEAD
-=======
     public static <T> T insertAndRetrieveBean(String insertQuery, String retrieveQuery,Class<T> beanClass, Object... insertParams) throws SQLException {
         // Выполнение вставки
         PreparedStatement insertStatement = connection.prepareStatement(insertQuery);
@@ -103,8 +101,6 @@ public class DBConnection {
 
     //метод для добавления изменения удаления
 
-
->>>>>>> master
     public static void close() {
         try {
             if (statement != null) {

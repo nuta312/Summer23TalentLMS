@@ -1,9 +1,5 @@
 package com.digital.db;
 
-<<<<<<< HEAD
-import com.digital.db.beans.DepartmentBeen;
-=======
->>>>>>> master
 import com.digital.db.beans.EmployeeBean;
 import com.digital.db.db_utils.DBConnection;
 import org.testng.Assert;
@@ -16,7 +12,6 @@ import java.util.Map;
 public class Tst {
     public static void main(String[] args) throws SQLException {
         DBConnection.open("employees");
-<<<<<<< HEAD
 
 
 //        EmployeeBean.getAll().forEach(System.out::println);
@@ -28,13 +23,11 @@ public class Tst {
 //        System.out.println(EmployeeBean.searchByFirstNameLastNameDate("Georgi", "Facello", "1986-06-26"));
 
 
-        DepartmentBeen.getAll().forEach(System.out::println);
 //        ResultSet rs = DBConnection.query("select * from  departments where dept_name = ?;","Finance");
 //        rs.next();
 //        System.out.println(new DepartmentBeen(rs));
 //        System.out.println(DepartmentBeen.getDeptNo("dept_no", "d009"));
 
-=======
 //        int expectedIndex = 1;
 //        int actualIndex =  EmployeeBean.getByNameLastName("Aibike","Imanbaeva").getEmp_no();
 //        System.out.println(actualIndex);
@@ -54,7 +47,6 @@ public class Tst {
         updates.put("last_name", "totosheva");
        EmployeeBean res =  EmployeeBean.updateEmployee(2, updates);
         System.out.println(res);
->>>>>>> master
         DBConnection.close();
 
     }

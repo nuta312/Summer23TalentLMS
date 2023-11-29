@@ -20,9 +20,8 @@ public class UserTest extends BaseApiTest {
     @Test()
     public void userTest() {
         user = userController.receiveUser(UserController.By.ID, "1");
-        Assert.assertEquals(user.getUserFirstName(), "Aibike");
+        Assert.assertEquals(user.getUserFirstName(), "Berdalieva");
     }
-
 
     @Test
     public void createUser() {
