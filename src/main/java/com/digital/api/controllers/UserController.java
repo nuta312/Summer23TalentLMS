@@ -1,12 +1,11 @@
-package com.digital.controllers;
+package com.digital.api.controllers;
 
 import com.digital.api.ApiRequest;
 import com.digital.models.User;
 
 import java.util.HashMap;
-import java.util.Map;
 
-import static com.digital.controllers.TalentLMSBaseEndpoint.*;
+import static com.digital.api.TalentLMSBaseEndpoint.*;
 
 
 public class UserController extends ApiRequest {

@@ -1,4 +1,4 @@
-package com.digital.controllers;
+package com.digital.api;
 
 public class TalentLMSBaseEndpoint {
     public static final String API = "api";

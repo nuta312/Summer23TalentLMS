@@ -2,7 +2,7 @@ package com.digital.api.users;
 
 import com.digital.api.BaseApiTest;
 import com.digital.config.ConfigReader;
-import com.digital.controllers.UserController;
+import com.digital.api.controllers.UserController;
 import com.digital.models.User;
 import com.digital.utils.EntityManager;
 import org.testng.Assert;
