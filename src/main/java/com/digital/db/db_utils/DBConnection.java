@@ -1,6 +1,8 @@
 package com.digital.db.db_utils;
 import com.digital.config.ConfigReader;
 import com.mysql.cj.jdbc.MysqlDataSource;
+import org.apache.commons.dbutils.BeanProcessor;
+
 import java.sql.*;
 
 public class DBConnection {
@@ -28,8 +30,8 @@ public class DBConnection {
             //Он предоставляет методы для выполнения различных видов SQL-запросов
         else {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-              //при выполнении более сложных операций, таких как использование параметризованных запросов,
-              // рекомендуется использовать PreparedStatement, так как это обеспечивает безопасность от SQL-инъекций и повышает производительность.
+            //при выполнении более сложных операций, таких как использование параметризованных запросов,
+            // рекомендуется использовать PreparedStatement, так как это обеспечивает безопасность от SQL-инъекций и повышает производительность.
             for (int i = 0; i < params.length; i++) {
                 preparedStatement.setObject(i + 1, params[i]);
             }
@@ -37,6 +39,67 @@ public class DBConnection {
             return preparedStatement.executeQuery();
         }
     }
+
+    public static <T> T insertAndRetrieveBean(String insertQuery, String retrieveQuery,Class<T> beanClass, Object... insertParams) throws SQLException {
+        // Выполнение вставки
+        PreparedStatement insertStatement = connection.prepareStatement(insertQuery);
+        for (int i = 0; i < insertParams.length; i++) {
+            insertStatement.setObject(i + 1, insertParams[i]);
+        }
+        insertStatement.executeUpdate();
+
+        // Получение созданного объекта Java Bean
+        PreparedStatement retrieveStatement = connection.prepareStatement(retrieveQuery);
+        // Предположим, что retrieveQuery возвращает только одну запись и ваш Java Bean может быть создан с использованием BeanProcessor
+        ResultSet resultSet = retrieveStatement.executeQuery();
+        if (resultSet.next()) {
+            return new BeanProcessor().toBean(resultSet, beanClass);
+        } else {
+            return null; // Возвращаем null, если запись не найдена
+        }
+    }
+
+    public static <T> T updateAndRetrieveBean(String updateQuery, String retrieveQuery, Class<T> beanClass, Object... insertParams) throws SQLException {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(updateQuery);
+            for (int i = 0; i < insertParams.length; i++) {
+                insertStatement.setObject(i + 1, insertParams[i]);
+            }
+            int rowsUpdated = insertStatement.executeUpdate();
+            if (rowsUpdated == 0) {
+                System.out.println("No rows updated. Returning null.");
+                return null;
+            }
+            PreparedStatement retrieveStatement = connection.prepareStatement(retrieveQuery);
+            ResultSet resultSet = retrieveStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return new BeanProcessor().toBean(resultSet, beanClass);
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    public static <T> T deleteBean(String deleteQuery, String retrieveQuery,Class<T> beanClass, Object... insertParams) throws SQLException {
+        PreparedStatement insertStatement = connection.prepareStatement(deleteQuery);
+        for (int i = 0; i < insertParams.length; i++) {
+            insertStatement.setObject(i + 1, insertParams[i]);
+        }
+        insertStatement.executeUpdate();
+        PreparedStatement retrieveStatement = connection.prepareStatement(retrieveQuery);
+        ResultSet resultSet = retrieveStatement.executeQuery();
+        if (resultSet.next()) {
+            return new BeanProcessor().toBean(resultSet, beanClass);
+        } else {
+            return null;
+        }
+    }
+
+    //метод для добавления изменения удаления
 
 
     public static void close() {
