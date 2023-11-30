@@ -16,7 +16,7 @@ public class CreateUserTest extends UserHomePageTest {
         User user = fakeDataProvider.createFakeUser();
         createUser
                 .clickAddUserBtn()
-                .fillUpFirstNameInput(user.getUserName())
+                .fillUpFirstNameInput(user.getUserFirstName())
                 .fillUpLastNameInput(user.getUserLastName())
                 .fillUpEmailInput(user.getUserEmail())
                 .fillUpUsernamenput(user.getUserUsername())

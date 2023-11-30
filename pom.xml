@@ -79,6 +79,20 @@
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.35</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.3.0</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -190,19 +204,6 @@
                         <artifactId>aspectjweaver</artifactId>
                         <version>1.9.19</version>
                     </dependency>
-                    <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-                    <dependency>
-                        <groupId>io.rest-assured</groupId>
-                        <artifactId>rest-assured</artifactId>
-                        <version>5.3.2</version>
-                    </dependency>
-                    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-                    <dependency>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
-                        <version>2.0.7</version>
-                    </dependency>
-
                 </dependencies>
             </plugin>
             <!-- give IntelliJ acceptable to run and open allure report automatic By download allure binary in project
@@ -218,4 +219,7 @@
             </plugin>
         </plugins>
     </build>
+
+
+
 </project>
