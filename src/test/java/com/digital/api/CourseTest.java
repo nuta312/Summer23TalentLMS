@@ -20,4 +20,9 @@ public class CourseTest extends BaseApiTest {
     Course course= courseController.createCourse(EntityManager.generateCourse());
     Assert.assertNotNull(course.getId());
   }
+  @Test
+  public void deleteCourse(){
+    courseController.deleteCourse("131");
+    Assert.assertEquals(courseController.response.getStatusCode(), 200);
+  }
 }

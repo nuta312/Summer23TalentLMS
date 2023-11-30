@@ -59,8 +59,6 @@ public abstract class ApiRequest {
         return this.response;
     }
 
-    ;
-
     public static String getEndpoint(String... endpoints) {
         StringBuilder endPoint = new StringBuilder();
         for (String arg : endpoints) {
@@ -86,11 +84,8 @@ public abstract class ApiRequest {
         for (Map.Entry<String, String> entry : parameters.entrySet()) {
             query.append(entry.getKey() + "=" + entry.getValue() + "&");
         }
-        ;
         return query.deleteCharAt(query.length() - 1).toString();
     }
-
-    ;
 
 
 }

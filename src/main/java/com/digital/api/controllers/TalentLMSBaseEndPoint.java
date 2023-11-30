@@ -8,6 +8,7 @@ public class TalentLMSBaseEndPoint {
         public static final String COURSES= "courses";
 
         public static final String DELETE_USER = "deleteuser";
+        public static final String DELETE_COURSE= "deletecourse";
         public static final String CREATE_COURSE= "createcourse";
 
         public static final String USER_SIGNUP = "usersignup";
