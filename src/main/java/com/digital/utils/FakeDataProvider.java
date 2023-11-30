@@ -88,13 +88,20 @@ public class FakeDataProvider {
 
     public User createFakeUser() {
         User user = new User();
+<<<<<<< HEAD
+        user.setUserFirstName(generateFakeFirstName());
+=======
 //        user.setUserName(generateFakeFirstName());
+>>>>>>> origin
         user.setUserLastName(generateFakeLastName());
         user.setUserEmail(generateFakeEmail());
         user.setUserUsername(generateLogin());
         user.setUserPass(generateStrongPassword());
         user.setUserBio(generateRandomBio());
         return user;
+    }
+    public static String generateCourseName(){
+        return faker.chuckNorris().fact();
     }
 
 }

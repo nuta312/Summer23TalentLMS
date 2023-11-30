@@ -1,16 +1,18 @@
-package com.digital.controllers;
+package com.digital.api.controllers;
 
 import com.digital.api.ApiRequest;
 import com.digital.models.User;
-import com.digital.models.BaseEntity;
+import io.restassured.response.Response;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.HashMap;
-import java.util.Map;
 
-import static com.digital.controllers.TalentLMSBaseEndpoint.*;
+import static com.digital.api.controllers.TalentLMSBaseEndPoint.*;
 
+
+@Slf4j
 
 public class UserController extends ApiRequest {
-
 
     public UserController(String url) {
         super(url);
@@ -20,6 +22,7 @@ public class UserController extends ApiRequest {
         this.response = super.get(getEndpoint(API, V1, USERS));
         return this.response.as(User[].class);
     }
+
 
     public User receiveUser(By key, String value) {
         HashMap<String, String> map = new HashMap<>() {{
@@ -34,6 +37,15 @@ public class UserController extends ApiRequest {
         return this.response.as(User.class);
     }
 
+    public Response deleteUser(String id1) {
+        HashMap<String, String> map = new HashMap<>() {{
+            put("user_id", id1);
+            put("deleted_by_user_id", "1");
+        }};
+
+        this.response = super.post(getEndpoint(API, V1, DELETE_USER) , map);
+        return response;
+    }
 
     public enum By {
         USERNAME("username"),
@@ -48,9 +60,14 @@ public class UserController extends ApiRequest {
     }
 
 
+//    public boolean isMaxUsers() {
+//        User[] users = getUsers();
+//        int count = 0;
+//        for (User user : users) {
+//            if (user.getUserid() != null) {
+//                count++;
+//            }
+//        }
+//        return count >= 5;
+//    }
 };
-
-
-
-
-

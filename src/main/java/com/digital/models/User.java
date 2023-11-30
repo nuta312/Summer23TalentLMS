@@ -15,7 +15,8 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
 public class User extends BaseEntity {
-    private String id;
+    @JsonProperty(value = "id")
+    private String userid;
     @JsonProperty(value = "first_name")
     private String userFirstName;
     @JsonProperty(value = "last_name")
@@ -29,4 +30,6 @@ public class User extends BaseEntity {
     @JsonProperty(value = "bio")
     private String userBio;
 
+
 }
+

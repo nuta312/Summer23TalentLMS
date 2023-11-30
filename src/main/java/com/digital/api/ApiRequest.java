@@ -1,16 +1,12 @@
 package com.digital.api;
 
-
 import com.digital.config.ConfigReader;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import io.restassured.http.ContentType;
 import java.util.HashMap;
 import java.util.Map;
-
-import static io.restassured.RestAssured.config;
 import static io.restassured.RestAssured.given;
 
 @Data
@@ -31,21 +27,24 @@ public abstract class ApiRequest {
     }
 
 
-    public Response get(String endPoint){
+    public Response get(String endPoint) {
         log.info("performed GET {}", endPoint);
         this.response = given()
                 .spec(requestSpecification)
                 .get(endPoint);
         logResponse();
         return this.response;
-    };
+    }
+
+    ;
+
 
     private void logResponse(){
         log.warn("Response is \n{}", getResponse().getBody().asPrettyString());
     }
 
 
-    public Response post(String endPoint, String body){
+    public Response post(String endPoint, String body) {
         log.info("performed POST {}", endPoint);
         log.info(("body is {}"), body);
         this.response = given()
@@ -54,7 +53,7 @@ public abstract class ApiRequest {
                 .post(endPoint);
         logResponse();
         return this.response;
-    };
+    }
 
 
     public static String getEndpoint(String... endpoints) {
@@ -65,13 +64,23 @@ public abstract class ApiRequest {
         return endPoint.substring(0, endPoint.length() - 1);
     }
 
-    public String formatParameter(HashMap<String,String> parameters){
+    public Response post(String endpoint, Map<String, String> map) {
+        log.info("performed POST {}", endpoint);
+        log.info("FORM PARAMS IS {}", map);
+        this.response = given()
+                .spec(requestSpecification)
+                .formParams(map)
+                .post(endpoint);
+        logResponse();
+        return this.response;
+    }
+
+
+    public String formatParameter(HashMap<String, String> parameters) {
         StringBuilder query = new StringBuilder("?");
-        for(Map.Entry<String,String> entry: parameters.entrySet()){
+        for (Map.Entry<String, String> entry : parameters.entrySet()) {
             query.append(entry.getKey() + "=" + entry.getValue() + "&");
-        };
-        return query.deleteCharAt(query.length()-1).toString();
-    };
-
-
+        }
+        return query.deleteCharAt(query.length() - 1).toString();
+    }
 }

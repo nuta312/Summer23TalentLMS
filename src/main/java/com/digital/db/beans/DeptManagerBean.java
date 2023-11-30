@@ -11,7 +11,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class DeptManagerBean {
+public class  DeptManagerBean {
     private int emp_no;
     private String dept_no;
     private String from_date;

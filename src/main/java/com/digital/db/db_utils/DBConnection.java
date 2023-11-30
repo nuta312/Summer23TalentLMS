@@ -125,7 +125,10 @@ public class DBConnection {
         dataSource.setServerTimezone("UTC");
         dataSource.setUser(ConfigReader.getProperty("user"));
         dataSource.setPassword(ConfigReader.getProperty("password"));
+        dataSource.setServerTimezone("UTC");
         dataSource.setDatabaseName(database);
         return dataSource;
     }
+
+
 }
