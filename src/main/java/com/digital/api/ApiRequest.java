@@ -1,20 +1,16 @@
 package com.digital.api;
 
-
 import com.digital.config.ConfigReader;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
 @Data
 @Slf4j
-
 public abstract class ApiRequest {
 
     protected String url;
@@ -43,7 +39,7 @@ public abstract class ApiRequest {
     ;
 
 
-    private void logResponse() {
+    private void logResponse(){
         log.warn("Response is \n{}", getResponse().getBody().asPrettyString());
     }
 
@@ -58,6 +54,7 @@ public abstract class ApiRequest {
         logResponse();
         return this.response;
     }
+
 
     public static String getEndpoint(String... endpoints) {
         StringBuilder endPoint = new StringBuilder();
@@ -86,6 +83,4 @@ public abstract class ApiRequest {
         }
         return query.deleteCharAt(query.length() - 1).toString();
     }
-
-
 }

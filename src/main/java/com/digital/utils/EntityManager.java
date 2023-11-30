@@ -1,5 +1,6 @@
 package com.digital.utils;
 
+<<<<<<< HEAD
 import com.digital.api.ApiRequest;
 import com.digital.api.controllers.UserController;
 import com.digital.models.Course;
@@ -7,6 +8,9 @@ import com.digital.models.User;
 import io.restassured.response.Response;
 
 import java.util.Random;
+=======
+import com.digital.models.User;
+>>>>>>> origin
 
 public class EntityManager {
     public static User generateUser() {
@@ -17,6 +21,7 @@ public class EntityManager {
                 .userUsername(FakeDataProvider.generateLogin())
                 .userPass(FakeDataProvider.generateStrongPassword()).build();
     }
+<<<<<<< HEAD
      public static Course generateCourse(){
         return Course.builder()
                 .name(FakeDataProvider.generateCourseName())
@@ -28,3 +33,6 @@ public class EntityManager {
      }
 
 }
+=======
+}
+>>>>>>> origin

@@ -30,4 +30,6 @@ public class User extends BaseEntity {
     @JsonProperty(value = "bio")
     private String userBio;
 
+
 }
+

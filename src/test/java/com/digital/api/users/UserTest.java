@@ -1,5 +1,6 @@
-package com.digital.api;
+package com.digital.api.users;
 
+import com.digital.api.BaseApiTest;
 import com.digital.api.controllers.UserController;
 import com.digital.config.ConfigReader;
 
