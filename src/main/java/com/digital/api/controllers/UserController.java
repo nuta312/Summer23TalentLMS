@@ -2,7 +2,8 @@ package com.digital.api.controllers;
 
 import com.digital.api.ApiRequest;
 import com.digital.models.User;
-import com.digital.models.BaseEntity;
+import io.restassured.response.Response;
+
 import java.util.HashMap;
 
 import static com.digital.api.TalentLMSBaseEndpoint.*;
@@ -29,10 +30,18 @@ public class UserController extends ApiRequest {
     }
 
     public User createUser(User user) {
-        this.response = super.post(getEndpoint(API, V1, USER_SIGNUP), BaseEntity.toJson(user));
+        this.response = super.post(getEndpoint(API, V1, USER_SIGNUP),user.toJson());
         return this.response.as(User.class);
     }
 
+    public Response deleteUser(String id1){
+         HashMap<String, String> map = new HashMap<>() {{
+            put("user_id", id1);
+            put("deleted_by_user_id", "1");
+        }};
+        this.response = super.post(getEndpoint(API, V1,DELETE_USER), map);
+        return response;
+    }
 
     public enum By {
         USERNAME("username"),
@@ -44,6 +53,16 @@ public class UserController extends ApiRequest {
         By(String nameOfKey) {
             this.nameOfKey = nameOfKey;
         }
+    }
+
+    public boolean isMaxUsers(){
+        User[] users = getUsers();
+        int count = 0;
+        for (User user : users){
+            if (user.getUserId() != null){
+                count ++;
+            }
+        }return count >=5;
     }
 
 

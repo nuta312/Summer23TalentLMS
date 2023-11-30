@@ -11,11 +11,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true) //анотация джексона, которая игнорирует поля которые нет у нас в классе
+@JsonInclude(JsonInclude.Include.NON_NULL) // нулевые данные не вывводит
 @Builder
 public class User extends BaseEntity {
-    private String id;
+    @JsonProperty(value = "id")
+    private String userId;
     @JsonProperty(value = "first_name")
     private String userFirstName;
     @JsonProperty(value = "last_name")

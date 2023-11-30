@@ -7,5 +7,9 @@ public class TalentLMSBaseEndpoint {
 
 public static final String USER_SIGNUP = "usersignup";
 
+public static final String DELETE_USER="deleteuser";
+
+
+
 
 }

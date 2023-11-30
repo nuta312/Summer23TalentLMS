@@ -56,7 +56,7 @@ public abstract class ApiRequest {
                 .post(endPoint);
         logResponse();
         return this.response;
-    };
+    }
 
 
     public static String getEndpoint(String... endpoints) {
@@ -74,6 +74,17 @@ public abstract class ApiRequest {
         };
         return query.deleteCharAt(query.length()-1).toString();
     };
+
+    public Response post(String endpoint, Map<String,String> map) {
+        log.info("performed POST {}", endpoint);
+        log.info("FORM PARAMS IS{}", map);
+        this.response = given()
+                .spec(requestSpecification)
+                .formParams(map)
+                .post(endpoint);
+        logResponse();
+        return this.response;
+    }
 
 
 }
