@@ -11,7 +11,6 @@ import static com.digital.api.TalentLMSBaseEndpoint.*;
 
 public class UserController extends ApiRequest {
 
-
     public UserController(String url) {
         super(url);
     }
@@ -30,16 +29,16 @@ public class UserController extends ApiRequest {
     }
 
     public User createUser(User user) {
-        this.response = super.post(getEndpoint(API, V1, USER_SIGNUP),user.toJson());
+        this.response = super.post(getEndpoint(API, V1, USER_SIGNUP), user.toJson());
         return this.response.as(User.class);
     }
-
-    public Response deleteUser(String id1){
-         HashMap<String, String> map = new HashMap<>() {{
+    public Response deleteUser(String id1) {
+        HashMap<String, String> map = new HashMap<>() {{
             put("user_id", id1);
             put("deleted_by_user_id", "1");
         }};
-        this.response = super.post(getEndpoint(API, V1,DELETE_USER), map);
+
+        this.response = super.post(getEndpoint(API, V1, DELETE_USER) , map);
         return response;
     }
 
@@ -71,4 +70,14 @@ public class UserController extends ApiRequest {
 
 
 
+//    public boolean isMaxUsers() {
+//        User[] users = getUsers();
+//        int count = 0;
+//        for (User user : users) {
+//            if (user.getUserid() != null) {
+//                count++;
+//            }
+//        }
+//        return count >= 5;
+//    }
 

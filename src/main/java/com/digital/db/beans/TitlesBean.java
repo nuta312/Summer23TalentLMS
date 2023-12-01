@@ -21,6 +21,7 @@ public class TitlesBean {
     public static List<TitlesBean> getAll() throws SQLException {
         String query = "select * from titles;";
         ResultSet resultSet = DBConnection.query(query);
+
         return resultSet.next() ? new BeanProcessor().toBeanList(resultSet, TitlesBean.class) : null;
     };
 
