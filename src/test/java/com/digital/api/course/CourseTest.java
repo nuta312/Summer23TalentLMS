@@ -1,0 +1,31 @@
+package com.digital.api.course;
+
+import com.digital.api.BaseApiTest;
+import com.digital.api.controllers.CourseController;
+import com.digital.config.ConfigReader;
+import com.digital.models.BaseEntity;
+import com.digital.models.Course;
+import com.digital.utils.EntityManager;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class CourseTest extends BaseApiTest {
+    @BeforeClass
+    public void beforeClass() {
+        courseController = new CourseController(ConfigReader.getProperty("url"));
+
+    }
+
+    @Test
+    public void createCourse() {
+        Course course = courseController.createCourse(EntityManager.generateCourse());
+        Assert.assertNotNull(course.getId());
+    }
+
+    @Test
+    public void deleteCourse() {
+        courseController.deleteCourse("131");
+        Assert.assertEquals(courseController.getResponse().getStatusCode(), 200);
+    }
+}
