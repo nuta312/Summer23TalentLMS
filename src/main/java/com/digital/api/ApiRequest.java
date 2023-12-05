@@ -13,16 +13,16 @@ import static io.restassured.RestAssured.given;
 @Slf4j
 public abstract class ApiRequest {
     protected String url;
-    protected Response response;
-    protected RequestSpecification requestSpecification;
+    protected Response response; //запрос
+    protected RequestSpecification requestSpecification; // настройка параметров запроса http
     private static final String SLASH = "/";
-
+    // конструкор
     public ApiRequest(String url) {
         this.url = url;
-        this.requestSpecification = given()
+        this.requestSpecification = given()  // начало запроса
                 .baseUri(this.url)
                 .auth()
-                .basic(ConfigReader.getProperty("apiKey"), "");
+                .basic(ConfigReader.getProperty("apiKey"), "");  // авторизация
     }
     public Response get(String endPoint) {
         log.info("performed GET {}", endPoint);

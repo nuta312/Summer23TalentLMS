@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import java.util.Objects;
+import static com.digital.enums.StatusCodes.HTTP_OK;
 public class UserTest extends BaseApiTest {
     User expectedUser;
 
@@ -21,7 +22,7 @@ public class UserTest extends BaseApiTest {
             for (User userIn : users){
                 if(!Objects.equals(userIn.getUserId(), "1")){
                     userController.deleteUser(userIn.getUserId());
-                    break;
+
                 }
             }
         }
@@ -32,8 +33,10 @@ public class UserTest extends BaseApiTest {
     @Test
     public void createUser() {
         expectedUser = EntityManager.generateUser();
-        expectedUser = userController.createUser(expectedUser);
-        Assert.assertNotNull(expectedUser.getUserId());
-        Assert.assertEquals(userController.getResponse().getStatusCode(),200);
+        User actualUser = userController.createUser(expectedUser);
+        ApiAssert.assertThat(userController.getResponse())
+                .isCorrectStatusCode(HTTP_OK)
+                .assertUser(actualUser)
+                .isCorrectFirstName(expectedUser.getUserFirstName());
     }
 }

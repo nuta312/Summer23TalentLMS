@@ -1,4 +1,9 @@
 package com.digital.asserts;
 
-public class CourseAssert {
+import com.digital.models.BaseEntity;
+public class CourseAssert extends EntityAssert {
+    public CourseAssert(BaseEntity entity) {
+        super(entity);
+    }
 }
+

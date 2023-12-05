@@ -30,5 +30,8 @@ public class User extends BaseEntity {
     @JsonProperty(value = "bio")
     private String userBio;
 
-
+    @Override
+    public Object receiveName() {
+        return getUserFirstName();
+    }
 }

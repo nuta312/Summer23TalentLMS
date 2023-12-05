@@ -9,8 +9,7 @@ import io.restassured.response.Response;
 import java.util.Random;
 
 import com.digital.models.User;
-
-public class EntityManager {
+public class    EntityManager {
     public static User generateUser() {
         return User.builder()
                 .userFirstName(FakeDataProvider.generateFakeFirstName())

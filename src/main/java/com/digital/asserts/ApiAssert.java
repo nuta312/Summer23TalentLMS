@@ -11,7 +11,6 @@ import org.assertj.core.api.Assertions;
 import static org.testng.Assert.assertTrue;
 
 @Slf4j
-
 public class ApiAssert {
     Response response;
 
@@ -19,20 +18,27 @@ public class ApiAssert {
         this.response = response;
     }
 
-    public static ApiAssert asserThat(Response response) {
+
+    public static ApiAssert assertThat(Response response) {
+
         return new ApiAssert(response);
     }
 
     public ApiAssert isCorrectStatusCode(StatusCodes expectedStatusCode) {
-        if (this.response == null) assertTrue(false, "response is null");
+        if (this.response == null) assertTrue(false, "Response is null");
         Assertions.assertThat(this.response.getStatusCode())
                 .withFailMessage("Response code is not correct Actual %s, Expected %s", this.response.getStatusCode(), expectedStatusCode)
                 .isEqualTo(expectedStatusCode.getStatus());
         log.info("Status code is correct Actual {}, Expected {}", this.response.getStatusCode(), expectedStatusCode);
         return this;
     }
-    public UserAssert assertUser(){
-        return UserAssert.assertThat(this.response.as(User.class));
 
+//    public UserAssert assertUser() {
+//        return UserAssert.assertThat(this.response.as(User.class));
+
+
+    public UserAssert assertUser(User user) {
+        return UserAssert.assertThat(user);
     }
-}
+    }
+

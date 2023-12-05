@@ -18,6 +18,8 @@ public class CreateUserTest extends UserHomePageTest {
                 .clickAddUserBtn()
                 .fillUpFirstNameInput(user.getUserFirstName())
 //                .fillUpFirstNameInput(user.getUserName())
+                .fillUpFirstNameInput(user.getUserFirstName())
+//                .fillUpFirstNameInput(user.getUserName())
                 .fillUpLastNameInput(user.getUserLastName())
                 .fillUpEmailInput(user.getUserEmail())
                 .fillUpUsernamenput(user.getUserUsername())
