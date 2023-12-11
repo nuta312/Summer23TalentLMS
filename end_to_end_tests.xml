@@ -3,6 +3,10 @@
 <suite name="E2E Suite">
     <test name="E2E Tests">
         <classes>
+
+                <class name="com.digital.userCategoryTest.CreateUserTest"></class>
+
+
         </classes>
     </test>
 </suite>
