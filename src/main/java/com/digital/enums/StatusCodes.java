@@ -13,6 +13,7 @@ public enum StatusCodes {
     private final int status;
 
     StatusCodes(int status) {
+
         this.status = status;
     }
 }

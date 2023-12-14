@@ -10,6 +10,7 @@ public class EntityAssert {
     protected BaseEntity entity;
 
     public EntityAssert(BaseEntity entity) {
+
         this.entity = entity;
     }
 

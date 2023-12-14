@@ -8,6 +8,7 @@ import org.assertj.core.api.Assertions;
 @Slf4j
 public class UserAssert extends EntityAssert {
     public UserAssert(BaseEntity entity) {
+
         super(entity);
     }
 

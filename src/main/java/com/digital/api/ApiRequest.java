@@ -36,9 +36,6 @@ public abstract class ApiRequest {
         return this.response;
     }
 
-    ;
-
-
     private void logResponse(){
         log.warn("Response is \n{}", getResponse().getBody().asPrettyString());
     }

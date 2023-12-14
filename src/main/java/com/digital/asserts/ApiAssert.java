@@ -2,6 +2,7 @@ package com.digital.asserts;
 
 import com.digital.enums.StatusCodes;
 import com.digital.models.BaseEntity;
+import com.digital.models.Course;
 import com.digital.models.User;
 import com.google.protobuf.Api;
 import io.restassured.response.Response;
@@ -15,10 +16,12 @@ public class ApiAssert {
     Response response;
 
     public ApiAssert(Response response) {
+
         this.response = response;
     }
 
     public static ApiAssert assertThat(Response response) {
+
         return new ApiAssert(response);
     }
 
@@ -31,7 +34,12 @@ public class ApiAssert {
         return this;
     }
 
+    public CourseAssert assertCourse(Course course){
+        return CourseAssert.assertThat(course);
+
+    }
     public UserAssert assertUser(User user) {
+
         return UserAssert.assertThat(user);
     }
 }

@@ -32,6 +32,7 @@ public class User extends BaseEntity {
 
     @Override
     public Object receiveName() {
+
         return getUserFirstName();
     }
 }

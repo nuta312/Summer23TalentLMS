@@ -34,7 +34,6 @@ public class UserTest extends BaseApiTest {
                 .isCorrectStatusCode(HTTP_OK);
     }
 
-
     @Test
     public void createUser() {
         expectedUser = EntityManager.generateUser();
