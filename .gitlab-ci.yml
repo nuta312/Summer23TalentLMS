@@ -1,0 +1,15 @@
+image: maven:3-jdk-11
+
+stages:
+  -test
+  -allure
+
+test_run:
+  stage: test
+  script:
+    - mvn clean test - DfailIfNoTest=false -PEndToEndTest
+
+report:
+    stage: allure
+    scripts:
+      - allure generate target/allure-results
